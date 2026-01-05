@@ -299,14 +299,14 @@ const DigitalSystems = () => {
         </div>
       </section>
 
-      {/* Code preview section */}
-      <section className="section-padding bg-navy-deep pattern-lines">
+      {/* Animated Dashboard Preview Section */}
+      <section className="section-padding bg-navy-deep pattern-lines overflow-hidden">
         <div className="container-editorial">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center"
+            className="max-w-4xl mx-auto text-center"
           >
             <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
               What You Get
@@ -315,59 +315,155 @@ const DigitalSystems = () => {
               Systems that just work.
             </h2>
             
-            {/* Mock dashboard preview */}
+            {/* Animated Dashboard Preview */}
             <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40, rotateX: 10 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-navy border border-cream/10 rounded-lg overflow-hidden shadow-2xl"
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="relative perspective-1000"
             >
-              <div className="flex items-center gap-2 px-4 py-3 bg-navy-light/50 border-b border-cream/10">
-                <div className="w-3 h-3 rounded-full bg-destructive/60" />
-                <div className="w-3 h-3 rounded-full bg-gold/60" />
-                <div className="w-3 h-3 rounded-full bg-green-500/60" />
-                <span className="ml-4 text-xs text-cream/40 font-mono">dashboard.sourcing.vn</span>
-              </div>
-              <div className="p-6">
-                <div className="grid grid-cols-4 gap-4 mb-6">
-                  {[
-                    { label: "Active Orders", value: "24" },
-                    { label: "Pending QC", value: "8" },
-                    { label: "In Transit", value: "12" },
-                    { label: "Completed", value: "156" },
-                  ].map((stat, i) => (
-                    <motion.div 
-                      key={stat.label}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.3 + i * 0.1 }}
-                      className="bg-navy-light/30 p-4 rounded"
-                    >
-                      <div className="text-2xl font-display font-bold text-gold">{stat.value}</div>
-                      <div className="text-xs text-cream/50">{stat.label}</div>
-                    </motion.div>
-                  ))}
+              {/* Floating decorative elements */}
+              <motion.div
+                className="absolute -top-8 -left-8 w-16 h-16 border border-gold/20 rounded-lg"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              />
+              <motion.div
+                className="absolute -bottom-4 -right-4 w-12 h-12 bg-gold/10 rounded-full"
+                animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              />
+              
+              <div className="bg-navy border border-cream/10 rounded-lg overflow-hidden shadow-2xl relative">
+                {/* Window Header */}
+                <div className="flex items-center gap-2 px-4 py-3 bg-navy-light/50 border-b border-cream/10">
+                  <motion.div 
+                    className="w-3 h-3 rounded-full bg-destructive/60"
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 0 }}
+                  />
+                  <motion.div 
+                    className="w-3 h-3 rounded-full bg-gold/60"
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
+                  />
+                  <motion.div 
+                    className="w-3 h-3 rounded-full bg-green-500/60"
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
+                  />
+                  <motion.span 
+                    className="ml-4 text-xs text-cream/40 font-mono"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 }}
+                  >
+                    dashboard.sourcing.vn
+                  </motion.span>
                 </div>
-                <div className="space-y-2">
-                  {[1, 2, 3].map((i) => (
-                    <motion.div 
-                      key={i}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.5 + i * 0.1 }}
-                      className="flex items-center gap-4 bg-navy-light/20 p-3 rounded"
+                
+                <div className="p-6">
+                  {/* Stats Grid with counting animation */}
+                  <div className="grid grid-cols-4 gap-4 mb-6">
+                    {[
+                      { label: "Active Orders", value: 24, color: "text-gold" },
+                      { label: "Pending QC", value: 8, color: "text-cream" },
+                      { label: "In Transit", value: 12, color: "text-cream" },
+                      { label: "Completed", value: 156, color: "text-green-400" },
+                    ].map((stat, i) => (
+                      <motion.div 
+                        key={stat.label}
+                        initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4 + i * 0.1, type: "spring", stiffness: 100 }}
+                        whileHover={{ scale: 1.05, y: -5 }}
+                        className="bg-navy-light/30 p-4 rounded border border-cream/5 hover:border-gold/30 transition-colors cursor-pointer"
+                      >
+                        <motion.div 
+                          className={`text-2xl lg:text-3xl font-display font-bold ${stat.color}`}
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.6 + i * 0.1 }}
+                        >
+                          {stat.value}
+                        </motion.div>
+                        <div className="text-xs text-cream/50">{stat.label}</div>
+                      </motion.div>
+                    ))}
+                  </div>
+                  
+                  {/* Animated list items */}
+                  <div className="space-y-2">
+                    {[
+                      { title: "Order #1247 - Textile Samples", progress: 75, status: "In Progress" },
+                      { title: "Order #1246 - Electronics PCB", progress: 100, status: "Complete" },
+                      { title: "Order #1245 - Packaging Design", progress: 45, status: "Processing" },
+                    ].map((item, i) => (
+                      <motion.div 
+                        key={i}
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.7 + i * 0.15 }}
+                        whileHover={{ x: 10, backgroundColor: "rgba(255,255,255,0.05)" }}
+                        className="flex items-center gap-4 bg-navy-light/20 p-4 rounded cursor-pointer transition-colors"
+                      >
+                        <motion.div 
+                          className="w-10 h-10 rounded bg-gold/20 flex items-center justify-center"
+                          whileHover={{ rotate: 10 }}
+                        >
+                          <span className="text-lg">📦</span>
+                        </motion.div>
+                        <div className="flex-1">
+                          <div className="text-sm text-cream/80 mb-1">{item.title}</div>
+                          <div className="relative h-1.5 bg-cream/10 rounded-full overflow-hidden">
+                            <motion.div
+                              className="absolute inset-y-0 left-0 bg-gradient-to-r from-gold to-gold/60 rounded-full"
+                              initial={{ width: 0 }}
+                              whileInView={{ width: `${item.progress}%` }}
+                              viewport={{ once: true }}
+                              transition={{ delay: 1 + i * 0.2, duration: 1, ease: "easeOut" }}
+                            />
+                          </div>
+                        </div>
+                        <motion.div 
+                          className={`text-xs px-2 py-1 rounded ${
+                            item.status === "Complete" 
+                              ? "bg-green-500/20 text-green-400" 
+                              : "bg-gold/20 text-gold"
+                          }`}
+                          animate={{ opacity: [0.7, 1, 0.7] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        >
+                          {item.status}
+                        </motion.div>
+                      </motion.div>
+                    ))}
+                  </div>
+                  
+                  {/* Animated typing indicator */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1.5 }}
+                    className="mt-6 flex items-center gap-2 text-xs text-cream/40"
+                  >
+                    <motion.div
+                      className="flex gap-1"
+                      animate={{ opacity: [0.4, 1, 0.4] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
                     >
-                      <div className="w-8 h-8 rounded bg-gold/20" />
-                      <div className="flex-1">
-                        <div className="h-2 bg-cream/10 rounded w-1/3 mb-1" />
-                        <div className="h-2 bg-cream/5 rounded w-1/2" />
-                      </div>
-                      <div className="text-xs text-green-400">● Active</div>
+                      <span className="w-1.5 h-1.5 bg-gold rounded-full" />
+                      <span className="w-1.5 h-1.5 bg-gold rounded-full" />
+                      <span className="w-1.5 h-1.5 bg-gold rounded-full" />
                     </motion.div>
-                  ))}
+                    <span>Live updates syncing...</span>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
