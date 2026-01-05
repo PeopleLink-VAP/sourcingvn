@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import happyTeamImage from "@/assets/images/happy-team.jpg";
-import entrepreneurImage from "@/assets/images/entrepreneur-woman.jpg";
-import qualityInspectorImage from "@/assets/images/quality-inspector.jpg";
+import vietnamTeamImage from "@/assets/images/vietnam-team.jpg";
+import asianMeetingImage from "@/assets/images/asian-meeting.jpg";
+import vietnamFactoryImage from "@/assets/images/vietnam-factory.jpg";
 
 export const Hero = () => {
   return (
@@ -118,8 +118,8 @@ export const Hero = () => {
                 className="relative z-10"
               >
                 <img 
-                  src={happyTeamImage} 
-                  alt="Our happy team in Vietnam" 
+                  src={vietnamTeamImage} 
+                  alt="Our team in Vietnam" 
                   className="w-full h-80 object-cover rounded-3xl shadow-2xl"
                 />
                 <div className="absolute -bottom-4 -right-4 w-full h-full bg-sunshine/30 rounded-3xl -z-10" />
@@ -135,8 +135,8 @@ export const Hero = () => {
                 <motion.img 
                   animate={{ y: [0, 8, 0] }}
                   transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
-                  src={entrepreneurImage}
-                  alt="Entrepreneur working"
+                  src={asianMeetingImage}
+                  alt="Business meeting in Vietnam"
                   className="w-32 h-40 object-cover rounded-2xl shadow-xl border-4 border-white"
                 />
               </motion.div>
@@ -150,8 +150,8 @@ export const Hero = () => {
                 <motion.img 
                   animate={{ y: [0, -6, 0] }}
                   transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.5 }}
-                  src={qualityInspectorImage}
-                  alt="Quality inspector"
+                  src={vietnamFactoryImage}
+                  alt="Vietnam factory"
                   className="w-36 h-44 object-cover rounded-2xl shadow-xl border-4 border-white"
                 />
               </motion.div>

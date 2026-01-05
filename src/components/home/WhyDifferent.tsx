@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, MapPin, DollarSign, Eye } from "lucide-react";
-import happyClientImage from "@/assets/images/happy-client.jpg";
+import asianBusinessImage from "@/assets/images/asian-business.jpg";
 
 const truths = [
   {
@@ -56,8 +56,8 @@ export const WhyDifferent = () => {
             {/* Image with overlay */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img 
-                src={happyClientImage}
-                alt="Happy client receiving products"
+                src={asianBusinessImage}
+                alt="Business partnership in Vietnam"
                 className="w-full h-64 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />

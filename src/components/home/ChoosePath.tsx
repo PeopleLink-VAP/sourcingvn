@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Package, Users, Cpu, Star } from "lucide-react";
-import qualityInspectorImage from "@/assets/images/quality-inspector.jpg";
-import supportTeamImage from "@/assets/images/support-team.jpg";
-import happyTeamImage from "@/assets/images/happy-team.jpg";
+import vietnamMarketImage from "@/assets/images/vietnam-market.jpg";
+import asianOfficeImage from "@/assets/images/asian-office.jpg";
+import asianDeveloperImage from "@/assets/images/asian-developer.jpg";
 
 const paths = [
   {
@@ -11,7 +11,7 @@ const paths = [
     title: "Product Sourcing",
     description: "Factories, suppliers, quality control — we handle it on the ground.",
     href: "/product-sourcing",
-    image: qualityInspectorImage,
+    image: vietnamMarketImage,
     color: "teal",
     stats: "200+ products sourced"
   },
@@ -20,7 +20,7 @@ const paths = [
     title: "Talent Sourcing",
     description: "Reliable support without full-time overhead. Founders started as VAs.",
     href: "/talent-sourcing",
-    image: supportTeamImage,
+    image: asianOfficeImage,
     color: "coral",
     stats: "50+ team members placed"
   },
@@ -29,7 +29,7 @@ const paths = [
     title: "Digital & Systems",
     description: "Websites, AI chatbots, CRM, internal tools. Built to work.",
     href: "/digital-systems",
-    image: happyTeamImage,
+    image: asianDeveloperImage,
     color: "navy",
     stats: "100+ systems built"
   },
