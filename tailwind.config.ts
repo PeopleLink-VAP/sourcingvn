@@ -70,6 +70,19 @@ export default {
         cream: "hsl(var(--cream))",
         "warm-gray": "hsl(var(--warm-gray))",
         "cool-gray": "hsl(var(--cool-gray))",
+        // New vibrant colors
+        sunshine: {
+          DEFAULT: "hsl(var(--sunshine))",
+          muted: "hsl(var(--sunshine-muted))",
+        },
+        teal: {
+          DEFAULT: "hsl(var(--teal))",
+          muted: "hsl(var(--teal-muted))",
+        },
+        coral: {
+          DEFAULT: "hsl(var(--coral))",
+          muted: "hsl(var(--coral-muted))",
+        },
       },
       fontFamily: {
         display: ["Space Grotesk", "system-ui", "sans-serif"],

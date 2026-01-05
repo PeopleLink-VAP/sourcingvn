@@ -1,71 +1,57 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import logoSquare from "@/assets/logo_square.png";
+import happyTeamImage from "@/assets/images/happy-team.jpg";
+import entrepreneurImage from "@/assets/images/entrepreneur-woman.jpg";
+import qualityInspectorImage from "@/assets/images/quality-inspector.jpg";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen bg-navy-deep overflow-hidden">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 pattern-dots opacity-30" />
+    <section className="relative min-h-screen bg-gradient-to-br from-cream via-sunshine/10 to-teal/10 overflow-hidden">
+      {/* Animated background patterns */}
+      <div className="absolute inset-0 pattern-confetti" />
+      <div className="absolute inset-0 pattern-waves opacity-60" />
       
-      {/* Animated background element */}
+      {/* Floating decorative elements */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.08, scale: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4"
-      >
-        <img 
-          src={logoSquare} 
-          alt="" 
-          className="w-[500px] md:w-[700px] lg:w-[900px] h-auto opacity-50"
-          aria-hidden="true"
-        />
-      </motion.div>
-
-      {/* Floating lines decoration */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true">
-        <motion.line
-          x1="10%"
-          y1="20%"
-          x2="10%"
-          y2="80%"
-          stroke="hsl(48, 92%, 52%)"
-          strokeWidth="1"
-          strokeOpacity="0.2"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 2, delay: 0.5 }}
-        />
-        <motion.line
-          x1="90%"
-          y1="30%"
-          x2="90%"
-          y2="70%"
-          stroke="hsl(48, 92%, 52%)"
-          strokeWidth="1"
-          strokeOpacity="0.15"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 1.5, delay: 1 }}
-        />
-      </svg>
+        animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+        className="absolute top-32 right-20 w-20 h-20 bg-sunshine/20 rounded-full blur-xl"
+      />
+      <motion.div
+        animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
+        transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
+        className="absolute bottom-40 left-20 w-32 h-32 bg-teal/15 rounded-full blur-2xl"
+      />
+      <motion.div
+        animate={{ y: [0, -10, 0] }}
+        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 2 }}
+        className="absolute top-1/2 left-1/3 w-16 h-16 bg-coral/20 rounded-full blur-xl"
+      />
 
       {/* Content */}
-      <div className="relative z-10 container-editorial min-h-screen flex items-center pt-24">
-        <div className="grid-asymmetric w-full items-center">
+      <div className="relative z-10 container-editorial min-h-screen flex items-center pt-24 pb-12">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
           {/* Left content */}
-          <div className="py-12 md:py-0">
+          <div className="py-8 md:py-0">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h1 className="headline-xl text-cream mb-6">
+              <motion.span 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="inline-block px-4 py-2 bg-sunshine/20 text-navy rounded-full text-sm font-medium mb-6"
+              >
+                👋 Your Vietnam Partner
+              </motion.span>
+              
+              <h1 className="headline-xl text-navy mb-6">
                 Source smarter in Vietnam.
                 <br />
-                <span className="text-gold">Without middlemen.</span>
+                <span className="gradient-text">Without middlemen.</span>
                 <br />
                 Without guesswork.
               </h1>
@@ -75,9 +61,10 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="body-lg text-cream/70 max-w-xl mb-10"
+              className="body-lg text-cool-gray max-w-xl mb-10"
             >
-              Your on-the-ground partner for sourcing products, talent, and systems in Vietnam.
+              Your on-the-ground partner for sourcing products, talent, and systems in Vietnam. 
+              Real people, real results.
             </motion.p>
 
             <motion.div
@@ -86,35 +73,100 @@ export const Hero = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-wrap gap-4"
             >
-              <Button asChild variant="hero" size="xl">
+              <Button asChild size="xl" className="bg-navy hover:bg-navy-light text-cream shadow-lg hover:shadow-xl transition-all">
                 <Link to="/start-project">Start a Project</Link>
               </Button>
-              <Button asChild variant="hero-outline" size="xl">
+              <Button asChild variant="outline" size="xl" className="border-navy text-navy hover:bg-navy hover:text-cream">
                 <Link to="/how-we-help">How We Help</Link>
               </Button>
             </motion.div>
+
+            {/* Trust badges */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="flex flex-wrap items-center gap-8 mt-12 pt-8 border-t border-navy/10"
+            >
+              <div className="text-center">
+                <p className="text-3xl font-display font-bold text-navy">10+</p>
+                <p className="text-sm text-cool-gray">Years in Vietnam</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-display font-bold text-navy">200+</p>
+                <p className="text-sm text-cool-gray">Projects Delivered</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-display font-bold text-teal">Zero</p>
+                <p className="text-sm text-cool-gray">Commission Fees</p>
+              </div>
+            </motion.div>
           </div>
 
-          {/* Right stats/trust indicators */}
+          {/* Right - Photo collage */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="hidden md:block"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative hidden lg:block"
           >
-            <div className="space-y-8">
-              <div className="border-l-2 border-gold/30 pl-6">
-                <p className="text-5xl font-display font-bold text-cream mb-2">10+</p>
-                <p className="text-cream/60 text-sm uppercase tracking-wider">Years in Vietnam</p>
-              </div>
-              <div className="border-l-2 border-gold/30 pl-6">
-                <p className="text-5xl font-display font-bold text-cream mb-2">200+</p>
-                <p className="text-cream/60 text-sm uppercase tracking-wider">Projects Delivered</p>
-              </div>
-              <div className="border-l-2 border-gold/30 pl-6">
-                <p className="text-5xl font-display font-bold text-cream mb-2">Zero</p>
-                <p className="text-cream/60 text-sm uppercase tracking-wider">Commission Fees</p>
-              </div>
+            <div className="relative">
+              {/* Main image */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                className="relative z-10"
+              >
+                <img 
+                  src={happyTeamImage} 
+                  alt="Our happy team in Vietnam" 
+                  className="w-full h-80 object-cover rounded-3xl shadow-2xl"
+                />
+                <div className="absolute -bottom-4 -right-4 w-full h-full bg-sunshine/30 rounded-3xl -z-10" />
+              </motion.div>
+
+              {/* Floating secondary images */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+                className="absolute -left-12 top-20 z-20"
+              >
+                <motion.img 
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
+                  src={entrepreneurImage}
+                  alt="Entrepreneur working"
+                  className="w-32 h-40 object-cover rounded-2xl shadow-xl border-4 border-white"
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1, duration: 0.6 }}
+                className="absolute -right-8 -bottom-16 z-20"
+              >
+                <motion.img 
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.5 }}
+                  src={qualityInspectorImage}
+                  alt="Quality inspector"
+                  className="w-36 h-44 object-cover rounded-2xl shadow-xl border-4 border-white"
+                />
+              </motion.div>
+
+              {/* Decorative elements */}
+              <motion.div 
+                animate={{ rotate: 360 }}
+                transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+                className="absolute -top-8 -right-8 w-24 h-24 border-4 border-dashed border-teal/30 rounded-full"
+              />
+              <motion.div 
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ repeat: Infinity, duration: 3 }}
+                className="absolute bottom-1/3 -left-6 w-12 h-12 bg-coral/40 rounded-full"
+              />
             </div>
           </motion.div>
         </div>
@@ -130,9 +182,9 @@ export const Hero = () => {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
-          className="w-6 h-10 border-2 border-cream/30 rounded-full flex justify-center pt-2"
+          className="w-6 h-10 border-2 border-navy/30 rounded-full flex justify-center pt-2"
         >
-          <div className="w-1 h-2 bg-gold rounded-full" />
+          <div className="w-1 h-2 bg-sunshine rounded-full" />
         </motion.div>
       </motion.div>
     </section>
