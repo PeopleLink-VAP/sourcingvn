@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe, Bot, Database, Cog, Zap, Shield, Code, Smartphone } from "lucide-react";
 import { useRef } from "react";
 
-import developerImage from "@/assets/images/developer-working.jpg";
+import asianCodingImage from "@/assets/images/asian-coding.jpg";
 
 const services = [
   {
@@ -82,8 +82,8 @@ const DigitalSystems = () => {
           style={{ y: codeY }}
         >
           <img 
-            src={developerImage} 
-            alt="Developer at work" 
+            src={asianCodingImage} 
+            alt="Developer working in Vietnam" 
             className="w-full h-[120%] object-cover opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/95 to-navy-deep/80" />

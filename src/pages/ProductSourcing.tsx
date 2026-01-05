@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, XCircle, Package, Shirt, Cpu, Gift, Home } from "lucide-react";
 import { useRef } from "react";
 
-import factoryImage from "@/assets/images/factory-workers.jpg";
-import qualityImage from "@/assets/images/quality-check.jpg";
-import warehouseImage from "@/assets/images/warehouse.jpg";
+import garmentFactoryImage from "@/assets/images/garment-factory-asia.jpg";
+import vietnamWarehouseImage from "@/assets/images/vietnam-warehouse.jpg";
+import asianTeamWork from "@/assets/images/asian-team-work.jpg";
 
 const processSteps = [
   { number: "01", title: "Discovery", description: "We understand your product, quantities, timeline, and quality requirements.", icon: "📋" },
@@ -74,8 +74,8 @@ const ProductSourcing = () => {
           style={{ y: imageY }}
         >
           <img 
-            src={factoryImage} 
-            alt="Factory workers" 
+            src={garmentFactoryImage} 
+            alt="Vietnam garment factory" 
             className="w-full h-[120%] object-cover opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/90 to-navy-deep/70" />
@@ -334,8 +334,8 @@ const ProductSourcing = () => {
               className="relative"
             >
               <img 
-                src={qualityImage} 
-                alt="Quality inspection" 
+                src={asianTeamWork} 
+                alt="Quality inspection in Vietnam" 
                 className="w-full aspect-square object-cover"
               />
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gold/20 -z-10" />
@@ -456,8 +456,8 @@ const ProductSourcing = () => {
       {/* Warehouse Image Section */}
       <section className="relative h-[60vh] overflow-hidden">
         <motion.img 
-          src={warehouseImage} 
-          alt="Warehouse operations" 
+          src={vietnamWarehouseImage} 
+          alt="Vietnam warehouse operations" 
           className="w-full h-full object-cover"
           initial={{ scale: 1.1 }}
           whileInView={{ scale: 1 }}

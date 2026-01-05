@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart, Clock, Users, Mail, FileText, Calculator, Search, Headphones } from "lucide-react";
 import { useRef } from "react";
 
-import talentImage from "@/assets/images/talent-working.jpg";
-import teamImage from "@/assets/images/team-meeting.jpg";
+import asianCollaborationImage from "@/assets/images/asian-collaboration.jpg";
+import diverseTeamMeeting from "@/assets/images/diverse-team-meeting.jpg";
 
 const benefits = [
   {
@@ -105,8 +105,8 @@ const TalentSourcing = () => {
           style={{ y: imageY }}
         >
           <img 
-            src={talentImage} 
-            alt="Professional at work" 
+            src={asianCollaborationImage} 
+            alt="Team collaboration in Vietnam" 
             className="w-full h-[120%] object-cover opacity-25"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/95 to-navy-deep/80" />
@@ -467,8 +467,8 @@ const TalentSourcing = () => {
               className="relative"
             >
               <img 
-                src={teamImage} 
-                alt="Team collaboration" 
+                src={diverseTeamMeeting} 
+                alt="Team collaboration in Vietnam" 
                 className="w-full aspect-[4/3] object-cover"
               />
               <motion.div 
