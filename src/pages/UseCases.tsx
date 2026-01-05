@@ -6,17 +6,18 @@ import { ArrowRight, Package, Users, Cpu, Star, Quote, ChevronRight, Image, X } 
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
-import happyTeamImage from "@/assets/images/happy-team.jpg";
-import qualityInspectorImage from "@/assets/images/quality-inspector.jpg";
-import entrepreneurImage from "@/assets/images/entrepreneur-woman.jpg";
-import supportTeamImage from "@/assets/images/support-team.jpg";
-import happyClientImage from "@/assets/images/happy-client.jpg";
-import factoryImage from "@/assets/images/factory-workers.jpg";
-import talentImage from "@/assets/images/talent-working.jpg";
-import developerImage from "@/assets/images/developer-working.jpg";
-import warehouseImage from "@/assets/images/warehouse.jpg";
-import teamMeetingImage from "@/assets/images/team-meeting.jpg";
-import qualityCheckImage from "@/assets/images/quality-check.jpg";
+// Import Vietnam/Asian-themed images
+import vietnamTeamImage from "@/assets/images/vietnam-team.jpg";
+import garmentFactoryImage from "@/assets/images/garment-factory-asia.jpg";
+import asianWomanProfessional from "@/assets/images/asian-woman-professional.jpg";
+import asianOfficeTeam from "@/assets/images/asian-office-team.jpg";
+import asianBusinessImage from "@/assets/images/asian-business.jpg";
+import vietnamWarehouseImage from "@/assets/images/vietnam-warehouse.jpg";
+import asianTeamWork from "@/assets/images/asian-team-work.jpg";
+import asianCodingImage from "@/assets/images/asian-coding.jpg";
+import asianCollaborationImage from "@/assets/images/asian-collaboration.jpg";
+import diverseTeamMeeting from "@/assets/images/diverse-team-meeting.jpg";
+import asianWomanLaptop from "@/assets/images/asian-woman-laptop.jpg";
 
 interface UseCase {
   id: string;
@@ -53,7 +54,7 @@ const useCases = [
           { label: "Quality Pass Rate", value: "98%" },
           { label: "Time to Market", value: "12 weeks" }
         ],
-        gallery: [factoryImage, qualityCheckImage, warehouseImage, happyClientImage],
+        gallery: [garmentFactoryImage, vietnamWarehouseImage, asianTeamWork, asianBusinessImage],
         testimonial: "Sourcing.vn didn't just find us a factory — they found us a partner. The quality exceeded our expectations."
       },
       {
@@ -70,7 +71,7 @@ const useCases = [
           { label: "New Suppliers", value: "2" },
           { label: "Shipping Savings", value: "18%" }
         ],
-        gallery: [warehouseImage, factoryImage, happyTeamImage, qualityInspectorImage],
+        gallery: [vietnamWarehouseImage, garmentFactoryImage, vietnamTeamImage, asianOfficeTeam],
         testimonial: "They saved our holiday season. Now we have supply chain redundancy we never had before."
       },
       {
@@ -87,7 +88,7 @@ const useCases = [
           { label: "Cost Reduction", value: "22%" },
           { label: "Current Scale", value: "10K/mo" }
         ],
-        gallery: [developerImage, qualityCheckImage, factoryImage, warehouseImage],
+        gallery: [asianCodingImage, asianTeamWork, garmentFactoryImage, vietnamWarehouseImage],
         testimonial: "The technical expertise was unexpected. They understood our specs and caught issues before they became problems."
       }
     ]
@@ -113,7 +114,7 @@ const useCases = [
           { label: "Team Size", value: "5 people" },
           { label: "Retention", value: "18 months" }
         ],
-        gallery: [supportTeamImage, teamMeetingImage, happyTeamImage, talentImage],
+        gallery: [asianOfficeTeam, diverseTeamMeeting, vietnamTeamImage, asianCollaborationImage],
         testimonial: "Our support team in Vietnam is now our competitive advantage. They're better than in-house teams I've managed."
       },
       {
@@ -130,7 +131,7 @@ const useCases = [
           { label: "Time to Productivity", value: "2 weeks" },
           { label: "Cost vs US Hire", value: "65% less" }
         ],
-        gallery: [entrepreneurImage, talentImage, teamMeetingImage, supportTeamImage],
+        gallery: [asianWomanProfessional, asianWomanLaptop, diverseTeamMeeting, asianOfficeTeam],
         testimonial: "Lan isn't just an assistant — she runs half my business. I couldn't operate without her now."
       },
       {
@@ -147,7 +148,7 @@ const useCases = [
           { label: "Team Size", value: "3 people" },
           { label: "Cost Savings", value: "70%" }
         ],
-        gallery: [talentImage, happyTeamImage, developerImage, entrepreneurImage],
+        gallery: [asianCollaborationImage, vietnamTeamImage, asianCodingImage, asianWomanProfessional],
         testimonial: "The quality and consistency is incredible. They understand our brand voice better than agencies we paid 10x more."
       }
     ]
@@ -173,7 +174,7 @@ const useCases = [
           { label: "Platforms Connected", value: "4" },
           { label: "ROI", value: "3 weeks" }
         ],
-        gallery: [developerImage, happyTeamImage, qualityInspectorImage, supportTeamImage],
+        gallery: [asianCodingImage, vietnamTeamImage, asianOfficeTeam, asianCollaborationImage],
         testimonial: "The automation paid for itself in 3 weeks. We went from drowning in spreadsheets to running on autopilot."
       },
       {
@@ -190,7 +191,7 @@ const useCases = [
           { label: "Response Time", value: "< 5 sec" },
           { label: "Guest Satisfaction", value: "+25%" }
         ],
-        gallery: [supportTeamImage, developerImage, teamMeetingImage, happyClientImage],
+        gallery: [asianOfficeTeam, asianCodingImage, diverseTeamMeeting, asianBusinessImage],
         testimonial: "Our guests love the instant responses. Staff love that they can focus on what matters. Win-win."
       },
       {
@@ -207,7 +208,7 @@ const useCases = [
           { label: "Features", value: "Exactly what needed" },
           { label: "Monthly Cost", value: "$0 (self-hosted)" }
         ],
-        gallery: [developerImage, teamMeetingImage, happyTeamImage, entrepreneurImage],
+        gallery: [asianCodingImage, diverseTeamMeeting, vietnamTeamImage, asianWomanProfessional],
         testimonial: "Finally a CRM my team actually uses. No more 'I forgot to update the spreadsheet' excuses."
       }
     ]
@@ -220,21 +221,21 @@ const testimonials = [
     author: "Amanda Chen",
     role: "Founder, Bloom Naturals",
     rating: 5,
-    image: entrepreneurImage
+    image: asianWomanProfessional
   },
   {
     quote: "Our VA has become indispensable. What started as inbox management evolved into full operations support. Sourcing.vn made the transition seamless.",
     author: "Marcus Johnson",
     role: "CEO, Digital First Agency",
     rating: 5,
-    image: qualityInspectorImage
+    image: asianTeamWork
   },
   {
     quote: "The automation they built paid for itself in 3 weeks. We went from drowning in spreadsheets to having real-time visibility across all operations.",
     author: "Sophie Williams",
     role: "Operations Director, TrendCo",
     rating: 5,
-    image: happyClientImage
+    image: asianBusinessImage
   }
 ];
 
@@ -281,15 +282,15 @@ const UseCases = () => {
         >
           <div className="relative">
             <img 
-              src={happyTeamImage} 
-              alt="Happy team" 
+              src={vietnamTeamImage} 
+              alt="Vietnam team" 
               className="w-80 h-48 object-cover rounded-2xl shadow-xl"
             />
             <motion.img 
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 4 }}
-              src={happyClientImage} 
-              alt="Happy client" 
+              src={asianBusinessImage} 
+              alt="Business partnership" 
               className="absolute -bottom-16 -left-20 w-48 h-36 object-cover rounded-xl shadow-lg border-4 border-white"
             />
           </div>
