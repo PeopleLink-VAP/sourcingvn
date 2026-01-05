@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
 import { Package, Users, Cpu } from "lucide-react";
 import { Link } from "react-router-dom";
-import qualityInspectorImage from "@/assets/images/quality-inspector.jpg";
-import supportTeamImage from "@/assets/images/support-team.jpg";
-import happyTeamImage from "@/assets/images/happy-team.jpg";
+import vietnamFactoryImage from "@/assets/images/vietnam-factory.jpg";
+import asianCollaborationImage from "@/assets/images/asian-collaboration.jpg";
+import asianDeveloperImage from "@/assets/images/asian-developer.jpg";
 
 const services = [
   {
     icon: Package,
     title: "Product Sourcing",
     description: "Find and verify factories. Negotiate without commission. Control quality on the ground.",
-    image: qualityInspectorImage,
+    image: vietnamFactoryImage,
     color: "teal",
     href: "/product-sourcing"
   },
@@ -18,7 +18,7 @@ const services = [
     icon: Users,
     title: "Talent Sourcing",
     description: "Hire reliable support without the overhead. From VAs to specialized roles.",
-    image: supportTeamImage,
+    image: asianCollaborationImage,
     color: "coral",
     href: "/talent-sourcing"
   },
@@ -26,7 +26,7 @@ const services = [
     icon: Cpu,
     title: "Digital & Systems",
     description: "Websites, automation, AI tools. Built lean, built to scale.",
-    image: happyTeamImage,
+    image: asianDeveloperImage,
     color: "navy",
     href: "/digital-systems"
   },
