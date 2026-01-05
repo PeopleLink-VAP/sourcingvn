@@ -349,6 +349,142 @@ const ProductSourcing = () => {
         </div>
       </section>
 
+      {/* What You Get - Production Tracker */}
+      <section className="section-padding bg-navy-deep pattern-grid overflow-hidden">
+        <div className="container-editorial">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
+              What You Get
+            </p>
+            <h2 className="headline-lg text-cream">
+              Full visibility. Zero guesswork.
+            </h2>
+          </motion.div>
+
+          {/* Animated Production Flow */}
+          <div className="max-w-4xl mx-auto">
+            <div className="relative">
+              {/* Connecting line */}
+              <motion.div
+                className="absolute top-1/2 left-0 right-0 h-1 bg-cream/10 -translate-y-1/2 hidden lg:block"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5 }}
+                style={{ originX: 0 }}
+              />
+              
+              <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
+                {[
+                  { icon: "🔍", label: "Sourced", status: "done", count: 12 },
+                  { icon: "✅", label: "Approved", status: "done", count: 8 },
+                  { icon: "🏭", label: "In Production", status: "active", count: 3 },
+                  { icon: "📋", label: "QC Check", status: "pending", count: 2 },
+                  { icon: "🚢", label: "Shipped", status: "pending", count: 0 },
+                ].map((step, i) => (
+                  <motion.div
+                    key={step.label}
+                    initial={{ opacity: 0, y: 30, scale: 0.8 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.15, type: "spring" }}
+                    whileHover={{ scale: 1.1, y: -10 }}
+                    className="relative z-10"
+                  >
+                    <div className={`bg-navy border rounded-lg p-6 text-center transition-all ${
+                      step.status === "active" 
+                        ? "border-gold shadow-lg shadow-gold/20" 
+                        : step.status === "done"
+                          ? "border-green-500/30"
+                          : "border-cream/10"
+                    }`}>
+                      <motion.div
+                        className="text-4xl mb-3"
+                        animate={step.status === "active" ? { 
+                          scale: [1, 1.2, 1],
+                          rotate: [0, 5, -5, 0]
+                        } : {}}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      >
+                        {step.icon}
+                      </motion.div>
+                      <p className="text-cream/70 text-sm mb-2">{step.label}</p>
+                      <motion.p 
+                        className={`text-2xl font-display font-bold ${
+                          step.status === "active" ? "text-gold" : "text-cream/50"
+                        }`}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5 + i * 0.1 }}
+                      >
+                        {step.count}
+                      </motion.p>
+                      {step.status === "active" && (
+                        <motion.div
+                          className="absolute -top-2 -right-2 w-4 h-4 bg-gold rounded-full"
+                          animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
+                        />
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Live Activity Feed */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.8 }}
+              className="mt-12 bg-navy/50 border border-cream/10 rounded-lg p-6"
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <motion.div
+                  className="w-2 h-2 bg-green-400 rounded-full"
+                  animate={{ opacity: [1, 0.3, 1] }}
+                  transition={{ duration: 1, repeat: Infinity }}
+                />
+                <span className="text-sm text-cream/60 font-mono">Live Activity</span>
+              </div>
+              <div className="space-y-3">
+                {[
+                  { time: "2 min ago", event: "QC inspection completed for Order #1247", type: "success" },
+                  { time: "15 min ago", event: "Production started on textile batch B-42", type: "info" },
+                  { time: "1 hour ago", event: "New sample approved by client", type: "success" },
+                ].map((activity, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1 + i * 0.1 }}
+                    className="flex items-center gap-4 text-sm"
+                  >
+                    <span className="text-cream/40 w-20 flex-shrink-0">{activity.time}</span>
+                    <motion.div
+                      className={`w-2 h-2 rounded-full flex-shrink-0 ${
+                        activity.type === "success" ? "bg-green-400" : "bg-gold"
+                      }`}
+                      animate={{ scale: [1, 1.5, 1] }}
+                      transition={{ delay: i * 0.5, duration: 0.5 }}
+                    />
+                    <span className="text-cream/70">{activity.event}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section-padding surface-dark pattern-grid">
         <div className="container-editorial text-center">
