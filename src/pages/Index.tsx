@@ -4,6 +4,7 @@ import { WhatWeDo } from "@/components/home/WhatWeDo";
 import { WhyDifferent } from "@/components/home/WhyDifferent";
 import { ChoosePath } from "@/components/home/ChoosePath";
 import { Footer } from "@/components/Footer";
+import { Mascot } from "@/components/Mascot";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <WhyDifferent />
       <ChoosePath />
       <Footer />
+      <Mascot message="Hi! 👋 Need help with your project?" />
     </div>
   );
 };
