@@ -177,6 +177,183 @@ const TalentSourcing = () => {
         </motion.div>
       </section>
 
+      {/* What You Get - Team Collaboration Preview - MOVED UP */}
+      <section className="py-16 bg-navy pattern-diagonal overflow-hidden">
+        <div className="container-editorial">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
+              What You Get
+            </p>
+            <h2 className="headline-lg text-cream">
+              Your extended team. Always on.
+            </h2>
+          </motion.div>
+
+          {/* Team Collaboration Interface */}
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-navy-deep border border-cream/10 rounded-lg overflow-hidden shadow-2xl"
+            >
+              {/* Chat Header */}
+              <div className="flex items-center justify-between px-6 py-4 bg-navy-light/30 border-b border-cream/10">
+                <div className="flex items-center gap-3">
+                  <div className="relative">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold to-gold/60 flex items-center justify-center text-navy-deep font-bold">
+                      T
+                    </div>
+                    <motion.div
+                      className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-400 rounded-full border-2 border-navy"
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    />
+                  </div>
+                  <div>
+                    <p className="text-cream text-sm font-medium">Your Support Team</p>
+                    <p className="text-cream/50 text-xs">3 members online</p>
+                  </div>
+                </div>
+                <div className="flex gap-2">
+                  {["📞", "📹", "⚙️"].map((icon, i) => (
+                    <motion.button
+                      key={i}
+                      whileHover={{ scale: 1.2 }}
+                      className="w-8 h-8 rounded-full bg-cream/5 flex items-center justify-center text-sm hover:bg-cream/10 transition-colors"
+                    >
+                      {icon}
+                    </motion.button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Chat Messages */}
+              <div className="p-6 space-y-4 min-h-[250px]">
+                {[
+                  { sender: "Linh", message: "Just finished the competitor research report! Sending it over now 📊", time: "9:42 AM", avatar: "L" },
+                  { sender: "You", message: "Perfect timing! Can you also schedule the client calls for next week?", time: "9:45 AM", isUser: true },
+                  { sender: "Mai", message: "Already on it! I've drafted the calendar invites. Sending for your approval now.", time: "9:47 AM", avatar: "M" },
+                ].map((msg, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20, x: msg.isUser ? 20 : -20 }}
+                    whileInView={{ opacity: 1, y: 0, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 + i * 0.2 }}
+                    className={`flex gap-3 ${msg.isUser ? "flex-row-reverse" : ""}`}
+                  >
+                    {!msg.isUser && (
+                      <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold text-sm font-medium flex-shrink-0">
+                        {msg.avatar}
+                      </div>
+                    )}
+                    <div className={`max-w-[70%] ${msg.isUser ? "text-right" : ""}`}>
+                      {!msg.isUser && (
+                        <p className="text-gold text-xs mb-1">{msg.sender}</p>
+                      )}
+                      <div className={`rounded-lg p-3 ${
+                        msg.isUser 
+                          ? "bg-gold text-navy-deep" 
+                          : "bg-cream/10 text-cream/80"
+                      }`}>
+                        <p className="text-sm">{msg.message}</p>
+                      </div>
+                      <p className="text-cream/40 text-xs mt-1">{msg.time}</p>
+                    </div>
+                  </motion.div>
+                ))}
+
+                {/* Typing indicator */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 1.2 }}
+                  className="flex gap-3"
+                >
+                  <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold text-sm font-medium">
+                    M
+                  </div>
+                  <div className="bg-cream/10 rounded-lg p-3">
+                    <motion.div
+                      className="flex gap-1"
+                      animate={{ opacity: [0.4, 1, 0.4] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      <span className="w-2 h-2 bg-cream/60 rounded-full" />
+                      <span className="w-2 h-2 bg-cream/60 rounded-full" />
+                      <span className="w-2 h-2 bg-cream/60 rounded-full" />
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Task Progress Bar */}
+              <div className="px-6 py-4 border-t border-cream/10 bg-navy-light/20">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-cream/60 text-sm">Weekly tasks completed</span>
+                  <span className="text-gold text-sm font-medium">18/20</span>
+                </div>
+                <div className="relative h-2 bg-cream/10 rounded-full overflow-hidden">
+                  <motion.div
+                    className="absolute inset-y-0 left-0 bg-gradient-to-r from-gold to-green-400 rounded-full"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "90%" }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5, duration: 1.5, ease: "easeOut" }}
+                  />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Team Member Avatars */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.8 }}
+              className="flex justify-center mt-8 gap-4"
+            >
+              {[
+                { name: "Linh", role: "VA Lead", status: "online" },
+                { name: "Mai", role: "Admin Support", status: "online" },
+                { name: "Hung", role: "Research", status: "online" },
+              ].map((member, i) => (
+                <motion.div
+                  key={member.name}
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 1 + i * 0.1, type: "spring" }}
+                  whileHover={{ y: -5, scale: 1.05 }}
+                  className="text-center"
+                >
+                  <div className="relative inline-block mb-2">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gold/80 to-gold/40 flex items-center justify-center text-navy-deep font-bold text-lg">
+                      {member.name[0]}
+                    </div>
+                    <motion.div
+                      className="absolute bottom-0 right-0 w-4 h-4 bg-green-400 rounded-full border-2 border-navy-deep"
+                      animate={{ scale: [1, 1.3, 1] }}
+                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
+                    />
+                  </div>
+                  <p className="text-cream text-sm font-medium">{member.name}</p>
+                  <p className="text-cream/50 text-xs">{member.role}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Benefits */}
       <section className="section-padding bg-background">
         <div className="container-editorial">
@@ -382,182 +559,7 @@ const TalentSourcing = () => {
         </div>
       </section>
 
-      {/* What You Get - Team Collaboration Preview */}
-      <section className="section-padding bg-navy-deep pattern-diagonal overflow-hidden">
-        <div className="container-editorial">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
-              What You Get
-            </p>
-            <h2 className="headline-lg text-cream">
-              Your extended team. Always on.
-            </h2>
-          </motion.div>
-
-          {/* Team Collaboration Interface */}
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-navy border border-cream/10 rounded-lg overflow-hidden shadow-2xl"
-            >
-              {/* Chat Header */}
-              <div className="flex items-center justify-between px-6 py-4 bg-navy-light/30 border-b border-cream/10">
-                <div className="flex items-center gap-3">
-                  <div className="relative">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold to-gold/60 flex items-center justify-center text-navy-deep font-bold">
-                      T
-                    </div>
-                    <motion.div
-                      className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-400 rounded-full border-2 border-navy"
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    />
-                  </div>
-                  <div>
-                    <p className="text-cream text-sm font-medium">Your Support Team</p>
-                    <p className="text-cream/50 text-xs">3 members online</p>
-                  </div>
-                </div>
-                <div className="flex gap-2">
-                  {["📞", "📹", "⚙️"].map((icon, i) => (
-                    <motion.button
-                      key={i}
-                      whileHover={{ scale: 1.2 }}
-                      className="w-8 h-8 rounded-full bg-cream/5 flex items-center justify-center text-sm hover:bg-cream/10 transition-colors"
-                    >
-                      {icon}
-                    </motion.button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Chat Messages */}
-              <div className="p-6 space-y-4 min-h-[300px]">
-                {[
-                  { sender: "Linh", message: "Just finished the competitor research report! Sending it over now 📊", time: "9:42 AM", avatar: "L" },
-                  { sender: "You", message: "Perfect timing! Can you also schedule the client calls for next week?", time: "9:45 AM", isUser: true },
-                  { sender: "Mai", message: "Already on it! I've drafted the calendar invites. Here's the proposed schedule:", time: "9:47 AM", avatar: "M" },
-                ].map((msg, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20, x: msg.isUser ? 20 : -20 }}
-                    whileInView={{ opacity: 1, y: 0, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.4 + i * 0.2 }}
-                    className={`flex gap-3 ${msg.isUser ? "flex-row-reverse" : ""}`}
-                  >
-                    {!msg.isUser && (
-                      <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold text-sm font-medium flex-shrink-0">
-                        {msg.avatar}
-                      </div>
-                    )}
-                    <div className={`max-w-[70%] ${msg.isUser ? "text-right" : ""}`}>
-                      {!msg.isUser && (
-                        <p className="text-gold text-xs mb-1">{msg.sender}</p>
-                      )}
-                      <div className={`rounded-lg p-3 ${
-                        msg.isUser 
-                          ? "bg-gold text-navy-deep" 
-                          : "bg-cream/10 text-cream/80"
-                      }`}>
-                        <p className="text-sm">{msg.message}</p>
-                      </div>
-                      <p className="text-cream/40 text-xs mt-1">{msg.time}</p>
-                    </div>
-                  </motion.div>
-                ))}
-
-                {/* Typing indicator */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 1.2 }}
-                  className="flex gap-3"
-                >
-                  <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold text-sm font-medium">
-                    M
-                  </div>
-                  <div className="bg-cream/10 rounded-lg p-3">
-                    <motion.div
-                      className="flex gap-1"
-                      animate={{ opacity: [0.4, 1, 0.4] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      <span className="w-2 h-2 bg-cream/60 rounded-full" />
-                      <span className="w-2 h-2 bg-cream/60 rounded-full" />
-                      <span className="w-2 h-2 bg-cream/60 rounded-full" />
-                    </motion.div>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Task Progress Bar */}
-              <div className="px-6 py-4 border-t border-cream/10 bg-navy-light/20">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-cream/60 text-sm">Weekly tasks completed</span>
-                  <span className="text-gold text-sm font-medium">18/20</span>
-                </div>
-                <div className="relative h-2 bg-cream/10 rounded-full overflow-hidden">
-                  <motion.div
-                    className="absolute inset-y-0 left-0 bg-gradient-to-r from-gold to-green-400 rounded-full"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "90%" }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5, duration: 1.5, ease: "easeOut" }}
-                  />
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Team Member Avatars */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8 }}
-              className="flex justify-center mt-8 gap-4"
-            >
-              {[
-                { name: "Linh", role: "VA Lead", status: "online" },
-                { name: "Mai", role: "Admin Support", status: "online" },
-                { name: "Hung", role: "Research", status: "online" },
-              ].map((member, i) => (
-                <motion.div
-                  key={member.name}
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 1 + i * 0.1, type: "spring" }}
-                  whileHover={{ y: -5, scale: 1.05 }}
-                  className="text-center"
-                >
-                  <div className="relative inline-block mb-2">
-                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gold/80 to-gold/40 flex items-center justify-center text-navy-deep font-bold text-lg">
-                      {member.name[0]}
-                    </div>
-                    <motion.div
-                      className="absolute bottom-0 right-0 w-4 h-4 bg-green-400 rounded-full border-2 border-navy-deep"
-                      animate={{ scale: [1, 1.3, 1] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
-                    />
-                  </div>
-                  <p className="text-cream text-sm font-medium">{member.name}</p>
-                  <p className="text-cream/50 text-xs">{member.role}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      {/* Removed duplicate - now shown after hero */}
 
       {/* CTA */}
       <section className="section-padding surface-dark pattern-grid">
