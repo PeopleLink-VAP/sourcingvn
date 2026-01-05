@@ -1,65 +1,185 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Globe, Bot, Database, Cog } from "lucide-react";
+import { ArrowRight, Globe, Bot, Database, Cog, Zap, Shield, Code, Smartphone } from "lucide-react";
+import { useRef } from "react";
+
+import developerImage from "@/assets/images/developer-working.jpg";
 
 const services = [
   {
     icon: Globe,
-    title: "Websites",
+    title: "Websites & Landing Pages",
     description: "Fast, modern websites that work. Built lean, designed to convert.",
+    features: ["Responsive design", "SEO optimized", "Fast loading", "Easy to update"],
+    useCases: ["Company websites", "Product landing pages", "Portfolio sites", "E-commerce stores"],
   },
   {
     icon: Bot,
     title: "AI Chatbots",
     description: "Customer support automation. Answer questions 24/7 without hiring.",
+    features: ["24/7 availability", "Multi-language", "Lead capture", "Human handoff"],
+    useCases: ["Customer support", "Lead qualification", "FAQ automation", "Appointment booking"],
   },
   {
     icon: Database,
     title: "CRM & Operations",
     description: "Organize your leads, customers, and processes in one place.",
+    features: ["Custom fields", "Automation", "Reporting", "Integrations"],
+    useCases: ["Sales pipeline", "Customer tracking", "Order management", "Team workflows"],
   },
   {
     icon: Cog,
     title: "Internal Tools",
     description: "Custom dashboards, automations, and integrations for your team.",
+    features: ["Custom logic", "API integrations", "Real-time data", "Role-based access"],
+    useCases: ["Admin dashboards", "Inventory systems", "Reporting tools", "Process automation"],
+  },
+];
+
+const techPrinciples = [
+  {
+    icon: Zap,
+    title: "No Bloat",
+    description: "We build only what you need. No unnecessary features, no over-engineering.",
+  },
+  {
+    icon: Code,
+    title: "Maintainable",
+    description: "Clean code, clear documentation. You can understand and modify what we build.",
+  },
+  {
+    icon: Shield,
+    title: "Secure",
+    description: "Security best practices baked in. Your data and your customers' data protected.",
+  },
+  {
+    icon: Smartphone,
+    title: "Scalable",
+    description: "Start small, grow big. Our systems handle 10x your current load without breaking.",
   },
 ];
 
 const DigitalSystems = () => {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+
+  const codeY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+
   return (
     <div className="min-h-screen bg-navy-deep">
       <Navigation />
       
       {/* Hero */}
-      <section className="pt-32 pb-20">
-        <div className="container-editorial">
+      <section ref={heroRef} className="relative pt-32 pb-24 overflow-hidden min-h-[70vh] flex items-center">
+        <motion.div 
+          className="absolute inset-0"
+          style={{ y: codeY }}
+        >
+          <img 
+            src={developerImage} 
+            alt="Developer at work" 
+            className="w-full h-[120%] object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/95 to-navy-deep/80" />
+        </motion.div>
+        
+        <div className="absolute inset-0 pattern-grid" />
+        
+        {/* Floating code elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute text-cream/5 font-mono text-sm whitespace-nowrap"
+              initial={{ opacity: 0 }}
+              animate={{ 
+                opacity: [0, 0.1, 0],
+                y: ["100%", "-100%"],
+              }}
+              transition={{
+                duration: 15 + i * 2,
+                repeat: Infinity,
+                delay: i * 2,
+              }}
+              style={{
+                left: `${10 + i * 15}%`,
+                top: "100%",
+              }}
+            >
+              {`const ${['buildSystem', 'deployApp', 'createBot', 'initCRM', 'runAutomation', 'connectAPI'][i]} = async () => {...}`}
+            </motion.div>
+          ))}
+        </div>
+        
+        <div className="container-editorial relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
-              Digital & Systems
-            </p>
+            <motion.p 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-gold text-sm font-medium uppercase tracking-widest mb-4 font-mono"
+            >
+              {"// Digital & Systems"}
+            </motion.p>
             <h1 className="headline-xl text-cream mb-6">
               Tools that work.
               <br />
-              <span className="text-cream/60">No buzzwords required.</span>
+              <motion.span 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="text-cream/60"
+              >
+                No buzzwords required.
+              </motion.span>
             </h1>
-            <p className="body-lg text-cream/70 max-w-2xl">
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="body-lg text-cream/70 max-w-2xl"
+            >
               We build websites, chatbots, CRM systems, and internal tools. 
               Clean, functional, built to scale.
-            </p>
+            </motion.p>
           </motion.div>
         </div>
+
+        {/* Terminal window decoration */}
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.8 }}
+          className="absolute bottom-12 right-12 hidden xl:block"
+        >
+          <div className="bg-navy/80 border border-cream/10 rounded-lg p-4 w-80 backdrop-blur-sm">
+            <div className="flex gap-2 mb-3">
+              <div className="w-3 h-3 rounded-full bg-destructive/60" />
+              <div className="w-3 h-3 rounded-full bg-gold/60" />
+              <div className="w-3 h-3 rounded-full bg-green-500/60" />
+            </div>
+            <div className="font-mono text-xs text-cream/70 space-y-1">
+              <p><span className="text-gold">$</span> npm run build</p>
+              <p className="text-green-400">✓ Compiled successfully</p>
+              <p className="text-cream/40">Ready for deployment</p>
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Services Grid */}
-      <section className="pb-24">
+      <section className="pb-24 relative">
         <div className="container-editorial">
           <div className="grid md:grid-cols-2 gap-6">
             {services.map((service, index) => (
@@ -69,14 +189,51 @@ const DigitalSystems = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-navy/50 border border-cream/10 p-8 lg:p-10 hover:border-gold/30 transition-all duration-300 group"
+                className="bg-navy/50 border border-cream/10 p-8 lg:p-10 hover:border-gold/30 transition-all duration-500 group relative overflow-hidden"
               >
-                <service.icon 
-                  className="w-10 h-10 text-cream/40 group-hover:text-gold transition-colors duration-300 mb-6" 
-                  strokeWidth={1.5}
-                />
-                <h3 className="headline-md text-cream mb-4">{service.title}</h3>
-                <p className="body-md text-cream/60">{service.description}</p>
+                {/* Background glow on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10">
+                  <motion.div
+                    whileHover={{ rotate: 10, scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <service.icon 
+                      className="w-12 h-12 text-cream/40 group-hover:text-gold transition-colors duration-300 mb-6" 
+                      strokeWidth={1.5}
+                    />
+                  </motion.div>
+                  <h3 className="headline-md text-cream mb-4 group-hover:text-gold transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  <p className="body-md text-cream/60 mb-6">{service.description}</p>
+                  
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div>
+                      <p className="text-xs uppercase tracking-widest text-gold mb-2">Features</p>
+                      <div className="space-y-1">
+                        {service.features.map((feature) => (
+                          <div key={feature} className="text-sm text-cream/50 flex items-center gap-2">
+                            <div className="w-1 h-1 rounded-full bg-gold/60" />
+                            {feature}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase tracking-widest text-gold mb-2">Use Cases</p>
+                      <div className="space-y-1">
+                        {service.useCases.map((useCase) => (
+                          <div key={useCase} className="text-sm text-cream/50 flex items-center gap-2">
+                            <div className="w-1 h-1 rounded-full bg-cream/30" />
+                            {useCase}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -115,37 +272,106 @@ const DigitalSystems = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-6"
+              className="grid grid-cols-2 gap-6"
             >
-              <div className="border-l-2 border-gold pl-6">
-                <p className="text-sm font-semibold uppercase tracking-widest text-gold mb-2">
-                  No bloat
-                </p>
-                <p className="body-md text-navy">
-                  We build only what you need. No unnecessary features, 
-                  no over-engineering.
-                </p>
-              </div>
-              <div className="border-l-2 border-navy/20 hover:border-gold pl-6 transition-colors">
-                <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-2">
-                  Maintainable
-                </p>
-                <p className="body-md text-navy">
-                  Clean code, clear documentation. You can understand and 
-                  modify what we build.
-                </p>
-              </div>
-              <div className="border-l-2 border-navy/20 hover:border-gold pl-6 transition-colors">
-                <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-2">
-                  Scalable
-                </p>
-                <p className="body-md text-navy">
-                  Start small, grow big. Our systems are designed to handle 
-                  10x your current load.
-                </p>
-              </div>
+              {techPrinciples.map((principle, index) => (
+                <motion.div
+                  key={principle.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group"
+                >
+                  <div className="border-l-2 border-navy/20 hover:border-gold pl-6 transition-colors duration-300">
+                    <principle.icon className="w-8 h-8 text-navy-light group-hover:text-gold transition-colors duration-300 mb-3" strokeWidth={1.5} />
+                    <p className="text-sm font-semibold uppercase tracking-widest text-navy mb-2">
+                      {principle.title}
+                    </p>
+                    <p className="text-sm text-cool-gray">
+                      {principle.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Code preview section */}
+      <section className="section-padding bg-navy-deep pattern-lines">
+        <div className="container-editorial">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
+              What You Get
+            </p>
+            <h2 className="headline-lg text-cream mb-8">
+              Systems that just work.
+            </h2>
+            
+            {/* Mock dashboard preview */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-navy border border-cream/10 rounded-lg overflow-hidden shadow-2xl"
+            >
+              <div className="flex items-center gap-2 px-4 py-3 bg-navy-light/50 border-b border-cream/10">
+                <div className="w-3 h-3 rounded-full bg-destructive/60" />
+                <div className="w-3 h-3 rounded-full bg-gold/60" />
+                <div className="w-3 h-3 rounded-full bg-green-500/60" />
+                <span className="ml-4 text-xs text-cream/40 font-mono">dashboard.sourcing.vn</span>
+              </div>
+              <div className="p-6">
+                <div className="grid grid-cols-4 gap-4 mb-6">
+                  {[
+                    { label: "Active Orders", value: "24" },
+                    { label: "Pending QC", value: "8" },
+                    { label: "In Transit", value: "12" },
+                    { label: "Completed", value: "156" },
+                  ].map((stat, i) => (
+                    <motion.div 
+                      key={stat.label}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.3 + i * 0.1 }}
+                      className="bg-navy-light/30 p-4 rounded"
+                    >
+                      <div className="text-2xl font-display font-bold text-gold">{stat.value}</div>
+                      <div className="text-xs text-cream/50">{stat.label}</div>
+                    </motion.div>
+                  ))}
+                </div>
+                <div className="space-y-2">
+                  {[1, 2, 3].map((i) => (
+                    <motion.div 
+                      key={i}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.5 + i * 0.1 }}
+                      className="flex items-center gap-4 bg-navy-light/20 p-3 rounded"
+                    >
+                      <div className="w-8 h-8 rounded bg-gold/20" />
+                      <div className="flex-1">
+                        <div className="h-2 bg-cream/10 rounded w-1/3 mb-1" />
+                        <div className="h-2 bg-cream/5 rounded w-1/2" />
+                      </div>
+                      <div className="text-xs text-green-400">● Active</div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -163,12 +389,17 @@ const DigitalSystems = () => {
             <p className="body-lg text-cream/60 mb-10 max-w-xl mx-auto">
               Tell us what you need. We'll scope it out and give you a clear plan.
             </p>
-            <Button asChild variant="hero" size="xl">
-              <Link to="/start-project">
-                Start Your Project
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-            </Button>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Button asChild variant="hero" size="xl">
+                <Link to="/start-project">
+                  Start Your Project
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+              </Button>
+            </motion.div>
           </motion.div>
         </div>
       </section>
