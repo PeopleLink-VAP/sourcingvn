@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Heart, Clock, Users, Mail, FileText, Calculator, Search, Headphones } from "lucide-react";
+import { ArrowRight, Heart, Clock, Users, Mail, FileText, Calculator, Search, Headphones, Video, Camera, Palette, Globe, Cpu, ShoppingBag, TrendingUp, Briefcase, Star } from "lucide-react";
 import { useRef } from "react";
 
 import asianCollaborationImage from "@/assets/images/asian-collaboration.jpg";
@@ -27,7 +27,7 @@ const benefits = [
   },
 ];
 
-const talentTypes = [
+const dailySupportTypes = [
   {
     icon: Mail,
     title: "Virtual Assistants",
@@ -42,9 +42,9 @@ const talentTypes = [
   },
   {
     icon: FileText,
-    title: "Content & Creative",
-    description: "Writers, editors, and creators for your content needs.",
-    tasks: ["Blog writing", "Social media", "Copywriting", "Basic design"],
+    title: "Content & Copywriting",
+    description: "Writers and editors for your everyday content needs.",
+    tasks: ["Blog writing", "Social media posts", "Copywriting", "Email newsletters"],
   },
   {
     icon: Calculator,
@@ -57,6 +57,66 @@ const talentTypes = [
     title: "Research & Data",
     description: "Deep research and data management for business intelligence.",
     tasks: ["Market research", "Lead generation", "Data entry", "CRM management"],
+  },
+];
+
+const highLevelCreative = [
+  {
+    icon: Video,
+    title: "Video Production",
+    description: "Professional video makers for product demos, brand stories, social content, and corporate videos.",
+    tasks: ["Product videos", "Social media reels", "Brand storytelling", "Corporate videos"],
+  },
+  {
+    icon: Camera,
+    title: "Photography",
+    description: "Product photography, lifestyle shoots, and visual content creation.",
+    tasks: ["Product photography", "Lifestyle shoots", "E-commerce imagery", "Brand visuals"],
+  },
+  {
+    icon: Palette,
+    title: "Graphic Design",
+    description: "Brand identity, packaging design, marketing materials, and digital assets.",
+    tasks: ["Brand identity", "Packaging design", "Marketing collateral", "UI/UX design"],
+  },
+  {
+    icon: TrendingUp,
+    title: "Digital Marketing",
+    description: "Performance marketing, SEO, paid advertising, and growth strategy execution.",
+    tasks: ["Paid ads management", "SEO optimization", "Campaign strategy", "Analytics & reporting"],
+  },
+];
+
+const consultingServices = [
+  {
+    icon: Globe,
+    title: "Vietnam Market Entry",
+    description: "Navigate regulations, find local partners, understand consumer behavior, and establish your presence in Vietnam.",
+    details: ["Market landscape analysis", "Legal & compliance guidance", "Local partner identification", "Cultural business advisory", "Go-to-market roadmap"],
+  },
+  {
+    icon: Cpu,
+    title: "Tech Consulting",
+    description: "System architecture, digital transformation, AI integration, and technology roadmap for your operations.",
+    details: ["Tech stack assessment", "AI & automation strategy", "System integration planning", "Data infrastructure", "Digital transformation roadmap"],
+  },
+  {
+    icon: ShoppingBag,
+    title: "Retail & E-commerce Consulting",
+    description: "Market positioning, channel strategy, pricing optimization, and retail operations in Southeast Asia.",
+    details: ["Channel strategy", "Pricing & positioning", "Supply chain optimization", "E-commerce platform setup", "Omnichannel strategy"],
+  },
+  {
+    icon: Briefcase,
+    title: "Operations & Hiring Strategy",
+    description: "Build your Vietnam-based team with the right structure, comp benchmarks, and operational playbook.",
+    details: ["Team structure design", "Compensation benchmarking", "Recruitment process setup", "HR compliance in Vietnam", "Remote team management"],
+  },
+  {
+    icon: TrendingUp,
+    title: "Growth & Expansion Advisory",
+    description: "Scale into Vietnam or Southeast Asia with a structured growth plan backed by on-ground insights.",
+    details: ["Regional expansion planning", "Partnership development", "Brand localization", "Distribution network", "Performance benchmarking"],
   },
 ];
 
@@ -128,7 +188,7 @@ const TalentSourcing = () => {
               Talent Sourcing
             </motion.p>
             <h1 className="headline-xl text-cream mb-6">
-              This is not hiring.
+              From daily support
               <br />
               <motion.span 
                 initial={{ opacity: 0 }}
@@ -136,7 +196,7 @@ const TalentSourcing = () => {
                 transition={{ delay: 0.4 }}
                 className="text-gold"
               >
-                This is support.
+                to strategic consulting.
               </motion.span>
             </h1>
             <motion.p 
@@ -145,8 +205,8 @@ const TalentSourcing = () => {
               transition={{ delay: 0.5 }}
               className="body-lg text-cream/70 max-w-2xl"
             >
-              You don't need to build a team. You need someone reliable 
-              who gets things done. We find those people in Vietnam.
+              Whether you need a virtual assistant or a market entry consultant, 
+              we connect you with reliable Vietnamese talent at every level.
             </motion.p>
           </motion.div>
         </div>
@@ -175,183 +235,6 @@ const TalentSourcing = () => {
             </motion.div>
           ))}
         </motion.div>
-      </section>
-
-      {/* What You Get - Team Collaboration Preview - MOVED UP */}
-      <section className="py-16 bg-navy pattern-diagonal overflow-hidden">
-        <div className="container-editorial">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
-              What You Get
-            </p>
-            <h2 className="headline-lg text-cream">
-              Your extended team. Always on.
-            </h2>
-          </motion.div>
-
-          {/* Team Collaboration Interface */}
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-navy-deep border border-cream/10 rounded-lg overflow-hidden shadow-2xl"
-            >
-              {/* Chat Header */}
-              <div className="flex items-center justify-between px-6 py-4 bg-navy-light/30 border-b border-cream/10">
-                <div className="flex items-center gap-3">
-                  <div className="relative">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold to-gold/60 flex items-center justify-center text-navy-deep font-bold">
-                      T
-                    </div>
-                    <motion.div
-                      className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-400 rounded-full border-2 border-navy"
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    />
-                  </div>
-                  <div>
-                    <p className="text-cream text-sm font-medium">Your Support Team</p>
-                    <p className="text-cream/50 text-xs">3 members online</p>
-                  </div>
-                </div>
-                <div className="flex gap-2">
-                  {["📞", "📹", "⚙️"].map((icon, i) => (
-                    <motion.button
-                      key={i}
-                      whileHover={{ scale: 1.2 }}
-                      className="w-8 h-8 rounded-full bg-cream/5 flex items-center justify-center text-sm hover:bg-cream/10 transition-colors"
-                    >
-                      {icon}
-                    </motion.button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Chat Messages */}
-              <div className="p-6 space-y-4 min-h-[250px]">
-                {[
-                  { sender: "Linh", message: "Just finished the competitor research report! Sending it over now 📊", time: "9:42 AM", avatar: "L" },
-                  { sender: "You", message: "Perfect timing! Can you also schedule the client calls for next week?", time: "9:45 AM", isUser: true },
-                  { sender: "Mai", message: "Already on it! I've drafted the calendar invites. Sending for your approval now.", time: "9:47 AM", avatar: "M" },
-                ].map((msg, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20, x: msg.isUser ? 20 : -20 }}
-                    whileInView={{ opacity: 1, y: 0, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.4 + i * 0.2 }}
-                    className={`flex gap-3 ${msg.isUser ? "flex-row-reverse" : ""}`}
-                  >
-                    {!msg.isUser && (
-                      <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold text-sm font-medium flex-shrink-0">
-                        {msg.avatar}
-                      </div>
-                    )}
-                    <div className={`max-w-[70%] ${msg.isUser ? "text-right" : ""}`}>
-                      {!msg.isUser && (
-                        <p className="text-gold text-xs mb-1">{msg.sender}</p>
-                      )}
-                      <div className={`rounded-lg p-3 ${
-                        msg.isUser 
-                          ? "bg-gold text-navy-deep" 
-                          : "bg-cream/10 text-cream/80"
-                      }`}>
-                        <p className="text-sm">{msg.message}</p>
-                      </div>
-                      <p className="text-cream/40 text-xs mt-1">{msg.time}</p>
-                    </div>
-                  </motion.div>
-                ))}
-
-                {/* Typing indicator */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 1.2 }}
-                  className="flex gap-3"
-                >
-                  <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold text-sm font-medium">
-                    M
-                  </div>
-                  <div className="bg-cream/10 rounded-lg p-3">
-                    <motion.div
-                      className="flex gap-1"
-                      animate={{ opacity: [0.4, 1, 0.4] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      <span className="w-2 h-2 bg-cream/60 rounded-full" />
-                      <span className="w-2 h-2 bg-cream/60 rounded-full" />
-                      <span className="w-2 h-2 bg-cream/60 rounded-full" />
-                    </motion.div>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Task Progress Bar */}
-              <div className="px-6 py-4 border-t border-cream/10 bg-navy-light/20">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-cream/60 text-sm">Weekly tasks completed</span>
-                  <span className="text-gold text-sm font-medium">18/20</span>
-                </div>
-                <div className="relative h-2 bg-cream/10 rounded-full overflow-hidden">
-                  <motion.div
-                    className="absolute inset-y-0 left-0 bg-gradient-to-r from-gold to-green-400 rounded-full"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "90%" }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5, duration: 1.5, ease: "easeOut" }}
-                  />
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Team Member Avatars */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8 }}
-              className="flex justify-center mt-8 gap-4"
-            >
-              {[
-                { name: "Linh", role: "VA Lead", status: "online" },
-                { name: "Mai", role: "Admin Support", status: "online" },
-                { name: "Hung", role: "Research", status: "online" },
-              ].map((member, i) => (
-                <motion.div
-                  key={member.name}
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 1 + i * 0.1, type: "spring" }}
-                  whileHover={{ y: -5, scale: 1.05 }}
-                  className="text-center"
-                >
-                  <div className="relative inline-block mb-2">
-                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gold/80 to-gold/40 flex items-center justify-center text-navy-deep font-bold text-lg">
-                      {member.name[0]}
-                    </div>
-                    <motion.div
-                      className="absolute bottom-0 right-0 w-4 h-4 bg-green-400 rounded-full border-2 border-navy-deep"
-                      animate={{ scale: [1, 1.3, 1] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
-                    />
-                  </div>
-                  <p className="text-cream text-sm font-medium">{member.name}</p>
-                  <p className="text-cream/50 text-xs">{member.role}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
       </section>
 
       {/* Benefits */}
@@ -384,7 +267,7 @@ const TalentSourcing = () => {
         </div>
       </section>
 
-      {/* Talent Types */}
+      {/* ==================== DAILY SUPPORT SECTION ==================== */}
       <section className="section-padding surface-cream pattern-diagonal">
         <div className="container-editorial">
           <motion.div
@@ -393,16 +276,25 @@ const TalentSourcing = () => {
             viewport={{ once: true }}
             className="mb-16"
           >
+            <div className="flex items-center gap-3 mb-4">
+              <div className="bg-gold/20 text-gold px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full">
+                Essential
+              </div>
+            </div>
             <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
-              Types of Support
+              Daily Support
             </p>
             <h2 className="headline-lg text-navy max-w-xl">
-              The talent you need, ready to work.
+              Reliable talent for your everyday operations.
             </h2>
+            <p className="body-lg text-cool-gray mt-4 max-w-2xl">
+              Trained, vetted Vietnamese professionals who integrate into your workflow. 
+              Part-time, full-time, or project-based.
+            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {talentTypes.map((type, index) => (
+            {dailySupportTypes.map((type, index) => (
               <motion.div
                 key={type.title}
                 initial={{ opacity: 0, y: 30 }}
@@ -428,6 +320,139 @@ const TalentSourcing = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ==================== HIGH-LEVEL CREATIVE SECTION ==================== */}
+      <section className="section-padding bg-background">
+        <div className="container-editorial">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <div className="bg-navy-deep text-cream px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full">
+                High Level
+              </div>
+            </div>
+            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
+              Creative & Specialist Talent
+            </p>
+            <h2 className="headline-lg text-navy max-w-xl">
+              Video makers, designers, and digital specialists.
+            </h2>
+            <p className="body-lg text-cool-gray mt-4 max-w-2xl">
+              Skilled professionals for projects that require creative vision, 
+              technical expertise, and a higher level of execution.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {highLevelCreative.map((type, index) => (
+              <motion.div
+                key={type.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="border border-navy/10 p-8 hover:border-gold/40 hover:shadow-xl transition-all duration-500 group bg-background"
+              >
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 bg-navy-deep flex items-center justify-center flex-shrink-0">
+                    <type.icon className="w-8 h-8 text-gold" strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <h3 className="headline-md text-navy mb-3 group-hover:text-gold transition-colors duration-300">
+                      {type.title}
+                    </h3>
+                    <p className="body-md text-cool-gray mb-4 text-sm">{type.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {type.tasks.map((task) => (
+                        <span key={task} className="text-xs bg-gold/10 text-navy px-3 py-1 rounded-full">
+                          {task}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== PREMIUM CONSULTING SECTION ==================== */}
+      <section className="section-padding bg-navy-deep pattern-grid">
+        <div className="container-editorial">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <div className="bg-gold text-navy-deep px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full flex items-center gap-1">
+                <Star className="w-3 h-3" />
+                Premium
+              </div>
+            </div>
+            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
+              Consulting
+            </p>
+            <h2 className="headline-lg text-cream max-w-2xl">
+              Strategic consulting with specialists in Vietnam & Southeast Asia.
+            </h2>
+            <p className="body-lg text-cream/60 mt-4 max-w-2xl">
+              For businesses that need more than execution — they need insight, 
+              strategy, and on-ground expertise to enter or scale in this market.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {consultingServices.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-navy-light/20 border border-cream/10 p-8 hover:border-gold/40 transition-all duration-500 group"
+              >
+                <service.icon 
+                  className="w-10 h-10 text-gold mb-6" 
+                  strokeWidth={1.5}
+                />
+                <h3 className="text-xl font-display font-semibold text-cream mb-3 group-hover:text-gold transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-cream/60 mb-6">{service.description}</p>
+                <div className="space-y-2">
+                  {service.details.map((detail) => (
+                    <div key={detail} className="flex items-center gap-2 text-sm text-cream/50">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gold" />
+                      {detail}
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <Button asChild variant="hero" size="xl">
+              <Link to="/start-project">
+                Book a Consultation
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+            </Button>
+          </motion.div>
         </div>
       </section>
 
@@ -559,8 +584,6 @@ const TalentSourcing = () => {
         </div>
       </section>
 
-      {/* Removed duplicate - now shown after hero */}
-
       {/* CTA */}
       <section className="section-padding surface-dark pattern-grid">
         <div className="container-editorial text-center">
@@ -573,7 +596,7 @@ const TalentSourcing = () => {
               Let's find your support.
             </h2>
             <p className="body-lg text-cream/60 mb-10 max-w-xl mx-auto">
-              Tell us what you need. We'll match you with the right person.
+              Tell us what you need. We'll match you with the right person — or the right strategy.
             </p>
             <motion.div
               whileHover={{ scale: 1.05 }}

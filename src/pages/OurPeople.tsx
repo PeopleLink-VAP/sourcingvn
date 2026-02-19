@@ -3,33 +3,73 @@ import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
-const team = [
+const teamMembers = [
   {
-    name: "Minh Nguyen",
-    role: "Founder & CEO",
-    bio: "Started as a VA 12 years ago. Built teams for companies across 15 countries. Still answers emails personally.",
-    initials: "MN",
+    name: "Duyen Pham",
+    role: "Founder",
+    initials: "DP",
+    intro: "If you work with Sourcing.vn, you will feel Duyen's influence immediately: structured, direct, and execution-driven.",
+    highlights: [
+      "Founder of one of the top three largest Virtual Assistant communities in Vietnam with nearly 17,000 members",
+      "Supported over 200 startups, SMEs, and global founders in operations and sourcing",
+      "Helped scale an ecommerce brand to over $1M/month with a single SKU",
+      "Airbnb Superhost with 450+ five-star reviews",
+    ],
+    quote: "Vietnam has world-class talent and capability. It simply needs the right bridge to the global market.",
+    closing: "Sourcing.vn exists not only to protect international clients entering Vietnam, but also to create better global opportunities for Vietnamese professionals.",
   },
   {
-    name: "Linh Tran",
-    role: "Operations Director",
-    bio: "Manages factory relationships and production. Visited 200+ factories. Speaks three languages fluently.",
-    initials: "LT",
+    name: "Kent Nguyen",
+    role: "Technology Consultant",
+    initials: "KN",
+    intro: '"In data we trust."',
+    highlights: [
+      "Ensures every system we build stands on solid foundations",
+      "Focuses on clean data, correct input, and clear structure",
+      "Guides technology decisions in an era of AI, automation, and rapid tech shifts",
+    ],
+    quote: "No matter how advanced the tools are, wrong input leads to wrong output.",
+    closing: null,
   },
   {
-    name: "David Chen",
-    role: "Digital Lead",
-    bio: "Engineer turned consultant. Builds systems that actually work. Allergic to unnecessary complexity.",
-    initials: "DC",
+    name: "Mai Anh",
+    role: "Client Success Lead",
+    initials: "MA",
+    intro: "Mai Anh is the bridge between your expectations and our execution.",
+    highlights: [
+      "Strong analytical mindset with deep understanding of cross-cultural communication",
+      "Identifies bottlenecks fast and aligns the right solution",
+      "Understands your real objective and balances supply and demand",
+      "Ensures timelines, quality, and communication stay aligned",
+    ],
+    quote: null,
+    closing: 'Clients often say they feel "understood" when working with her.',
   },
   {
-    name: "Hoa Le",
-    role: "Talent Manager",
-    bio: "Matches people with opportunities. Former recruiter. Believes in potential over credentials.",
-    initials: "HL",
+    name: "Thuy",
+    role: "Growth Specialist",
+    initials: "TH",
+    intro: "If your goal is scale, Thuy focuses on momentum.",
+    highlights: [
+      "Supported brands such as Kingfood Mart and Crown Jewelry in expanding reach and performance",
+      "Specializes in paid advertising, brand positioning, and go-to-market execution",
+      "Identifies market gaps and turns strategy into measurable campaigns",
+      "Positions brands clearly for growth",
+    ],
+    quote: null,
+    closing: "For founders who want more than operations — who want structured growth — Thuy becomes the extension of their internal marketing brain.",
   },
+];
+
+const clientExpectations = [
+  "Clear communication",
+  "Transparent process",
+  "On-ground verification",
+  "Data-backed decisions",
+  "Cultural understanding",
+  "Accountability",
 ];
 
 const OurPeople = () => {
@@ -47,49 +87,85 @@ const OurPeople = () => {
             className="max-w-3xl"
           >
             <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
-              Our People
+              Behind The Scenes
             </p>
             <h1 className="headline-xl text-cream mb-6">
-              Small team.
+              The people behind
               <br />
-              <span className="text-cream/60">Big commitment.</span>
+              <span className="text-cream/60">Sourcing.vn</span>
             </h1>
             <p className="body-lg text-cream/70 max-w-2xl">
-              We're not a faceless agency. We're a group of people who've 
-              been in the trenches — sourcing, hiring, building — and now 
-              we do it for others.
+              We're not a faceless agency. We're a coordinated team built to 
+              represent you in Vietnam with integrity and precision.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Team Grid */}
+      {/* Team Members */}
       <section className="section-padding bg-background">
         <div className="container-editorial">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
-            {team.map((member, index) => (
+          <div className="space-y-24">
+            {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex gap-6"
+                transition={{ delay: 0.1 }}
+                className={`grid lg:grid-cols-5 gap-12 items-start ${
+                  index > 0 ? "pt-12 border-t border-navy/10" : ""
+                }`}
               >
-                {/* Avatar placeholder */}
-                <div className="w-24 h-24 flex-shrink-0 bg-navy-deep flex items-center justify-center">
-                  <span className="text-2xl font-display font-bold text-cream">
-                    {member.initials}
-                  </span>
+                {/* Left: Name card */}
+                <div className="lg:col-span-2">
+                  <div className="sticky top-32">
+                    <div className="w-20 h-20 bg-navy-deep flex items-center justify-center mb-6">
+                      <span className="text-2xl font-display font-bold text-cream">
+                        {member.initials}
+                      </span>
+                    </div>
+                    <h3 className="headline-lg text-navy mb-2">{member.name}</h3>
+                    <p className="text-gold text-sm font-medium uppercase tracking-wider mb-4">
+                      {member.role}
+                    </p>
+                    {member.quote && (
+                      <div className="border-l-2 border-gold pl-4 mt-6">
+                        <p className="body-md text-navy italic">
+                          "{member.quote}"
+                        </p>
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <h3 className="headline-md text-navy mb-1">{member.name}</h3>
-                  <p className="text-sm text-gold font-medium uppercase tracking-wider mb-3">
-                    {member.role}
+
+                {/* Right: Details */}
+                <div className="lg:col-span-3">
+                  <p className="body-lg text-navy mb-6 font-medium">
+                    {member.intro}
                   </p>
-                  <p className="body-md text-cool-gray">
-                    {member.bio}
-                  </p>
+                  
+                  <div className="space-y-3 mb-6">
+                    {member.highlights.map((highlight, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.1 }}
+                        className="flex items-start gap-3"
+                      >
+                        <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                        <span className="body-md text-cool-gray">{highlight}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {member.closing && (
+                    <p className="body-md text-navy/80 bg-gold/5 border-l-2 border-gold/30 pl-4 py-3">
+                      {member.closing}
+                    </p>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -97,7 +173,7 @@ const OurPeople = () => {
         </div>
       </section>
 
-      {/* Culture */}
+      {/* What You Can Expect */}
       <section className="section-padding surface-cream">
         <div className="container-editorial">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -107,18 +183,31 @@ const OurPeople = () => {
               viewport={{ once: true }}
             >
               <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
-                How We Work
+                Our Promise
               </p>
               <h2 className="headline-lg text-navy mb-6">
-                We hire slow.
-                <br />
-                We trust fast.
+                What you can expect from us.
               </h2>
-              <p className="body-lg text-cool-gray">
-                Everyone on our team went through multiple projects before 
-                joining full-time. We don't hire resumes — we hire people 
-                who've proven they can deliver.
+              <p className="body-lg text-cool-gray mb-8">
+                As a client, you deserve clarity, accountability, and a team 
+                that treats your business as their own.
               </p>
+
+              <div className="grid grid-cols-2 gap-4">
+                {clientExpectations.map((item, index) => (
+                  <motion.div
+                    key={item}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.08 }}
+                    className="flex items-center gap-3"
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0" />
+                    <span className="text-navy font-medium">{item}</span>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
 
             <motion.div
@@ -129,17 +218,21 @@ const OurPeople = () => {
             >
               <div className="border-l-2 border-gold pl-6">
                 <p className="body-md text-navy font-medium">
-                  "We answer within 24 hours. Always."
+                  "We are not freelancers working independently."
                 </p>
               </div>
               <div className="border-l-2 border-navy/20 pl-6">
                 <p className="body-md text-navy">
-                  "If we can't help, we'll tell you. And we'll recommend someone who can."
+                  "We are a coordinated team built to represent you in Vietnam 
+                  with integrity and precision."
                 </p>
               </div>
-              <div className="border-l-2 border-navy/20 pl-6">
-                <p className="body-md text-navy">
-                  "We don't disappear after delivery. Problems happen. We handle them."
+              <div className="bg-navy-deep p-8 mt-8">
+                <p className="text-2xl font-display font-bold text-cream mb-2">
+                  Sourcing.vn
+                </p>
+                <p className="text-gold text-lg font-display">
+                  is your local advantage.
                 </p>
               </div>
             </motion.div>
