@@ -53,10 +53,10 @@ const teamMembers = [
     closing: 'Clients often say they feel "understood" when working with her.',
   },
   {
-    name: "Thuy Nguyen",
+    name: "Duong",
     role: "Growth Specialist",
     photo: thuyPhoto,
-    intro: "If your goal is scale, Thuy focuses on momentum.",
+    intro: "If your goal is scale, Duong focuses on momentum.",
     highlights: [
       "Supported brands such as Kingfood Mart and Crown Jewelry in expanding reach and performance",
       "Specializes in paid advertising, brand positioning, and go-to-market execution",
