@@ -58,7 +58,7 @@ const teamMembers = [
     photo: thuyPhoto,
     intro: "If your goal is scale, Duong focuses on momentum.",
     highlights: [
-      "Supported brands such as Kingfood Mart and Crown Jewelry in expanding reach and performance",
+      "Supported brands such as Kingfoodmart and Crown Jewelry in expanding reach and performance",
       "Specializes in paid advertising, brand positioning, and go-to-market execution",
       "Identifies market gaps and turns strategy into measurable campaigns",
       "Positions brands clearly for growth",
