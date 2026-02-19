@@ -245,7 +245,7 @@ const ProductSourcing = () => {
                   { time: "Mon", event: "Factory visit completed — 3 suppliers vetted in Ho Chi Minh City", type: "success" },
                   { time: "Wed", event: "Sample batch B-42 received, 2 revisions requested on stitching", type: "info" },
                   { time: "Fri", event: "QC inspection passed — Order #1247 cleared for shipping", type: "success" },
-                  { time: "1 hour ago", event: "New sample approved by client", type: "success" },
+                  
                 ].map((activity, i) => (
                   <motion.div
                     key={i}
@@ -421,12 +421,12 @@ const ProductSourcing = () => {
                   transition={{ delay: index * 0.15 }}
                   className="flex gap-8 items-start group"
                 >
-                  <div className="relative z-10 w-[120px] flex-shrink-0 hidden lg:flex items-center gap-4">
-                    <span className="text-4xl font-display font-bold text-navy/20 group-hover:text-gold transition-colors duration-300">
+                  <div className="relative z-10 w-[60px] lg:w-[120px] flex-shrink-0 flex items-center gap-4">
+                    <span className="text-2xl lg:text-4xl font-display font-bold text-navy/20 group-hover:text-gold transition-colors duration-300">
                       {step.number}
                     </span>
                     <motion.div
-                      className="w-3 h-3 rounded-full bg-navy/20 group-hover:bg-gold group-hover:scale-150 transition-all duration-300"
+                      className="w-3 h-3 rounded-full bg-navy/20 group-hover:bg-gold group-hover:scale-150 transition-all duration-300 hidden lg:block"
                       whileInView={{ scale: [0, 1.2, 1] }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.15 + 0.3 }}
@@ -434,9 +434,6 @@ const ProductSourcing = () => {
                   </div>
                   <div className="flex-1 pb-8 border-b border-navy/10 group-hover:border-gold/30 transition-colors">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="lg:hidden text-sm font-bold text-gold">
-                        Step {step.number}
-                      </span>
                       <span className="text-2xl">{step.icon}</span>
                     </div>
                     <h3 className="headline-md text-navy mb-2 group-hover:text-gold transition-colors duration-300">
