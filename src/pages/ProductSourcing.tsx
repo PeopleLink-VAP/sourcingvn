@@ -13,10 +13,11 @@ import asianTeamWork from "@/assets/images/asian-team-work.jpg";
 const processSteps = [
   { number: "01", title: "Discovery", description: "We understand your product, quantities, timeline, and quality requirements.", icon: "📋" },
   { number: "02", title: "Factory Search", description: "We identify and vet factories — visiting in person, not just emailing.", icon: "🔍" },
-  { number: "03", title: "Negotiation", description: "We negotiate on your behalf with full transparency. No hidden markups.", icon: "🤝" },
-  { number: "04", title: "Sample & Approve", description: "We manage sampling and work through revisions until you approve.", icon: "✅" },
-  { number: "05", title: "Production", description: "We oversee production with regular check-ins and quality inspections.", icon: "🏭" },
-  { number: "06", title: "Delivery", description: "We coordinate logistics and ensure your products arrive as expected.", icon: "📦" },
+  { number: "03", title: "Sample Making", description: "We coordinate sample production and manage revisions with the factory until quality meets your standards.", icon: "🧵" },
+  { number: "04", title: "Negotiation", description: "We negotiate on your behalf with full transparency. No hidden markups.", icon: "🤝" },
+  { number: "05", title: "Sample Approval", description: "Final sample review with you. We don't move forward until you're 100% satisfied.", icon: "✅" },
+  { number: "06", title: "Production", description: "We oversee production with regular check-ins, on-site visits, and quality inspections.", icon: "🏭" },
+  { number: "07", title: "Delivery", description: "We coordinate logistics and ensure your products arrive as expected.", icon: "📦" },
 ];
 
 const comparison = [
@@ -168,10 +169,11 @@ const ProductSourcing = () => {
                 style={{ originX: 0 }}
               />
               
-              <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
+              <div className="grid grid-cols-2 lg:grid-cols-6 gap-6">
                 {[
                   { icon: "🔍", label: "Sourced", status: "done", count: 12 },
-                  { icon: "✅", label: "Approved", status: "done", count: 8 },
+                  { icon: "🧵", label: "Sampling", status: "done", count: 8 },
+                  { icon: "✅", label: "Approved", status: "done", count: 6 },
                   { icon: "🏭", label: "In Production", status: "active", count: 3 },
                   { icon: "📋", label: "QC Check", status: "pending", count: 2 },
                   { icon: "🚢", label: "Shipped", status: "pending", count: 0 },
@@ -236,17 +238,13 @@ const ProductSourcing = () => {
               className="mt-12 bg-navy-deep/50 border border-cream/10 rounded-lg p-6"
             >
               <div className="flex items-center gap-2 mb-4">
-                <motion.div
-                  className="w-2 h-2 bg-green-400 rounded-full"
-                  animate={{ opacity: [1, 0.3, 1] }}
-                  transition={{ duration: 1, repeat: Infinity }}
-                />
-                <span className="text-sm text-cream/60 font-mono">Live Activity</span>
+                <span className="text-sm text-cream/60 font-mono">📊 Weekly Report Preview</span>
               </div>
               <div className="space-y-3">
                 {[
-                  { time: "2 min ago", event: "QC inspection completed for Order #1247", type: "success" },
-                  { time: "15 min ago", event: "Production started on textile batch B-42", type: "info" },
+                  { time: "Mon", event: "Factory visit completed — 3 suppliers vetted in Ho Chi Minh City", type: "success" },
+                  { time: "Wed", event: "Sample batch B-42 received, 2 revisions requested on stitching", type: "info" },
+                  { time: "Fri", event: "QC inspection passed — Order #1247 cleared for shipping", type: "success" },
                   { time: "1 hour ago", event: "New sample approved by client", type: "success" },
                 ].map((activity, i) => (
                   <motion.div
