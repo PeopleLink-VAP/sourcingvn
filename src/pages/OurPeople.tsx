@@ -53,7 +53,7 @@ const teamMembers = [
     closing: 'Clients often say they feel "understood" when working with her.',
   },
   {
-    name: "Duong",
+    name: "Thuy Duong",
     role: "Growth Specialist",
     photo: thuyPhoto,
     intro: "If your goal is scale, Duong focuses on momentum.",
