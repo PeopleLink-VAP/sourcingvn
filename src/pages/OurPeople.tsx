@@ -5,11 +5,16 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
+import duyenPhoto from "@/assets/images/duyen-pham.jpg";
+import kentPhoto from "@/assets/images/kent-nguyen.png";
+import maiAnhPhoto from "@/assets/images/mai-anh.jpg";
+import thuyPhoto from "@/assets/images/thuy-nguyen.jpg";
+
 const teamMembers = [
   {
     name: "Duyen Pham",
     role: "Founder",
-    initials: "DP",
+    photo: duyenPhoto,
     intro: "If you work with Sourcing.vn, you will feel Duyen's influence immediately: structured, direct, and execution-driven.",
     highlights: [
       "Founder of one of the top three largest Virtual Assistant communities in Vietnam with nearly 17,000 members",
@@ -23,7 +28,7 @@ const teamMembers = [
   {
     name: "Kent Nguyen",
     role: "Technology Consultant",
-    initials: "KN",
+    photo: kentPhoto,
     intro: '"In data we trust."',
     highlights: [
       "Ensures every system we build stands on solid foundations",
@@ -36,7 +41,7 @@ const teamMembers = [
   {
     name: "Mai Anh",
     role: "Client Success Lead",
-    initials: "MA",
+    photo: maiAnhPhoto,
     intro: "Mai Anh is the bridge between your expectations and our execution.",
     highlights: [
       "Strong analytical mindset with deep understanding of cross-cultural communication",
@@ -48,9 +53,9 @@ const teamMembers = [
     closing: 'Clients often say they feel "understood" when working with her.',
   },
   {
-    name: "Thuy",
+    name: "Thuy Nguyen",
     role: "Growth Specialist",
-    initials: "TH",
+    photo: thuyPhoto,
     intro: "If your goal is scale, Thuy focuses on momentum.",
     highlights: [
       "Supported brands such as Kingfood Mart and Crown Jewelry in expanding reach and performance",
@@ -120,11 +125,11 @@ const OurPeople = () => {
                 {/* Left: Name card */}
                 <div className="lg:col-span-2">
                   <div className="sticky top-32">
-                    <div className="w-20 h-20 bg-navy-deep flex items-center justify-center mb-6">
-                      <span className="text-2xl font-display font-bold text-cream">
-                        {member.initials}
-                      </span>
-                    </div>
+                    <img 
+                      src={member.photo} 
+                      alt={member.name}
+                      className="w-32 h-32 object-cover object-top rounded-lg mb-6"
+                    />
                     <h3 className="headline-lg text-navy mb-2">{member.name}</h3>
                     <p className="text-gold text-sm font-medium uppercase tracking-wider mb-4">
                       {member.role}
