@@ -58,8 +58,8 @@ serve(async (req: Request) => {
     `;
 
     const { data, error } = await resend.emails.send({
-      from: "Sourcing.vn <onboarding@resend.dev>",
-      to: ["duyenpham.jc@gmail.com"],
+      from: "Sourcing.vn <hello@sourcing.vn>",
+      to: ["hello@sourcing.vn"],
       replyTo: email,
       subject: `New Project Inquiry from ${name}`,
       html: htmlBody,
