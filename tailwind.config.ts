@@ -70,6 +70,11 @@ export default {
         cream: "hsl(var(--cream))",
         "warm-gray": "hsl(var(--warm-gray))",
         "cool-gray": "hsl(var(--cool-gray))",
+        "brand-red": {
+          DEFAULT: "hsl(var(--brand-red))",
+          deep: "hsl(var(--brand-red-deep))",
+          light: "hsl(var(--brand-red-light))",
+        },
         // New vibrant colors
         sunshine: {
           DEFAULT: "hsl(var(--sunshine))",
