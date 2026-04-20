@@ -6,17 +6,17 @@
 
 @layer base {
   :root {
-    /* Core brand colors - Vietnamese red + gold */
-    --navy: 0 72% 42%;
-    --navy-deep: 0 75% 32%;
-    --navy-light: 0 60% 52%;
-    --gold: 45 95% 55%;
-    --gold-muted: 42 85% 62%;
+    /* Core brand colors - refined Vietnamese red + gold */
+    --navy: 4 65% 38%;
+    --navy-deep: 6 60% 24%;
+    --navy-light: 4 55% 48%;
+    --gold: 42 88% 56%;
+    --gold-muted: 40 78% 64%;
 
     /* Brand red aliases (matches logo) */
-    --brand-red: 0 72% 42%;
-    --brand-red-deep: 0 75% 32%;
-    --brand-red-light: 0 65% 55%;
+    --brand-red: 4 65% 38%;
+    --brand-red-deep: 6 60% 24%;
+    --brand-red-light: 4 55% 50%;
 
     /* New vibrant colors */
     --sunshine: 45 100% 55%;
@@ -33,19 +33,19 @@
 
     /* Semantic mappings */
     --background: 40 30% 97%;
-    --foreground: 0 60% 18%;
+    --foreground: 10 30% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 60% 18%;
+    --card-foreground: 10 30% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 60% 18%;
+    --popover-foreground: 10 30% 15%;
 
-    --primary: 0 72% 42%;
+    --primary: 4 65% 38%;
     --primary-foreground: 40 30% 97%;
 
     --secondary: 40 25% 94%;
-    --secondary-foreground: 0 60% 22%;
+    --secondary-foreground: 10 40% 22%;
 
     --muted: 30 15% 90%;
     --muted-foreground: 20 8% 45%;
@@ -62,19 +62,19 @@
 
     --radius: 0.5rem;
 
-    /* Dark surfaces - deep red instead of navy */
-    --surface-dark: 0 75% 22%;
+    /* Dark surfaces - deep burgundy */
+    --surface-dark: 8 45% 18%;
     --surface-dark-foreground: 40 30% 97%;
 
     /* Sidebar */
-    --sidebar-background: 0 75% 22%;
+    --sidebar-background: 8 45% 18%;
     --sidebar-foreground: 40 30% 97%;
-    --sidebar-primary: 45 100% 55%;
-    --sidebar-primary-foreground: 0 75% 22%;
-    --sidebar-accent: 0 60% 30%;
+    --sidebar-primary: 42 88% 56%;
+    --sidebar-primary-foreground: 8 45% 18%;
+    --sidebar-accent: 6 40% 26%;
     --sidebar-accent-foreground: 40 30% 97%;
-    --sidebar-border: 0 50% 32%;
-    --sidebar-ring: 45 100% 55%;
+    --sidebar-border: 6 35% 28%;
+    --sidebar-ring: 42 88% 56%;
   }
 
   .dark {
