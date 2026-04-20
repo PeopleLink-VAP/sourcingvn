@@ -6,99 +6,104 @@
 
 @layer base {
   :root {
-    /* Core brand colors - warmer and brighter */
-    --navy: 220 45% 25%;
-    --navy-deep: 220 50% 18%;
-    --navy-light: 220 35% 35%;
-    --gold: 48 92% 52%;
-    --gold-muted: 45 70% 60%;
-    
+    /* Core brand colors - Vietnamese red + gold */
+    --navy: 0 72% 42%;
+    --navy-deep: 0 75% 32%;
+    --navy-light: 0 60% 52%;
+    --gold: 45 95% 55%;
+    --gold-muted: 42 85% 62%;
+
+    /* Brand red aliases (matches logo) */
+    --brand-red: 0 72% 42%;
+    --brand-red-deep: 0 75% 32%;
+    --brand-red-light: 0 65% 55%;
+
     /* New vibrant colors */
     --sunshine: 45 100% 55%;
     --sunshine-muted: 42 90% 65%;
     --teal: 175 60% 40%;
     --teal-muted: 175 50% 50%;
-    --coral: 15 85% 60%;
-    --coral-muted: 15 70% 70%;
-    
+    --coral: 12 85% 58%;
+    --coral-muted: 12 75% 68%;
+
     /* Neutrals - warmer */
     --cream: 40 30% 97%;
-    --warm-gray: 30 10% 55%;
-    --cool-gray: 220 8% 45%;
-    
+    --warm-gray: 25 10% 55%;
+    --cool-gray: 20 8% 45%;
+
     /* Semantic mappings */
     --background: 40 30% 97%;
-    --foreground: 220 45% 25%;
-    
+    --foreground: 0 60% 18%;
+
     --card: 0 0% 100%;
-    --card-foreground: 220 45% 25%;
-    
+    --card-foreground: 0 60% 18%;
+
     --popover: 0 0% 100%;
-    --popover-foreground: 220 45% 25%;
-    
-    --primary: 220 45% 25%;
+    --popover-foreground: 0 60% 18%;
+
+    --primary: 0 72% 42%;
     --primary-foreground: 40 30% 97%;
-    
-    --secondary: 40 20% 94%;
-    --secondary-foreground: 220 45% 25%;
-    
+
+    --secondary: 40 25% 94%;
+    --secondary-foreground: 0 60% 22%;
+
     --muted: 30 15% 90%;
-    --muted-foreground: 220 8% 50%;
-    
+    --muted-foreground: 20 8% 45%;
+
     --accent: 45 100% 55%;
-    --accent-foreground: 220 50% 18%;
-    
-    --destructive: 0 84% 60%;
+    --accent-foreground: 0 75% 22%;
+
+    --destructive: 0 84% 50%;
     --destructive-foreground: 0 0% 100%;
-    
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
+
+    --border: 20 15% 88%;
+    --input: 20 15% 88%;
     --ring: 45 100% 55%;
-    
+
     --radius: 0.5rem;
-    
-    /* Dark surfaces */
-    --surface-dark: 220 50% 18%;
+
+    /* Dark surfaces - deep red instead of navy */
+    --surface-dark: 0 75% 22%;
     --surface-dark-foreground: 40 30% 97%;
-    
+
     /* Sidebar */
-    --sidebar-background: 220 50% 18%;
+    --sidebar-background: 0 75% 22%;
     --sidebar-foreground: 40 30% 97%;
     --sidebar-primary: 45 100% 55%;
-    --sidebar-primary-foreground: 220 50% 18%;
-    --sidebar-accent: 220 35% 25%;
+    --sidebar-primary-foreground: 0 75% 22%;
+    --sidebar-accent: 0 60% 30%;
     --sidebar-accent-foreground: 40 30% 97%;
-    --sidebar-border: 220 30% 28%;
+    --sidebar-border: 0 50% 32%;
     --sidebar-ring: 45 100% 55%;
   }
 
   .dark {
-    --background: 220 50% 8%;
+    --background: 0 40% 8%;
     --foreground: 40 30% 97%;
-    
-    --card: 220 45% 12%;
+
+    --card: 0 35% 12%;
     --card-foreground: 40 30% 97%;
-    
-    --popover: 220 45% 12%;
+
+    --popover: 0 35% 12%;
     --popover-foreground: 40 30% 97%;
-    
+
     --primary: 40 30% 97%;
-    --primary-foreground: 220 50% 18%;
-    
-    --secondary: 220 30% 18%;
+    --primary-foreground: 0 75% 22%;
+
+    --secondary: 0 25% 18%;
     --secondary-foreground: 40 30% 97%;
-    
-    --muted: 220 25% 20%;
-    --muted-foreground: 220 10% 60%;
-    
+
+    --muted: 0 20% 20%;
+    --muted-foreground: 20 10% 65%;
+
     --accent: 45 100% 55%;
-    --accent-foreground: 220 50% 18%;
-    
-    --destructive: 0 62% 30%;
+    --accent-foreground: 0 75% 22%;
+
+    --destructive: 0 62% 35%;
     --destructive-foreground: 0 0% 100%;
-    
-    --border: 220 25% 22%;
-    --input: 220 25% 22%;
+
+    --border: 0 25% 22%;
+    --input: 0 25% 22%;
     --ring: 45 100% 55%;
   }
 }
