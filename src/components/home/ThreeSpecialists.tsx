@@ -9,7 +9,7 @@ const specialists = [
     icon: Package,
     title: "Product Sourcing",
     description:
-      "Someone who's spent their career in apparel, industrial goods, or agriculture — not a generalist reading a spec sheet.",
+      "Someone who's spent their career in apparel, industrial goods, or agriculture. Not a generalist reading a spec sheet.",
     image: factoryImg,
     color: "teal",
   },
@@ -17,7 +17,7 @@ const specialists = [
     icon: Users,
     title: "Talent Sourcing",
     description:
-      "Drawing from a community of 20,000+ vetted VAs and specialists — a pool most single-service agencies can't match.",
+      "Drawing from a community of 20,000+ vetted VAs and specialists. A pool most single-service agencies can't match.",
     image: talentImg,
     color: "coral",
   },
@@ -49,7 +49,7 @@ export const ThreeSpecialists = () => {
             We don't do everything a little. We do three things well.
           </h2>
           <p className="body-lg text-cool-gray">
-            Sourcing.vn isn't one generalist wearing three hats — it's three
+            Sourcing.vn isn't one generalist wearing three hats. It's three
             specialized teams under one roof. One point of contact. Three teams
             that actually know their lane.
           </p>

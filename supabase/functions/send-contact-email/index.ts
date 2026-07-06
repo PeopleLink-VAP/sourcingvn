@@ -109,7 +109,7 @@ serve(async (req: Request) => {
       to: [email],
       cc: ["hello@sourcing.vn"],
       replyTo: "hello@sourcing.vn",
-      subject: `Thank you for reaching out, ${name} — Sourcing.vn`,
+      subject: `Thank you for reaching out, ${name} · Sourcing.vn`,
       html: htmlBody,
     });
 

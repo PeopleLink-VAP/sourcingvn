@@ -405,7 +405,7 @@ const TalentSourcing = () => {
               Strategic consulting with specialists in Vietnam & Southeast Asia.
             </h2>
             <p className="body-lg text-cream/60 mt-4 max-w-2xl">
-              For businesses that need more than execution — they need insight, 
+              For businesses that need more than execution. They need insight, 
               strategy, and on-ground expertise to enter or scale in this market.
             </p>
           </motion.div>
@@ -475,8 +475,8 @@ const TalentSourcing = () => {
               </h2>
               <p className="body-lg text-cool-gray mb-6">
                 Hiring is expensive and risky. Managing remote teams is hard. 
-                What if you could just get support — trained, reliable, 
-                Vietnamese talent — without the overhead?
+                What if you could just get support: trained, reliable, 
+                Vietnamese talent, without the overhead?
               </p>
               <p className="body-md text-navy">
                 We've been building remote teams for over a decade. We know 
@@ -508,7 +508,7 @@ const TalentSourcing = () => {
                   They anticipate needs and become essential."
                 </blockquote>
                 <p className="text-cream/50 text-sm uppercase tracking-wider">
-                  — How we think about hiring
+                  How we think about hiring
                 </p>
               </motion.div>
             </motion.div>
@@ -596,7 +596,7 @@ const TalentSourcing = () => {
               Let's find your support.
             </h2>
             <p className="body-lg text-cream/60 mb-10 max-w-xl mx-auto">
-              Tell us what you need. We'll match you with the right person — or the right strategy.
+              Tell us what you need. We'll match you with the right person, or the right strategy.
             </p>
             <motion.div
               whileHover={{ scale: 1.05 }}

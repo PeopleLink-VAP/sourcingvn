@@ -55,7 +55,7 @@ const useCases = [
           { label: "Time to Market", value: "12 weeks" }
         ],
         gallery: [garmentFactoryImage, vietnamWarehouseImage, asianTeamWork, asianBusinessImage],
-        testimonial: "Sourcing.vn didn't just find us a factory — they found us a partner. The quality exceeded our expectations."
+        testimonial: "Sourcing.vn didn't just find us a factory. They found us a partner. The quality exceeded our expectations."
       },
       {
         id: "home-goods",
@@ -98,7 +98,7 @@ const useCases = [
     icon: Users,
     color: "from-coral to-coral-muted",
     link: "/talent-sourcing",
-    description: "Find reliable remote support — VAs, customer service, and specialized roles from Vietnam.",
+    description: "Find reliable remote support: VAs, customer service, and specialized roles from Vietnam.",
     cases: [
       {
         id: "customer-support",
@@ -132,7 +132,7 @@ const useCases = [
           { label: "Cost vs US Hire", value: "65% less" }
         ],
         gallery: [asianWomanProfessional, asianWomanLaptop, diverseTeamMeeting, asianOfficeTeam],
-        testimonial: "Lan isn't just an assistant — she runs half my business. I couldn't operate without her now."
+        testimonial: "Lan isn't just an assistant. She runs half my business. I couldn't operate without her now."
       },
       {
         id: "content-team",
@@ -217,7 +217,7 @@ const useCases = [
 
 const testimonials = [
   {
-    quote: "Working with Sourcing.vn felt like having an insider on the ground. They didn't just find suppliers — they understood our brand and protected our margins.",
+    quote: "Working with Sourcing.vn felt like having an insider on the ground. They didn't just find suppliers. They understood our brand and protected our margins.",
     author: "Amanda Chen",
     role: "Founder, Bloom Naturals",
     rating: 5,
@@ -475,7 +475,7 @@ const UseCases = () => {
                 <div className="mt-8 p-6 bg-navy-deep rounded-xl">
                   <Quote className="w-8 h-8 text-gold/30 mb-3" />
                   <p className="text-cream italic mb-4">"{selectedCase.testimonial}"</p>
-                  <p className="text-cream/60 text-sm">— {selectedCase.client}</p>
+                  <p className="text-cream/60 text-sm">– {selectedCase.client}</p>
                 </div>
                 
                 {/* CTA */}

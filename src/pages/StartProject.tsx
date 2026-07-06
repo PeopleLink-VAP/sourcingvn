@@ -79,7 +79,7 @@ const StartProject = () => {
             </h1>
             <p className="body-lg text-cream/70">
               Tell us what you're looking for. We'll get back to you 
-              within 24 hours — usually much faster.
+              within 24 hours. Usually much faster.
             </p>
           </motion.div>
         </div>

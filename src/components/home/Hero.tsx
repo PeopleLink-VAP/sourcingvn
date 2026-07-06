@@ -48,24 +48,54 @@ export const Hero = () => {
                 👋 Your Vietnam Partner
               </motion.span>
               
-              <h1 className="headline-xl text-navy mb-6">
-                Source smarter in Vietnam.
-                <br />
-                <span className="gradient-text">Without middlemen.</span>
-                <br />
-                Without guesswork.
+              <h1 className="font-display font-bold text-navy mb-6 leading-[0.95] tracking-tight text-5xl md:text-6xl lg:text-7xl">
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.25 }}
+                  className="block"
+                >
+                  Source smarter
+                </motion.span>
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="block"
+                >
+                  in{" "}
+                  <span className="relative inline-block">
+                    <span className="relative z-10 gradient-text">Vietnam.</span>
+                    <motion.span
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: 1 }}
+                      transition={{ duration: 0.7, delay: 0.9, ease: "easeOut" }}
+                      style={{ originX: 0 }}
+                      className="absolute left-0 right-0 bottom-1 h-3 md:h-4 bg-sunshine/50 -z-0 rounded-sm"
+                    />
+                  </span>
+                </motion.span>
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.55 }}
+                  className="block text-3xl md:text-4xl lg:text-5xl text-cool-gray font-medium mt-3"
+                >
+                  No middlemen. No guesswork.
+                </motion.span>
               </h1>
             </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
               className="body-lg text-cool-gray max-w-xl mb-10"
             >
               Your on-the-ground partner for sourcing products, talent, and systems in Vietnam. 
               Real people, real results.
             </motion.p>
+
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

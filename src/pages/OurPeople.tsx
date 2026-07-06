@@ -65,7 +65,7 @@ const teamMembers = [
       "Positions brands clearly for growth",
     ],
     quote: null,
-    closing: "For founders who want more than operations — who want structured growth — Thuy becomes the extension of their internal marketing brain.",
+    closing: "For founders who want more than operations, who want structured growth, Thuy becomes the extension of their internal marketing brain.",
   },
 ];
 

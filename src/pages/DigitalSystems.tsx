@@ -450,7 +450,7 @@ const DigitalSystems = () => {
               </h2>
               <p className="body-lg text-cool-gray mb-6">
                 We don't build complex systems to impress. We build what you 
-                actually need — clean interfaces, smart automation, reliable 
+                actually need: clean interfaces, smart automation, reliable 
                 infrastructure.
               </p>
               <p className="body-md text-navy">
