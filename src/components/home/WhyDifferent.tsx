@@ -20,8 +20,8 @@ const CommissionRing = () => {
           strokeWidth="8" fill="none" strokeLinecap="round"
           strokeDasharray={C}
           initial={{ strokeDashoffset: C }}
-          animate={inView ? { strokeDashoffset: C } : {}}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          animate={inView ? { strokeDashoffset: 0 } : {}}
+          transition={{ duration: 1.4, ease: "easeOut" }}
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
