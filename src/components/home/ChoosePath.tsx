@@ -109,6 +109,9 @@ export const ChoosePath = () => {
                 </div>
 
                 <div className="p-6 flex flex-col flex-1">
+                  <p className="text-[11px] font-semibold uppercase tracking-widest text-sunshine/80 mb-2">
+                    {path.team}
+                  </p>
                   <div className="flex items-center gap-3 mb-4">
                     <path.icon className="w-8 h-8 text-sunshine" strokeWidth={1.5} />
                     <h3 className="headline-md text-cream group-hover:text-sunshine transition-colors">
@@ -123,7 +126,7 @@ export const ChoosePath = () => {
                   <div className="border-t border-cream/10 pt-4 mt-auto">
                     <p className="body-md text-cream/80 mb-4">{path.cta}</p>
                     <div className="flex items-center gap-2 text-sunshine font-medium">
-                      <span>Explore</span>
+                      <span>See success stories</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
                     </div>
                   </div>
