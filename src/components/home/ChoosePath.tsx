@@ -9,7 +9,7 @@ const paths = [
   {
     icon: Package,
     title: "Product Sourcing",
-    description: "Factories, suppliers, quality control — we handle it on the ground.",
+    description: "From apparel to industrial parts — see how we vet suppliers.",
     href: "/product-sourcing",
     image: vietnamMarketImage,
     color: "teal",
@@ -18,7 +18,7 @@ const paths = [
   {
     icon: Users,
     title: "Talent Sourcing",
-    description: "Reliable support without full-time overhead. Founders started as VAs.",
+    description: "From VAs to specialized roles — meet our talent pool.",
     href: "/talent-sourcing",
     image: asianOfficeImage,
     color: "coral",
@@ -27,7 +27,7 @@ const paths = [
   {
     icon: Cpu,
     title: "Digital & Systems",
-    description: "Websites, AI chatbots, CRM, internal tools. Built to work.",
+    description: "Backed by 20 years of software expertise — see our tech work.",
     href: "/digital-systems",
     image: asianDeveloperImage,
     color: "navy",
@@ -62,8 +62,8 @@ export const ChoosePath = () => {
           <p className="text-sm font-semibold uppercase tracking-widest text-sunshine mb-4">
             Choose Your Path
           </p>
-          <h2 className="headline-lg text-cream max-w-2xl mx-auto">
-            What are you looking to source?
+          <h2 className="headline-lg text-cream max-w-3xl mx-auto">
+            Tell us what you're building. We'll tell you who's already solved it.
           </h2>
         </motion.div>
 
