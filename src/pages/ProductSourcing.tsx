@@ -12,7 +12,7 @@ import asianTeamWork from "@/assets/images/asian-team-work.jpg";
 
 const processSteps = [
   { number: "01", title: "Discovery", description: "We understand your product, quantities, timeline, and quality requirements.", icon: "📋" },
-  { number: "02", title: "Factory Search", description: "We identify and vet factories — visiting in person, not just emailing.", icon: "🔍" },
+  { number: "02", title: "Factory Search", description: "We identify and vet factories, visiting in person, not just emailing.", icon: "🔍" },
   { number: "03", title: "Sample Making", description: "We coordinate sample production and manage revisions with the factory until quality meets your standards.", icon: "🧵" },
   { number: "04", title: "Negotiation", description: "We negotiate on your behalf with full transparency. No hidden markups.", icon: "🤝" },
   { number: "05", title: "Sample Approval", description: "Final sample review with you. We don't move forward until you're 100% satisfied.", icon: "✅" },
@@ -242,9 +242,9 @@ const ProductSourcing = () => {
               </div>
               <div className="space-y-3">
                 {[
-                  { time: "Mon", event: "Factory visit completed — 3 suppliers vetted in Ho Chi Minh City", type: "success" },
+                  { time: "Mon", event: "Factory visit completed. 3 suppliers vetted in Ho Chi Minh City", type: "success" },
                   { time: "Wed", event: "Sample batch B-42 received, 2 revisions requested on stitching", type: "info" },
-                  { time: "Fri", event: "QC inspection passed — Order #1247 cleared for shipping", type: "success" },
+                  { time: "Fri", event: "QC inspection passed. Order #1247 cleared for shipping", type: "success" },
                   
                 ].map((activity, i) => (
                   <motion.div
@@ -396,7 +396,7 @@ const ProductSourcing = () => {
               Our Process
             </p>
             <h2 className="headline-lg text-navy max-w-2xl">
-              From idea to delivery — how we work.
+              From idea to delivery. Here's how we work.
             </h2>
           </motion.div>
 

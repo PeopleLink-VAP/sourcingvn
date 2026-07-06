@@ -9,7 +9,7 @@ const paths = [
   {
     icon: Package,
     title: "Product Sourcing",
-    description: "From apparel to industrial parts — see how we vet suppliers.",
+    description: "From apparel to industrial parts. See how we vet suppliers.",
     href: "/product-sourcing",
     image: vietnamMarketImage,
     color: "teal",
@@ -18,7 +18,7 @@ const paths = [
   {
     icon: Users,
     title: "Talent Sourcing",
-    description: "From VAs to specialized roles — meet our talent pool.",
+    description: "From VAs to specialized roles. Meet our talent pool.",
     href: "/talent-sourcing",
     image: asianOfficeImage,
     color: "coral",
@@ -27,7 +27,7 @@ const paths = [
   {
     icon: Cpu,
     title: "Digital & Systems",
-    description: "Backed by 20 years of software expertise — see our tech work.",
+    description: "Backed by 20 years of software expertise. See our tech work.",
     href: "/digital-systems",
     image: asianDeveloperImage,
     color: "navy",

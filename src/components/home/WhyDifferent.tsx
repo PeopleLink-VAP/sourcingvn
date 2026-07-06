@@ -65,7 +65,7 @@ export const WhyDifferent = () => {
                 <p className="text-cream font-medium text-lg">
                   "They saved us $45,000 on our first order alone."
                 </p>
-                <p className="text-cream/70 text-sm mt-2">— Sarah K., Bloom Naturals</p>
+                <p className="text-cream/70 text-sm mt-2">– Sarah K., Bloom Naturals</p>
               </div>
             </div>
           </motion.div>

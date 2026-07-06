@@ -37,7 +37,7 @@ export const WhyVietnam = () => {
             </h2>
             <div className="space-y-5 body-md text-cool-gray">
               <p>
-                Vietnam is one of the hottest sourcing markets right now — and it's
+                Vietnam is one of the hottest sourcing markets right now, and it's
                 bigger than apparel and handicrafts. We regularly source heavy
                 industry components and agricultural products alongside the
                 categories people expect.
@@ -46,7 +46,7 @@ export const WhyVietnam = () => {
                 On the talent side, the shift is just as real. Vietnam used to sit in
                 software outsourcing's shadow, behind India and the Philippines. Not
                 anymore. Alongside those two, Vietnam is now a default name on
-                outsourcing shortlists — a roughly 560,000-strong tech talent pool,
+                outsourcing shortlists, with a roughly 560,000-strong tech talent pool,
                 double-digit market growth, and rates that make SMEs take notice.
                 We've felt that shift directly: most of our talent requests today
                 come from SMEs who need a reliable hand, fast, without hiring
