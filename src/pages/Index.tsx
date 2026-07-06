@@ -4,7 +4,6 @@ import { WhyWeDoThis } from "@/components/home/WhyWeDoThis";
 import { WhatWeDo } from "@/components/home/WhatWeDo";
 import { WhyDifferent } from "@/components/home/WhyDifferent";
 import { WhyVietnam } from "@/components/home/WhyVietnam";
-import { ThreeSpecialists } from "@/components/home/ThreeSpecialists";
 import { ChoosePath } from "@/components/home/ChoosePath";
 import { Footer } from "@/components/Footer";
 import { Mascot } from "@/components/Mascot";
@@ -18,7 +17,6 @@ const Index = () => {
       <WhatWeDo />
       <WhyDifferent />
       <WhyVietnam />
-      <ThreeSpecialists />
       <ChoosePath />
       <Footer />
       <Mascot message="Hi! 👋 Need help with your project?" />
@@ -27,3 +25,4 @@ const Index = () => {
 };
 
 export default Index;
+

@@ -9,29 +9,35 @@ const paths = [
   {
     icon: Package,
     title: "Product Sourcing",
-    description: "From apparel to industrial parts. See how we vet suppliers.",
+    specialist:
+      "Led by someone who's spent their career in apparel, industrial goods, and agriculture. Not a generalist reading a spec sheet.",
+    cta: "From apparel to industrial parts. See how we vet suppliers.",
     href: "/product-sourcing",
     image: vietnamMarketImage,
     color: "teal",
-    stats: "200+ products sourced"
+    stats: "200+ products sourced",
   },
   {
     icon: Users,
     title: "Talent Sourcing",
-    description: "From VAs to specialized roles. Meet our talent pool.",
+    specialist:
+      "Drawing from a community of 20,000+ vetted VAs and specialists. A pool most single-service agencies can't match.",
+    cta: "From VAs to specialized roles. Meet our talent pool.",
     href: "/talent-sourcing",
     image: asianOfficeImage,
     color: "coral",
-    stats: "50+ team members placed"
+    stats: "50+ team members placed",
   },
   {
     icon: Cpu,
     title: "Digital & Systems",
-    description: "Backed by 20 years of software expertise. See our tech work.",
+    specialist:
+      "Led by an expert with 20 years in software, AI, and data transformation.",
+    cta: "Backed by 20 years of software expertise. See our tech work.",
     href: "/digital-systems",
     image: asianDeveloperImage,
     color: "navy",
-    stats: "100+ systems built"
+    stats: "100+ systems built",
   },
 ];
 
@@ -50,21 +56,25 @@ export const ChoosePath = () => {
         transition={{ repeat: Infinity, duration: 12, ease: "easeInOut", delay: 2 }}
         className="absolute bottom-20 right-20 w-80 h-80 bg-teal/5 rounded-full blur-3xl"
       />
-      
+
       <div className="container-editorial relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-14 max-w-3xl mx-auto"
         >
           <p className="text-sm font-semibold uppercase tracking-widest text-sunshine mb-4">
-            Choose Your Path
+            One Partner, Three Specialists
           </p>
-          <h2 className="headline-lg text-cream max-w-3xl mx-auto">
-            Tell us what you're building. We'll tell you who's already solved it.
+          <h2 className="headline-lg text-cream mb-5">
+            Tell us what you're building. We'll point you to the team that's already solved it.
           </h2>
+          <p className="body-md text-cream/70">
+            Three specialized teams under one roof. One point of contact.
+            Pick the lane that matches your project.
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
@@ -78,38 +88,41 @@ export const ChoosePath = () => {
             >
               <Link
                 to={path.href}
-                className="group block bg-cream/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-cream/10 hover:border-sunshine/50 transition-all duration-500 hover:bg-cream/10"
+                className="group flex flex-col h-full bg-cream/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-cream/10 hover:border-sunshine/50 transition-all duration-500 hover:bg-cream/10"
               >
                 {/* Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img 
+                <div className="relative h-44 overflow-hidden">
+                  <img
                     src={path.image}
                     alt={path.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/40 to-transparent" />
-                  
-                  {/* Stats badge */}
+
                   <div className="absolute top-4 right-4 flex items-center gap-1 px-3 py-1 bg-sunshine/90 text-navy text-xs font-semibold rounded-full">
                     <Star className="w-3 h-3" />
                     {path.stats}
                   </div>
                 </div>
 
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center gap-3 mb-4">
-                    <path.icon 
-                      className="w-8 h-8 text-sunshine" 
-                      strokeWidth={1.5}
-                    />
-                    <h3 className="headline-md text-cream group-hover:text-sunshine transition-colors">{path.title}</h3>
+                    <path.icon className="w-8 h-8 text-sunshine" strokeWidth={1.5} />
+                    <h3 className="headline-md text-cream group-hover:text-sunshine transition-colors">
+                      {path.title}
+                    </h3>
                   </div>
-                  <p className="body-md text-cream/70 mb-6">
-                    {path.description}
+
+                  <p className="text-sm text-cream/60 italic mb-4 leading-relaxed">
+                    {path.specialist}
                   </p>
-                  <div className="flex items-center gap-2 text-sunshine font-medium">
-                    <span>Explore</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
+
+                  <div className="border-t border-cream/10 pt-4 mt-auto">
+                    <p className="body-md text-cream/80 mb-4">{path.cta}</p>
+                    <div className="flex items-center gap-2 text-sunshine font-medium">
+                      <span>Explore</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -117,7 +130,6 @@ export const ChoosePath = () => {
           ))}
         </div>
 
-        {/* See all use cases link */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -125,8 +137,8 @@ export const ChoosePath = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-12"
         >
-          <Link 
-            to="/use-cases" 
+          <Link
+            to="/use-cases"
             className="inline-flex items-center gap-2 text-cream/80 hover:text-sunshine transition-colors font-medium"
           >
             See all success stories
