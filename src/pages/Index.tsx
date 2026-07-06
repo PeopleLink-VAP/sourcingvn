@@ -16,7 +16,7 @@ const Index = () => {
       <WhyWeDoThis />
       <WhatWeDo />
       <WhyDifferent />
-      <WhyVietnam />
+      {/* <WhyVietnam /> hidden for now */}
       <ChoosePath />
       <Footer />
       <Mascot message="Hi! 👋 Need help with your project?" />
