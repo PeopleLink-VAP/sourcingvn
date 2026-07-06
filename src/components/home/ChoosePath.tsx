@@ -9,6 +9,7 @@ const paths = [
   {
     icon: Package,
     title: "Product Sourcing",
+    team: "Run by our Product Sourcing team",
     specialist:
       "Led by someone who's spent their career in apparel, industrial goods, and agriculture. Not a generalist reading a spec sheet.",
     cta: "From apparel to industrial parts. See how we vet suppliers.",
@@ -20,6 +21,7 @@ const paths = [
   {
     icon: Users,
     title: "Talent Sourcing",
+    team: "Run by our Talent team",
     specialist:
       "Drawing from a community of 20,000+ vetted VAs and specialists. A pool most single-service agencies can't match.",
     cta: "From VAs to specialized roles. Meet our talent pool.",
@@ -31,6 +33,7 @@ const paths = [
   {
     icon: Cpu,
     title: "Digital & Systems",
+    team: "Run by our Digital & Systems team",
     specialist:
       "Led by an expert with 20 years in software, AI, and data transformation.",
     cta: "Backed by 20 years of software expertise. See our tech work.",
@@ -66,14 +69,14 @@ export const ChoosePath = () => {
           className="text-center mb-14 max-w-3xl mx-auto"
         >
           <p className="text-sm font-semibold uppercase tracking-widest text-sunshine mb-4">
-            One Partner, Three Specialists
+            Success Stories
           </p>
           <h2 className="headline-lg text-cream mb-5">
-            Tell us what you're building. We'll point you to the team that's already solved it.
+            Real projects, real outcomes. Grouped by the team behind them.
           </h2>
           <p className="body-md text-cream/70">
-            Three specialized teams under one roof. One point of contact.
-            Pick the lane that matches your project.
+            Each pillar is run by its own specialized team, not a generalist wearing three hats.
+            Pick the lane that matches your project and see what they've shipped.
           </p>
         </motion.div>
 
