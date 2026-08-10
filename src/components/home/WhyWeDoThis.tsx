@@ -46,10 +46,11 @@ export const WhyWeDoThis = () => {
                 We set out to be the bridge between Vietnamese vendors, freelancers,
                 and suppliers, and the clients who need them. Working with founders and
                 teams from every corner of the world, we kept seeing the same thing:
-                how much untapped potential this country holds, and how much difference
-                one good partner on the ground makes.
+                how much untapped potential this country holds, and how much difference{" "}
+                <span className="font-semibold text-navy">one good partner</span>{" "}
+                on the ground makes.
               </p>
-              <p>
+              <p className="font-medium text-navy">
                 That's the job now. Help Vietnam's markets grow. Help our clients build
                 something real here.
               </p>
