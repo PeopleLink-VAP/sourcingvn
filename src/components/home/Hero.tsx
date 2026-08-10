@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import vietnamTeamImage from "@/assets/images/vietnam-team.jpg";
-import asianMeetingImage from "@/assets/images/asian-meeting.jpg";
-import vietnamFactoryImage from "@/assets/images/vietnam-factory.jpg";
+import vietnamTeamImage from "@/assets/images/vn-saigon-panorama.jpg";
+import asianMeetingImage from "@/assets/images/vn-haiphong-port.jpg";
+import vietnamFactoryImage from "@/assets/images/vn-ben-thanh-market.jpg";
 
 export const Hero = () => {
   return (
@@ -149,7 +149,7 @@ export const Hero = () => {
               >
                 <img 
                   src={vietnamTeamImage} 
-                  alt="Our team in Vietnam" 
+                  alt="Ho Chi Minh City skyline at dusk, Vietnam" 
                   className="w-full h-80 object-cover rounded-3xl shadow-2xl"
                 />
                 <div className="absolute -bottom-4 -right-4 w-full h-full bg-sunshine/30 rounded-3xl -z-10" />
@@ -166,7 +166,7 @@ export const Hero = () => {
                   animate={{ y: [0, 8, 0] }}
                   transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
                   src={asianMeetingImage}
-                  alt="Business meeting in Vietnam"
+                  alt="Container terminal in Hai Phong, Vietnam"
                   className="w-32 h-40 object-cover rounded-2xl shadow-xl border-4 border-white"
                 />
               </motion.div>
@@ -181,7 +181,7 @@ export const Hero = () => {
                   animate={{ y: [0, -6, 0] }}
                   transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.5 }}
                   src={vietnamFactoryImage}
-                  alt="Vietnam factory"
+                  alt="Ben Thanh Market in Ho Chi Minh City"
                   className="w-36 h-44 object-cover rounded-2xl shadow-xl border-4 border-white"
                 />
               </motion.div>

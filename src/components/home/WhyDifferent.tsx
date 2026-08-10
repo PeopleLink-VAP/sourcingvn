@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MapPin, DollarSign, Eye, Check, X } from "lucide-react";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
-import asianBusinessImage from "@/assets/images/asian-business.jpg";
+import asianBusinessImage from "@/assets/images/vn-rice-harvest.jpg";
 
 // Donut ring showing "0% commission"
 const CommissionRing = () => {
@@ -34,16 +34,16 @@ const CommissionRing = () => {
   );
 };
 
-// Visits-on-the-ground counter
-const GroundVisits = () => (
+// Clients supported counter
+const ClientsSupported = () => (
   <div className="w-32 h-32 mx-auto flex flex-col items-center justify-center">
     <AnimatedCounter
-      to={340}
+      to={100}
       suffix="+"
       className="text-4xl font-display font-bold text-navy"
     />
     <span className="text-[10px] uppercase tracking-widest text-cool-gray mt-1 text-center">
-      Factory visits<br />in the last 12 mo
+      Clients supported<br />with product sourcing
     </span>
   </div>
 );
@@ -84,9 +84,9 @@ const TransparencyList = () => {
 const truths = [
   {
     icon: MapPin,
-    label: "On the ground",
-    text: "We walk into factories. Not distant brokers.",
-    visual: <GroundVisits />,
+    label: "On-site / off-site",
+    text: "Not every owner wants a finished product. We join at whatever stage your sourcing is at.",
+    visual: <ClientsSupported />,
     color: "teal",
   },
   {
@@ -141,7 +141,7 @@ export const WhyDifferent = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
                 src={asianBusinessImage}
-                alt="Business partnership in Vietnam"
+                alt="Farmer harvesting rice in northern Vietnam"
                 className="w-full h-64 object-cover"
                 loading="lazy"
               />

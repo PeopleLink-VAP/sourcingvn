@@ -24,7 +24,7 @@ export const WhyWeDoThis = () => {
             </div>
             <div className="absolute -bottom-4 -right-4 w-full h-full bg-sunshine/25 rounded-2xl -z-10" />
             <p className="mt-4 text-sm text-cool-gray italic">
-              Duyen, Founder · on-site with clients in Ho Chi Minh City
+              Duyen Pham, Founder · on-site with clients in Ho Chi Minh City and Danang city, Vietnam
             </p>
           </motion.div>
 
