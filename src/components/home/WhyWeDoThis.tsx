@@ -43,8 +43,8 @@ export const WhyWeDoThis = () => {
             </h2>
             <div className="space-y-5 body-lg text-cool-gray">
               <p>
-                We set out to be the bridge between Vietnamese vendors, freelancers,
-                and suppliers, and the clients who need them. Working with founders and
+                We set out to be the bridge between Vietnamese vendors, freelancers and
+                the clients who need them. Working with founders and
                 teams from every corner of the world, we kept seeing the same thing:
                 how much untapped potential Vietnam holds, and how much difference{" "}
                 <span className="font-semibold text-navy">one good partner</span>{" "}
