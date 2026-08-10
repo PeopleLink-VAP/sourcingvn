@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MapPin, DollarSign, Eye, Check, X } from "lucide-react";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
-import asianBusinessImage from "@/assets/images/asian-business.jpg";
+import asianBusinessImage from "@/assets/images/vn-rice-harvest.jpg";
 
 // Donut ring showing "0% commission"
 const CommissionRing = () => {
@@ -141,7 +141,7 @@ export const WhyDifferent = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
                 src={asianBusinessImage}
-                alt="Business partnership in Vietnam"
+                alt="Farmer harvesting rice in northern Vietnam"
                 className="w-full h-64 object-cover"
                 loading="lazy"
               />

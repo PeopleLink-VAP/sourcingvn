@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Package, Users, Cpu, Star } from "lucide-react";
-import vietnamMarketImage from "@/assets/images/vietnam-market.jpg";
-import asianOfficeImage from "@/assets/images/asian-office.jpg";
-import asianDeveloperImage from "@/assets/images/asian-developer.jpg";
+import vietnamMarketImage from "@/assets/images/vn-hoi-an-lanterns.jpg";
+import asianOfficeImage from "@/assets/images/vn-ben-thanh-market.jpg";
+import asianDeveloperImage from "@/assets/images/vn-danang-city.jpg";
 
 const paths = [
   {
