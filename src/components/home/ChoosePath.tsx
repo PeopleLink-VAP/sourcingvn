@@ -16,7 +16,7 @@ const paths = [
     href: "/product-sourcing",
     image: vietnamMarketImage,
     color: "teal",
-    stats: "200+ products sourced",
+    stats: "100+ products sourced",
   },
   {
     icon: Users,
@@ -40,7 +40,7 @@ const paths = [
     href: "/digital-systems",
     image: asianDeveloperImage,
     color: "navy",
-    stats: "100+ systems built",
+    stats: "40+ systems built",
   },
 ];
 
