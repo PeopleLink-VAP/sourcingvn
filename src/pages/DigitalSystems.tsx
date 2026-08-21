@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { SelectedProjects } from "@/components/digital/SelectedProjects";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -355,6 +356,8 @@ const DigitalSystems = () => {
           </motion.div>
         </div>
       </section>
+
+      <SelectedProjects />
 
       {/* Services Grid */}
       <section className="section-padding bg-navy-deep relative">
