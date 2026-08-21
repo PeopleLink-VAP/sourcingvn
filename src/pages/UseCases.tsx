@@ -504,13 +504,21 @@ const UseCases = () => {
               
               {/* Modal Content */}
               <div className="p-8">
-                <div className="flex items-start justify-between mb-6">
+                <div className="flex items-start justify-between gap-6 mb-6">
                   <div>
                     <span className="text-xs font-semibold uppercase tracking-wider text-teal">{selectedCase.industry}</span>
                     <h2 className="headline-lg text-navy">{selectedCase.title}</h2>
                     <p className="text-cool-gray">{selectedCase.client}</p>
                   </div>
+                  {selectedCase.logo && (
+                    <img
+                      src={selectedCase.logo}
+                      alt={`${selectedCase.title} logo`}
+                      className="h-12 w-auto max-w-[160px] object-contain shrink-0"
+                    />
+                  )}
                 </div>
+
                 
                 {/* Metrics */}
                 <div className="grid grid-cols-4 gap-4 mb-8">
