@@ -118,12 +118,12 @@ export const Pricing = () => {
                   {plan.name}
                 </h3>
                 <div className="flex items-baseline gap-2">
+                  {plan.name !== "Custom Platforms" && (
+                    <span className="text-sm text-muted-foreground">From</span>
+                  )}
                   <span className="text-3xl font-bold text-primary tracking-tight">
                     {plan.price}
                   </span>
-                  {plan.name !== "Custom Platforms" && (
-                    <span className="text-sm text-muted-foreground">from</span>
-                  )}
                 </div>
                 {plan.priceLabel && (
                   <p className="text-sm text-muted-foreground mt-1">
@@ -162,8 +162,8 @@ export const Pricing = () => {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 rounded-xl border border-border bg-card p-6">
-          <p className="text-sm text-muted-foreground max-w-2xl">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 rounded-xl border border-primary/20 bg-primary/5 p-6">
+          <p className="text-sm text-foreground font-medium max-w-2xl">
             Starting prices are estimates. Final pricing depends on scope, features,
             integrations and technical complexity.
           </p>
