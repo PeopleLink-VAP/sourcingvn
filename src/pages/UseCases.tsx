@@ -6,19 +6,7 @@ import { ArrowRight, Package, Users, Cpu, Star, Quote, ChevronRight, Image, X } 
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
-// Import Vietnam/Asian-themed images
-import vietnamTeamImage from "@/assets/images/vietnam-team.jpg";
-import garmentFactoryImage from "@/assets/images/garment-factory-asia.jpg";
-import asianWomanProfessional from "@/assets/images/asian-woman-professional.jpg";
-import asianOfficeTeam from "@/assets/images/asian-office-team.jpg";
-import asianBusinessImage from "@/assets/images/asian-business.jpg";
-import vietnamWarehouseImage from "@/assets/images/vietnam-warehouse.jpg";
-import asianTeamWork from "@/assets/images/asian-team-work.jpg";
-import asianCodingImage from "@/assets/images/asian-coding.jpg";
-import asianCollaborationImage from "@/assets/images/asian-collaboration.jpg";
-import diverseTeamMeeting from "@/assets/images/diverse-team-meeting.jpg";
-import asianWomanLaptop from "@/assets/images/asian-woman-laptop.jpg";
-import hoiAnLanterns from "@/assets/images/vn-hoi-an-lanterns.jpg";
+// Real client project photos only (no stock or AI imagery)
 
 // Client project screenshots and logos
 import edgepointShot from "@/assets/cases/Edpoint_safety.jpg";
@@ -74,7 +62,7 @@ const useCases = [
           { label: "Quality Pass Rate", value: "98%" },
           { label: "Time to Market", value: "12 weeks" }
         ],
-        gallery: [garmentFactoryImage, vietnamWarehouseImage, asianTeamWork, asianBusinessImage],
+        gallery: [],
         testimonial: "Sourcing.vn didn't just find us a factory. They found us a partner. The quality exceeded our expectations."
       },
       {
@@ -91,7 +79,7 @@ const useCases = [
           { label: "New Suppliers", value: "2" },
           { label: "Shipping Savings", value: "18%" }
         ],
-        gallery: [vietnamWarehouseImage, garmentFactoryImage, vietnamTeamImage, asianOfficeTeam],
+        gallery: [],
         testimonial: "They saved our holiday season. Now we have supply chain redundancy we never had before."
       },
       {
@@ -108,7 +96,7 @@ const useCases = [
           { label: "Cost Reduction", value: "22%" },
           { label: "Current Scale", value: "10K/mo" }
         ],
-        gallery: [asianCodingImage, asianTeamWork, garmentFactoryImage, vietnamWarehouseImage],
+        gallery: [],
         testimonial: "The technical expertise was unexpected. They understood our specs and caught issues before they became problems."
       }
     ]
@@ -134,7 +122,7 @@ const useCases = [
           { label: "Team Size", value: "5 people" },
           { label: "Retention", value: "18 months" }
         ],
-        gallery: [asianOfficeTeam, diverseTeamMeeting, vietnamTeamImage, asianCollaborationImage],
+        gallery: [],
         testimonial: "Our support team in Vietnam is now our competitive advantage. They're better than in-house teams I've managed."
       },
       {
@@ -151,7 +139,7 @@ const useCases = [
           { label: "Time to Productivity", value: "2 weeks" },
           { label: "Cost vs US Hire", value: "65% less" }
         ],
-        gallery: [asianWomanProfessional, asianWomanLaptop, diverseTeamMeeting, asianOfficeTeam],
+        gallery: [],
         testimonial: "Lan isn't just an assistant. She runs half my business. I couldn't operate without her now."
       },
       {
@@ -168,7 +156,7 @@ const useCases = [
           { label: "Team Size", value: "3 people" },
           { label: "Cost Savings", value: "70%" }
         ],
-        gallery: [asianCollaborationImage, vietnamTeamImage, asianCodingImage, asianWomanProfessional],
+        gallery: [],
         testimonial: "The quality and consistency is incredible. They understand our brand voice better than agencies we paid 10x more."
       }
     ]
@@ -195,7 +183,7 @@ const useCases = [
           { label: "Booking Paths", value: "2" },
           { label: "Market", value: "Canada" }
         ],
-        gallery: [edgepointShot, edgepointSite, diverseTeamMeeting, asianOfficeTeam],
+        gallery: [edgepointShot, edgepointSite],
         testimonial: "The new site finally represents the company we've become, not the one we were ten years ago."
       },
       {
@@ -213,7 +201,7 @@ const useCases = [
           { label: "Shared System", value: "1" },
           { label: "Market", value: "Canada" }
         ],
-        gallery: [radiusShot, vietnamWarehouseImage, asianTeamWork, asianCollaborationImage],
+        gallery: [radiusShot],
         testimonial: "Clients used to see four separate contractors. Now they see one crew that can handle the whole site."
       },
       {
@@ -231,7 +219,7 @@ const useCases = [
           { label: "Integration", value: "Square" },
           { label: "Market", value: "USA" }
         ],
-        gallery: [soraStudio, soraShot, asianWomanProfessional, asianBusinessImage],
+        gallery: [soraStudio, soraShot],
         testimonial: "People book before they even call us now. The site does the selling."
       },
       {
@@ -249,7 +237,7 @@ const useCases = [
           { label: "Location", value: "Hoi An" },
           { label: "Guest Types", value: "Local + Intl" }
         ],
-        gallery: [gloryShot, gloryVilla, hoiAnLanterns, vietnamTeamImage],
+        gallery: [gloryShot, gloryVilla],
         testimonial: "Guests tell us they booked because of the story, not the price."
       },
       {
@@ -266,7 +254,7 @@ const useCases = [
           { label: "Spreadsheets", value: "Retired" },
           { label: "Ticket Triage", value: "Live" }
         ],
-        gallery: [portalShot, vaEvent, asianWomanLaptop, asianOfficeTeam],
+        gallery: [portalShot, vaEvent],
         testimonial: "We stopped losing student issues in group chats. That alone changed how the team works."
       },
       {
@@ -283,7 +271,7 @@ const useCases = [
           { label: "Spreadsheets", value: "1 platform" },
           { label: "Users", value: "Buyers + Suppliers" }
         ],
-        gallery: [sourcingPlatformShot, factorySourcing, vietnamWarehouseImage, garmentFactoryImage],
+        gallery: [sourcingPlatformShot, factorySourcing],
         testimonial: "We can answer 'who can make this, and where?' in minutes instead of days."
       }
     ]
@@ -296,22 +284,19 @@ const testimonials = [
     quote: "Working with Sourcing.vn felt like having an insider on the ground. They didn't just find suppliers. They understood our brand and protected our margins.",
     author: "Amanda Chen",
     role: "Founder, Bloom Naturals",
-    rating: 5,
-    image: asianWomanProfessional
+    rating: 5
   },
   {
     quote: "Our VA has become indispensable. What started as inbox management evolved into full operations support. Sourcing.vn made the transition seamless.",
     author: "Marcus Johnson",
     role: "CEO, Digital First Agency",
-    rating: 5,
-    image: asianTeamWork
+    rating: 5
   },
   {
     quote: "The automation they built paid for itself in 3 weeks. We went from drowning in spreadsheets to having real-time visibility across all operations.",
     author: "Sophie Williams",
     role: "Operations Director, TrendCo",
-    rating: 5,
-    image: asianBusinessImage
+    rating: 5
   }
 ];
 
@@ -362,28 +347,6 @@ const UseCases = () => {
           </motion.div>
         </div>
         
-        {/* Floating images */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="hidden lg:block absolute right-12 top-1/2 -translate-y-1/2"
-        >
-          <div className="relative">
-            <img 
-              src={vietnamTeamImage} 
-              alt="Vietnam team" 
-              className="w-80 h-48 object-cover rounded-2xl shadow-xl"
-            />
-            <motion.img 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 4 }}
-              src={asianBusinessImage} 
-              alt="Business partnership" 
-              className="absolute -bottom-16 -left-20 w-48 h-36 object-cover rounded-xl shadow-lg border-4 border-white"
-            />
-          </div>
-        </motion.div>
       </section>
 
       {/* Use Cases by Category */}
@@ -433,19 +396,22 @@ const UseCases = () => {
                   className="scroll-mt-32 bg-white rounded-2xl shadow-sm border border-border overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer"
                 >
                   {/* Image with gallery indicator */}
-                  <div className="relative h-48 overflow-hidden">
-                    <img 
-                      src={useCase.gallery[0]} 
-                      alt={useCase.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                  {useCase.gallery.length > 0 && (
+                    <div className="relative h-48 overflow-hidden">
+                      <img 
+                        src={useCase.gallery[0]} 
+                        alt={useCase.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
 
-                    {/* Gallery indicator */}
-                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
-                      <Image className="w-3 h-3 text-navy" />
-                      <span className="text-xs font-medium text-navy">{useCase.gallery.length}</span>
+                      {/* Gallery indicator */}
+                      <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
+                        <Image className="w-3 h-3 text-navy" />
+                        <span className="text-xs font-medium text-navy">{useCase.gallery.length}</span>
+                      </div>
                     </div>
-                  </div>
+                  )}
+
 
                   {/* Client details below the photo */}
                   <div className="p-5 flex items-start gap-3">
@@ -505,24 +471,24 @@ const UseCases = () => {
                 </button>
                 
                 {/* Gallery */}
-                <div className="grid grid-cols-4 gap-1 h-64">
-                  {selectedCase.gallery.map((img, i) => (
-                    <div 
-                      key={i} 
-                      className={`relative overflow-hidden cursor-pointer ${i === 0 ? 'col-span-2 row-span-2' : ''}`}
-                      onClick={() => setSelectedImage(img)}
-                    >
-                      <img 
-                        src={img} 
-                        alt={`Gallery ${i + 1}`}
-                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                      />
-                      {i === 0 && (
-                        <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
-                      )}
-                    </div>
-                  ))}
-                </div>
+                {selectedCase.gallery.length > 0 && (
+                  <div className={`grid gap-1 h-64 ${selectedCase.gallery.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
+                    {selectedCase.gallery.map((img, i) => (
+                      <div 
+                        key={i} 
+                        className="relative overflow-hidden cursor-pointer"
+                        onClick={() => setSelectedImage(img)}
+                      >
+                        <img 
+                          src={img} 
+                          alt={`${selectedCase.title} project photo ${i + 1}`}
+                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+
               </div>
               
               {/* Modal Content */}
@@ -656,11 +622,10 @@ const UseCases = () => {
                 </p>
                 
                 <div className="flex items-center gap-4">
-                  <img 
-                    src={testimonial.image}
-                    alt={testimonial.author}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
+                  <div className="w-12 h-12 rounded-full bg-sunshine/20 text-sunshine flex items-center justify-center font-display font-semibold">
+                    {testimonial.author.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+                  </div>
+
                   <div>
                     <p className="text-cream font-medium">{testimonial.author}</p>
                     <p className="text-cream/60 text-sm">{testimonial.role}</p>
