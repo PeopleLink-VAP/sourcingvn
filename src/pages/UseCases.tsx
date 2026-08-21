@@ -194,7 +194,7 @@ const useCases = [
           { label: "Booking Paths", value: "2" },
           { label: "Market", value: "Canada" }
         ],
-        gallery: [edgepointShot, asianCodingImage, diverseTeamMeeting, asianOfficeTeam],
+        gallery: [edgepointShot, edgepointSite, diverseTeamMeeting, asianOfficeTeam],
         testimonial: "The new site finally represents the company we've become, not the one we were ten years ago."
       },
       {
@@ -229,7 +229,7 @@ const useCases = [
           { label: "Integration", value: "Square" },
           { label: "Market", value: "USA" }
         ],
-        gallery: [soraShot, asianWomanProfessional, asianWomanLaptop, asianBusinessImage],
+        gallery: [soraStudio, soraShot, asianWomanProfessional, asianBusinessImage],
         testimonial: "People book before they even call us now. The site does the selling."
       },
       {
@@ -237,6 +237,7 @@ const useCases = [
         title: "Glory Nest",
         client: "Glorynest Villa, Hoi An, Vietnam",
         industry: "Hospitality",
+        logo: gloryLogo,
         challenge: "A two-bedroom villa in Hoi An competing on an OTA listing page, where the experience and the social impact story got flattened into a price and a photo grid.",
         solution: "A storytelling-led site that sells the stay, not just the room, with two clear booking routes: direct bank transfer for domestic guests and Airbnb for international guests.",
         result: "Direct bookings without service fees, plus the Airbnb safety net for international travellers.",
@@ -246,7 +247,7 @@ const useCases = [
           { label: "Location", value: "Hoi An" },
           { label: "Guest Types", value: "Local + Intl" }
         ],
-        gallery: [gloryShot, hoiAnLanterns, vietnamTeamImage, asianBusinessImage],
+        gallery: [gloryShot, gloryVilla, hoiAnLanterns, vietnamTeamImage],
         testimonial: "Guests tell us they booked because of the story, not the price."
       },
       {
@@ -263,7 +264,7 @@ const useCases = [
           { label: "Spreadsheets", value: "Retired" },
           { label: "Ticket Triage", value: "Live" }
         ],
-        gallery: [portalShot, asianWomanLaptop, diverseTeamMeeting, asianOfficeTeam],
+        gallery: [portalShot, vaEvent, asianWomanLaptop, asianOfficeTeam],
         testimonial: "We stopped losing student issues in group chats. That alone changed how the team works."
       },
       {
@@ -280,7 +281,7 @@ const useCases = [
           { label: "Spreadsheets", value: "1 platform" },
           { label: "Users", value: "Buyers + Suppliers" }
         ],
-        gallery: [sourcingPlatformShot, garmentFactoryImage, vietnamWarehouseImage, asianCodingImage],
+        gallery: [sourcingPlatformShot, factorySourcing, vietnamWarehouseImage, garmentFactoryImage],
         testimonial: "We can answer 'who can make this, and where?' in minutes instead of days."
       }
     ]
