@@ -347,28 +347,6 @@ const UseCases = () => {
           </motion.div>
         </div>
         
-        {/* Floating images */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="hidden lg:block absolute right-12 top-1/2 -translate-y-1/2"
-        >
-          <div className="relative">
-            <img 
-              src={vietnamTeamImage} 
-              alt="Vietnam team" 
-              className="w-80 h-48 object-cover rounded-2xl shadow-xl"
-            />
-            <motion.img 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 4 }}
-              src={asianBusinessImage} 
-              alt="Business partnership" 
-              className="absolute -bottom-16 -left-20 w-48 h-36 object-cover rounded-xl shadow-lg border-4 border-white"
-            />
-          </div>
-        </motion.div>
       </section>
 
       {/* Use Cases by Category */}
