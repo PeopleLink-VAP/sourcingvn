@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Package, Users, Cpu, Star, Quote, ChevronRight, Image, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Import Vietnam/Asian-themed images
 import vietnamTeamImage from "@/assets/images/vietnam-team.jpg";
@@ -18,12 +18,24 @@ import asianCodingImage from "@/assets/images/asian-coding.jpg";
 import asianCollaborationImage from "@/assets/images/asian-collaboration.jpg";
 import diverseTeamMeeting from "@/assets/images/diverse-team-meeting.jpg";
 import asianWomanLaptop from "@/assets/images/asian-woman-laptop.jpg";
+import hoiAnLanterns from "@/assets/images/vn-hoi-an-lanterns.jpg";
+
+// Client project screenshots and logos
+import edgepointShot from "@/assets/cases/Edpoint_safety.png.asset.json";
+import edgepointLogo from "@/assets/cases/edpoint_logo.png.asset.json";
+import radiusShot from "@/assets/cases/radius_excavation.png.asset.json";
+import soraShot from "@/assets/cases/sora_nail.png.asset.json";
+import soraLogo from "@/assets/cases/sora_logo.png.asset.json";
+import gloryShot from "@/assets/cases/glorynest.png.asset.json";
+import portalShot from "@/assets/cases/teaching_portal.png.asset.json";
+import sourcingPlatformShot from "@/assets/cases/sourcing_supplier.png.asset.json";
 
 interface UseCase {
   id: string;
   title: string;
   client: string;
   industry: string;
+  logo?: string;
   challenge: string;
   solution: string;
   result: string;
@@ -31,6 +43,7 @@ interface UseCase {
   gallery: string[];
   testimonial: string;
 }
+
 
 const useCases = [
   {
