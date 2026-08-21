@@ -4,12 +4,14 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import edgepointImage from "@/assets/images/asian-office.jpg";
-import radiusImage from "@/assets/images/vietnam-warehouse.jpg";
-import soraImage from "@/assets/images/entrepreneur-woman.jpg";
-import gloryImage from "@/assets/images/vn-hoi-an-lanterns.jpg";
-import vaPortalImage from "@/assets/images/asian-woman-laptop.jpg";
-import sourcingPlatformImage from "@/assets/images/asian-coding.jpg";
+import edgepointShot from "@/assets/cases/Edpoint_safety.jpg";
+import edgepointLogo from "@/assets/cases/edpoint_logo.png";
+import radiusShot from "@/assets/cases/radius_excavation.jpg";
+import soraShot from "@/assets/cases/sora_nail.jpg";
+import soraLogo from "@/assets/cases/sora_logo.png";
+import gloryShot from "@/assets/cases/glorynest.jpg";
+import portalShot from "@/assets/cases/teaching_portal.jpg";
+import sourcingPlatformShot from "@/assets/cases/sourcing_supplier.jpg";
 
 type Project = {
   name: string;
@@ -17,6 +19,7 @@ type Project = {
   headline: string;
   description: string;
   image: string;
+  logo?: string;
   href: string;
 };
 
@@ -27,7 +30,8 @@ const projects: Project[] = [
     headline: "When your website no longer represents your business.",
     description:
       "Modernized an established safety company's website and content, creating a stronger digital foundation for its next stage of growth.",
-    image: edgepointImage,
+    image: edgepointShot,
+    logo: edgepointLogo,
     href: "/use-cases#edgepoint-safety",
   },
   {
@@ -36,7 +40,7 @@ const projects: Project[] = [
     headline: "Four companies. One digital ecosystem.",
     description:
       "Connected the digital presence of multiple businesses across construction, disposal and mechanical services while keeping each company distinct.",
-    image: radiusImage,
+    image: radiusShot,
     href: "/use-cases#radius-ecosystem",
   },
   {
@@ -45,7 +49,8 @@ const projects: Project[] = [
     headline: "From “I like it” to “I'll book it.”",
     description:
       "A distinctive beauty website designed around the customer journey and connected directly to the booking experience.",
-    image: soraImage,
+    image: soraShot,
+    logo: soraLogo,
     href: "/use-cases#sora-nail",
   },
   {
@@ -54,7 +59,7 @@ const projects: Project[] = [
     headline: "Selling the feeling, not just the room.",
     description:
       "A storytelling-led website combining the homestay experience, direct booking and Airbnb.",
-    image: gloryImage,
+    image: gloryShot,
     href: "/use-cases#glory-nest",
   },
   {
@@ -63,7 +68,7 @@ const projects: Project[] = [
     headline: "When 200+ students become too much for spreadsheets.",
     description:
       "A learning and operations portal connecting students, trainers, courses, schedules, content and support.",
-    image: vaPortalImage,
+    image: portalShot,
     href: "/use-cases#va-training-portal",
   },
   {
@@ -72,7 +77,7 @@ const projects: Project[] = [
     headline: "What if sourcing didn't live in 20 different spreadsheets?",
     description:
       "A platform connecting international buyers, Vietnamese suppliers and the sourcing team in one structured workflow.",
-    image: sourcingPlatformImage,
+    image: sourcingPlatformShot,
     href: "/use-cases#sourcing-platform",
   },
 ];
@@ -151,9 +156,18 @@ export const SelectedProjects = () => {
                         src={project.image}
                         alt={`${project.name} project preview`}
                         loading="lazy"
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 to-transparent" />
+                      {project.logo && (
+                        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2">
+                          <img
+                            src={project.logo}
+                            alt={`${project.name} logo`}
+                            className="h-6 w-auto max-w-[120px] object-contain"
+                          />
+                        </div>
+                      )}
                     </div>
 
                     <div className="p-8 lg:p-12 flex flex-col justify-center">

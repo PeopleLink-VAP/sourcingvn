@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Package, Users, Cpu, Star, Quote, ChevronRight, Image, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Import Vietnam/Asian-themed images
 import vietnamTeamImage from "@/assets/images/vietnam-team.jpg";
@@ -18,12 +18,24 @@ import asianCodingImage from "@/assets/images/asian-coding.jpg";
 import asianCollaborationImage from "@/assets/images/asian-collaboration.jpg";
 import diverseTeamMeeting from "@/assets/images/diverse-team-meeting.jpg";
 import asianWomanLaptop from "@/assets/images/asian-woman-laptop.jpg";
+import hoiAnLanterns from "@/assets/images/vn-hoi-an-lanterns.jpg";
+
+// Client project screenshots and logos
+import edgepointShot from "@/assets/cases/Edpoint_safety.jpg";
+import edgepointLogo from "@/assets/cases/edpoint_logo.png";
+import radiusShot from "@/assets/cases/radius_excavation.jpg";
+import soraShot from "@/assets/cases/sora_nail.jpg";
+import soraLogo from "@/assets/cases/sora_logo.png";
+import gloryShot from "@/assets/cases/glorynest.jpg";
+import portalShot from "@/assets/cases/teaching_portal.jpg";
+import sourcingPlatformShot from "@/assets/cases/sourcing_supplier.jpg";
 
 interface UseCase {
   id: string;
   title: string;
   client: string;
   industry: string;
+  logo?: string;
   challenge: string;
   solution: string;
   result: string;
@@ -31,6 +43,7 @@ interface UseCase {
   gallery: string[];
   testimonial: string;
 }
+
 
 const useCases = [
   {
@@ -158,60 +171,114 @@ const useCases = [
     icon: Cpu,
     color: "from-navy to-navy-light",
     link: "/digital-systems",
-    description: "Build websites, chatbots, CRM systems, and internal tools that actually work.",
+    description: "Websites, platforms and internal systems built around how businesses actually work.",
     cases: [
       {
-        id: "ecommerce-automation",
-        title: "E-commerce Automation",
-        client: "Robert C., Multi-brand Owner",
-        industry: "E-commerce",
-        challenge: "Manual order processing causing delays and errors across 4 Shopify stores. Staff spending 20+ hours/week on data entry.",
-        solution: "Built custom automation connecting Shopify, inventory system, shipping platforms, and accounting software. Real-time sync with error handling and alerts.",
-        result: "Processing time reduced by 85%, zero manual errors. Staff now focuses on customer service and growth.",
+        id: "edgepoint-safety",
+        title: "Edgepoint Safety",
+        client: "Edgepoint Safety & Access, Canada",
+        industry: "Safety & Access",
+        logo: edgepointLogo,
+        challenge: "An established safety and access company had outgrown its website. The site no longer reflected the depth of its training programs, field expertise or the scale of the business.",
+        solution: "We rebuilt the site around how customers actually buy: clear service and training paths, a structured content system for courses and certifications, plus quote and booking entry points on every page.",
+        result: "A modern digital foundation that finally matches the business, with clearer paths to quotes and training bookings.",
         metrics: [
-          { label: "Time Saved", value: "85%" },
-          { label: "Manual Errors", value: "Zero" },
-          { label: "Platforms Connected", value: "4" },
-          { label: "ROI", value: "3 weeks" }
+          { label: "Service Lines", value: "4" },
+          { label: "Content Rebuilt", value: "100%" },
+          { label: "Booking Paths", value: "2" },
+          { label: "Market", value: "Canada" }
         ],
-        gallery: [asianCodingImage, vietnamTeamImage, asianOfficeTeam, asianCollaborationImage],
-        testimonial: "The automation paid for itself in 3 weeks. We went from drowning in spreadsheets to running on autopilot."
+        gallery: [edgepointShot, asianCodingImage, diverseTeamMeeting, asianOfficeTeam],
+        testimonial: "The new site finally represents the company we've become, not the one we were ten years ago."
       },
       {
-        id: "ai-chatbot",
-        title: "AI Chatbot Implementation",
-        client: "Lisa H., Hotel Chain Manager",
+        id: "radius-ecosystem",
+        title: "Radius Ecosystem",
+        client: "Radius Group, Canada",
+        industry: "Construction & Industrial Services",
+        challenge: "Four connected companies across excavation, construction, disposal and mechanical services were competing with each other online instead of working as one group.",
+        solution: "We designed a shared digital ecosystem: one network model with an interactive hub linking every discipline, while each company keeps its own identity, content and audience.",
+        result: "One accountable brand story across six disciplines, with cross-referrals now built into the navigation.",
+        metrics: [
+          { label: "Companies", value: "4" },
+          { label: "Disciplines", value: "6" },
+          { label: "Shared System", value: "1" },
+          { label: "Market", value: "Canada" }
+        ],
+        gallery: [radiusShot, vietnamWarehouseImage, asianTeamWork, asianCollaborationImage],
+        testimonial: "Clients used to see four separate contractors. Now they see one crew that can handle the whole site."
+      },
+      {
+        id: "sora-nail",
+        title: "Sora Nail",
+        client: "Sora Nail Studio, USA",
+        industry: "Beauty & Wellness",
+        logo: soraLogo,
+        challenge: "A beautiful studio with no digital presence to match. Visitors liked the look but had no obvious way to move from browsing to booking.",
+        solution: "An editorial, image-led site built around the customer journey, with the Square booking flow connected directly into every section instead of buried in a contact page.",
+        result: "From \"I like it\" to \"I'll book it\": booking is now one tap away from anywhere on the site.",
+        metrics: [
+          { label: "Booking Taps", value: "1" },
+          { label: "Pages", value: "Single flow" },
+          { label: "Integration", value: "Square" },
+          { label: "Market", value: "USA" }
+        ],
+        gallery: [soraShot, asianWomanProfessional, asianWomanLaptop, asianBusinessImage],
+        testimonial: "People book before they even call us now. The site does the selling."
+      },
+      {
+        id: "glory-nest",
+        title: "Glory Nest",
+        client: "Glorynest Villa, Hoi An, Vietnam",
         industry: "Hospitality",
-        challenge: "High volume of repetitive guest inquiries overwhelming staff. 60% of calls were basic questions about check-in times and amenities.",
-        solution: "Implemented AI chatbot with multilingual support (English, Vietnamese, Chinese, Korean) and booking integration. Human handoff for complex issues.",
-        result: "Handled 70% of inquiries automatically. Staff freed for VIP guests and complex requests.",
+        challenge: "A two-bedroom villa in Hoi An competing on an OTA listing page, where the experience and the social impact story got flattened into a price and a photo grid.",
+        solution: "A storytelling-led site that sells the stay, not just the room, with two clear booking routes: direct bank transfer for domestic guests and Airbnb for international guests.",
+        result: "Direct bookings without service fees, plus the Airbnb safety net for international travellers.",
         metrics: [
-          { label: "Inquiries Automated", value: "70%" },
-          { label: "Languages", value: "4" },
-          { label: "Response Time", value: "< 5 sec" },
-          { label: "Guest Satisfaction", value: "+25%" }
+          { label: "Booking Routes", value: "2" },
+          { label: "Service Fees", value: "Zero (direct)" },
+          { label: "Location", value: "Hoi An" },
+          { label: "Guest Types", value: "Local + Intl" }
         ],
-        gallery: [asianOfficeTeam, asianCodingImage, diverseTeamMeeting, asianBusinessImage],
-        testimonial: "Our guests love the instant responses. Staff love that they can focus on what matters. Win-win."
+        gallery: [gloryShot, hoiAnLanterns, vietnamTeamImage, asianBusinessImage],
+        testimonial: "Guests tell us they booked because of the story, not the price."
       },
       {
-        id: "custom-crm",
-        title: "Custom CRM Build",
-        client: "Mark S., B2B Services",
-        industry: "Professional Services",
-        challenge: "Outgrew spreadsheet-based client tracking. Off-the-shelf CRMs were too complex or didn't fit their sales process.",
-        solution: "Built lean CRM tailored to their exact workflow: lead intake, proposal tracking, project management, and invoicing all in one place.",
-        result: "Sales cycle shortened by 30%. Team adoption was 100% (vs 40% with previous CRM).",
+        id: "va-training-portal",
+        title: "Virtual Assistant Training Portal",
+        client: "Internal · VA Academy, Vietnam",
+        industry: "Education & Operations",
+        challenge: "More than 200 students, trainers, courses, schedules and support tickets were being run out of spreadsheets and chat groups. Nothing was traceable.",
+        solution: "A learning and operations portal with a trainer center: ticket triage by urgency, course and cohort filters, assignment feedback tracking and clear ownership for every issue.",
+        result: "Every request now has an owner and a status. Escalations surface before students complain.",
         metrics: [
-          { label: "Sales Cycle", value: "-30%" },
-          { label: "Team Adoption", value: "100%" },
-          { label: "Features", value: "Exactly what needed" },
-          { label: "Monthly Cost", value: "$0 (self-hosted)" }
+          { label: "Students", value: "200+" },
+          { label: "Roles", value: "4" },
+          { label: "Spreadsheets", value: "Retired" },
+          { label: "Ticket Triage", value: "Live" }
         ],
-        gallery: [asianCodingImage, diverseTeamMeeting, vietnamTeamImage, asianWomanProfessional],
-        testimonial: "Finally a CRM my team actually uses. No more 'I forgot to update the spreadsheet' excuses."
+        gallery: [portalShot, asianWomanLaptop, diverseTeamMeeting, asianOfficeTeam],
+        testimonial: "We stopped losing student issues in group chats. That alone changed how the team works."
+      },
+      {
+        id: "sourcing-platform",
+        title: "Sourcing Platform",
+        client: "Sourcing.vn · Vietnam & International",
+        industry: "Sourcing & Supply Chain",
+        challenge: "Sourcing work lived across twenty different spreadsheets: supplier lists, industry coverage, quotes and buyer requests all disconnected from each other.",
+        solution: "A platform connecting international buyers, Vietnamese suppliers and our sourcing team in one workflow, with a live suppliers map showing coverage by province and industry.",
+        result: "Supplier coverage is now visible at a glance across 20 industries and every province we work in.",
+        metrics: [
+          { label: "Industries", value: "20" },
+          { label: "Coverage", value: "Nationwide" },
+          { label: "Spreadsheets", value: "1 platform" },
+          { label: "Users", value: "Buyers + Suppliers" }
+        ],
+        gallery: [sourcingPlatformShot, garmentFactoryImage, vietnamWarehouseImage, asianCodingImage],
+        testimonial: "We can answer 'who can make this, and where?' in minutes instead of days."
       }
     ]
+
   }
 ];
 
@@ -242,6 +309,19 @@ const testimonials = [
 const UseCases = () => {
   const [selectedCase, setSelectedCase] = useState<UseCase | null>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  // Open the matching case study when arriving via /use-cases#<case-id>
+  useEffect(() => {
+    const id = window.location.hash.replace("#", "");
+    if (!id) return;
+    const match = useCases.flatMap((c) => c.cases).find((c) => c.id === id);
+    if (!match) return;
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "center" });
+    const timer = window.setTimeout(() => setSelectedCase(match), 400);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+
 
   return (
     <div className="min-h-screen bg-cream">
@@ -335,12 +415,13 @@ const UseCases = () => {
               {category.cases.map((useCase, index) => (
                 <motion.div
                   key={useCase.id}
+                  id={useCase.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   onClick={() => setSelectedCase(useCase)}
-                  className="bg-white rounded-2xl shadow-sm border border-border overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                  className="scroll-mt-32 bg-white rounded-2xl shadow-sm border border-border overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer"
                 >
                   {/* Image with gallery indicator */}
                   <div className="relative h-48 overflow-hidden">
@@ -356,6 +437,12 @@ const UseCases = () => {
                       <Image className="w-3 h-3 text-navy" />
                       <span className="text-xs font-medium text-navy">{useCase.gallery.length}</span>
                     </div>
+
+                    {useCase.logo && (
+                      <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2">
+                        <img src={useCase.logo} alt={`${useCase.title} logo`} className="h-6 w-auto max-w-[110px] object-contain" />
+                      </div>
+                    )}
                     
                     <div className="absolute bottom-4 left-4 right-4">
                       <span className="text-xs font-semibold uppercase tracking-wider text-white/70">{useCase.industry}</span>
@@ -363,6 +450,7 @@ const UseCases = () => {
                       <p className="text-white/80 text-sm">{useCase.client}</p>
                     </div>
                   </div>
+
                   
                   {/* Quick stats */}
                   <div className="p-4 grid grid-cols-2 gap-2">
@@ -437,13 +525,21 @@ const UseCases = () => {
               
               {/* Modal Content */}
               <div className="p-8">
-                <div className="flex items-start justify-between mb-6">
+                <div className="flex items-start justify-between gap-6 mb-6">
                   <div>
                     <span className="text-xs font-semibold uppercase tracking-wider text-teal">{selectedCase.industry}</span>
                     <h2 className="headline-lg text-navy">{selectedCase.title}</h2>
                     <p className="text-cool-gray">{selectedCase.client}</p>
                   </div>
+                  {selectedCase.logo && (
+                    <img
+                      src={selectedCase.logo}
+                      alt={`${selectedCase.title} logo`}
+                      className="h-12 w-auto max-w-[160px] object-contain shrink-0"
+                    />
+                  )}
                 </div>
+
                 
                 {/* Metrics */}
                 <div className="grid grid-cols-4 gap-4 mb-8">
