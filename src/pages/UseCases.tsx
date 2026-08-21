@@ -6,19 +6,7 @@ import { ArrowRight, Package, Users, Cpu, Star, Quote, ChevronRight, Image, X } 
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
-// Import Vietnam/Asian-themed images
-import vietnamTeamImage from "@/assets/images/vietnam-team.jpg";
-import garmentFactoryImage from "@/assets/images/garment-factory-asia.jpg";
-import asianWomanProfessional from "@/assets/images/asian-woman-professional.jpg";
-import asianOfficeTeam from "@/assets/images/asian-office-team.jpg";
-import asianBusinessImage from "@/assets/images/asian-business.jpg";
-import vietnamWarehouseImage from "@/assets/images/vietnam-warehouse.jpg";
-import asianTeamWork from "@/assets/images/asian-team-work.jpg";
-import asianCodingImage from "@/assets/images/asian-coding.jpg";
-import asianCollaborationImage from "@/assets/images/asian-collaboration.jpg";
-import diverseTeamMeeting from "@/assets/images/diverse-team-meeting.jpg";
-import asianWomanLaptop from "@/assets/images/asian-woman-laptop.jpg";
-import hoiAnLanterns from "@/assets/images/vn-hoi-an-lanterns.jpg";
+// Real client project photos only (no stock or AI imagery)
 
 // Client project screenshots and logos
 import edgepointShot from "@/assets/cases/Edpoint_safety.jpg";
