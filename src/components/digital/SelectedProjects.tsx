@@ -122,15 +122,17 @@ export const SelectedProjects = () => {
 
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex gap-6">
-            {projects.map((project) => (
+            {projects.map((project, i) => (
               <div
                 key={project.name}
-                className="min-w-0 shrink-0 grow-0 basis-[85%] sm:basis-[48%] lg:basis-[32%]"
+                className="min-w-0 shrink-0 grow-0 basis-[85%] sm:basis-[48%] lg:basis-[32%] animate-fade-in"
+                style={{ animationDelay: `${i * 90}ms` }}
               >
                 <Link
                   to={project.href}
-                  className="group flex h-full flex-col rounded-xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-colors"
+                  className="group flex h-full flex-col rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:-translate-y-1"
                 >
+
                   <div className="relative aspect-[16/10] overflow-hidden bg-secondary">
                     <img
                       src={project.image}
