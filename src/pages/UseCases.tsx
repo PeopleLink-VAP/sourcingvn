@@ -437,37 +437,30 @@ const UseCases = () => {
                       alt={useCase.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
-                    
+
                     {/* Gallery indicator */}
                     <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
                       <Image className="w-3 h-3 text-navy" />
                       <span className="text-xs font-medium text-navy">{useCase.gallery.length}</span>
                     </div>
+                  </div>
 
+                  {/* Client details below the photo */}
+                  <div className="p-5 flex items-start gap-3">
                     {useCase.logo && (
-                      <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2">
-                        <img src={useCase.logo} alt={`${useCase.title} logo`} className="h-6 w-auto max-w-[110px] object-contain" />
-                      </div>
+                      <img
+                        src={useCase.logo}
+                        alt={`${useCase.title} logo`}
+                        className="h-8 w-auto max-w-[80px] object-contain shrink-0 mt-1"
+                      />
                     )}
-                    
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-white/70">{useCase.industry}</span>
-                      <h3 className="text-white font-display font-semibold text-lg">{useCase.title}</h3>
-                      <p className="text-white/80 text-sm">{useCase.client}</p>
+                    <div>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-teal">{useCase.industry}</span>
+                      <h3 className="text-navy font-display font-semibold text-lg leading-snug">{useCase.title}</h3>
+                      <p className="text-cool-gray text-sm">{useCase.client}</p>
                     </div>
                   </div>
 
-                  
-                  {/* Quick stats */}
-                  <div className="p-4 grid grid-cols-2 gap-2">
-                    {useCase.metrics.slice(0, 2).map((metric, i) => (
-                      <div key={i} className="text-center p-2 bg-cream/50 rounded-lg">
-                        <div className="text-lg font-display font-bold text-navy">{metric.value}</div>
-                        <div className="text-xs text-cool-gray">{metric.label}</div>
-                      </div>
-                    ))}
-                  </div>
                   
                   {/* Click to expand */}
                   <div className="px-4 pb-4">
