@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Bot, FileText, GraduationCap, LayoutDashboard, MessageSquare, Receipt, Users } from "lucide-react";
+import { Bot, FileText, Globe, GraduationCap, LayoutDashboard, MessageSquare, Receipt, Users } from "lucide-react";
 import { DashboardPreview } from "./DashboardPreview";
 import { ChatDemo } from "./ChatDemo";
 import { LmsStudentView } from "./LmsDemo";
+import { WebsiteDemo } from "./WebsiteDemo";
+
 
 const PortalDemo = () => (
   <div className="rounded-xl border border-border bg-card shadow-sm overflow-hidden">
