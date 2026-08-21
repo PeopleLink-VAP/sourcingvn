@@ -90,13 +90,15 @@ export const SelectedProjects = () => {
     <section className="section-padding bg-secondary/40 overflow-hidden">
       <div className="container-editorial">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
-          <div className="max-w-xl">
+          <div className="max-w-xl animate-fade-in">
             <p className="text-xs font-medium uppercase tracking-widest text-primary mb-4">Use Cases</p>
-            <h2 className="headline-lg text-foreground mb-3">Built for different problems.</h2>
+            <h2 className="headline-lg text-foreground mb-3">What we've built for our customers.</h2>
             <p className="body-md text-muted-foreground">
-              Every business needs something different. Here are a few examples.
+              Real websites, portals and systems we designed and built for real businesses. Every
+              business needed something different.
             </p>
           </div>
+
 
           <div className="hidden md:flex items-center gap-3">
             <button
