@@ -357,6 +357,8 @@ const DigitalSystems = () => {
         </div>
       </section>
 
+      <SelectedProjects />
+
       {/* Services Grid */}
       <section className="section-padding bg-navy-deep relative">
         <div className="container-editorial">
