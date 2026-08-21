@@ -310,6 +310,19 @@ const UseCases = () => {
   const [selectedCase, setSelectedCase] = useState<UseCase | null>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
+  // Open the matching case study when arriving via /use-cases#<case-id>
+  useEffect(() => {
+    const id = window.location.hash.replace("#", "");
+    if (!id) return;
+    const match = useCases.flatMap((c) => c.cases).find((c) => c.id === id);
+    if (!match) return;
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "center" });
+    const timer = window.setTimeout(() => setSelectedCase(match), 400);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+
+
   return (
     <div className="min-h-screen bg-cream">
       <Navigation />
