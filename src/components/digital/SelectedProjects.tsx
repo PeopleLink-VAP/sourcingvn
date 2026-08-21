@@ -90,13 +90,15 @@ export const SelectedProjects = () => {
     <section className="section-padding bg-secondary/40 overflow-hidden">
       <div className="container-editorial">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
-          <div className="max-w-xl">
+          <div className="max-w-xl animate-fade-in">
             <p className="text-xs font-medium uppercase tracking-widest text-primary mb-4">Use Cases</p>
-            <h2 className="headline-lg text-foreground mb-3">Built for different problems.</h2>
+            <h2 className="headline-lg text-foreground mb-3">What we've built for our customers.</h2>
             <p className="body-md text-muted-foreground">
-              Every business needs something different. Here are a few examples.
+              Real websites, portals and systems we designed and built for real businesses. Every
+              business needed something different.
             </p>
           </div>
+
 
           <div className="hidden md:flex items-center gap-3">
             <button
@@ -120,15 +122,17 @@ export const SelectedProjects = () => {
 
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex gap-6">
-            {projects.map((project) => (
+            {projects.map((project, i) => (
               <div
                 key={project.name}
-                className="min-w-0 shrink-0 grow-0 basis-[85%] sm:basis-[48%] lg:basis-[32%]"
+                className="min-w-0 shrink-0 grow-0 basis-[85%] sm:basis-[48%] lg:basis-[32%] animate-fade-in"
+                style={{ animationDelay: `${i * 90}ms` }}
               >
                 <Link
                   to={project.href}
-                  className="group flex h-full flex-col rounded-xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-colors"
+                  className="group flex h-full flex-col rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:-translate-y-1"
                 >
+
                   <div className="relative aspect-[16/10] overflow-hidden bg-secondary">
                     <img
                       src={project.image}

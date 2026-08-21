@@ -38,7 +38,7 @@ const DigitalSystems = () => {
       <section className="pt-32 pb-16 lg:pb-24 bg-background border-b border-border">
         <div className="container-editorial">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
+            <div className="animate-fade-in">
               <p className="text-xs font-medium uppercase tracking-widest text-primary mb-5">
                 Digital &amp; Systems
               </p>
@@ -46,27 +46,30 @@ const DigitalSystems = () => {
                 Your business doesn't need more tools. It needs a better system.
               </h1>
               <p className="body-lg text-muted-foreground max-w-xl mb-9">
-                We design and build websites, portals, dashboards, LMS platforms and business
-                systems around the way your team actually works.
+                We design and build websites, landing pages, portals, dashboards, LMS platforms and
+                business systems around the way your team actually works.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button asChild size="lg">
+                <Button asChild size="lg" className="hover-scale">
                   <Link to="/start-project">
                     Talk to us about your project
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg">
+                <Button asChild variant="outline" size="lg" className="hover-scale">
                   <a href="#examples">
                     See what we've built
-                    <ArrowDown className="w-4 h-4 ml-2" />
+                    <ArrowDown className="w-4 h-4 ml-2 animate-bounce" />
                   </a>
                 </Button>
               </div>
             </div>
 
-            <DashboardPreview />
+            <div className="animate-scale-in">
+              <DashboardPreview />
+            </div>
           </div>
+
         </div>
       </section>
 
@@ -148,11 +151,16 @@ const DigitalSystems = () => {
             <h2 className="headline-lg text-foreground">Three steps, no mystery.</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {steps.map((step) => (
-              <div key={step.title} className="rounded-xl border border-border bg-card p-7">
+            {steps.map((step, i) => (
+              <div
+                key={step.title}
+                className="rounded-xl border border-border bg-card p-7 animate-fade-in transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/40"
+                style={{ animationDelay: `${i * 120}ms` }}
+              >
                 <span className="inline-flex w-9 h-9 items-center justify-center rounded-full border border-primary/30 text-primary font-display font-semibold mb-5">
                   {step.number}
                 </span>
+
                 <h3 className="text-lg font-display font-semibold text-foreground mb-2">
                   {step.title}
                 </h3>
