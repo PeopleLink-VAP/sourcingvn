@@ -62,7 +62,7 @@ const useCases = [
           { label: "Quality Pass Rate", value: "98%" },
           { label: "Time to Market", value: "12 weeks" }
         ],
-        gallery: [garmentFactoryImage, vietnamWarehouseImage, asianTeamWork, asianBusinessImage],
+        gallery: [],
         testimonial: "Sourcing.vn didn't just find us a factory. They found us a partner. The quality exceeded our expectations."
       },
       {
@@ -79,7 +79,7 @@ const useCases = [
           { label: "New Suppliers", value: "2" },
           { label: "Shipping Savings", value: "18%" }
         ],
-        gallery: [vietnamWarehouseImage, garmentFactoryImage, vietnamTeamImage, asianOfficeTeam],
+        gallery: [],
         testimonial: "They saved our holiday season. Now we have supply chain redundancy we never had before."
       },
       {
@@ -96,7 +96,7 @@ const useCases = [
           { label: "Cost Reduction", value: "22%" },
           { label: "Current Scale", value: "10K/mo" }
         ],
-        gallery: [asianCodingImage, asianTeamWork, garmentFactoryImage, vietnamWarehouseImage],
+        gallery: [],
         testimonial: "The technical expertise was unexpected. They understood our specs and caught issues before they became problems."
       }
     ]
@@ -122,7 +122,7 @@ const useCases = [
           { label: "Team Size", value: "5 people" },
           { label: "Retention", value: "18 months" }
         ],
-        gallery: [asianOfficeTeam, diverseTeamMeeting, vietnamTeamImage, asianCollaborationImage],
+        gallery: [],
         testimonial: "Our support team in Vietnam is now our competitive advantage. They're better than in-house teams I've managed."
       },
       {
@@ -139,7 +139,7 @@ const useCases = [
           { label: "Time to Productivity", value: "2 weeks" },
           { label: "Cost vs US Hire", value: "65% less" }
         ],
-        gallery: [asianWomanProfessional, asianWomanLaptop, diverseTeamMeeting, asianOfficeTeam],
+        gallery: [],
         testimonial: "Lan isn't just an assistant. She runs half my business. I couldn't operate without her now."
       },
       {
@@ -156,7 +156,7 @@ const useCases = [
           { label: "Team Size", value: "3 people" },
           { label: "Cost Savings", value: "70%" }
         ],
-        gallery: [asianCollaborationImage, vietnamTeamImage, asianCodingImage, asianWomanProfessional],
+        gallery: [],
         testimonial: "The quality and consistency is incredible. They understand our brand voice better than agencies we paid 10x more."
       }
     ]
@@ -183,7 +183,7 @@ const useCases = [
           { label: "Booking Paths", value: "2" },
           { label: "Market", value: "Canada" }
         ],
-        gallery: [edgepointShot, edgepointSite, diverseTeamMeeting, asianOfficeTeam],
+        gallery: [edgepointShot, edgepointSite],
         testimonial: "The new site finally represents the company we've become, not the one we were ten years ago."
       },
       {
@@ -201,7 +201,7 @@ const useCases = [
           { label: "Shared System", value: "1" },
           { label: "Market", value: "Canada" }
         ],
-        gallery: [radiusShot, vietnamWarehouseImage, asianTeamWork, asianCollaborationImage],
+        gallery: [radiusShot],
         testimonial: "Clients used to see four separate contractors. Now they see one crew that can handle the whole site."
       },
       {
@@ -219,7 +219,7 @@ const useCases = [
           { label: "Integration", value: "Square" },
           { label: "Market", value: "USA" }
         ],
-        gallery: [soraStudio, soraShot, asianWomanProfessional, asianBusinessImage],
+        gallery: [soraStudio, soraShot],
         testimonial: "People book before they even call us now. The site does the selling."
       },
       {
@@ -237,7 +237,7 @@ const useCases = [
           { label: "Location", value: "Hoi An" },
           { label: "Guest Types", value: "Local + Intl" }
         ],
-        gallery: [gloryShot, gloryVilla, hoiAnLanterns, vietnamTeamImage],
+        gallery: [gloryShot, gloryVilla],
         testimonial: "Guests tell us they booked because of the story, not the price."
       },
       {
@@ -254,7 +254,7 @@ const useCases = [
           { label: "Spreadsheets", value: "Retired" },
           { label: "Ticket Triage", value: "Live" }
         ],
-        gallery: [portalShot, vaEvent, asianWomanLaptop, asianOfficeTeam],
+        gallery: [portalShot, vaEvent],
         testimonial: "We stopped losing student issues in group chats. That alone changed how the team works."
       },
       {
@@ -271,7 +271,7 @@ const useCases = [
           { label: "Spreadsheets", value: "1 platform" },
           { label: "Users", value: "Buyers + Suppliers" }
         ],
-        gallery: [sourcingPlatformShot, factorySourcing, vietnamWarehouseImage, garmentFactoryImage],
+        gallery: [sourcingPlatformShot, factorySourcing],
         testimonial: "We can answer 'who can make this, and where?' in minutes instead of days."
       }
     ]
@@ -284,22 +284,19 @@ const testimonials = [
     quote: "Working with Sourcing.vn felt like having an insider on the ground. They didn't just find suppliers. They understood our brand and protected our margins.",
     author: "Amanda Chen",
     role: "Founder, Bloom Naturals",
-    rating: 5,
-    image: asianWomanProfessional
+    rating: 5
   },
   {
     quote: "Our VA has become indispensable. What started as inbox management evolved into full operations support. Sourcing.vn made the transition seamless.",
     author: "Marcus Johnson",
     role: "CEO, Digital First Agency",
-    rating: 5,
-    image: asianTeamWork
+    rating: 5
   },
   {
     quote: "The automation they built paid for itself in 3 weeks. We went from drowning in spreadsheets to having real-time visibility across all operations.",
     author: "Sophie Williams",
     role: "Operations Director, TrendCo",
-    rating: 5,
-    image: asianBusinessImage
+    rating: 5
   }
 ];
 
