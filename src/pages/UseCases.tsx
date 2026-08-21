@@ -619,11 +619,10 @@ const UseCases = () => {
                 </p>
                 
                 <div className="flex items-center gap-4">
-                  <img 
-                    src={testimonial.image}
-                    alt={testimonial.author}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
+                  <div className="w-12 h-12 rounded-full bg-sunshine/20 text-sunshine flex items-center justify-center font-display font-semibold">
+                    {testimonial.author.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+                  </div>
+
                   <div>
                     <p className="text-cream font-medium">{testimonial.author}</p>
                     <p className="text-cream/60 text-sm">{testimonial.role}</p>
