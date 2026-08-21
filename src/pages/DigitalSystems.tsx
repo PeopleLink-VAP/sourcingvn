@@ -3,8 +3,6 @@ import { Footer } from "@/components/Footer";
 import { SelectedProjects } from "@/components/digital/SelectedProjects";
 import { SystemExamples } from "@/components/digital/SystemExamples";
 import { DashboardPreview } from "@/components/digital/DashboardPreview";
-import { ChatDemo } from "@/components/digital/ChatDemo";
-import { LmsStudentView, LmsTrainerView } from "@/components/digital/LmsDemo";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, ArrowRight } from "lucide-react";
