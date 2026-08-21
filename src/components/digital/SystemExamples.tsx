@@ -40,12 +40,20 @@ const PortalDemo = () => (
 
 const tabs = [
   {
+    id: "website",
+    label: "Website & Landing Page",
+    icon: Globe,
+    copy: "A fast, mobile-first website or a single focused landing page that turns visitors into enquiries.",
+    visual: <WebsiteDemo />,
+  },
+  {
     id: "portal",
     label: "Customer Portal",
     icon: Users,
     copy: "Customers log in, track orders, see invoices and talk to your team without email chaos.",
     visual: <PortalDemo />,
   },
+
   {
     id: "lms",
     label: "Learning Platform",
