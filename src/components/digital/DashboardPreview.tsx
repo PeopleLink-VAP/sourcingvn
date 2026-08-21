@@ -42,15 +42,14 @@ export const DashboardPreview = ({ compact = false }: { compact?: boolean }) => 
             </div>
             <div className="flex items-end gap-2 h-24">
               {[38, 52, 44, 61, 57, 72, 66, 84].map((height, i) => (
-                <div key={i} className="flex-1 rounded-t bg-primary/15 relative overflow-hidden">
-                  <div
-                    className="w-full rounded-t bg-primary/70 absolute bottom-0"
-                    style={{ height: `${height}%` }}
-                  />
-                  <div style={{ height: "6rem" }} />
-                </div>
+                <div
+                  key={i}
+                  className="flex-1 rounded-t bg-primary/60"
+                  style={{ height: `${height}%` }}
+                />
               ))}
             </div>
+
           </div>
 
           <div className="space-y-3">
