@@ -22,13 +22,19 @@ import hoiAnLanterns from "@/assets/images/vn-hoi-an-lanterns.jpg";
 
 // Client project screenshots and logos
 import edgepointShot from "@/assets/cases/Edpoint_safety.jpg";
+import edgepointSite from "@/assets/cases/edgepoint_site.jpg";
 import edgepointLogo from "@/assets/cases/edpoint_logo.png";
 import radiusShot from "@/assets/cases/radius_excavation.jpg";
 import soraShot from "@/assets/cases/sora_nail.jpg";
+import soraStudio from "@/assets/cases/sora_studio.jpg";
 import soraLogo from "@/assets/cases/sora_logo.png";
 import gloryShot from "@/assets/cases/glorynest.jpg";
+import gloryVilla from "@/assets/cases/glorynest_villa.jpg";
+import gloryLogo from "@/assets/cases/glorynest_logo.png";
 import portalShot from "@/assets/cases/teaching_portal.jpg";
+import vaEvent from "@/assets/cases/va_event.jpg";
 import sourcingPlatformShot from "@/assets/cases/sourcing_supplier.jpg";
+import factorySourcing from "@/assets/cases/factory_sourcing.jpg";
 
 interface UseCase {
   id: string;
@@ -188,7 +194,7 @@ const useCases = [
           { label: "Booking Paths", value: "2" },
           { label: "Market", value: "Canada" }
         ],
-        gallery: [edgepointShot, asianCodingImage, diverseTeamMeeting, asianOfficeTeam],
+        gallery: [edgepointShot, edgepointSite, diverseTeamMeeting, asianOfficeTeam],
         testimonial: "The new site finally represents the company we've become, not the one we were ten years ago."
       },
       {
@@ -223,7 +229,7 @@ const useCases = [
           { label: "Integration", value: "Square" },
           { label: "Market", value: "USA" }
         ],
-        gallery: [soraShot, asianWomanProfessional, asianWomanLaptop, asianBusinessImage],
+        gallery: [soraStudio, soraShot, asianWomanProfessional, asianBusinessImage],
         testimonial: "People book before they even call us now. The site does the selling."
       },
       {
@@ -231,6 +237,7 @@ const useCases = [
         title: "Glory Nest",
         client: "Glorynest Villa, Hoi An, Vietnam",
         industry: "Hospitality",
+        logo: gloryLogo,
         challenge: "A two-bedroom villa in Hoi An competing on an OTA listing page, where the experience and the social impact story got flattened into a price and a photo grid.",
         solution: "A storytelling-led site that sells the stay, not just the room, with two clear booking routes: direct bank transfer for domestic guests and Airbnb for international guests.",
         result: "Direct bookings without service fees, plus the Airbnb safety net for international travellers.",
@@ -240,7 +247,7 @@ const useCases = [
           { label: "Location", value: "Hoi An" },
           { label: "Guest Types", value: "Local + Intl" }
         ],
-        gallery: [gloryShot, hoiAnLanterns, vietnamTeamImage, asianBusinessImage],
+        gallery: [gloryShot, gloryVilla, hoiAnLanterns, vietnamTeamImage],
         testimonial: "Guests tell us they booked because of the story, not the price."
       },
       {
@@ -257,7 +264,7 @@ const useCases = [
           { label: "Spreadsheets", value: "Retired" },
           { label: "Ticket Triage", value: "Live" }
         ],
-        gallery: [portalShot, asianWomanLaptop, diverseTeamMeeting, asianOfficeTeam],
+        gallery: [portalShot, vaEvent, asianWomanLaptop, asianOfficeTeam],
         testimonial: "We stopped losing student issues in group chats. That alone changed how the team works."
       },
       {
@@ -274,7 +281,7 @@ const useCases = [
           { label: "Spreadsheets", value: "1 platform" },
           { label: "Users", value: "Buyers + Suppliers" }
         ],
-        gallery: [sourcingPlatformShot, garmentFactoryImage, vietnamWarehouseImage, asianCodingImage],
+        gallery: [sourcingPlatformShot, factorySourcing, vietnamWarehouseImage, garmentFactoryImage],
         testimonial: "We can answer 'who can make this, and where?' in minutes instead of days."
       }
     ]
@@ -430,37 +437,30 @@ const UseCases = () => {
                       alt={useCase.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy/70 to-transparent" />
-                    
+
                     {/* Gallery indicator */}
                     <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
                       <Image className="w-3 h-3 text-navy" />
                       <span className="text-xs font-medium text-navy">{useCase.gallery.length}</span>
                     </div>
+                  </div>
 
+                  {/* Client details below the photo */}
+                  <div className="p-5 flex items-start gap-3">
                     {useCase.logo && (
-                      <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2">
-                        <img src={useCase.logo} alt={`${useCase.title} logo`} className="h-6 w-auto max-w-[110px] object-contain" />
-                      </div>
+                      <img
+                        src={useCase.logo}
+                        alt={`${useCase.title} logo`}
+                        className="h-8 w-auto max-w-[80px] object-contain shrink-0 mt-1"
+                      />
                     )}
-                    
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-white/70">{useCase.industry}</span>
-                      <h3 className="text-white font-display font-semibold text-lg">{useCase.title}</h3>
-                      <p className="text-white/80 text-sm">{useCase.client}</p>
+                    <div>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-teal">{useCase.industry}</span>
+                      <h3 className="text-navy font-display font-semibold text-lg leading-snug">{useCase.title}</h3>
+                      <p className="text-cool-gray text-sm">{useCase.client}</p>
                     </div>
                   </div>
 
-                  
-                  {/* Quick stats */}
-                  <div className="p-4 grid grid-cols-2 gap-2">
-                    {useCase.metrics.slice(0, 2).map((metric, i) => (
-                      <div key={i} className="text-center p-2 bg-cream/50 rounded-lg">
-                        <div className="text-lg font-display font-bold text-navy">{metric.value}</div>
-                        <div className="text-xs text-cool-gray">{metric.label}</div>
-                      </div>
-                    ))}
-                  </div>
                   
                   {/* Click to expand */}
                   <div className="px-4 pb-4">
