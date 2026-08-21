@@ -35,7 +35,7 @@ export const ChatDemo = () => {
         </div>
       </div>
 
-      <div className="p-4 lg:p-5 space-y-3 min-h-[320px]">
+      <div className="p-4 lg:p-5 space-y-3 min-h-[240px]">
         {script.slice(0, visible).map((msg, i) => (
           <div key={i} className={`flex ${msg.from === "user" ? "justify-end" : "justify-start"}`}>
             <p

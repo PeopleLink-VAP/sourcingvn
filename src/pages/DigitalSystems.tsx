@@ -3,8 +3,6 @@ import { Footer } from "@/components/Footer";
 import { SelectedProjects } from "@/components/digital/SelectedProjects";
 import { SystemExamples } from "@/components/digital/SystemExamples";
 import { DashboardPreview } from "@/components/digital/DashboardPreview";
-import { ChatDemo } from "@/components/digital/ChatDemo";
-import { LmsStudentView, LmsTrainerView } from "@/components/digital/LmsDemo";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, ArrowRight } from "lucide-react";
@@ -78,65 +76,8 @@ const DigitalSystems = () => {
         <SystemExamples />
       </div>
 
-      {/* Chatbot */}
-      <section className="section-padding bg-secondary/40 border-y border-border">
-        <div className="container-editorial">
-          <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center">
-            <div className="max-w-lg">
-              <p className="text-xs font-medium uppercase tracking-widest text-primary mb-4">
-                AI Assistant
-              </p>
-              <h2 className="headline-lg text-foreground mb-5">
-                Not every customer question needs a human.
-              </h2>
-              <p className="body-lg text-muted-foreground">
-                An assistant trained on your business answers the repeat questions, qualifies the
-                lead, and passes real opportunities to your team with the context already gathered.
-              </p>
-            </div>
-            <ChatDemo />
-          </div>
-        </div>
-      </section>
 
-      {/* LMS */}
-      <section className="section-padding bg-background">
-        <div className="container-editorial">
-          <div className="max-w-2xl mb-10">
-            <p className="text-xs font-medium uppercase tracking-widest text-primary mb-4">
-              Learning Systems
-            </p>
-            <h2 className="headline-lg text-foreground mb-4">
-              From "Where's that lesson?" to one learning system.
-            </h2>
-            <p className="body-md text-muted-foreground">
-              Students get one place to learn. Trainers get the operational system behind it.
-            </p>
-          </div>
 
-          <div className="grid lg:grid-cols-[1.3fr_1fr] gap-6 items-start">
-            <LmsStudentView />
-            <LmsTrainerView />
-          </div>
-        </div>
-      </section>
-
-      {/* Dashboard */}
-      <section className="section-padding bg-secondary/40 border-y border-border">
-        <div className="container-editorial">
-          <div className="max-w-2xl mb-10">
-            <p className="text-xs font-medium uppercase tracking-widest text-primary mb-4">
-              Business Dashboard
-            </p>
-            <h2 className="headline-lg text-foreground mb-4">One place to see what matters.</h2>
-            <p className="body-md text-muted-foreground">
-              Revenue, active projects, tasks, customers, team activity and alerts, pulled together
-              from the tools you already use.
-            </p>
-          </div>
-          <DashboardPreview />
-        </div>
-      </section>
 
       {/* Use cases */}
       <SelectedProjects />
