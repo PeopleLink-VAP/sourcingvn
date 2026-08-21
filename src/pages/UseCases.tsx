@@ -396,19 +396,22 @@ const UseCases = () => {
                   className="scroll-mt-32 bg-white rounded-2xl shadow-sm border border-border overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer"
                 >
                   {/* Image with gallery indicator */}
-                  <div className="relative h-48 overflow-hidden">
-                    <img 
-                      src={useCase.gallery[0]} 
-                      alt={useCase.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                  {useCase.gallery.length > 0 && (
+                    <div className="relative h-48 overflow-hidden">
+                      <img 
+                        src={useCase.gallery[0]} 
+                        alt={useCase.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
 
-                    {/* Gallery indicator */}
-                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
-                      <Image className="w-3 h-3 text-navy" />
-                      <span className="text-xs font-medium text-navy">{useCase.gallery.length}</span>
+                      {/* Gallery indicator */}
+                      <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
+                        <Image className="w-3 h-3 text-navy" />
+                        <span className="text-xs font-medium text-navy">{useCase.gallery.length}</span>
+                      </div>
                     </div>
-                  </div>
+                  )}
+
 
                   {/* Client details below the photo */}
                   <div className="p-5 flex items-start gap-3">
