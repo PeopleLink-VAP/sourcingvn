@@ -471,24 +471,24 @@ const UseCases = () => {
                 </button>
                 
                 {/* Gallery */}
-                <div className="grid grid-cols-4 gap-1 h-64">
-                  {selectedCase.gallery.map((img, i) => (
-                    <div 
-                      key={i} 
-                      className={`relative overflow-hidden cursor-pointer ${i === 0 ? 'col-span-2 row-span-2' : ''}`}
-                      onClick={() => setSelectedImage(img)}
-                    >
-                      <img 
-                        src={img} 
-                        alt={`Gallery ${i + 1}`}
-                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                      />
-                      {i === 0 && (
-                        <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
-                      )}
-                    </div>
-                  ))}
-                </div>
+                {selectedCase.gallery.length > 0 && (
+                  <div className={`grid gap-1 h-64 ${selectedCase.gallery.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
+                    {selectedCase.gallery.map((img, i) => (
+                      <div 
+                        key={i} 
+                        className="relative overflow-hidden cursor-pointer"
+                        onClick={() => setSelectedImage(img)}
+                      >
+                        <img 
+                          src={img} 
+                          alt={`${selectedCase.title} project photo ${i + 1}`}
+                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+
               </div>
               
               {/* Modal Content */}
