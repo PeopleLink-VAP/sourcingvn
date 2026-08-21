@@ -402,12 +402,13 @@ const UseCases = () => {
               {category.cases.map((useCase, index) => (
                 <motion.div
                   key={useCase.id}
+                  id={useCase.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   onClick={() => setSelectedCase(useCase)}
-                  className="bg-white rounded-2xl shadow-sm border border-border overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                  className="scroll-mt-32 bg-white rounded-2xl shadow-sm border border-border overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer"
                 >
                   {/* Image with gallery indicator */}
                   <div className="relative h-48 overflow-hidden">
@@ -423,6 +424,12 @@ const UseCases = () => {
                       <Image className="w-3 h-3 text-navy" />
                       <span className="text-xs font-medium text-navy">{useCase.gallery.length}</span>
                     </div>
+
+                    {useCase.logo && (
+                      <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-2">
+                        <img src={useCase.logo} alt={`${useCase.title} logo`} className="h-6 w-auto max-w-[110px] object-contain" />
+                      </div>
+                    )}
                     
                     <div className="absolute bottom-4 left-4 right-4">
                       <span className="text-xs font-semibold uppercase tracking-wider text-white/70">{useCase.industry}</span>
@@ -430,6 +437,7 @@ const UseCases = () => {
                       <p className="text-white/80 text-sm">{useCase.client}</p>
                     </div>
                   </div>
+
                   
                   {/* Quick stats */}
                   <div className="p-4 grid grid-cols-2 gap-2">
