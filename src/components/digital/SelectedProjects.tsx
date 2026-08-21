@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import edgepointShot from "@/assets/cases/Edpoint_safety.png.asset.json";
-import edgepointLogo from "@/assets/cases/edpoint_logo.png.asset.json";
-import radiusShot from "@/assets/cases/radius_excavation.png.asset.json";
-import soraShot from "@/assets/cases/sora_nail.png.asset.json";
-import soraLogo from "@/assets/cases/sora_logo.png.asset.json";
-import gloryShot from "@/assets/cases/glorynest.png.asset.json";
-import portalShot from "@/assets/cases/teaching_portal.png.asset.json";
-import sourcingPlatformShot from "@/assets/cases/sourcing_supplier.png.asset.json";
+import edgepointShot from "@/assets/cases/Edpoint_safety.jpg";
+import edgepointLogo from "@/assets/cases/edpoint_logo.png";
+import radiusShot from "@/assets/cases/radius_excavation.jpg";
+import soraShot from "@/assets/cases/sora_nail.jpg";
+import soraLogo from "@/assets/cases/sora_logo.png";
+import gloryShot from "@/assets/cases/glorynest.jpg";
+import portalShot from "@/assets/cases/teaching_portal.jpg";
+import sourcingPlatformShot from "@/assets/cases/sourcing_supplier.jpg";
 
 type Project = {
   name: string;
@@ -30,8 +30,8 @@ const projects: Project[] = [
     headline: "When your website no longer represents your business.",
     description:
       "Modernized an established safety company's website and content, creating a stronger digital foundation for its next stage of growth.",
-    image: edgepointShot.url,
-    logo: edgepointLogo.url,
+    image: edgepointShot,
+    logo: edgepointLogo,
     href: "/use-cases#edgepoint-safety",
   },
   {
@@ -40,7 +40,7 @@ const projects: Project[] = [
     headline: "Four companies. One digital ecosystem.",
     description:
       "Connected the digital presence of multiple businesses across construction, disposal and mechanical services while keeping each company distinct.",
-    image: radiusShot.url,
+    image: radiusShot,
     href: "/use-cases#radius-ecosystem",
   },
   {
@@ -49,8 +49,8 @@ const projects: Project[] = [
     headline: "From “I like it” to “I'll book it.”",
     description:
       "A distinctive beauty website designed around the customer journey and connected directly to the booking experience.",
-    image: soraShot.url,
-    logo: soraLogo.url,
+    image: soraShot,
+    logo: soraLogo,
     href: "/use-cases#sora-nail",
   },
   {
@@ -59,7 +59,7 @@ const projects: Project[] = [
     headline: "Selling the feeling, not just the room.",
     description:
       "A storytelling-led website combining the homestay experience, direct booking and Airbnb.",
-    image: gloryShot.url,
+    image: gloryShot,
     href: "/use-cases#glory-nest",
   },
   {
@@ -68,7 +68,7 @@ const projects: Project[] = [
     headline: "When 200+ students become too much for spreadsheets.",
     description:
       "A learning and operations portal connecting students, trainers, courses, schedules, content and support.",
-    image: portalShot.url,
+    image: portalShot,
     href: "/use-cases#va-training-portal",
   },
   {
@@ -77,7 +77,7 @@ const projects: Project[] = [
     headline: "What if sourcing didn't live in 20 different spreadsheets?",
     description:
       "A platform connecting international buyers, Vietnamese suppliers and the sourcing team in one structured workflow.",
-    image: sourcingPlatformShot.url,
+    image: sourcingPlatformShot,
     href: "/use-cases#sourcing-platform",
   },
 ];

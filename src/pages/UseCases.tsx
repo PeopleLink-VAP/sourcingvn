@@ -21,14 +21,14 @@ import asianWomanLaptop from "@/assets/images/asian-woman-laptop.jpg";
 import hoiAnLanterns from "@/assets/images/vn-hoi-an-lanterns.jpg";
 
 // Client project screenshots and logos
-import edgepointShot from "@/assets/cases/Edpoint_safety.png.asset.json";
-import edgepointLogo from "@/assets/cases/edpoint_logo.png.asset.json";
-import radiusShot from "@/assets/cases/radius_excavation.png.asset.json";
-import soraShot from "@/assets/cases/sora_nail.png.asset.json";
-import soraLogo from "@/assets/cases/sora_logo.png.asset.json";
-import gloryShot from "@/assets/cases/glorynest.png.asset.json";
-import portalShot from "@/assets/cases/teaching_portal.png.asset.json";
-import sourcingPlatformShot from "@/assets/cases/sourcing_supplier.png.asset.json";
+import edgepointShot from "@/assets/cases/Edpoint_safety.jpg";
+import edgepointLogo from "@/assets/cases/edpoint_logo.png";
+import radiusShot from "@/assets/cases/radius_excavation.jpg";
+import soraShot from "@/assets/cases/sora_nail.jpg";
+import soraLogo from "@/assets/cases/sora_logo.png";
+import gloryShot from "@/assets/cases/glorynest.jpg";
+import portalShot from "@/assets/cases/teaching_portal.jpg";
+import sourcingPlatformShot from "@/assets/cases/sourcing_supplier.jpg";
 
 interface UseCase {
   id: string;
@@ -178,7 +178,7 @@ const useCases = [
         title: "Edgepoint Safety",
         client: "Edgepoint Safety & Access, Canada",
         industry: "Safety & Access",
-        logo: edgepointLogo.url,
+        logo: edgepointLogo,
         challenge: "An established safety and access company had outgrown its website. The site no longer reflected the depth of its training programs, field expertise or the scale of the business.",
         solution: "We rebuilt the site around how customers actually buy: clear service and training paths, a structured content system for courses and certifications, plus quote and booking entry points on every page.",
         result: "A modern digital foundation that finally matches the business, with clearer paths to quotes and training bookings.",
@@ -188,7 +188,7 @@ const useCases = [
           { label: "Booking Paths", value: "2" },
           { label: "Market", value: "Canada" }
         ],
-        gallery: [edgepointShot.url, asianCodingImage, diverseTeamMeeting, asianOfficeTeam],
+        gallery: [edgepointShot, asianCodingImage, diverseTeamMeeting, asianOfficeTeam],
         testimonial: "The new site finally represents the company we've become, not the one we were ten years ago."
       },
       {
@@ -205,7 +205,7 @@ const useCases = [
           { label: "Shared System", value: "1" },
           { label: "Market", value: "Canada" }
         ],
-        gallery: [radiusShot.url, vietnamWarehouseImage, asianTeamWork, asianCollaborationImage],
+        gallery: [radiusShot, vietnamWarehouseImage, asianTeamWork, asianCollaborationImage],
         testimonial: "Clients used to see four separate contractors. Now they see one crew that can handle the whole site."
       },
       {
@@ -213,7 +213,7 @@ const useCases = [
         title: "Sora Nail",
         client: "Sora Nail Studio, USA",
         industry: "Beauty & Wellness",
-        logo: soraLogo.url,
+        logo: soraLogo,
         challenge: "A beautiful studio with no digital presence to match. Visitors liked the look but had no obvious way to move from browsing to booking.",
         solution: "An editorial, image-led site built around the customer journey, with the Square booking flow connected directly into every section instead of buried in a contact page.",
         result: "From \"I like it\" to \"I'll book it\": booking is now one tap away from anywhere on the site.",
@@ -223,7 +223,7 @@ const useCases = [
           { label: "Integration", value: "Square" },
           { label: "Market", value: "USA" }
         ],
-        gallery: [soraShot.url, asianWomanProfessional, asianWomanLaptop, asianBusinessImage],
+        gallery: [soraShot, asianWomanProfessional, asianWomanLaptop, asianBusinessImage],
         testimonial: "People book before they even call us now. The site does the selling."
       },
       {
@@ -240,7 +240,7 @@ const useCases = [
           { label: "Location", value: "Hoi An" },
           { label: "Guest Types", value: "Local + Intl" }
         ],
-        gallery: [gloryShot.url, hoiAnLanterns, vietnamTeamImage, asianBusinessImage],
+        gallery: [gloryShot, hoiAnLanterns, vietnamTeamImage, asianBusinessImage],
         testimonial: "Guests tell us they booked because of the story, not the price."
       },
       {
@@ -257,7 +257,7 @@ const useCases = [
           { label: "Spreadsheets", value: "Retired" },
           { label: "Ticket Triage", value: "Live" }
         ],
-        gallery: [portalShot.url, asianWomanLaptop, diverseTeamMeeting, asianOfficeTeam],
+        gallery: [portalShot, asianWomanLaptop, diverseTeamMeeting, asianOfficeTeam],
         testimonial: "We stopped losing student issues in group chats. That alone changed how the team works."
       },
       {
@@ -274,7 +274,7 @@ const useCases = [
           { label: "Spreadsheets", value: "1 platform" },
           { label: "Users", value: "Buyers + Suppliers" }
         ],
-        gallery: [sourcingPlatformShot.url, garmentFactoryImage, vietnamWarehouseImage, asianCodingImage],
+        gallery: [sourcingPlatformShot, garmentFactoryImage, vietnamWarehouseImage, asianCodingImage],
         testimonial: "We can answer 'who can make this, and where?' in minutes instead of days."
       }
     ]
