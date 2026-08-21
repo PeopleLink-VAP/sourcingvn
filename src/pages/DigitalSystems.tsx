@@ -113,6 +113,9 @@ const DigitalSystems = () => {
         </div>
       </section>
 
+      {/* Pricing */}
+      <Pricing />
+
       {/* Final CTA */}
       <section className="section-padding bg-secondary/40 border-t border-border">
         <div className="container-editorial">
