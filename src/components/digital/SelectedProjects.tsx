@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import edgepointShot from "@/assets/cases/Edpoint_safety.jpg";
 import edgepointLogo from "@/assets/cases/edpoint_logo.png";
 import radiusShot from "@/assets/cases/radius_excavation.jpg";
+import radiusLogo from "@/assets/cases/radius_logo.png";
 import soraShot from "@/assets/cases/sora_studio.jpg";
 import soraLogo from "@/assets/cases/sora_logo.png";
 import gloryShot from "@/assets/cases/glorynest.jpg";
@@ -36,6 +37,7 @@ const projects: Project[] = [
     country: "Canada",
     description: "One digital ecosystem for four businesses.",
     image: radiusShot,
+    logo: radiusLogo,
     href: "/use-cases#radius-ecosystem",
   },
   {

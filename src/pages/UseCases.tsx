@@ -25,6 +25,7 @@ import edgepointShot from "@/assets/cases/Edpoint_safety.jpg";
 import edgepointSite from "@/assets/cases/edgepoint_site.jpg";
 import edgepointLogo from "@/assets/cases/edpoint_logo.png";
 import radiusShot from "@/assets/cases/radius_excavation.jpg";
+import radiusLogo from "@/assets/cases/radius_logo.png";
 import soraShot from "@/assets/cases/sora_nail.jpg";
 import soraStudio from "@/assets/cases/sora_studio.jpg";
 import soraLogo from "@/assets/cases/sora_logo.png";
@@ -202,6 +203,7 @@ const useCases = [
         title: "Radius Ecosystem",
         client: "Radius Group, Canada",
         industry: "Construction & Industrial Services",
+        logo: radiusLogo,
         challenge: "Four connected companies across excavation, construction, disposal and mechanical services were competing with each other online instead of working as one group.",
         solution: "We designed a shared digital ecosystem: one network model with an interactive hub linking every discipline, while each company keeps its own identity, content and audience.",
         result: "One accountable brand story across six disciplines, with cross-referrals now built into the navigation.",
