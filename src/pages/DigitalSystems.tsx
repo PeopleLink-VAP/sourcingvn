@@ -151,11 +151,16 @@ const DigitalSystems = () => {
             <h2 className="headline-lg text-foreground">Three steps, no mystery.</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {steps.map((step) => (
-              <div key={step.title} className="rounded-xl border border-border bg-card p-7">
+            {steps.map((step, i) => (
+              <div
+                key={step.title}
+                className="rounded-xl border border-border bg-card p-7 animate-fade-in transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/40"
+                style={{ animationDelay: `${i * 120}ms` }}
+              >
                 <span className="inline-flex w-9 h-9 items-center justify-center rounded-full border border-primary/30 text-primary font-display font-semibold mb-5">
                   {step.number}
                 </span>
+
                 <h3 className="text-lg font-display font-semibold text-foreground mb-2">
                   {step.title}
                 </h3>
