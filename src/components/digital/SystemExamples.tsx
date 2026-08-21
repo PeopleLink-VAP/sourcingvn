@@ -84,21 +84,25 @@ export const SystemExamples = () => {
   return (
     <section className="section-padding bg-background">
       <div className="container-editorial">
-        <div className="max-w-2xl mb-10">
+        <div className="max-w-2xl mb-10 animate-fade-in">
           <p className="text-xs font-medium uppercase tracking-widest text-primary mb-4">Examples</p>
           <h2 className="headline-lg text-foreground">What can a digital system actually do?</h2>
+          <p className="body-md text-muted-foreground mt-4">
+            From a simple landing page to a full internal platform. Click through a few live examples.
+          </p>
         </div>
 
         <div className="flex flex-wrap gap-2 mb-8">
-          {tabs.map((tab) => (
+          {tabs.map((tab, i) => (
             <button
               key={tab.id}
               type="button"
               onClick={() => setActive(tab.id)}
-              className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
+              style={{ animationDelay: `${i * 70}ms` }}
+              className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300 animate-fade-in hover:-translate-y-0.5 ${
                 active === tab.id
-                  ? "border-primary bg-primary text-primary-foreground"
-                  : "border-border bg-card text-muted-foreground hover:text-foreground"
+                  ? "border-primary bg-primary text-primary-foreground shadow-md scale-105"
+                  : "border-border bg-card text-muted-foreground hover:text-foreground hover:border-primary/40"
               }`}
             >
               <tab.icon className="w-4 h-4" />
@@ -108,9 +112,14 @@ export const SystemExamples = () => {
         </div>
 
         <div className="grid lg:grid-cols-[1fr_1.4fr] gap-8 items-start">
-          <p className="body-lg text-muted-foreground max-w-md">{current.copy}</p>
-          <div key={current.id}>{current.visual}</div>
+          <p key={`${current.id}-copy`} className="body-lg text-muted-foreground max-w-md animate-fade-in">
+            {current.copy}
+          </p>
+          <div key={current.id} className="animate-scale-in">
+            {current.visual}
+          </div>
         </div>
+
       </div>
     </section>
   );
