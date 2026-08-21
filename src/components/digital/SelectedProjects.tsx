@@ -7,9 +7,10 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import edgepointShot from "@/assets/cases/Edpoint_safety.jpg";
 import edgepointLogo from "@/assets/cases/edpoint_logo.png";
 import radiusShot from "@/assets/cases/radius_excavation.jpg";
-import soraShot from "@/assets/cases/sora_nail.jpg";
+import soraShot from "@/assets/cases/sora_studio.jpg";
 import soraLogo from "@/assets/cases/sora_logo.png";
 import gloryShot from "@/assets/cases/glorynest.jpg";
+import gloryLogo from "@/assets/cases/glorynest_logo.png";
 import portalShot from "@/assets/cases/teaching_portal.jpg";
 import sourcingPlatformShot from "@/assets/cases/sourcing_supplier.jpg";
 
@@ -60,6 +61,7 @@ const projects: Project[] = [
     description:
       "A storytelling-led website combining the homestay experience, direct booking and Airbnb.",
     image: gloryShot,
+    logo: gloryLogo,
     href: "/use-cases#glory-nest",
   },
   {
