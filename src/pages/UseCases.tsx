@@ -22,13 +22,19 @@ import hoiAnLanterns from "@/assets/images/vn-hoi-an-lanterns.jpg";
 
 // Client project screenshots and logos
 import edgepointShot from "@/assets/cases/Edpoint_safety.jpg";
+import edgepointSite from "@/assets/cases/edgepoint_site.jpg";
 import edgepointLogo from "@/assets/cases/edpoint_logo.png";
 import radiusShot from "@/assets/cases/radius_excavation.jpg";
 import soraShot from "@/assets/cases/sora_nail.jpg";
+import soraStudio from "@/assets/cases/sora_studio.jpg";
 import soraLogo from "@/assets/cases/sora_logo.png";
 import gloryShot from "@/assets/cases/glorynest.jpg";
+import gloryVilla from "@/assets/cases/glorynest_villa.jpg";
+import gloryLogo from "@/assets/cases/glorynest_logo.png";
 import portalShot from "@/assets/cases/teaching_portal.jpg";
+import vaEvent from "@/assets/cases/va_event.jpg";
 import sourcingPlatformShot from "@/assets/cases/sourcing_supplier.jpg";
+import factorySourcing from "@/assets/cases/factory_sourcing.jpg";
 
 interface UseCase {
   id: string;
