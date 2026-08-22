@@ -21,7 +21,7 @@ const plans = [
   },
   {
     name: "E-commerce",
-    price: "$959",
+    price: "$1,200",
     description:
       "Online stores designed to help businesses sell products and manage orders.",
     features: [
@@ -37,7 +37,7 @@ const plans = [
   },
   {
     name: "Portals & LMS",
-    price: "$1,250",
+    price: "$1,950",
     description:
       "Custom portals for students, customers, members or teams.",
     features: [
@@ -54,7 +54,7 @@ const plans = [
   },
   {
     name: "Business Systems",
-    price: "$1,800",
+    price: "$2,000",
     description:
       "Digital systems that replace scattered spreadsheets, manual processes and disconnected tools.",
     features: [
