@@ -3,7 +3,6 @@ import { Footer } from "@/components/Footer";
 import { SelectedProjects } from "@/components/digital/SelectedProjects";
 import { SystemExamples } from "@/components/digital/SystemExamples";
 import { DashboardPreview } from "@/components/digital/DashboardPreview";
-import { Pricing } from "@/components/digital/Pricing";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, ArrowRight } from "lucide-react";
@@ -113,8 +112,22 @@ const DigitalSystems = () => {
         </div>
       </section>
 
-      {/* Pricing */}
-      <Pricing />
+      {/* Custom Quote */}
+      <section className="section-padding bg-background border-t border-border">
+        <div className="container-editorial">
+          <div className="max-w-3xl">
+            <p className="text-xs font-medium uppercase tracking-widest text-primary mb-4">
+              How We Price
+            </p>
+            <h2 className="headline-lg text-foreground mb-6">
+              No fixed packages. No surprise costs.
+            </h2>
+            <p className="body-lg text-muted-foreground">
+              Every project is quoted based on your requirements, scope, and level of customization.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Final CTA */}
       <section className="section-padding bg-secondary/40 border-t border-border">
