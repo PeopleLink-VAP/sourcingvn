@@ -142,11 +142,7 @@ export const Pricing = () => {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 rounded-xl border border-primary/20 bg-primary/5 p-6">
-          <p className="text-sm text-foreground font-medium max-w-2xl">
-            Starting prices are estimates. Final pricing depends on scope, features,
-            integrations and technical complexity.
-          </p>
+        <div className="flex flex-col sm:flex-row items-center justify-end gap-6 rounded-xl border border-primary/20 bg-primary/5 p-6">
           <Button asChild size="lg" className="shrink-0">
             <Link to="/start-project">
               Talk to us about your project
