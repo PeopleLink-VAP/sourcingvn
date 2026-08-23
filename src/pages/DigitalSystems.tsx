@@ -112,8 +112,22 @@ const DigitalSystems = () => {
         </div>
       </section>
 
-      {/* Pricing */}
-      <Pricing />
+      {/* Custom Quote */}
+      <section className="section-padding bg-background border-t border-border">
+        <div className="container-editorial">
+          <div className="max-w-3xl">
+            <p className="text-xs font-medium uppercase tracking-widest text-primary mb-4">
+              How We Price
+            </p>
+            <h2 className="headline-lg text-foreground mb-6">
+              No fixed packages. No surprise costs.
+            </h2>
+            <p className="body-lg text-muted-foreground">
+              Every project is quoted based on your requirements, scope, and level of customization.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Final CTA */}
       <section className="section-padding bg-secondary/40 border-t border-border">
