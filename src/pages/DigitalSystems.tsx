@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { SelectedProjects } from "@/components/digital/SelectedProjects";
 import { SystemExamples } from "@/components/digital/SystemExamples";
 import { DashboardPreview } from "@/components/digital/DashboardPreview";
+import { Pricing } from "@/components/digital/Pricing";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, ArrowRight } from "lucide-react";
