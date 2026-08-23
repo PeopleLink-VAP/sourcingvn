@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 const plans = [
   {
     name: "Websites",
-    price: "$400",
     description:
       "Professional websites for businesses that need a strong, modern online presence.",
     features: [
@@ -21,7 +20,6 @@ const plans = [
   },
   {
     name: "E-commerce",
-    price: "$1,200",
     description:
       "Online stores designed to help businesses sell products and manage orders.",
     features: [
@@ -37,7 +35,6 @@ const plans = [
   },
   {
     name: "Portals & LMS",
-    price: "$1,950",
     description:
       "Custom portals for students, customers, members or teams.",
     features: [
@@ -54,7 +51,6 @@ const plans = [
   },
   {
     name: "Business Systems",
-    price: "$2,000",
     description:
       "Digital systems that replace scattered spreadsheets, manual processes and disconnected tools.",
     features: [
@@ -71,10 +67,7 @@ const plans = [
   },
   {
     name: "Custom Platforms",
-    price: "Custom",
-    priceLabel: "Price depends on your needs",
-    description:
-      "For larger or more complex digital products.",
+    description: "For larger or more complex digital products.",
     features: [
       "Marketplaces",
       "Supplier platforms",
@@ -95,14 +88,13 @@ export const Pricing = () => {
       <div className="container-editorial">
         <div className="max-w-3xl mb-12">
           <p className="text-xs font-medium uppercase tracking-widest text-primary mb-4">
-            Pricing
+            What We Build
           </p>
           <h2 className="headline-lg text-foreground mb-5">
-            Digital Solutions — Starting From
+            No fixed packages. No surprise costs.
           </h2>
           <p className="body-md text-muted-foreground">
-            Choose the type of solution you need. Final pricing depends on scope,
-            functionality and complexity.
+            Every project is quoted based on your requirements, scope, and level of customization.
           </p>
         </div>
 
@@ -117,19 +109,6 @@ export const Pricing = () => {
                 <h3 className="text-lg font-display font-semibold text-foreground mb-3">
                   {plan.name}
                 </h3>
-                <div className="flex items-baseline gap-2">
-                  {plan.name !== "Custom Platforms" && (
-                    <span className="text-sm text-muted-foreground">From</span>
-                  )}
-                  <span className="text-3xl font-bold text-primary tracking-tight">
-                    {plan.price}
-                  </span>
-                </div>
-                {plan.priceLabel && (
-                  <p className="text-sm text-muted-foreground mt-1">
-                    {plan.priceLabel}
-                  </p>
-                )}
               </div>
 
               <p className="text-sm text-muted-foreground leading-relaxed mb-5">
@@ -144,8 +123,9 @@ export const Pricing = () => {
                   {plan.features.map((feature) => (
                     <li
                       key={feature}
-                      className="text-sm text-muted-foreground leading-snug pl-3 relative before:content-[''] before:absolute before:left-0 before:top-[0.4rem] before:w-1 before:h-1 before:rounded-full before:bg-primary/60"
+                      className="text-sm text-muted-foreground leading-snug flex gap-2"
                     >
+                      <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                       {feature}
                     </li>
                   ))}
