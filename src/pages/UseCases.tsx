@@ -193,8 +193,7 @@ const useCases = [
           { label: "Shared System", value: "1" },
           { label: "Market", value: "Canada" }
         ],
-        gallery: [radiusShot],
-        testimonial: "Clients used to see four separate contractors. Now they see one crew that can handle the whole site."
+        gallery: [radiusShot]
       },
       {
         id: "sora-nail",
