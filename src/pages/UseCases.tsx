@@ -259,8 +259,7 @@ const useCases = [
           { label: "Spreadsheets", value: "1 platform" },
           { label: "Users", value: "Buyers + Suppliers" }
         ],
-        gallery: [sourcingPlatformShot, factorySourcing],
-        testimonial: "We can answer 'who can make this, and where?' in minutes instead of days."
+        gallery: [sourcingPlatformShot, factorySourcing]
       }
     ]
 
