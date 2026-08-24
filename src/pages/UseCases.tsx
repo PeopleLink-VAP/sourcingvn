@@ -266,26 +266,6 @@ const useCases = [
   }
 ];
 
-const testimonials = [
-  {
-    quote: "Working with Sourcing.vn felt like having an insider on the ground. They didn't just find suppliers. They understood our brand and protected our margins.",
-    author: "Amanda Chen",
-    role: "Founder, Bloom Naturals",
-    rating: 5
-  },
-  {
-    quote: "Our VA has become indispensable. What started as inbox management evolved into full operations support. Sourcing.vn made the transition seamless.",
-    author: "Marcus Johnson",
-    role: "CEO, Digital First Agency",
-    rating: 5
-  },
-  {
-    quote: "The automation they built paid for itself in 3 weeks. We went from drowning in spreadsheets to having real-time visibility across all operations.",
-    author: "Sophie Williams",
-    role: "Operations Director, TrendCo",
-    rating: 5
-  }
-];
 
 const UseCases = () => {
   const [selectedCase, setSelectedCase] = useState<UseCase | null>(null);
