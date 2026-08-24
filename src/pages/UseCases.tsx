@@ -61,8 +61,7 @@ const useCases = [
           { label: "Quality Pass Rate", value: "98%" },
           { label: "Time to Market", value: "12 weeks" }
         ],
-        gallery: [],
-        testimonial: "Sourcing.vn didn't just find us a factory. They found us a partner. The quality exceeded our expectations."
+        gallery: []
       },
       {
         id: "home-goods",
