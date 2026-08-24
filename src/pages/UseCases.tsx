@@ -93,8 +93,7 @@ const useCases = [
           { label: "Cost Reduction", value: "22%" },
           { label: "Current Scale", value: "10K/mo" }
         ],
-        gallery: [],
-        testimonial: "The technical expertise was unexpected. They understood our specs and caught issues before they became problems."
+        gallery: []
       }
     ]
   },
