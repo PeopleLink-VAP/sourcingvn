@@ -2,7 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Package, Users, Cpu, Star, Quote, ChevronRight, Image, X } from "lucide-react";
+import { ArrowRight, Package, Users, Cpu, ChevronRight, Image, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
@@ -36,7 +36,6 @@ interface UseCase {
   result: string;
   metrics: { label: string; value: string }[];
   gallery: string[];
-  testimonial: string;
 }
 
 
@@ -62,8 +61,7 @@ const useCases = [
           { label: "Quality Pass Rate", value: "98%" },
           { label: "Time to Market", value: "12 weeks" }
         ],
-        gallery: [],
-        testimonial: "Sourcing.vn didn't just find us a factory. They found us a partner. The quality exceeded our expectations."
+        gallery: []
       },
       {
         id: "home-goods",
@@ -79,8 +77,7 @@ const useCases = [
           { label: "New Suppliers", value: "2" },
           { label: "Shipping Savings", value: "18%" }
         ],
-        gallery: [],
-        testimonial: "They saved our holiday season. Now we have supply chain redundancy we never had before."
+        gallery: []
       },
       {
         id: "electronics-pcb",
@@ -96,8 +93,7 @@ const useCases = [
           { label: "Cost Reduction", value: "22%" },
           { label: "Current Scale", value: "10K/mo" }
         ],
-        gallery: [],
-        testimonial: "The technical expertise was unexpected. They understood our specs and caught issues before they became problems."
+        gallery: []
       }
     ]
   },
@@ -122,8 +118,7 @@ const useCases = [
           { label: "Team Size", value: "5 people" },
           { label: "Retention", value: "18 months" }
         ],
-        gallery: [],
-        testimonial: "Our support team in Vietnam is now our competitive advantage. They're better than in-house teams I've managed."
+        gallery: []
       },
       {
         id: "executive-assistant",
@@ -139,8 +134,7 @@ const useCases = [
           { label: "Time to Productivity", value: "2 weeks" },
           { label: "Cost vs US Hire", value: "65% less" }
         ],
-        gallery: [],
-        testimonial: "Lan isn't just an assistant. She runs half my business. I couldn't operate without her now."
+        gallery: []
       },
       {
         id: "content-team",
@@ -156,8 +150,7 @@ const useCases = [
           { label: "Team Size", value: "3 people" },
           { label: "Cost Savings", value: "70%" }
         ],
-        gallery: [],
-        testimonial: "The quality and consistency is incredible. They understand our brand voice better than agencies we paid 10x more."
+        gallery: []
       }
     ]
   },
@@ -183,8 +176,7 @@ const useCases = [
           { label: "Booking Paths", value: "2" },
           { label: "Market", value: "Canada" }
         ],
-        gallery: [edgepointShot, edgepointSite],
-        testimonial: "The new site finally represents the company we've become, not the one we were ten years ago."
+        gallery: [edgepointShot, edgepointSite]
       },
       {
         id: "radius-ecosystem",
@@ -201,8 +193,7 @@ const useCases = [
           { label: "Shared System", value: "1" },
           { label: "Market", value: "Canada" }
         ],
-        gallery: [radiusShot],
-        testimonial: "Clients used to see four separate contractors. Now they see one crew that can handle the whole site."
+        gallery: [radiusShot]
       },
       {
         id: "sora-nail",
@@ -219,8 +210,7 @@ const useCases = [
           { label: "Integration", value: "Square" },
           { label: "Market", value: "USA" }
         ],
-        gallery: [soraStudio, soraShot],
-        testimonial: "People book before they even call us now. The site does the selling."
+        gallery: [soraStudio, soraShot]
       },
       {
         id: "glory-nest",
@@ -237,8 +227,7 @@ const useCases = [
           { label: "Location", value: "Hoi An" },
           { label: "Guest Types", value: "Local + Intl" }
         ],
-        gallery: [gloryShot, gloryVilla],
-        testimonial: "Guests tell us they booked because of the story, not the price."
+        gallery: [gloryShot, gloryVilla]
       },
       {
         id: "va-training-portal",
@@ -254,8 +243,7 @@ const useCases = [
           { label: "Spreadsheets", value: "Retired" },
           { label: "Ticket Triage", value: "Live" }
         ],
-        gallery: [portalShot, vaEvent],
-        testimonial: "We stopped losing student issues in group chats. That alone changed how the team works."
+        gallery: [portalShot, vaEvent]
       },
       {
         id: "sourcing-platform",
@@ -271,34 +259,13 @@ const useCases = [
           { label: "Spreadsheets", value: "1 platform" },
           { label: "Users", value: "Buyers + Suppliers" }
         ],
-        gallery: [sourcingPlatformShot, factorySourcing],
-        testimonial: "We can answer 'who can make this, and where?' in minutes instead of days."
+        gallery: [sourcingPlatformShot, factorySourcing]
       }
     ]
 
   }
 ];
 
-const testimonials = [
-  {
-    quote: "Working with Sourcing.vn felt like having an insider on the ground. They didn't just find suppliers. They understood our brand and protected our margins.",
-    author: "Amanda Chen",
-    role: "Founder, Bloom Naturals",
-    rating: 5
-  },
-  {
-    quote: "Our VA has become indispensable. What started as inbox management evolved into full operations support. Sourcing.vn made the transition seamless.",
-    author: "Marcus Johnson",
-    role: "CEO, Digital First Agency",
-    rating: 5
-  },
-  {
-    quote: "The automation they built paid for itself in 3 weeks. We went from drowning in spreadsheets to having real-time visibility across all operations.",
-    author: "Sophie Williams",
-    role: "Operations Director, TrendCo",
-    rating: 5
-  }
-];
 
 const UseCases = () => {
   const [selectedCase, setSelectedCase] = useState<UseCase | null>(null);
@@ -535,13 +502,6 @@ const UseCases = () => {
                   </div>
                 </div>
                 
-                {/* Testimonial */}
-                <div className="mt-8 p-6 bg-navy-deep rounded-xl">
-                  <Quote className="w-8 h-8 text-gold/30 mb-3" />
-                  <p className="text-cream italic mb-4">"{selectedCase.testimonial}"</p>
-                  <p className="text-cream/60 text-sm">– {selectedCase.client}</p>
-                </div>
-                
                 {/* CTA */}
                 <div className="mt-8 text-center">
                   <Button asChild size="lg" className="bg-navy hover:bg-navy-light text-cream">
@@ -584,64 +544,6 @@ const UseCases = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Testimonials */}
-      <section className="section-padding bg-gradient-to-br from-navy to-navy-deep relative overflow-hidden">
-        <div className="absolute inset-0 pattern-dots opacity-20" />
-        
-        <div className="container-editorial relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <p className="text-sm font-semibold uppercase tracking-widest text-sunshine mb-4">
-              Testimonials
-            </p>
-            <h2 className="headline-lg text-cream max-w-2xl mx-auto">
-              What our clients say
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.author}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-navy-light/30 backdrop-blur-sm rounded-2xl p-8 border border-cream/10"
-              >
-                <Quote className="w-10 h-10 text-sunshine/30 mb-4" />
-                
-                <p className="text-cream/90 leading-relaxed mb-6">
-                  "{testimonial.quote}"
-                </p>
-                
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-sunshine/20 text-sunshine flex items-center justify-center font-display font-semibold">
-                    {testimonial.author.split(" ").map((n) => n[0]).join("").slice(0, 2)}
-                  </div>
-
-                  <div>
-                    <p className="text-cream font-medium">{testimonial.author}</p>
-                    <p className="text-cream/60 text-sm">{testimonial.role}</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-1 mt-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-sunshine text-sunshine" />
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-r from-sunshine/20 via-cream to-teal/20">
