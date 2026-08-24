@@ -25,6 +25,25 @@ import vaEvent from "@/assets/cases/va_event.jpg";
 import sourcingPlatformShot from "@/assets/cases/sourcing_supplier.jpg";
 import factorySourcing from "@/assets/cases/factory_sourcing.jpg";
 
+import edge1 from "@/assets/cases/highlights/EdgePoint_1_Hero.jpg";
+import edge2 from "@/assets/cases/highlights/EdgePoint_2_CoreServices.jpg";
+import edge3 from "@/assets/cases/highlights/EdgePoint_3_Training.jpg";
+import edge4 from "@/assets/cases/highlights/EdgePoint_4_ProjectHighlights.jpg";
+import rex1 from "@/assets/cases/highlights/RadiusExcavation_1_Hero.jpg";
+import rex2 from "@/assets/cases/highlights/RadiusExcavation_2_Network.jpg";
+import rex3 from "@/assets/cases/highlights/RadiusExcavation_3_Projects.jpg";
+import rdi1 from "@/assets/cases/highlights/RadiusDisposal_1_Hero.jpg";
+import rdi2 from "@/assets/cases/highlights/RadiusDisposal_2_Services.jpg";
+import rdi3 from "@/assets/cases/highlights/RadiusDisposal_3_Stats.jpg";
+import sora1 from "@/assets/cases/highlights/SoraNail_1_Hero.jpg";
+import sora2 from "@/assets/cases/highlights/SoraNail_2_Services.jpg";
+import sora3 from "@/assets/cases/highlights/SoraNail_3_Interior.jpg";
+import sora4 from "@/assets/cases/highlights/SoraNail_4_Testimonials.jpg";
+import glory1 from "@/assets/cases/highlights/Glorynest_1_Hero.jpg";
+import glory2 from "@/assets/cases/highlights/Glorynest_2_Gallery.jpg";
+import glory3 from "@/assets/cases/highlights/Glorynest_3_Features.jpg";
+import glory4 from "@/assets/cases/highlights/Glorynest_4_Stories.jpg";
+
 interface UseCase {
   id: string;
   title: string;
