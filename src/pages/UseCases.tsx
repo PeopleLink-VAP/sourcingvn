@@ -150,8 +150,7 @@ const useCases = [
           { label: "Team Size", value: "3 people" },
           { label: "Cost Savings", value: "70%" }
         ],
-        gallery: [],
-        testimonial: "The quality and consistency is incredible. They understand our brand voice better than agencies we paid 10x more."
+        gallery: []
       }
     ]
   },
