@@ -36,7 +36,6 @@ interface UseCase {
   result: string;
   metrics: { label: string; value: string }[];
   gallery: string[];
-  testimonial: string;
 }
 
 
