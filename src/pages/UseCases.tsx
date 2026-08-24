@@ -77,8 +77,7 @@ const useCases = [
           { label: "New Suppliers", value: "2" },
           { label: "Shipping Savings", value: "18%" }
         ],
-        gallery: [],
-        testimonial: "They saved our holiday season. Now we have supply chain redundancy we never had before."
+        gallery: []
       },
       {
         id: "electronics-pcb",
