@@ -480,7 +480,36 @@ const UseCases = () => {
                     <p className="text-navy font-medium">{selectedCase.result}</p>
                   </div>
                 </div>
-                
+
+                {/* Gallery */}
+                {selectedCase.gallery.length > 0 && (
+                  <div className="mt-10">
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-navy mb-4">
+                      Project Highlights
+                    </h3>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      {selectedCase.gallery.map((img, i) => (
+                        <button
+                          key={i}
+                          type="button"
+                          onClick={() => setSelectedImage(img)}
+                          className="group relative overflow-hidden rounded-xl border border-border bg-cream"
+                        >
+                          <div className="aspect-[16/10] overflow-hidden">
+                            <img
+                              src={img}
+                              alt={`${selectedCase.title} project highlight ${i + 1}`}
+                              loading="lazy"
+                              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+                            />
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+
                 {/* CTA */}
                 <div className="mt-8 text-center">
                   <Button asChild size="lg" className="bg-navy hover:bg-navy-light text-cream">
