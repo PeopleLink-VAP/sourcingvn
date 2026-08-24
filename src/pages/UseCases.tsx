@@ -502,13 +502,6 @@ const UseCases = () => {
                   </div>
                 </div>
                 
-                {/* Testimonial */}
-                <div className="mt-8 p-6 bg-navy-deep rounded-xl">
-                  <Quote className="w-8 h-8 text-gold/30 mb-3" />
-                  <p className="text-cream italic mb-4">"{selectedCase.testimonial}"</p>
-                  <p className="text-cream/60 text-sm">– {selectedCase.client}</p>
-                </div>
-                
                 {/* CTA */}
                 <div className="mt-8 text-center">
                   <Button asChild size="lg" className="bg-navy hover:bg-navy-light text-cream">
