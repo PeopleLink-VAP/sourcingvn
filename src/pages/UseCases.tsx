@@ -428,35 +428,14 @@ const UseCases = () => {
               className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Modal Header */}
-              <div className="relative">
-                <button
-                  onClick={() => setSelectedCase(null)}
-                  className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors"
-                >
-                  <X className="w-5 h-5 text-navy" />
-                </button>
-                
-                {/* Gallery */}
-                {selectedCase.gallery.length > 0 && (
-                  <div className={`grid gap-1 h-64 ${selectedCase.gallery.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
-                    {selectedCase.gallery.map((img, i) => (
-                      <div 
-                        key={i} 
-                        className="relative overflow-hidden cursor-pointer"
-                        onClick={() => setSelectedImage(img)}
-                      >
-                        <img 
-                          src={img} 
-                          alt={`${selectedCase.title} project photo ${i + 1}`}
-                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                )}
+              {/* Modal close */}
+              <button
+                onClick={() => setSelectedCase(null)}
+                className="sticky top-4 float-right mr-4 z-10 w-10 h-10 bg-cream/95 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-cream transition-colors"
+              >
+                <X className="w-5 h-5 text-navy" />
+              </button>
 
-              </div>
               
               {/* Modal Content */}
               <div className="p-8">
