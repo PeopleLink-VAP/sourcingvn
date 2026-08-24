@@ -243,8 +243,7 @@ const useCases = [
           { label: "Spreadsheets", value: "Retired" },
           { label: "Ticket Triage", value: "Live" }
         ],
-        gallery: [portalShot, vaEvent],
-        testimonial: "We stopped losing student issues in group chats. That alone changed how the team works."
+        gallery: [portalShot, vaEvent]
       },
       {
         id: "sourcing-platform",
