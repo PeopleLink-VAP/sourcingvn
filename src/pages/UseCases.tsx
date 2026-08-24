@@ -176,8 +176,7 @@ const useCases = [
           { label: "Booking Paths", value: "2" },
           { label: "Market", value: "Canada" }
         ],
-        gallery: [edgepointShot, edgepointSite],
-        testimonial: "The new site finally represents the company we've become, not the one we were ten years ago."
+        gallery: [edgepointShot, edgepointSite]
       },
       {
         id: "radius-ecosystem",
