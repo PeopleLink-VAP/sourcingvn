@@ -9,21 +9,33 @@ import { useEffect, useState } from "react";
 // Real client project photos only (no stock or AI imagery)
 
 // Client project screenshots and logos
-import edgepointShot from "@/assets/cases/Edpoint_safety.jpg";
-import edgepointSite from "@/assets/cases/edgepoint_site.jpg";
 import edgepointLogo from "@/assets/cases/edpoint_logo.png";
-import radiusShot from "@/assets/cases/radius_excavation.jpg";
 import radiusLogo from "@/assets/cases/radius_logo.png";
-import soraShot from "@/assets/cases/sora_nail.jpg";
-import soraStudio from "@/assets/cases/sora_studio.jpg";
 import soraLogo from "@/assets/cases/sora_logo.png";
-import gloryShot from "@/assets/cases/glorynest.jpg";
-import gloryVilla from "@/assets/cases/glorynest_villa.jpg";
 import gloryLogo from "@/assets/cases/glorynest_logo.png";
 import portalShot from "@/assets/cases/teaching_portal.jpg";
 import vaEvent from "@/assets/cases/va_event.jpg";
 import sourcingPlatformShot from "@/assets/cases/sourcing_supplier.jpg";
 import factorySourcing from "@/assets/cases/factory_sourcing.jpg";
+
+import edge1 from "@/assets/cases/highlights/EdgePoint_1_Hero.jpg";
+import edge2 from "@/assets/cases/highlights/EdgePoint_2_CoreServices.jpg";
+import edge3 from "@/assets/cases/highlights/EdgePoint_3_Training.jpg";
+import edge4 from "@/assets/cases/highlights/EdgePoint_4_ProjectHighlights.jpg";
+import rex1 from "@/assets/cases/highlights/RadiusExcavation_1_Hero.jpg";
+import rex2 from "@/assets/cases/highlights/RadiusExcavation_2_Network.jpg";
+import rex3 from "@/assets/cases/highlights/RadiusExcavation_3_Projects.jpg";
+import rdi1 from "@/assets/cases/highlights/RadiusDisposal_1_Hero.jpg";
+import rdi2 from "@/assets/cases/highlights/RadiusDisposal_2_Services.jpg";
+import rdi3 from "@/assets/cases/highlights/RadiusDisposal_3_Stats.jpg";
+import sora1 from "@/assets/cases/highlights/SoraNail_1_Hero.jpg";
+import sora2 from "@/assets/cases/highlights/SoraNail_2_Services.jpg";
+import sora3 from "@/assets/cases/highlights/SoraNail_3_Interior.jpg";
+import sora4 from "@/assets/cases/highlights/SoraNail_4_Testimonials.jpg";
+import glory1 from "@/assets/cases/highlights/Glorynest_1_Hero.jpg";
+import glory2 from "@/assets/cases/highlights/Glorynest_2_Gallery.jpg";
+import glory3 from "@/assets/cases/highlights/Glorynest_3_Features.jpg";
+import glory4 from "@/assets/cases/highlights/Glorynest_4_Stories.jpg";
 
 interface UseCase {
   id: string;
@@ -176,7 +188,7 @@ const useCases = [
           { label: "Booking Paths", value: "2" },
           { label: "Market", value: "Canada" }
         ],
-        gallery: [edgepointShot, edgepointSite]
+        gallery: [edge1, edge2, edge3, edge4]
       },
       {
         id: "radius-ecosystem",
@@ -193,7 +205,7 @@ const useCases = [
           { label: "Shared System", value: "1" },
           { label: "Market", value: "Canada" }
         ],
-        gallery: [radiusShot]
+        gallery: [rex1, rex2, rex3, rdi1, rdi2, rdi3]
       },
       {
         id: "sora-nail",
@@ -210,7 +222,7 @@ const useCases = [
           { label: "Integration", value: "Square" },
           { label: "Market", value: "USA" }
         ],
-        gallery: [soraStudio, soraShot]
+        gallery: [sora1, sora2, sora3, sora4]
       },
       {
         id: "glory-nest",
@@ -227,7 +239,7 @@ const useCases = [
           { label: "Location", value: "Hoi An" },
           { label: "Guest Types", value: "Local + Intl" }
         ],
-        gallery: [gloryShot, gloryVilla]
+        gallery: [glory1, glory2, glory3, glory4]
       },
       {
         id: "va-training-portal",
@@ -368,7 +380,7 @@ const UseCases = () => {
                       <img 
                         src={useCase.gallery[0]} 
                         alt={useCase.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       />
 
                       {/* Gallery indicator */}
@@ -428,35 +440,14 @@ const UseCases = () => {
               className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Modal Header */}
-              <div className="relative">
-                <button
-                  onClick={() => setSelectedCase(null)}
-                  className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors"
-                >
-                  <X className="w-5 h-5 text-navy" />
-                </button>
-                
-                {/* Gallery */}
-                {selectedCase.gallery.length > 0 && (
-                  <div className={`grid gap-1 h-64 ${selectedCase.gallery.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
-                    {selectedCase.gallery.map((img, i) => (
-                      <div 
-                        key={i} 
-                        className="relative overflow-hidden cursor-pointer"
-                        onClick={() => setSelectedImage(img)}
-                      >
-                        <img 
-                          src={img} 
-                          alt={`${selectedCase.title} project photo ${i + 1}`}
-                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                )}
+              {/* Modal close */}
+              <button
+                onClick={() => setSelectedCase(null)}
+                className="sticky top-4 float-right mr-4 z-10 w-10 h-10 bg-cream/95 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-cream transition-colors"
+              >
+                <X className="w-5 h-5 text-navy" />
+              </button>
 
-              </div>
               
               {/* Modal Content */}
               <div className="p-8">
@@ -501,7 +492,36 @@ const UseCases = () => {
                     <p className="text-navy font-medium">{selectedCase.result}</p>
                   </div>
                 </div>
-                
+
+                {/* Gallery */}
+                {selectedCase.gallery.length > 0 && (
+                  <div className="mt-10">
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-navy mb-4">
+                      Project Highlights
+                    </h3>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      {selectedCase.gallery.map((img, i) => (
+                        <button
+                          key={i}
+                          type="button"
+                          onClick={() => setSelectedImage(img)}
+                          className="group relative overflow-hidden rounded-xl border border-border bg-cream"
+                        >
+                          <div className="aspect-[16/10] overflow-hidden">
+                            <img
+                              src={img}
+                              alt={`${selectedCase.title} project highlight ${i + 1}`}
+                              loading="lazy"
+                              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+                            />
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+
                 {/* CTA */}
                 <div className="mt-8 text-center">
                   <Button asChild size="lg" className="bg-navy hover:bg-navy-light text-cream">
