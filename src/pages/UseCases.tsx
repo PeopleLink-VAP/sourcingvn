@@ -210,8 +210,7 @@ const useCases = [
           { label: "Integration", value: "Square" },
           { label: "Market", value: "USA" }
         ],
-        gallery: [soraStudio, soraShot],
-        testimonial: "People book before they even call us now. The site does the selling."
+        gallery: [soraStudio, soraShot]
       },
       {
         id: "glory-nest",
