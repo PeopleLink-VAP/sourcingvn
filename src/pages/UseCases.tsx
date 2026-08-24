@@ -227,8 +227,7 @@ const useCases = [
           { label: "Location", value: "Hoi An" },
           { label: "Guest Types", value: "Local + Intl" }
         ],
-        gallery: [gloryShot, gloryVilla],
-        testimonial: "Guests tell us they booked because of the story, not the price."
+        gallery: [gloryShot, gloryVilla]
       },
       {
         id: "va-training-portal",
