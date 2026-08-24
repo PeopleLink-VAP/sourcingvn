@@ -2,7 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Package, Users, Cpu, Star, Quote, ChevronRight, Image, X } from "lucide-react";
+import { ArrowRight, Package, Users, Cpu, ChevronRight, Image, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
