@@ -9,16 +9,9 @@ import { useEffect, useState } from "react";
 // Real client project photos only (no stock or AI imagery)
 
 // Client project screenshots and logos
-import edgepointShot from "@/assets/cases/Edpoint_safety.jpg";
-import edgepointSite from "@/assets/cases/edgepoint_site.jpg";
 import edgepointLogo from "@/assets/cases/edpoint_logo.png";
-import radiusShot from "@/assets/cases/radius_excavation.jpg";
 import radiusLogo from "@/assets/cases/radius_logo.png";
-import soraShot from "@/assets/cases/sora_nail.jpg";
-import soraStudio from "@/assets/cases/sora_studio.jpg";
 import soraLogo from "@/assets/cases/sora_logo.png";
-import gloryShot from "@/assets/cases/glorynest.jpg";
-import gloryVilla from "@/assets/cases/glorynest_villa.jpg";
 import gloryLogo from "@/assets/cases/glorynest_logo.png";
 import portalShot from "@/assets/cases/teaching_portal.jpg";
 import vaEvent from "@/assets/cases/va_event.jpg";
@@ -195,7 +188,7 @@ const useCases = [
           { label: "Booking Paths", value: "2" },
           { label: "Market", value: "Canada" }
         ],
-        gallery: [edgepointShot, edgepointSite]
+        gallery: [edge1, edge2, edge3, edge4]
       },
       {
         id: "radius-ecosystem",
@@ -212,7 +205,7 @@ const useCases = [
           { label: "Shared System", value: "1" },
           { label: "Market", value: "Canada" }
         ],
-        gallery: [radiusShot]
+        gallery: [rex1, rex2, rex3, rdi1, rdi2, rdi3]
       },
       {
         id: "sora-nail",
@@ -229,7 +222,7 @@ const useCases = [
           { label: "Integration", value: "Square" },
           { label: "Market", value: "USA" }
         ],
-        gallery: [soraStudio, soraShot]
+        gallery: [sora1, sora2, sora3, sora4]
       },
       {
         id: "glory-nest",
@@ -246,7 +239,7 @@ const useCases = [
           { label: "Location", value: "Hoi An" },
           { label: "Guest Types", value: "Local + Intl" }
         ],
-        gallery: [gloryShot, gloryVilla]
+        gallery: [glory1, glory2, glory3, glory4]
       },
       {
         id: "va-training-portal",
