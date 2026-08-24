@@ -134,8 +134,7 @@ const useCases = [
           { label: "Time to Productivity", value: "2 weeks" },
           { label: "Cost vs US Hire", value: "65% less" }
         ],
-        gallery: [],
-        testimonial: "Lan isn't just an assistant. She runs half my business. I couldn't operate without her now."
+        gallery: []
       },
       {
         id: "content-team",
