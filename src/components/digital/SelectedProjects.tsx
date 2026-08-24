@@ -147,7 +147,7 @@ export const SelectedProjects = () => {
 
               <div
                 className={`grid gap-3 ${
-                  project.shots.length > 1 ? "sm:grid-cols-2" : "grid-cols-1"
+                  project.shots.length > 1 ? "sm:grid-cols-2" : "grid-cols-1 sm:max-w-[calc(50%-0.375rem)]"
                 }`}
               >
                 {project.shots.map((shot) => (
