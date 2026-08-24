@@ -545,64 +545,6 @@ const UseCases = () => {
         )}
       </AnimatePresence>
 
-      {/* Testimonials */}
-      <section className="section-padding bg-gradient-to-br from-navy to-navy-deep relative overflow-hidden">
-        <div className="absolute inset-0 pattern-dots opacity-20" />
-        
-        <div className="container-editorial relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <p className="text-sm font-semibold uppercase tracking-widest text-sunshine mb-4">
-              Testimonials
-            </p>
-            <h2 className="headline-lg text-cream max-w-2xl mx-auto">
-              What our clients say
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.author}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-navy-light/30 backdrop-blur-sm rounded-2xl p-8 border border-cream/10"
-              >
-                <Quote className="w-10 h-10 text-sunshine/30 mb-4" />
-                
-                <p className="text-cream/90 leading-relaxed mb-6">
-                  "{testimonial.quote}"
-                </p>
-                
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-sunshine/20 text-sunshine flex items-center justify-center font-display font-semibold">
-                    {testimonial.author.split(" ").map((n) => n[0]).join("").slice(0, 2)}
-                  </div>
-
-                  <div>
-                    <p className="text-cream font-medium">{testimonial.author}</p>
-                    <p className="text-cream/60 text-sm">{testimonial.role}</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-1 mt-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-sunshine text-sunshine" />
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-r from-sunshine/20 via-cream to-teal/20">
         <div className="container-editorial text-center">
