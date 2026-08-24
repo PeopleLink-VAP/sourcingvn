@@ -118,8 +118,7 @@ const useCases = [
           { label: "Team Size", value: "5 people" },
           { label: "Retention", value: "18 months" }
         ],
-        gallery: [],
-        testimonial: "Our support team in Vietnam is now our competitive advantage. They're better than in-house teams I've managed."
+        gallery: []
       },
       {
         id: "executive-assistant",
