@@ -94,7 +94,12 @@ const projects: Project[] = [
     name: "Virtual Assistant Training Portal",
     country: "Vietnam",
     description: "One system for 200+ students, trainers and learning operations.",
-    shots: [{ src: portalShot, label: "Learning portal" }],
+    shots: [
+      { src: portalShot, label: "Learning portal" },
+      { src: vap1, label: "Class schedule" },
+      { src: vap2, label: "Trainer center" },
+      { src: vap3, label: "Mentor messaging" },
+    ],
     href: "/use-cases#va-training-portal",
   },
   {
