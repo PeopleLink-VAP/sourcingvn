@@ -62,7 +62,7 @@ const caseStudies = [
     tag: "Small Batch",
     summary:
       "A direct network of Hoi An tailors so early-stage brands can start small without hidden factory fees.",
-    photo: duyenImage,
+    photo: apparelPhoto,
   },
 ];
 
