@@ -21,38 +21,44 @@ const fadeUp = {
 
 const caseStudies = [
   {
+    id: "bamboo-homeware",
+    title: "Bamboo Straws & Eco Homeware",
+    tag: "Eco Homeware",
+    summary:
+      "Handmade bamboo straws, cutlery, brushes and flasks, engraved and packed retail-ready for eco brands abroad.",
+    photo: bambooStrawsJar,
+  },
+  {
+    id: "bamboo-carbon",
     title: "Bamboo & Coconut Activated Carbon",
-    client: "A veterinary products manufacturer moving sourcing from China to Vietnam amid US–China trade tension.",
-    goal: "Find bamboo coal meeting exact size and spec requirements to pass US lab testing.",
-    services: "Phase 1 (Supplier Vetting) + Phase 2 (Sample Delivery: collecting samples, quality checks, shipping to the client's US lab).",
-    challenges: "A limited pool of Vietnamese coal suppliers qualified for lab and medical-grade testing; client specs differed from standard local production; hazardous-material logistics required a special shipping route.",
-    result: "Found a qualified supplier and connected the client directly for ongoing production.",
-    photos: [garmentFactoryImage, qualityCheckImage],
+    tag: "Raw Materials",
+    summary:
+      "Lab-grade bamboo coal sourced in Vietnam for a US veterinary manufacturer moving away from China.",
+    photo: qualityCheckImage,
   },
   {
+    id: "cleaning-sprayers",
     title: "Cleaning Sprayers & Wet Tissues",
-    client: "A large US e-commerce seller moving hundreds of thousands of units per year.",
-    goal: "Source screen-cleaning sprayers and wet tissues during a short Vietnam stopover after the Canton Fair.",
-    services: "Supplier Vetting + Factory Visits.",
-    challenges: "Under 24 hours to vet suppliers and book visits; 8 factories visited across 2 days in different locations; some suppliers unavailable on short notice.",
-    result: "The client found factories matching target pricing and rebooked us for ongoing supplier communication.",
-    photos: [factoryWorkersImage, warehouseImage],
+    tag: "Factory Visits",
+    summary:
+      "Eight factory visits in two days for a US e-commerce seller with under 24 hours' notice.",
+    photo: factoryWorkersImage,
   },
   {
-    title: "Medical Scrubs",
-    client: "International hospital and clinic suppliers, sourcing from Vietnam, a hub thanks to brands like FIGS.",
-    goal: "Full A-to-Z sourcing, since the client never visited Vietnam in person.",
-    services: "Supplier Vetting through Door-to-Door Shipping.",
-    challenges: "Managing imported fabric components from China; ensuring 'Made in Vietnam' compliance; resolving a post-wash sizing issue with a factory and holding them accountable for the cost; rebuilding trust after the client's prior bad experience sourcing in Turkey; navigating COVID-era logistics.",
-    result: "All clients satisfied; several referred us to additional hospitals and clinics.",
-    photos: [qualityCheckImage, factoryWorkersImage],
+    id: "medical-scrubs",
+    title: "Medical Scrubs, A to Z",
+    tag: "Full Service",
+    summary:
+      "End-to-end sourcing for hospital suppliers who never set foot in Vietnam, from vetting to door-to-door shipping.",
+    photo: garmentFactoryImage,
   },
   {
+    id: "custom-clothing",
     title: "Custom Clothing, Low MOQ",
-    client: "Early-stage brands needing low-MOQ clothing: hoodies, shirts, dresses, sportswear.",
-    goal: "Avoid big-factory hidden fees and high minimum order quantities.",
-    approach: "A direct network of local tailors and small factories in Vietnam, led by founder Duyen, who grew up in a tailoring family in Hoi An, Vietnam's custom clothing hub.",
-    photos: [duyenImage, furnitureImage],
+    tag: "Small Batch",
+    summary:
+      "A direct network of Hoi An tailors so early-stage brands can start small without hidden factory fees.",
+    photo: duyenImage,
   },
 ];
 
