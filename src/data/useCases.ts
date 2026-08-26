@@ -62,19 +62,6 @@ import apparelCarpenter from "@/assets/cases/apparel/apparel_carpenter.jpg";
 import apparelKnit from "@/assets/cases/apparel/apparel_knit.jpg";
 import apparelCap from "@/assets/cases/apparel/apparel_cap.jpg";
 
-interface UseCase {
-  id: string;
-  title: string;
-  client: string;
-  industry: string;
-  logo?: string;
-  challenge: string;
-  solution: string;
-  result: string;
-  metrics: { label: string; value: string }[];
-  gallery: string[];
-}
-
 
 export const useCaseCategories: UseCaseCategory[] = [
   {
