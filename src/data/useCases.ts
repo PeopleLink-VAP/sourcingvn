@@ -39,6 +39,10 @@ import gloryVilla from "@/assets/cases/glorynest_villa.jpg";
 import gloryLogo from "@/assets/cases/glorynest_logo.png";
 import portalShot from "@/assets/cases/teaching_portal.jpg";
 import vaEvent from "@/assets/cases/va_event.jpg";
+import vapCalendar from "@/assets/cases/highlights/VAP_1_Calendar.jpg";
+import vapTrainer from "@/assets/cases/highlights/VAP_2_TrainerCenter.jpg";
+import vapMessages from "@/assets/cases/highlights/VAP_3_Messages.jpg";
+import coconutCarbon from "@/assets/cases/carbon/coconut_carbon.jpg";
 import sourcingPlatformShot from "@/assets/cases/sourcing_supplier.jpg";
 import factorySourcing from "@/assets/cases/factory_sourcing.jpg";
 import bambooPackaging from "@/assets/cases/bamboo/bamboo_packaging.jpg";
@@ -101,7 +105,7 @@ export const useCaseCategories: UseCaseCategory[] = [
           { label: "Shipping", value: "Hazmat route" },
           { label: "Outcome", value: "Direct link" }
         ],
-        gallery: []
+        gallery: [coconutCarbon]
       },
       {
         id: "cleaning-sprayers",
@@ -299,7 +303,7 @@ export const useCaseCategories: UseCaseCategory[] = [
           { label: "Spreadsheets", value: "Retired" },
           { label: "Ticket Triage", value: "Live" }
         ],
-        gallery: [portalShot, vaEvent]
+        gallery: [portalShot, vapCalendar, vapTrainer, vapMessages, vaEvent]
       },
       {
         id: "sourcing-platform",
