@@ -1,63 +1,22 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Package, Users, Cpu, Star } from "lucide-react";
-import vietnamMarketImage from "@/assets/images/vn-hoi-an-lanterns.jpg";
-import asianOfficeImage from "@/assets/images/vn-ben-thanh-market.jpg";
-import asianDeveloperImage from "@/assets/images/vn-danang-city.jpg";
+import { ArrowRight } from "lucide-react";
+import { featuredCases } from "@/data/useCases";
 
-const paths = [
-  {
-    icon: Package,
-    title: "Product Sourcing",
-    team: "Run by our Product Sourcing team",
-    specialist:
-      "Led by someone who's spent their career in apparel, industrial goods, and agriculture. Not a generalist reading a spec sheet.",
-    cta: "From apparel to industrial parts. See how we vet suppliers.",
-    href: "/product-sourcing",
-    image: vietnamMarketImage,
-    color: "teal",
-    stats: "100+ products sourced",
-  },
-  {
-    icon: Users,
-    title: "Talent Sourcing",
-    team: "Run by our Talent team",
-    specialist:
-      "Drawing from a community of 20,000+ vetted VAs and specialists. A pool most single-service agencies can't match.",
-    cta: "From VAs to specialized roles. Meet our talent pool.",
-    href: "/talent-sourcing",
-    image: asianOfficeImage,
-    color: "coral",
-    stats: "50+ team members placed",
-  },
-  {
-    icon: Cpu,
-    title: "Digital & Systems",
-    team: "Run by our Digital & Systems team",
-    specialist:
-      "Led by an expert with 20 years in software, AI, and data transformation.",
-    cta: "Backed by 20 years of software expertise. See our tech work.",
-    href: "/digital-systems",
-    image: asianDeveloperImage,
-    color: "navy",
-    stats: "40+ systems built",
-  },
-];
+const categoryAccent: Record<string, string> = {
+  "Product Sourcing": "text-teal border-teal/40 bg-teal/10",
+  "Talent Sourcing": "text-coral border-coral/40 bg-coral/10",
+  "Digital & Systems": "text-sunshine border-sunshine/40 bg-sunshine/10",
+};
 
 export const ChoosePath = () => {
   return (
     <section className="section-padding bg-gradient-to-br from-navy via-navy-deep to-navy-light relative overflow-hidden">
-      {/* Animated background */}
       <div className="absolute inset-0 pattern-dots opacity-15" />
       <motion.div
         animate={{ x: [0, 50, 0], y: [0, -30, 0] }}
         transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
         className="absolute top-20 left-20 w-64 h-64 bg-sunshine/5 rounded-full blur-3xl"
-      />
-      <motion.div
-        animate={{ x: [0, -40, 0], y: [0, 40, 0] }}
-        transition={{ repeat: Infinity, duration: 12, ease: "easeInOut", delay: 2 }}
-        className="absolute bottom-20 right-20 w-80 h-80 bg-teal/5 rounded-full blur-3xl"
       />
 
       <div className="container-editorial relative z-10">
@@ -66,69 +25,62 @@ export const ChoosePath = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14 max-w-3xl mx-auto"
+          className="max-w-3xl mb-12"
         >
           <p className="text-sm font-semibold uppercase tracking-widest text-sunshine mb-4">
             Success Stories
           </p>
           <h2 className="headline-lg text-cream mb-5">
-            Real projects, real outcomes. Grouped by the team behind them.
+            Real projects, run by the team behind each pillar.
           </h2>
           <p className="body-md text-cream/70">
-            Each pillar is run by its own specialized team, not a generalist wearing three hats.
-            Pick the lane that matches your project and see what they've shipped.
+            Product sourcing, talent and digital systems, each with its own specialist team.
+            Open any story to see the full case study.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {paths.map((path, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredCases.map((story, index) => (
             <motion.div
-              key={path.title}
+              key={story.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
             >
               <Link
-                to={path.href}
+                to={`/use-cases#${story.id}`}
                 className="group flex flex-col h-full bg-cream/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-cream/10 hover:border-sunshine/50 transition-all duration-500 hover:bg-cream/10"
               >
-                {/* Image */}
-                <div className="relative h-44 overflow-hidden">
-                  <img
-                    src={path.image}
-                    alt={path.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/40 to-transparent" />
-
-                  <div className="absolute top-4 right-4 flex items-center gap-1 px-3 py-1 bg-sunshine/90 text-navy text-xs font-semibold rounded-full">
-                    <Star className="w-3 h-3" />
-                    {path.stats}
+                {story.gallery.length > 0 && (
+                  <div className="relative h-44 overflow-hidden">
+                    <img
+                      src={story.gallery[0]}
+                      alt={story.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy-deep/20 to-transparent" />
+                    <span
+                      className={`absolute top-4 left-4 text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full border backdrop-blur-sm ${
+                        categoryAccent[story.category] ?? "text-cream border-cream/30 bg-cream/10"
+                      }`}
+                    >
+                      {story.category}
+                    </span>
                   </div>
-                </div>
+                )}
 
                 <div className="p-6 flex flex-col flex-1">
-                  <p className="text-[11px] font-semibold uppercase tracking-widest text-sunshine/80 mb-2">
-                    {path.team}
-                  </p>
-                  <div className="flex items-center gap-3 mb-4">
-                    <path.icon className="w-8 h-8 text-sunshine" strokeWidth={1.5} />
-                    <h3 className="headline-md text-cream group-hover:text-sunshine transition-colors">
-                      {path.title}
-                    </h3>
-                  </div>
+                  <h3 className="headline-md text-cream group-hover:text-sunshine transition-colors mb-2">
+                    {story.title}
+                  </h3>
+                  <p className="text-sm text-cream/60 mb-4">{story.client}</p>
+                  <p className="body-md text-cream/80 mb-5 line-clamp-3">{story.result}</p>
 
-                  <p className="text-sm text-cream/60 italic mb-4 leading-relaxed">
-                    {path.specialist}
-                  </p>
-
-                  <div className="border-t border-cream/10 pt-4 mt-auto">
-                    <p className="body-md text-cream/80 mb-4">{path.cta}</p>
-                    <div className="flex items-center gap-2 text-sunshine font-medium">
-                      <span>See success stories</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
-                    </div>
+                  <div className="flex items-center gap-2 text-sunshine font-medium mt-auto">
+                    <span>Read the case study</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
                   </div>
                 </div>
               </Link>
@@ -140,7 +92,7 @@ export const ChoosePath = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-12"
         >
           <Link
