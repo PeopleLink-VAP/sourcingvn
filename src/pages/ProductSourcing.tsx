@@ -12,6 +12,7 @@ import factoryWorkersImage from "@/assets/images/factory-workers.jpg";
 import furnitureImage from "@/assets/images/furniture-production.jpg";
 import marketImage from "@/assets/images/vietnam-market.jpg";
 import duyenImage from "@/assets/images/duyen-pham.jpg";
+import bambooStrawsJar from "@/assets/cases/bamboo/bamboo_straws_jar.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -21,38 +22,44 @@ const fadeUp = {
 
 const caseStudies = [
   {
+    id: "bamboo-homeware",
+    title: "Bamboo Straws & Eco Homeware",
+    tag: "Eco Homeware",
+    summary:
+      "Handmade bamboo straws, cutlery, brushes and flasks, engraved and packed retail-ready for eco brands abroad.",
+    photo: bambooStrawsJar,
+  },
+  {
+    id: "bamboo-carbon",
     title: "Bamboo & Coconut Activated Carbon",
-    client: "A veterinary products manufacturer moving sourcing from China to Vietnam amid US–China trade tension.",
-    goal: "Find bamboo coal meeting exact size and spec requirements to pass US lab testing.",
-    services: "Phase 1 (Supplier Vetting) + Phase 2 (Sample Delivery: collecting samples, quality checks, shipping to the client's US lab).",
-    challenges: "A limited pool of Vietnamese coal suppliers qualified for lab and medical-grade testing; client specs differed from standard local production; hazardous-material logistics required a special shipping route.",
-    result: "Found a qualified supplier and connected the client directly for ongoing production.",
-    photos: [garmentFactoryImage, qualityCheckImage],
+    tag: "Raw Materials",
+    summary:
+      "Lab-grade bamboo coal sourced in Vietnam for a US veterinary manufacturer moving away from China.",
+    photo: qualityCheckImage,
   },
   {
+    id: "cleaning-sprayers",
     title: "Cleaning Sprayers & Wet Tissues",
-    client: "A large US e-commerce seller moving hundreds of thousands of units per year.",
-    goal: "Source screen-cleaning sprayers and wet tissues during a short Vietnam stopover after the Canton Fair.",
-    services: "Supplier Vetting + Factory Visits.",
-    challenges: "Under 24 hours to vet suppliers and book visits; 8 factories visited across 2 days in different locations; some suppliers unavailable on short notice.",
-    result: "The client found factories matching target pricing and rebooked us for ongoing supplier communication.",
-    photos: [factoryWorkersImage, warehouseImage],
+    tag: "Factory Visits",
+    summary:
+      "Eight factory visits in two days for a US e-commerce seller with under 24 hours' notice.",
+    photo: factoryWorkersImage,
   },
   {
-    title: "Medical Scrubs",
-    client: "International hospital and clinic suppliers, sourcing from Vietnam, a hub thanks to brands like FIGS.",
-    goal: "Full A-to-Z sourcing, since the client never visited Vietnam in person.",
-    services: "Supplier Vetting through Door-to-Door Shipping.",
-    challenges: "Managing imported fabric components from China; ensuring 'Made in Vietnam' compliance; resolving a post-wash sizing issue with a factory and holding them accountable for the cost; rebuilding trust after the client's prior bad experience sourcing in Turkey; navigating COVID-era logistics.",
-    result: "All clients satisfied; several referred us to additional hospitals and clinics.",
-    photos: [qualityCheckImage, factoryWorkersImage],
+    id: "medical-scrubs",
+    title: "Medical Scrubs, A to Z",
+    tag: "Full Service",
+    summary:
+      "End-to-end sourcing for hospital suppliers who never set foot in Vietnam, from vetting to door-to-door shipping.",
+    photo: garmentFactoryImage,
   },
   {
+    id: "custom-clothing",
     title: "Custom Clothing, Low MOQ",
-    client: "Early-stage brands needing low-MOQ clothing: hoodies, shirts, dresses, sportswear.",
-    goal: "Avoid big-factory hidden fees and high minimum order quantities.",
-    approach: "A direct network of local tailors and small factories in Vietnam, led by founder Duyen, who grew up in a tailoring family in Hoi An, Vietnam's custom clothing hub.",
-    photos: [duyenImage, furnitureImage],
+    tag: "Small Batch",
+    summary:
+      "A direct network of Hoi An tailors so early-stage brands can start small without hidden factory fees.",
+    photo: duyenImage,
   },
 ];
 
@@ -215,69 +222,47 @@ const ProductSourcing = () => {
             </p>
           </motion.div>
 
-          <div className="space-y-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {caseStudies.map((cs, index) => (
-              <motion.article
-                key={cs.title}
-                {...fadeUp}
-                className="grid lg:grid-cols-5 gap-10 items-start border-t border-navy/10 pt-12"
-              >
-                <div className={`lg:col-span-2 grid gap-4 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                  {cs.photos.map((photo, i) => (
+              <motion.div key={cs.id} {...fadeUp} transition={{ delay: index * 0.06 }}>
+                <Link
+                  to={`/use-cases#${cs.id}`}
+                  className="group block h-full bg-background border border-navy/10 hover:border-gold/60 transition-colors"
+                >
+                  <div className="aspect-[4/3] overflow-hidden">
                     <img
-                      key={i}
-                      src={photo}
-                      alt={`${cs.title} project photo`}
-                      className="w-full aspect-[4/3] object-cover"
+                      src={cs.photo}
+                      alt={`${cs.title} sourcing project in Vietnam`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
-                  ))}
-                </div>
-
-                <div className={`lg:col-span-3 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-                  <p className="text-gold text-xs font-medium uppercase tracking-widest mb-3">
-                    Case {String(index + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="headline-md text-navy mb-6">{cs.title}</h3>
-
-                  <dl className="space-y-5">
-                    <div>
-                      <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Client</dt>
-                      <dd className="body-md text-navy">{cs.client}</dd>
-                    </div>
-                    <div>
-                      <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Goal</dt>
-                      <dd className="body-md text-navy">{cs.goal}</dd>
-                    </div>
-                    {cs.services && (
-                      <div>
-                        <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Services Used</dt>
-                        <dd className="body-md text-navy">{cs.services}</dd>
-                      </div>
-                    )}
-                    {cs.approach && (
-                      <div>
-                        <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Approach</dt>
-                        <dd className="body-md text-navy">{cs.approach}</dd>
-                      </div>
-                    )}
-                    {cs.challenges && (
-                      <div>
-                        <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Challenges</dt>
-                        <dd className="body-md text-cool-gray">{cs.challenges}</dd>
-                      </div>
-                    )}
-                    {cs.result && (
-                      <div>
-                        <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Result</dt>
-                        <dd className="body-md text-navy font-medium">{cs.result}</dd>
-                      </div>
-                    )}
-                  </dl>
-                </div>
-              </motion.article>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-gold text-xs font-medium uppercase tracking-widest mb-2">
+                      {cs.tag}
+                    </p>
+                    <h3 className="font-display text-xl text-navy leading-snug mb-3">
+                      {cs.title}
+                    </h3>
+                    <p className="body-md text-cool-gray mb-5">{cs.summary}</p>
+                    <span className="inline-flex items-center gap-2 text-sm font-medium text-navy group-hover:text-gold transition-colors">
+                      View the project
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
             ))}
           </div>
+
+          <motion.div {...fadeUp} className="mt-12">
+            <Button asChild variant="outline" size="lg">
+              <Link to="/use-cases" className="inline-flex items-center gap-2">
+                See all case studies
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Button>
+          </motion.div>
         </div>
       </section>
 
