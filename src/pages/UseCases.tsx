@@ -31,6 +31,19 @@ import bambooStrawsJar from "@/assets/cases/bamboo/bamboo_straws_jar.jpg";
 import bambooHairbrush from "@/assets/cases/bamboo/bamboo_hairbrush.jpg";
 import bambooEcoheartSet from "@/assets/cases/bamboo/bamboo_ecoheart_set.jpg";
 import bambooRetailBox from "@/assets/cases/bamboo/bamboo_retail_box.jpg";
+import wetTissue from "@/assets/cases/sprayers/wet_tissue.jpg";
+import sprayer1 from "@/assets/cases/sprayers/sprayer_1.jpg";
+import sprayer2 from "@/assets/cases/sprayers/sprayer_2.jpg";
+import sprayer3 from "@/assets/cases/sprayers/sprayer_3.jpg";
+import sprayer4 from "@/assets/cases/sprayers/sprayer_4.jpg";
+import scrubsNavy from "@/assets/cases/scrubs/scrubs_navy.jpg";
+import scrubsStudio from "@/assets/cases/scrubs/scrubs_studio.jpg";
+import scrubsVideo1 from "@/assets/cases/scrubs/scrubs_video_1.mp4.asset.json";
+import scrubsVideo2 from "@/assets/cases/scrubs/scrubs_video_2.mp4.asset.json";
+import apparelHoodie from "@/assets/cases/apparel/apparel_hoodie.jpg";
+import apparelCarpenter from "@/assets/cases/apparel/apparel_carpenter.jpg";
+import apparelKnit from "@/assets/cases/apparel/apparel_knit.jpg";
+import apparelCap from "@/assets/cases/apparel/apparel_cap.jpg";
 
 interface UseCase {
   id: string;
@@ -100,7 +113,7 @@ const useCases = [
           { label: "Notice", value: "<24 hrs" },
           { label: "Volume", value: "100Ks/yr" }
         ],
-        gallery: []
+        gallery: [sprayer1, wetTissue, sprayer2, sprayer3, sprayer4]
       },
       {
         id: "medical-scrubs",
@@ -116,11 +129,11 @@ const useCases = [
           { label: "Compliance", value: "Made in VN" },
           { label: "Referrals", value: "Multiple" }
         ],
-        gallery: []
+        gallery: [scrubsStudio, scrubsNavy, scrubsVideo1.url, scrubsVideo2.url]
       },
       {
         id: "custom-clothing",
-        title: "Custom Clothing, Low MOQ",
+        title: "Custom Apparel, Low MOQ",
         client: "Early-stage apparel brands",
         industry: "Apparel & Fashion",
         challenge: "Small brands needing hoodies, shirts, dresses and sportswear kept running into big-factory hidden fees and minimum order quantities they could not meet.",
@@ -132,7 +145,7 @@ const useCases = [
           { label: "Network", value: "Local tailors" },
           { label: "Base", value: "Hoi An" }
         ],
-        gallery: []
+        gallery: [apparelHoodie, apparelCarpenter, apparelKnit, apparelCap]
       }
     ]
   },
@@ -483,13 +496,23 @@ const UseCases = () => {
                       <div 
                         key={i} 
                         className="relative overflow-hidden cursor-pointer"
-                        onClick={() => setSelectedImage(img)}
+                        onClick={() => { if (!img.endsWith(".mp4")) setSelectedImage(img); }}
                       >
-                        <img 
-                          src={img} 
-                          alt={`${selectedCase.title} project photo ${i + 1}`}
-                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                        />
+                        {img.endsWith(".mp4") ? (
+                          <video
+                            src={img}
+                            controls
+                            muted
+                            playsInline
+                            className="w-full h-full object-cover bg-navy"
+                          />
+                        ) : (
+                          <img
+                            src={img}
+                            alt={`${selectedCase.title} project photo ${i + 1}`}
+                            className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                          />
+                        )}
                       </div>
                     ))}
                   </div>
