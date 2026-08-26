@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Package, Users, Cpu } from "lucide-react";
 import { Link } from "react-router-dom";
-import vietnamFactoryImage from "@/assets/images/vn-haiphong-port-2.jpg";
-import asianCollaborationImage from "@/assets/images/vn-ben-thanh-stalls.jpg";
-import asianDeveloperImage from "@/assets/images/vn-saigon-skyline.jpg";
+import vietnamFactoryImage from "@/assets/images/vn-bamboo-straws.jpg";
+import asianCollaborationImage from "@/assets/images/vn-team-gathering.jpg";
+import asianDeveloperImage from "@/assets/images/vn-dev-desk.jpg";
 
 const services = [
   {
