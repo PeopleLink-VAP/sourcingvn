@@ -12,6 +12,7 @@ import factoryWorkersImage from "@/assets/images/factory-workers.jpg";
 import furnitureImage from "@/assets/images/furniture-production.jpg";
 import marketImage from "@/assets/images/vietnam-market.jpg";
 import duyenImage from "@/assets/images/duyen-pham.jpg";
+import bambooStrawsJar from "@/assets/cases/bamboo/bamboo_straws_jar.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
