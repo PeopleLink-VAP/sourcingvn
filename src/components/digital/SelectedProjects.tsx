@@ -24,6 +24,9 @@ import glory1 from "@/assets/cases/highlights/Glorynest_1_Hero.jpg";
 import glory2 from "@/assets/cases/highlights/Glorynest_2_Gallery.jpg";
 import glory3 from "@/assets/cases/highlights/Glorynest_3_Features.jpg";
 import glory4 from "@/assets/cases/highlights/Glorynest_4_Stories.jpg";
+import vap1 from "@/assets/cases/highlights/VAP_1_Calendar.jpg";
+import vap2 from "@/assets/cases/highlights/VAP_2_TrainerCenter.jpg";
+import vap3 from "@/assets/cases/highlights/VAP_3_Messages.jpg";
 
 type Project = {
   name: string;
@@ -91,7 +94,12 @@ const projects: Project[] = [
     name: "Virtual Assistant Training Portal",
     country: "Vietnam",
     description: "One system for 200+ students, trainers and learning operations.",
-    shots: [{ src: portalShot, label: "Learning portal" }],
+    shots: [
+      { src: portalShot, label: "Learning portal" },
+      { src: vap1, label: "Class schedule" },
+      { src: vap2, label: "Trainer center" },
+      { src: vap3, label: "Mentor messaging" },
+    ],
     href: "/use-cases#va-training-portal",
   },
   {
