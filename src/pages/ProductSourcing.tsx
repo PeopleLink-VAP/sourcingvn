@@ -1,319 +1,319 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, XCircle, Package, Shirt, Cpu, Gift, Home } from "lucide-react";
-import { useRef } from "react";
+import { ArrowRight, Video, ShieldCheck, Users, Compass } from "lucide-react";
 
-import garmentFactoryImage from "@/assets/images/garment-factory-asia.jpg";
-import vietnamWarehouseImage from "@/assets/images/vietnam-warehouse.jpg";
-import asianTeamWork from "@/assets/images/asian-team-work.jpg";
+import garmentFactoryImage from "@/assets/images/vietnam-factory.jpg";
+import qualityCheckImage from "@/assets/images/quality-check.jpg";
+import warehouseImage from "@/assets/images/vietnam-warehouse.jpg";
+import factoryWorkersImage from "@/assets/images/factory-workers.jpg";
+import furnitureImage from "@/assets/images/furniture-production.jpg";
+import marketImage from "@/assets/images/vietnam-market.jpg";
+import duyenImage from "@/assets/images/duyen-pham.jpg";
 
-const processSteps = [
-  { number: "01", title: "Discovery", description: "We understand your product, quantities, timeline, and quality requirements.", icon: "📋" },
-  { number: "02", title: "Factory Search", description: "We identify and vet factories, visiting in person, not just emailing.", icon: "🔍" },
-  { number: "03", title: "Sample Making", description: "We coordinate sample production and manage revisions with the factory until quality meets your standards.", icon: "🧵" },
-  { number: "04", title: "Negotiation", description: "We negotiate on your behalf with full transparency. No hidden markups.", icon: "🤝" },
-  { number: "05", title: "Sample Approval", description: "Final sample review with you. We don't move forward until you're 100% satisfied.", icon: "✅" },
-  { number: "06", title: "Production", description: "We oversee production with regular check-ins, on-site visits, and quality inspections.", icon: "🏭" },
-  { number: "07", title: "Delivery", description: "We coordinate logistics and ensure your products arrive as expected.", icon: "📦" },
+const fadeUp = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-60px" },
+};
+
+const caseStudies = [
+  {
+    title: "Bamboo & Coconut Activated Carbon",
+    client: "A veterinary products manufacturer moving sourcing from China to Vietnam amid US–China trade tension.",
+    goal: "Find bamboo coal meeting exact size and spec requirements to pass US lab testing.",
+    services: "Phase 1 (Supplier Vetting) + Phase 2 (Sample Delivery: collecting samples, quality checks, shipping to the client's US lab).",
+    challenges: "A limited pool of Vietnamese coal suppliers qualified for lab and medical-grade testing; client specs differed from standard local production; hazardous-material logistics required a special shipping route.",
+    result: "Found a qualified supplier and connected the client directly for ongoing production.",
+    photos: [garmentFactoryImage, qualityCheckImage],
+  },
+  {
+    title: "Cleaning Sprayers & Wet Tissues",
+    client: "A large US e-commerce seller moving hundreds of thousands of units per year.",
+    goal: "Source screen-cleaning sprayers and wet tissues during a short Vietnam stopover after the Canton Fair.",
+    services: "Supplier Vetting + Factory Visits.",
+    challenges: "Under 24 hours to vet suppliers and book visits; 8 factories visited across 2 days in different locations; some suppliers unavailable on short notice.",
+    result: "The client found factories matching target pricing and rebooked us for ongoing supplier communication.",
+    photos: [factoryWorkersImage, warehouseImage],
+  },
+  {
+    title: "Medical Scrubs",
+    client: "International hospital and clinic suppliers, sourcing from Vietnam, a hub thanks to brands like FIGS.",
+    goal: "Full A-to-Z sourcing, since the client never visited Vietnam in person.",
+    services: "Supplier Vetting through Door-to-Door Shipping.",
+    challenges: "Managing imported fabric components from China; ensuring 'Made in Vietnam' compliance; resolving a post-wash sizing issue with a factory and holding them accountable for the cost; rebuilding trust after the client's prior bad experience sourcing in Turkey; navigating COVID-era logistics.",
+    result: "All clients satisfied; several referred us to additional hospitals and clinics.",
+    photos: [qualityCheckImage, factoryWorkersImage],
+  },
+  {
+    title: "Custom Clothing, Low MOQ",
+    client: "Early-stage brands needing low-MOQ clothing: hoodies, shirts, dresses, sportswear.",
+    goal: "Avoid big-factory hidden fees and high minimum order quantities.",
+    approach: "A direct network of local tailors and small factories in Vietnam, led by founder Duyen, who grew up in a tailoring family in Hoi An, Vietnam's custom clothing hub.",
+    photos: [duyenImage, furnitureImage],
+  },
 ];
 
-const comparison = [
-  { wrong: "Rely on Alibaba listings", right: "Visit factories in person" },
-  { wrong: "Pay commission on orders", right: "Pay flat fees for work done" },
-  { wrong: "Trust factory photos", right: "Verify production capabilities" },
-  { wrong: "Hope samples match production", right: "Monitor production quality" },
+const phases = [
+  {
+    number: "01",
+    title: "Discovery",
+    price: "Free",
+    description: "A free 20-minute consulting call to understand your needs and give you a quick intro to how we can help.",
+  },
+  {
+    number: "02",
+    title: "Factory Vetting",
+    price: "from $150 USD / product",
+    description: "We vet 7 to 30 factories depending on your product niche, then narrow it down to the best 2 or 3, complete with contact info, pricing range, and our honest insight on each.",
+  },
+  {
+    number: "03",
+    title: "Sample Making",
+    price: "from $175 USD / product",
+    description: "We manage the first prototype process with the factory on your behalf. One call to brief your requirements is all it takes; we handle the rest on the ground, where miscommunication can otherwise get expensive. We only charge our service fee: sample and shipping costs are quoted separately and paid directly to vendors, with no markup from us.",
+  },
+  {
+    number: "04",
+    title: "Communication & Negotiation",
+    price: "Customized based on workload",
+    description: "This phase often takes longer than expected as sample feedback on pricing, sizing and adjustments goes back and forth. If the factory communicates well in English and you have time to manage it, we are happy to connect you directly. If you'd rather we handle it, we stay involved as needed.",
+  },
+  {
+    number: "05",
+    title: "Mass Production",
+    price: "from $450 USD",
+    description: "We act as your project manager, coordinating between factory and client, resolving issues as they come up, and keeping production on schedule.",
+  },
+  {
+    number: "06",
+    title: "Inspection",
+    price: "Quoted per project",
+    description: "We inspect clothing ourselves. For specialized or unique products, we bring in trusted third-party inspectors to make sure standards are met.",
+  },
+  {
+    number: "07",
+    title: "Shipping",
+    price: "Support, not full logistics",
+    description: "We don't provide logistics services ourselves, but we connect you directly with logistics partners. This is often free if arranged from the start of the project; more complex shipping needs may carry a small service fee.",
+  },
 ];
 
-const useCases = [
+const principles = [
   {
-    icon: Shirt,
-    title: "Apparel & Textiles",
-    description: "Custom clothing, uniforms, bags, and fabric goods. Vietnam's textile industry is world-class.",
-    examples: ["T-shirts & polo shirts", "Work uniforms", "Bags & accessories", "Home textiles"],
+    icon: Compass,
+    title: "We meet you where you are",
+    text: "Not everyone needs full production sourcing from scratch. Whether you're exploring Vietnam for the first time or fixing a stuck production, we guide you from wherever your journey is.",
   },
   {
-    icon: Home,
-    title: "Furniture & Home",
-    description: "Wooden furniture, rattan products, ceramics, and home decor items.",
-    examples: ["Wooden furniture", "Rattan & bamboo products", "Ceramics & pottery", "Decorative items"],
+    icon: Users,
+    title: "Specialists, not generalists",
+    text: "Our team includes experienced merchandisers specialized by product category. Your project is handled by someone who knows your product, not one person doing everything.",
   },
   {
-    icon: Cpu,
-    title: "Electronics & Hardware",
-    description: "Circuit boards, cables, plastic components, and electronic accessories.",
-    examples: ["PCB assembly", "Cables & connectors", "Plastic injection parts", "Electronic housings"],
+    icon: ShieldCheck,
+    title: "Honest insight, no commissions",
+    text: "We never take commissions from factories, so recommendations stay unbiased. Beyond production capacity, we share observations and a wider market view so you can make informed calls.",
   },
   {
-    icon: Gift,
-    title: "Promotional & Packaging",
-    description: "Custom packaging, promotional items, and branded merchandise.",
-    examples: ["Custom packaging", "Promotional gifts", "Printed materials", "Display items"],
+    icon: Video,
+    title: "Factory visits, virtual or in person",
+    text: "Every shortlist is 2 to 3 vetted suppliers drawn from a pool of 7 to 30, never just one name. Visits can happen over live video meetings, so you don't need to travel.",
   },
 ];
 
 const ProductSourcing = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
-
-  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
-
   return (
     <div className="min-h-screen">
       <Navigation />
-      
-      {/* Hero with parallax */}
-      <section ref={heroRef} className="relative pt-32 pb-24 bg-navy-deep overflow-hidden min-h-[80vh] flex items-center">
-        <motion.div 
-          className="absolute inset-0"
-          style={{ y: imageY }}
-        >
-          <img 
-            src={garmentFactoryImage} 
-            alt="Vietnam garment factory" 
-            className="w-full h-[120%] object-cover opacity-30"
+
+      {/* Hero: quiet, editorial */}
+      <section className="relative pt-32 pb-20 bg-navy-deep overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={marketImage}
+            alt="Sourcing work in Vietnam"
+            className="w-full h-full object-cover opacity-25"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/90 to-navy-deep/70" />
-        </motion.div>
-        
-        <div className="absolute inset-0 pattern-lines" />
-        
-        <motion.div 
-          className="container-editorial relative z-10"
-          style={{ y: textY }}
-        >
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/95 to-navy-deep/80" />
+        </div>
+
+        <div className="container-editorial relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <motion.p 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-gold text-sm font-medium uppercase tracking-widest mb-4"
-            >
-              Product Sourcing
-            </motion.p>
-            <h1 className="headline-xl text-cream mb-6">
-              Find the right factory.
-              <br />
-              <motion.span 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="text-cream/60"
-              >
-                Not just any factory.
-              </motion.span>
-            </h1>
-            <motion.p 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="body-lg text-cream/70 max-w-2xl mb-8"
-            >
-              We go beyond Alibaba. We walk into factories, verify capabilities, 
-              negotiate transparently, and manage production so you don't have to.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-            >
-              <Button asChild variant="hero" size="xl">
-                <Link to="/start-project">
-                  Start Your Project
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-              </Button>
-            </motion.div>
-          </motion.div>
-        </motion.div>
-      </section>
-
-      {/* What You Get - Production Tracker - MOVED UP */}
-      <section className="py-16 bg-navy pattern-grid overflow-hidden">
-        <div className="container-editorial">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
+            className="max-w-2xl"
           >
             <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
-              What You Get
+              Product Sourcing
             </p>
-            <h2 className="headline-lg text-cream">
-              Full visibility. Zero guesswork.
-            </h2>
+            <h1 className="headline-xl text-cream mb-6">
+              A small team on the ground in Vietnam.
+              <br />
+              <span className="text-cream/60">Working closely with every client.</span>
+            </h1>
+            <p className="body-lg text-cream/70 mb-8">
+              We are a boutique sourcing team, not a volume operation. That means
+              fewer projects at a time, senior people on yours, and honest answers
+              even when they are not the ones you hoped for.
+            </p>
+            <Button asChild variant="hero" size="xl">
+              <Link to="/start-project">
+                Start Your Project
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+            </Button>
           </motion.div>
-
-          {/* Animated Production Flow */}
-          <div className="max-w-4xl mx-auto">
-            <div className="relative">
-              {/* Connecting line */}
-              <motion.div
-                className="absolute top-1/2 left-0 right-0 h-1 bg-cream/10 -translate-y-1/2 hidden lg:block"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5 }}
-                style={{ originX: 0 }}
-              />
-              
-              <div className="grid grid-cols-2 lg:grid-cols-6 gap-6">
-                {[
-                  { icon: "🔍", label: "Sourced", status: "done", count: 12 },
-                  { icon: "🧵", label: "Sampling", status: "done", count: 8 },
-                  { icon: "✅", label: "Approved", status: "done", count: 6 },
-                  { icon: "🏭", label: "In Production", status: "active", count: 3 },
-                  { icon: "📋", label: "QC Check", status: "pending", count: 2 },
-                  { icon: "🚢", label: "Shipped", status: "pending", count: 0 },
-                ].map((step, i) => (
-                  <motion.div
-                    key={step.label}
-                    initial={{ opacity: 0, y: 30, scale: 0.8 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.15, type: "spring" }}
-                    whileHover={{ scale: 1.1, y: -10 }}
-                    className="relative z-10"
-                  >
-                    <div className={`bg-navy-deep border rounded-lg p-6 text-center transition-all ${
-                      step.status === "active" 
-                        ? "border-gold shadow-lg shadow-gold/20" 
-                        : step.status === "done"
-                          ? "border-green-500/30"
-                          : "border-cream/10"
-                    }`}>
-                      <motion.div
-                        className="text-4xl mb-3"
-                        animate={step.status === "active" ? { 
-                          scale: [1, 1.2, 1],
-                          rotate: [0, 5, -5, 0]
-                        } : {}}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      >
-                        {step.icon}
-                      </motion.div>
-                      <p className="text-cream/70 text-sm mb-2">{step.label}</p>
-                      <motion.p 
-                        className={`text-2xl font-display font-bold ${
-                          step.status === "active" ? "text-gold" : "text-cream/50"
-                        }`}
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.5 + i * 0.1 }}
-                      >
-                        {step.count}
-                      </motion.p>
-                      {step.status === "active" && (
-                        <motion.div
-                          className="absolute -top-2 -right-2 w-4 h-4 bg-gold rounded-full"
-                          animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
-                          transition={{ duration: 1.5, repeat: Infinity }}
-                        />
-                      )}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            {/* Live Activity Feed */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8 }}
-              className="mt-12 bg-navy-deep/50 border border-cream/10 rounded-lg p-6"
-            >
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-sm text-cream/60 font-mono">📊 Weekly Report Preview</span>
-              </div>
-              <div className="space-y-3">
-                {[
-                  { time: "Mon", event: "Factory visit completed. 3 suppliers vetted in Ho Chi Minh City", type: "success" },
-                  { time: "Wed", event: "Sample batch B-42 received, 2 revisions requested on stitching", type: "info" },
-                  { time: "Fri", event: "QC inspection passed. Order #1247 cleared for shipping", type: "success" },
-                  
-                ].map((activity, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 1 + i * 0.1 }}
-                    className="flex items-center gap-4 text-sm"
-                  >
-                    <span className="text-cream/40 w-20 flex-shrink-0">{activity.time}</span>
-                    <motion.div
-                      className={`w-2 h-2 rounded-full flex-shrink-0 ${
-                        activity.type === "success" ? "bg-green-400" : "bg-gold"
-                      }`}
-                      animate={{ scale: [1, 1.5, 1] }}
-                      transition={{ delay: i * 0.5, duration: 0.5 }}
-                    />
-                    <span className="text-cream/70">{activity.event}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
         </div>
       </section>
 
-      {/* Use Cases with Images */}
+      {/* Principles */}
       <section className="section-padding bg-background">
         <div className="container-editorial">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
+          <motion.div {...fadeUp} className="mb-14 max-w-2xl">
             <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
-              What We Source
+              How We Work With You
             </p>
-            <h2 className="headline-lg text-navy max-w-2xl">
-              Industries we work with.
+            <h2 className="headline-lg text-navy">
+              Guidance first. Volume never.
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {useCases.map((useCase, index) => (
+            {principles.map((p, i) => (
               <motion.div
-                key={useCase.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group border border-navy/10 p-8 hover:border-gold/40 transition-all duration-500 bg-background hover:shadow-xl"
+                key={p.title}
+                {...fadeUp}
+                transition={{ delay: i * 0.08 }}
+                className="border border-navy/10 p-8 hover:border-gold/40 transition-colors duration-500"
               >
-                <useCase.icon 
-                  className="w-12 h-12 text-navy-light group-hover:text-gold transition-colors duration-300 mb-6" 
-                  strokeWidth={1.5}
-                />
-                <h3 className="headline-md text-navy mb-4 group-hover:text-gold transition-colors duration-300">
-                  {useCase.title}
-                </h3>
-                <p className="body-md text-cool-gray mb-6">{useCase.description}</p>
-                <div className="grid grid-cols-2 gap-2">
-                  {useCase.examples.map((example) => (
-                    <div key={example} className="flex items-center gap-2 text-sm text-navy/70">
-                      <div className="w-1.5 h-1.5 rounded-full bg-gold" />
-                      {example}
-                    </div>
+                <p.icon className="w-8 h-8 text-gold mb-5" strokeWidth={1.5} />
+                <h3 className="headline-md text-navy mb-3">{p.title}</h3>
+                <p className="body-md text-cool-gray">{p.text}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies */}
+      <section className="section-padding surface-cream">
+        <div className="container-editorial">
+          <motion.div {...fadeUp} className="mb-14 max-w-2xl">
+            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
+              Our Work
+            </p>
+            <h2 className="headline-lg text-navy">
+              Case studies, told plainly.
+            </h2>
+            <p className="body-md text-cool-gray mt-4">
+              Real projects, real constraints. This is what working with us
+              actually looks like.
+            </p>
+          </motion.div>
+
+          <div className="space-y-16">
+            {caseStudies.map((cs, index) => (
+              <motion.article
+                key={cs.title}
+                {...fadeUp}
+                className="grid lg:grid-cols-5 gap-10 items-start border-t border-navy/10 pt-12"
+              >
+                <div className={`lg:col-span-2 grid gap-4 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+                  {cs.photos.map((photo, i) => (
+                    <img
+                      key={i}
+                      src={photo}
+                      alt={`${cs.title} project photo`}
+                      className="w-full aspect-[4/3] object-cover"
+                      loading="lazy"
+                    />
                   ))}
+                </div>
+
+                <div className={`lg:col-span-3 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+                  <p className="text-gold text-xs font-medium uppercase tracking-widest mb-3">
+                    Case {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <h3 className="headline-md text-navy mb-6">{cs.title}</h3>
+
+                  <dl className="space-y-5">
+                    <div>
+                      <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Client</dt>
+                      <dd className="body-md text-navy">{cs.client}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Goal</dt>
+                      <dd className="body-md text-navy">{cs.goal}</dd>
+                    </div>
+                    {cs.services && (
+                      <div>
+                        <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Services Used</dt>
+                        <dd className="body-md text-navy">{cs.services}</dd>
+                      </div>
+                    )}
+                    {cs.approach && (
+                      <div>
+                        <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Approach</dt>
+                        <dd className="body-md text-navy">{cs.approach}</dd>
+                      </div>
+                    )}
+                    {cs.challenges && (
+                      <div>
+                        <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Challenges</dt>
+                        <dd className="body-md text-cool-gray">{cs.challenges}</dd>
+                      </div>
+                    )}
+                    {cs.result && (
+                      <div>
+                        <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Result</dt>
+                        <dd className="body-md text-navy font-medium">{cs.result}</dd>
+                      </div>
+                    )}
+                  </dl>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process & Pricing */}
+      <section className="section-padding bg-background">
+        <div className="container-editorial">
+          <motion.div {...fadeUp} className="mb-14 max-w-2xl">
+            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
+              How We Work & What It Costs
+            </p>
+            <h2 className="headline-lg text-navy">
+              Seven phases. Take what you need.
+            </h2>
+            <p className="body-md text-cool-gray mt-4">
+              You can engage us for a single phase or the full journey. Pricing is
+              transparent and scoped to the work, not the size of your order.
+            </p>
+          </motion.div>
+
+          <div className="max-w-3xl">
+            {phases.map((phase, index) => (
+              <motion.div
+                key={phase.number}
+                {...fadeUp}
+                transition={{ delay: index * 0.05 }}
+                className="group flex gap-6 md:gap-10 items-start py-8 border-b border-navy/10 last:border-b-0"
+              >
+                <span className="text-sm font-display font-semibold text-navy/30 group-hover:text-gold transition-colors pt-1 w-8 flex-shrink-0">
+                  {phase.number}
+                </span>
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-2">
+                    <h3 className="headline-md text-navy">{phase.title}</h3>
+                    <span className="text-sm text-gold font-medium">{phase.price}</span>
+                  </div>
+                  <p className="body-md text-cool-gray">{phase.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -321,192 +321,28 @@ const ProductSourcing = () => {
         </div>
       </section>
 
-      {/* Quality Section with Image */}
-      <section className="section-padding surface-cream">
+      {/* Ethos + CTA */}
+      <section className="section-padding surface-dark">
         <div className="container-editorial">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <img 
-                src={asianTeamWork} 
-                alt="Quality inspection in Vietnam" 
-                className="w-full aspect-square object-cover"
-              />
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gold/20 -z-10" />
-              <div className="absolute -top-6 -left-6 w-32 h-32 border-2 border-navy/10 -z-10" />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
-                The Reality
-              </p>
-              <h2 className="headline-lg text-navy mb-6">
-                What usually goes wrong in sourcing.
-              </h2>
-              <p className="body-md text-cool-gray mb-8">
-                Most sourcing problems start with shortcuts: trusting listings, 
-                skipping verification, accepting the first quote. Commissions 
-                incentivize agents to spend more of your money, not save it.
-              </p>
-
-              <div className="space-y-4">
-                {comparison.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="grid grid-cols-2 gap-4"
-                  >
-                    <div className="flex items-start gap-3 p-4 bg-destructive/5 border border-destructive/10">
-                      <XCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-navy">{item.wrong}</span>
-                    </div>
-                    <div className="flex items-start gap-3 p-4 bg-gold/10 border border-gold/20">
-                      <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-navy font-medium">{item.right}</span>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Timeline with Animation */}
-      <section className="section-padding bg-background pattern-dots">
-        <div className="container-editorial">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
-              Our Process
+          <motion.div {...fadeUp} className="max-w-3xl">
+            <p className="body-lg text-cream/80 mb-10 border-l-2 border-gold pl-6">
+              Our goal isn't just a finished product. It's a satisfied client and
+              a fair, respected partnership with the local factories who make it
+              happen.
             </p>
-            <h2 className="headline-lg text-navy max-w-2xl">
-              From idea to delivery. Here's how we work.
-            </h2>
-          </motion.div>
-
-          <div className="relative">
-            {/* Animated timeline line */}
-            <motion.div 
-              className="hidden lg:block absolute left-[60px] top-0 bottom-0 w-px bg-navy/10"
-              initial={{ scaleY: 0 }}
-              whileInView={{ scaleY: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
-              style={{ originY: 0 }}
-            />
-            
-            <div className="space-y-8">
-              {processSteps.map((step, index) => (
-                <motion.div
-                  key={step.number}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ delay: index * 0.15 }}
-                  className="flex gap-8 items-start group"
-                >
-                  <div className="relative z-10 w-[60px] lg:w-[120px] flex-shrink-0 flex items-center gap-4">
-                    <span className="text-2xl lg:text-4xl font-display font-bold text-navy/20 group-hover:text-gold transition-colors duration-300">
-                      {step.number}
-                    </span>
-                    <motion.div
-                      className="w-3 h-3 rounded-full bg-navy/20 group-hover:bg-gold group-hover:scale-150 transition-all duration-300 hidden lg:block"
-                      whileInView={{ scale: [0, 1.2, 1] }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.15 + 0.3 }}
-                    />
-                  </div>
-                  <div className="flex-1 pb-8 border-b border-navy/10 group-hover:border-gold/30 transition-colors">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-2xl">{step.icon}</span>
-                    </div>
-                    <h3 className="headline-md text-navy mb-2 group-hover:text-gold transition-colors duration-300">
-                      {step.title}
-                    </h3>
-                    <p className="body-md text-cool-gray">{step.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Warehouse Image Section */}
-      <section className="relative h-[60vh] overflow-hidden">
-        <motion.img 
-          src={vietnamWarehouseImage} 
-          alt="Vietnam warehouse operations" 
-          className="w-full h-full object-cover"
-          initial={{ scale: 1.1 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5 }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/90 via-navy-deep/60 to-transparent" />
-        <div className="absolute inset-0 flex items-center">
-          <div className="container-editorial">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="max-w-lg"
-            >
-              <h2 className="headline-lg text-cream mb-4">
-                End-to-end support.
-              </h2>
-              <p className="body-lg text-cream/70">
-                From factory selection to final delivery, we manage every step. 
-                You get updates, not surprises.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Removed duplicate - now shown after hero */}
-
-      {/* CTA */}
-      <section className="section-padding surface-dark pattern-grid">
-        <div className="container-editorial text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
             <h2 className="headline-lg text-cream mb-6">
-              Ready to source with confidence?
+              Tell us where you are in your sourcing journey.
             </h2>
-            <p className="body-lg text-cream/60 mb-10 max-w-xl mx-auto">
-              Tell us about your product. We'll tell you honestly if we can help.
+            <p className="body-lg text-cream/60 mb-10 max-w-xl">
+              We'll tell you honestly which phase makes sense for you, and which
+              ones you can skip.
             </p>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Button asChild variant="hero" size="xl">
-                <Link to="/start-project">
-                  Start Your Project
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-              </Button>
-            </motion.div>
+            <Button asChild variant="hero" size="xl">
+              <Link to="/start-project">
+                Start Your Project
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+            </Button>
           </motion.div>
         </div>
       </section>
