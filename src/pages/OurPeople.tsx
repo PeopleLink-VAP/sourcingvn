@@ -8,7 +8,6 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import duyenPhoto from "@/assets/images/duyen-pham.jpg";
 import kentPhoto from "@/assets/images/kent-nguyen.png";
 import maiAnhPhoto from "@/assets/images/mai-anh.jpg";
-import thuyPhoto from "@/assets/images/thuy-nguyen.jpg";
 
 const teamMembers = [
   {
@@ -97,7 +96,7 @@ const OurPeople = () => {
       <section className="section-padding bg-background">
         <div className="container-editorial">
           <div className="space-y-24">
-            {teamMembers.filter(member => !member.hidden).map((member, index) => (
+            {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
                 initial={{ opacity: 0, y: 40 }}
