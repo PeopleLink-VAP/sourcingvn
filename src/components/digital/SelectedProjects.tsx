@@ -15,7 +15,7 @@ import edge4 from "@/assets/cases/highlights/EdgePoint_4_ProjectHighlights.jpg";
 import rex1 from "@/assets/cases/highlights/RadiusExcavation_1_Hero.jpg";
 import rex2 from "@/assets/cases/highlights/RadiusExcavation_2_Network.jpg";
 import rdi1 from "@/assets/cases/highlights/RadiusDisposal_1_Hero.jpg";
-import rdi3 from "@/assets/cases/highlights/RadiusDisposal_3_Stats.jpg";
+import rdi2 from "@/assets/cases/highlights/RadiusDisposal_2_Services.jpg";
 import sora1 from "@/assets/cases/highlights/SoraNail_1_Hero.jpg";
 import sora2 from "@/assets/cases/highlights/SoraNail_2_Services.jpg";
 import sora3 from "@/assets/cases/highlights/SoraNail_3_Interior.jpg";
