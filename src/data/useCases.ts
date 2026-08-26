@@ -326,4 +326,15 @@ export const allCases: (UseCase & { category: string })[] = useCaseCategories.fl
   c.cases.map((useCase) => ({ ...useCase, category: c.category }))
 );
 
-export const featuredCases = allCases.filter((c) => c.featured);
+const featuredIds = [
+  "bamboo-homeware",
+  "medical-scrubs",
+  "edgepoint-safety",
+  "sora-nail",
+  "glory-nest",
+  "cleaning-sprayers",
+];
+
+export const featuredCases = featuredIds
+  .map((id) => allCases.find((c) => c.id === id))
+  .filter((c): c is (typeof allCases)[number] => Boolean(c));
