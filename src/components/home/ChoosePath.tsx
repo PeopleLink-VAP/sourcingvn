@@ -22,7 +22,7 @@ export const ChoosePath = () => {
       <div className="container-editorial relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileIn_view={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="max-w-3xl mb-12"
