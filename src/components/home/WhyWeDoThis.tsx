@@ -39,27 +39,19 @@ export const WhyWeDoThis = () => {
               From the Founder
             </p>
             <h2 className="headline-lg text-navy mb-6">
-              We didn't set out to build an agency.
+              What drives us
             </h2>
 
             <div className="space-y-6 body-lg text-cool-gray">
-              <p className="text-navy font-display text-xl leading-relaxed">
-                <span className="text-gold">"</span>
-                Everyone needs an assistant once in a while.
-                <span className="text-gold">"</span>
-                {" "}That belief has stayed with me through years of building startups across FMCG, import/export, and hospitality - industries that gave me a front-row seat to what it actually takes to work across borders, and the privilege of partnering with both international clients and Vietnamese talent along the way.
+              <p>
+                <span className="font-display text-xl text-navy italic">
+                  "Everyone needs an assistant once in a while."
+                </span>{" "}
+                That belief has stayed with me through years of building startups across FMCG, import/export, and hospitality - industries that gave me a front-row seat to what it actually takes to work across borders, and the privilege of partnering with both international clients and Vietnamese talent along the way.
               </p>
 
               <p>
-                Vietnam is{" "}
-                <span className="font-semibold text-navy">
-                  one of the most underrated resources in the region right now
-                </span>{" "}
-                - not just for its manufacturing base and outsourcing capacity, but for its{" "}
-                <span className="font-semibold text-navy">
-                  young, driven, and increasingly skilled workforce
-                </span>
-                . Along with a group of like-minded partners, I co-founded Sourcing Vietnam to make that resource accessible and easy to work with. We operate across three core areas:
+                Vietnam is one of the most underrated resources in the region right now - not just for its manufacturing base and outsourcing capacity, but for its young, driven, and increasingly skilled workforce. Along with a group of like-minded partners, I co-founded Sourcing Vietnam to make that resource accessible and easy to work with. We operate across three core areas:
               </p>
 
               <ul className="space-y-3 pl-1">
@@ -87,14 +79,7 @@ export const WhyWeDoThis = () => {
               </ul>
 
               <p>
-                What ties all three together is something you can't outsource to a spreadsheet:{" "}
-                <span className="font-semibold text-navy">
-                  someone on the ground who understands the language, the culture, and the working styles on both sides
-                </span>
-                . That{" "}
-                <span className="font-semibold text-navy">local fluency</span>{" "}
-                is what prevents the miscommunications, delays, and wasted budget that so often come with working across markets - and it's the difference between a vendor relationship and a{" "}
-                <span className="font-semibold text-navy">real partner</span>.
+                What ties all three together is something you can't outsource to a spreadsheet: someone on the ground who understands the language, the culture, and the working styles on both sides. That local fluency is what prevents the miscommunications, delays, and wasted budget that so often come with working across markets - and it's the difference between a vendor relationship and a real partner.
               </p>
 
               <p className="font-medium text-navy bg-gold/10 border-l-2 border-gold pl-4 py-3">
