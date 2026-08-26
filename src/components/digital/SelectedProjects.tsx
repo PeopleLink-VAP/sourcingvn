@@ -68,8 +68,8 @@ const projects: Project[] = [
     logo: soraLogo,
     shots: [
       { src: sora1, label: "Homepage" },
-      { src: sora2, label: "Featured services" },
-      { src: sora3, label: "Studio" },
+      { src: sora2, label: "Look book" },
+      { src: sora3, label: "The studio" },
       { src: sora4, label: "Client reviews" },
     ],
     href: "/use-cases#sora-nail",
