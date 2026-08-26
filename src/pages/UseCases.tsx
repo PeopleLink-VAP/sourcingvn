@@ -491,7 +491,7 @@ const UseCases = () => {
                 
                 {/* Gallery */}
                 {selectedCase.gallery.length > 0 && (
-                  <div className={`grid gap-1 h-64 ${selectedCase.gallery.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
+                  <div className={`grid gap-1 [&>*]:aspect-[4/3] ${selectedCase.gallery.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
                     {selectedCase.gallery.map((img, i) => (
                       <div 
                         key={i} 
