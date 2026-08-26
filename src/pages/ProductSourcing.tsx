@@ -221,69 +221,47 @@ const ProductSourcing = () => {
             </p>
           </motion.div>
 
-          <div className="space-y-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {caseStudies.map((cs, index) => (
-              <motion.article
-                key={cs.title}
-                {...fadeUp}
-                className="grid lg:grid-cols-5 gap-10 items-start border-t border-navy/10 pt-12"
-              >
-                <div className={`lg:col-span-2 grid gap-4 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                  {cs.photos.map((photo, i) => (
+              <motion.div key={cs.id} {...fadeUp} transition={{ delay: index * 0.06 }}>
+                <Link
+                  to={`/use-cases#${cs.id}`}
+                  className="group block h-full bg-background border border-navy/10 hover:border-gold/60 transition-colors"
+                >
+                  <div className="aspect-[4/3] overflow-hidden">
                     <img
-                      key={i}
-                      src={photo}
-                      alt={`${cs.title} project photo`}
-                      className="w-full aspect-[4/3] object-cover"
+                      src={cs.photo}
+                      alt={`${cs.title} sourcing project in Vietnam`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
-                  ))}
-                </div>
-
-                <div className={`lg:col-span-3 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-                  <p className="text-gold text-xs font-medium uppercase tracking-widest mb-3">
-                    Case {String(index + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="headline-md text-navy mb-6">{cs.title}</h3>
-
-                  <dl className="space-y-5">
-                    <div>
-                      <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Client</dt>
-                      <dd className="body-md text-navy">{cs.client}</dd>
-                    </div>
-                    <div>
-                      <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Goal</dt>
-                      <dd className="body-md text-navy">{cs.goal}</dd>
-                    </div>
-                    {cs.services && (
-                      <div>
-                        <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Services Used</dt>
-                        <dd className="body-md text-navy">{cs.services}</dd>
-                      </div>
-                    )}
-                    {cs.approach && (
-                      <div>
-                        <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Approach</dt>
-                        <dd className="body-md text-navy">{cs.approach}</dd>
-                      </div>
-                    )}
-                    {cs.challenges && (
-                      <div>
-                        <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Challenges</dt>
-                        <dd className="body-md text-cool-gray">{cs.challenges}</dd>
-                      </div>
-                    )}
-                    {cs.result && (
-                      <div>
-                        <dt className="text-xs font-semibold uppercase tracking-widest text-navy/50 mb-1">Result</dt>
-                        <dd className="body-md text-navy font-medium">{cs.result}</dd>
-                      </div>
-                    )}
-                  </dl>
-                </div>
-              </motion.article>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-gold text-xs font-medium uppercase tracking-widest mb-2">
+                      {cs.tag}
+                    </p>
+                    <h3 className="font-display text-xl text-navy leading-snug mb-3">
+                      {cs.title}
+                    </h3>
+                    <p className="body-md text-cool-gray mb-5">{cs.summary}</p>
+                    <span className="inline-flex items-center gap-2 text-sm font-medium text-navy group-hover:text-gold transition-colors">
+                      View the project
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
             ))}
           </div>
+
+          <motion.div {...fadeUp} className="mt-12">
+            <Button asChild variant="outline" size="lg">
+              <Link to="/use-cases" className="inline-flex items-center gap-2">
+                See all case studies
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Button>
+          </motion.div>
         </div>
       </section>
 
