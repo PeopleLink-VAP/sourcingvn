@@ -24,6 +24,13 @@ import portalShot from "@/assets/cases/teaching_portal.jpg";
 import vaEvent from "@/assets/cases/va_event.jpg";
 import sourcingPlatformShot from "@/assets/cases/sourcing_supplier.jpg";
 import factorySourcing from "@/assets/cases/factory_sourcing.jpg";
+import bambooPackaging from "@/assets/cases/bamboo/bamboo_packaging.jpg";
+import bambooStrawDrink from "@/assets/cases/bamboo/bamboo_straw_drink.jpg";
+import bambooStrawSet from "@/assets/cases/bamboo/bamboo_straw_set.jpg";
+import bambooStrawsJar from "@/assets/cases/bamboo/bamboo_straws_jar.jpg";
+import bambooHairbrush from "@/assets/cases/bamboo/bamboo_hairbrush.jpg";
+import bambooEcoheartSet from "@/assets/cases/bamboo/bamboo_ecoheart_set.jpg";
+import bambooRetailBox from "@/assets/cases/bamboo/bamboo_retail_box.jpg";
 
 interface UseCase {
   id: string;
