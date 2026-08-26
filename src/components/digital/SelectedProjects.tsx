@@ -57,7 +57,7 @@ const projects: Project[] = [
       { src: rex1, label: "Excavation homepage" },
       { src: rex2, label: "Radius network" },
       { src: rdi1, label: "Disposal homepage" },
-      { src: rdi3, label: "Results in numbers" },
+      { src: rdi2, label: "Disposal services" },
     ],
     href: "/use-cases#radius-ecosystem",
   },
