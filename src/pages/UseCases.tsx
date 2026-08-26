@@ -55,50 +55,82 @@ const useCases = [
     description: "Find reliable factories, negotiate better deals, and manage production from Vietnam.",
     cases: [
       {
-        id: "fashion-launch",
-        title: "Fashion Brand Launch",
-        client: "Sarah K., US Entrepreneur",
+        id: "bamboo-homeware",
+        title: "Bamboo Straws & Eco Homeware",
+        client: "Eco brands in the US, EU and Australia",
+        industry: "Eco Homeware & Tableware",
+        challenge: "Buyers wanted genuinely handmade Vietnamese bamboo goods (drinking straws, cutlery, hair brushes, flasks) with their own branding and retail-ready packaging, but most trading companies quoted generic stock with no control over engraving, moisture treatment or box design.",
+        solution: "We worked directly with artisan workshops in the Mekong Delta and central Vietnam: sample rounds for straw diameter and finish, laser engraving tests for each logo, moisture and mould treatment checks, plus a packaging partner for the printed boxes and jute pouches.",
+        result: "Retail-ready branded sets shipped from Vietnam: engraved straws, cleaning brushes, cutlery kits and bamboo flasks, packed exactly as the brand designed them.",
+        metrics: [
+          { label: "Product Lines", value: "6" },
+          { label: "Branding", value: "Engraved" },
+          { label: "Packaging", value: "Retail-ready" },
+          { label: "Origin", value: "Handmade VN" }
+        ],
+        gallery: [bambooStrawsJar, bambooRetailBox, bambooPackaging, bambooStrawSet, bambooStrawDrink, bambooEcoheartSet, bambooHairbrush]
+      },
+      {
+        id: "bamboo-carbon",
+        title: "Bamboo & Coconut Activated Carbon",
+        client: "A veterinary products manufacturer, USA",
+        industry: "Veterinary & Raw Materials",
+        challenge: "Moving sourcing from China to Vietnam amid US-China trade tension, the client needed bamboo coal in an exact size and spec that would pass US lab testing. Few Vietnamese suppliers qualified for lab or medical-grade testing, client specs differed from standard local production, and hazardous-material logistics needed a special shipping route.",
+        solution: "Phase 1 supplier vetting followed by Phase 2 sample delivery: collecting samples, running quality checks and shipping them to the client's lab in the US.",
+        result: "Found a qualified supplier and connected the client directly for ongoing production.",
+        metrics: [
+          { label: "Phases Used", value: "2" },
+          { label: "Lab Testing", value: "Passed" },
+          { label: "Shipping", value: "Hazmat route" },
+          { label: "Outcome", value: "Direct link" }
+        ],
+        gallery: []
+      },
+      {
+        id: "cleaning-sprayers",
+        title: "Cleaning Sprayers & Wet Tissues",
+        client: "A large US e-commerce seller",
+        industry: "Consumer Goods & E-commerce",
+        challenge: "The client had under 24 hours to vet suppliers and book factory visits during a short Vietnam stopover after the Canton Fair. Locations were spread out and some suppliers were unavailable on short notice.",
+        solution: "Rapid supplier vetting plus a planned route of 8 factory visits across 2 days in different provinces, with us on the ground translating and negotiating.",
+        result: "The client found factories matching target pricing and rebooked us for ongoing supplier communication.",
+        metrics: [
+          { label: "Factories Visited", value: "8" },
+          { label: "Days", value: "2" },
+          { label: "Notice", value: "<24 hrs" },
+          { label: "Volume", value: "100Ks/yr" }
+        ],
+        gallery: []
+      },
+      {
+        id: "medical-scrubs",
+        title: "Medical Scrubs, A to Z",
+        client: "International hospital and clinic suppliers",
+        industry: "Medical Apparel",
+        challenge: "The client never visited Vietnam in person. We managed imported fabric components from China, ensured 'Made in Vietnam' compliance, resolved a post-wash sizing issue and held the factory accountable for the cost, all while rebuilding trust after a bad sourcing experience in Turkey and navigating COVID-era logistics.",
+        solution: "Full service from supplier vetting through door-to-door shipping, with virtual factory visits and inspection reports standing in for the client on the ground.",
+        result: "All clients satisfied, with several referring us to additional hospitals and clinics.",
+        metrics: [
+          { label: "Scope", value: "A to Z" },
+          { label: "Client Visits", value: "Remote" },
+          { label: "Compliance", value: "Made in VN" },
+          { label: "Referrals", value: "Multiple" }
+        ],
+        gallery: []
+      },
+      {
+        id: "custom-clothing",
+        title: "Custom Clothing, Low MOQ",
+        client: "Early-stage apparel brands",
         industry: "Apparel & Fashion",
-        challenge: "Needed to source 5,000 units of sustainable bamboo clothing for new eco-fashion line. Previous suppliers had quality issues and high MOQs.",
-        solution: "We visited 12 factories in Ho Chi Minh City and Binh Duong, found 3 certified sustainable factories, negotiated 30% below initial quotes, and established a rigorous QC process with photo documentation at each production stage.",
-        result: "Launched on time with 98% quality pass rate, saved $45,000 on first order. Now scaling to 20,000 units/quarter.",
+        challenge: "Small brands needing hoodies, shirts, dresses and sportswear kept running into big-factory hidden fees and minimum order quantities they could not meet.",
+        solution: "A direct network of local tailors and small factories, led by founder Duyen, who grew up in a tailoring family in Hoi An, Vietnam's custom clothing hub.",
+        result: "Brands launch small, test the market and scale into larger factories when the numbers justify it.",
         metrics: [
-          { label: "Units Delivered", value: "5,000" },
-          { label: "Cost Savings", value: "$45K" },
-          { label: "Quality Pass Rate", value: "98%" },
-          { label: "Time to Market", value: "12 weeks" }
-        ],
-        gallery: []
-      },
-      {
-        id: "home-goods",
-        title: "Home Goods Expansion",
-        client: "Michael T., Australian Retailer",
-        industry: "Furniture & Home",
-        challenge: "Existing supplier couldn't scale for holiday demand. Needed backup production without sacrificing quality.",
-        solution: "Identified and vetted 5 backup factories specializing in rattan and wooden furniture. Managed split production across 3 facilities, coordinated shipping consolidation.",
-        result: "Fulfilled 200% of previous year's orders, zero stockouts during peak season. Ongoing relationship with 2 new suppliers.",
-        metrics: [
-          { label: "Order Increase", value: "200%" },
-          { label: "Stockouts", value: "Zero" },
-          { label: "New Suppliers", value: "2" },
-          { label: "Shipping Savings", value: "18%" }
-        ],
-        gallery: []
-      },
-      {
-        id: "electronics-pcb",
-        title: "Electronics Component Sourcing",
-        client: "James L., Hardware Startup",
-        industry: "Electronics",
-        challenge: "Needed reliable PCB assembly for IoT device prototype and small batch production. Previous Chinese supplier had 6-week lead times.",
-        solution: "Found Vietnamese electronics manufacturer with faster turnaround. Managed sampling process, coordinated technical specs, and oversaw first production run.",
-        result: "Reduced lead time to 2 weeks, 99.5% first-pass yield. Now ramping to 10K units/month.",
-        metrics: [
-          { label: "Lead Time", value: "2 weeks" },
-          { label: "First-Pass Yield", value: "99.5%" },
-          { label: "Cost Reduction", value: "22%" },
-          { label: "Current Scale", value: "10K/mo" }
+          { label: "MOQ", value: "Low" },
+          { label: "Hidden Fees", value: "None" },
+          { label: "Network", value: "Local tailors" },
+          { label: "Base", value: "Hoi An" }
         ],
         gallery: []
       }
