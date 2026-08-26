@@ -60,7 +60,7 @@ export const Footer = () => {
               </li>
               <li>
                 <Link to="/our-people" className="text-sm hover:text-gold transition-colors">
-                  Our People
+                  Our people and stories
                 </Link>
               </li>
               <li>

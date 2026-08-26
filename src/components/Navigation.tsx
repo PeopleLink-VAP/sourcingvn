@@ -10,7 +10,7 @@ const navLinks = [
   { href: "/digital-systems", label: "Digital & Systems" },
   { href: "/use-cases", label: "Use Cases" },
   { href: "/how-we-help", label: "How We Help" },
-  { href: "/our-people", label: "Our People" },
+  { href: "/our-people", label: "Our people and stories" },
 ];
 
 export const Navigation = () => {

@@ -80,9 +80,9 @@ const OurPeople = () => {
               Behind The Scenes
             </p>
             <h1 className="headline-xl text-cream mb-6">
-              The people behind
+              Our people
               <br />
-              <span className="text-cream/60">Sourcing.vn</span>
+              <span className="text-cream/60">and stories</span>
             </h1>
             <p className="body-lg text-cream/70 max-w-2xl">
               We're not a faceless agency. We're a coordinated team built to 

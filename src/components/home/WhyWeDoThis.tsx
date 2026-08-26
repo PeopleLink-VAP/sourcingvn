@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import duyenPhoto from "@/assets/images/duyen-pham.jpg";
 
 export const WhyWeDoThis = () => {
@@ -39,53 +41,26 @@ export const WhyWeDoThis = () => {
               From the Founder
             </p>
             <h2 className="headline-lg text-navy mb-6">
-              What drives us
+              Everyone needs an assistant once in a while.
             </h2>
 
-            <div className="space-y-6 body-lg text-cool-gray">
+            <div className="space-y-5 body-lg text-cool-gray">
               <p>
-                <span className="font-display text-xl text-navy italic">
-                  "Everyone needs an assistant once in a while."
-                </span>{" "}
-                That belief has stayed with me through years of building startups across FMCG, import/export, and hospitality - industries that gave me a front-row seat to what it actually takes to work across borders, and the privilege of partnering with both international clients and Vietnamese talent along the way.
+                That belief stayed with Duyen through years of building startups across FMCG, import/export and hospitality. Today, Sourcing.vn sits between international clients and Vietnamese talent so neither side has to figure it out alone.
               </p>
 
-              <p>
-                Vietnam is one of the most underrated resources in the region right now - not just for its manufacturing base and outsourcing capacity, but for its young, driven, and increasingly skilled workforce. Along with a group of like-minded partners, I co-founded Sourcing Vietnam to make that resource accessible and easy to work with. We operate across three core areas:
-              </p>
-
-              <ul className="space-y-3 pl-1">
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2.5 flex-shrink-0" />
-                  <span>
-                    <span className="font-semibold text-navy">Product sourcing</span>{" "}
-                    - connecting you with vetted factories and suppliers across FMCG, manufacturing, and export categories, so you get quality and pricing without the guesswork of navigating the market alone.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2.5 flex-shrink-0" />
-                  <span>
-                    <span className="font-semibold text-navy">Talent sourcing</span>{" "}
-                    - helping you find and onboard skilled Vietnamese professionals, from operations and manufacturing roles to remote digital talent, matched to how your business actually works.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2.5 flex-shrink-0" />
-                  <span>
-                    <span className="font-semibold text-navy">Digital solutions</span>{" "}
-                    - building and supporting the tech, tools, and digital infrastructure that let distributed teams and cross-border operations run smoothly.
-                  </span>
-                </li>
-              </ul>
-
-              <p>
-                What ties all three together is something you can't outsource to a spreadsheet: someone on the ground who understands the language, the culture, and the working styles on both sides. That local fluency is what prevents the miscommunications, delays, and wasted budget that so often come with working across markets - and it's the difference between a vendor relationship and a real partner.
-              </p>
-
-              <p className="font-medium text-navy bg-gold/10 border-l-2 border-gold pl-4 py-3">
-                We built Sourcing Vietnam because we've been the foreign client trying to figure out who to trust, and we've been the local partner trying to prove reliability. Now we sit in between - so you don't have to figure it out alone.
+              <p className="font-medium text-navy">
+                Product sourcing, talent sourcing and digital solutions, all backed by people who understand both languages, cultures and working styles.
               </p>
             </div>
+
+            <Link
+              to="/our-people"
+              className="inline-flex items-center gap-2 mt-8 text-navy font-semibold hover:text-teal transition-colors group"
+            >
+              Read our people and stories
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </motion.div>
         </div>
       </div>

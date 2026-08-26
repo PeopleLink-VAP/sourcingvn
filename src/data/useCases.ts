@@ -328,11 +328,8 @@ export const allCases: (UseCase & { category: string })[] = useCaseCategories.fl
 
 const featuredIds = [
   "bamboo-homeware",
-  "medical-scrubs",
   "edgepoint-safety",
-  "sora-nail",
-  "glory-nest",
-  "cleaning-sprayers",
+  "medical-scrubs",
 ];
 
 export const featuredCases = featuredIds
