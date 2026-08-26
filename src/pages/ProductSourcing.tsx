@@ -13,6 +13,9 @@ import furnitureImage from "@/assets/images/furniture-production.jpg";
 import marketImage from "@/assets/images/vietnam-market.jpg";
 import duyenImage from "@/assets/images/duyen-pham.jpg";
 import bambooStrawsJar from "@/assets/cases/bamboo/bamboo_straws_jar.jpg";
+import sprayerPhoto from "@/assets/cases/sprayers/sprayer_1.jpg";
+import scrubsPhoto from "@/assets/cases/scrubs/scrubs_studio.jpg";
+import apparelPhoto from "@/assets/cases/apparel/apparel_hoodie.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -43,7 +46,7 @@ const caseStudies = [
     tag: "Factory Visits",
     summary:
       "Eight factory visits in two days for a US e-commerce seller with under 24 hours' notice.",
-    photo: factoryWorkersImage,
+    photo: sprayerPhoto,
   },
   {
     id: "medical-scrubs",
@@ -51,11 +54,11 @@ const caseStudies = [
     tag: "Full Service",
     summary:
       "End-to-end sourcing for hospital suppliers who never set foot in Vietnam, from vetting to door-to-door shipping.",
-    photo: garmentFactoryImage,
+    photo: scrubsPhoto,
   },
   {
     id: "custom-clothing",
-    title: "Custom Clothing, Low MOQ",
+    title: "Custom Apparel, Low MOQ",
     tag: "Small Batch",
     summary:
       "A direct network of Hoi An tailors so early-stage brands can start small without hidden factory fees.",
