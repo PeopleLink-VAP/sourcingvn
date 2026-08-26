@@ -22,7 +22,7 @@ export const ChoosePath = () => {
       <div className="container-editorial relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          whileIn_view={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="max-w-3xl mb-12"
@@ -39,7 +39,7 @@ export const ChoosePath = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {featuredCases.map((story, index) => (
             <motion.div
               key={story.id}
@@ -47,38 +47,39 @@ export const ChoosePath = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
+              className={index === 0 ? "md:col-span-2 lg:col-span-1" : ""}
             >
               <Link
                 to={`/use-cases#${story.id}`}
-                className="group flex flex-col h-full bg-cream/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-cream/10 hover:border-sunshine/50 transition-all duration-500 hover:bg-cream/10"
+                className="group block relative h-full rounded-2xl overflow-hidden border border-cream/10 hover:border-sunshine/50 transition-all duration-500"
               >
                 {story.gallery.length > 0 && (
-                  <div className="relative h-44 overflow-hidden">
+                  <div className="relative aspect-[4/5] overflow-hidden">
                     <img
                       src={story.gallery[0]}
                       alt={story.title}
                       loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy-deep/20 to-transparent" />
-                    <span
-                      className={`absolute top-4 left-4 text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full border backdrop-blur-sm ${
-                        categoryAccent[story.category] ?? "text-cream border-cream/30 bg-cream/10"
-                      }`}
-                    >
-                      {story.category}
-                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent" />
                   </div>
                 )}
 
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="headline-md text-cream group-hover:text-sunshine transition-colors mb-2">
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <span
+                    className={`inline-block text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full border backdrop-blur-sm mb-3 ${
+                      categoryAccent[story.category] ?? "text-cream border-cream/30 bg-cream/10"
+                    }`}
+                  >
+                    {story.category}
+                  </span>
+                  <h3 className="headline-md text-cream group-hover:text-sunshine transition-colors mb-1">
                     {story.title}
                   </h3>
-                  <p className="text-sm text-cream/60 mb-4">{story.client}</p>
-                  <p className="body-md text-cream/80 mb-5 line-clamp-3">{story.result}</p>
+                  <p className="text-sm text-cream/70 mb-3">{story.client}</p>
+                  <p className="body-md text-cream/80 line-clamp-2 mb-4">{story.result}</p>
 
-                  <div className="flex items-center gap-2 text-sunshine font-medium mt-auto">
+                  <div className="flex items-center gap-2 text-sunshine font-medium">
                     <span>Read the case study</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
                   </div>
