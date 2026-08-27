@@ -5,7 +5,7 @@ import duyenPhoto from "@/assets/images/duyen-pham.jpg";
 
 export const WhyWeDoThis = () => {
   return (
-    <section className="section-padding bg-cream relative overflow-hidden">
+    <section className="section-padding bg-cream pattern-grain relative overflow-hidden">
       <div className="container-editorial">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Image left */}
@@ -41,16 +41,55 @@ export const WhyWeDoThis = () => {
               From the Founder
             </p>
             <h2 className="headline-lg text-navy mb-5">
-              Everyone needs an assistant once in a while.
+              Vietnam is one of the most valued resources in the region right now.
             </h2>
 
-            <div className="space-y-4 body-lg text-cool-gray">
+            <div className="space-y-4 body-md text-cool-gray">
               <p>
-                That belief stayed with Duyen through years of building startups across FMCG, import/export and hospitality. Today, Sourcing.vn sits between international clients and Vietnamese talent so neither side has to figure it out alone.
+                Not just for its manufacturing base and outsourcing capacity, but for its young,
+                driven and increasingly skilled workforce. Along with a group of like-minded
+                partners, I co-founded Sourcing Vietnam to make that resource accessible and easy
+                to work with. We operate across three core areas:
               </p>
 
-              <p className="font-medium text-navy">
-                Product sourcing, talent sourcing and digital solutions, all backed by people who understand both languages, cultures and working styles.
+              <ul className="space-y-3">
+                {[
+                  {
+                    label: "Product sourcing",
+                    text: "vetted factories and suppliers across FMCG, manufacturing and export, so you get quality and pricing without guesswork.",
+                  },
+                  {
+                    label: "Talent sourcing",
+                    text: "skilled Vietnamese professionals, from operations roles to remote digital talent, matched to how your business actually works.",
+                  },
+                  {
+                    label: "Digital solutions",
+                    text: "the tech, tools and infrastructure that let distributed teams and cross-border operations run smoothly.",
+                  },
+                ].map((item) => (
+                  <li key={item.label} className="flex gap-3">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-sunshine shrink-0" />
+                    <span>
+                      <span className="font-semibold text-navy">{item.label}</span> {item.text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <p>
+                What ties all three together is something you can't outsource to a spreadsheet:{" "}
+                <span className="font-medium text-navy">
+                  someone on the ground who understands the language, the culture and the working
+                  styles on both sides.
+                </span>{" "}
+                That local fluency is the difference between a vendor relationship and a real
+                partner.
+              </p>
+
+              <p>
+                We built Sourcing Vietnam because we've been the foreign client trying to figure out
+                who to trust, and we've been the local partner trying to prove reliability. Now we
+                sit in between, so you don't have to figure it out alone.
               </p>
             </div>
 

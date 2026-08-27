@@ -43,13 +43,13 @@ const teamMembers = [
     photo: maiAnhPhoto,
     intro: "Mai Anh is the account manager you'll always be glad to have on your side.",
     highlights: [
-      "Has a gift for clearing up blurry expectations",
-      "Makes sure every vendor involved is aligned from the start",
-      "A graduate of Columbia College in the U.S.",
-      "Brings a firsthand understanding of cultural and working-style differences",
+      "Has a gift for turning blurry expectations into a clear, written scope",
+      "Keeps clients, vendors and our own team aligned from day one",
+      "Owns timelines, follow-ups and updates so nothing quietly slips",
+      "Reads cultural and working-style differences and adjusts before they become friction",
     ],
     quote: null,
-    closing: "That firsthand understanding makes collaboration with local partners far smoother for everyone involved.",
+    closing: "Clients tend to notice the same thing: they always know where their project stands.",
   },
 ];
 
@@ -93,7 +93,7 @@ const OurPeople = () => {
       </section>
 
       {/* Team Members */}
-      <section className="section-padding bg-background">
+      <section className="section-padding bg-background pattern-dots">
         <div className="container-editorial">
           <div className="space-y-24">
             {teamMembers.map((member, index) => (
@@ -164,7 +164,7 @@ const OurPeople = () => {
       </section>
 
       {/* What You Can Expect */}
-      <section className="section-padding surface-cream">
+      <section className="section-padding surface-cream pattern-arches">
         <div className="container-editorial">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -231,7 +231,7 @@ const OurPeople = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding surface-dark">
+      <section className="section-padding surface-dark pattern-grid">
         <div className="container-editorial text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

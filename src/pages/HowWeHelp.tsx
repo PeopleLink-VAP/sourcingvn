@@ -164,7 +164,7 @@ const HowWeHelp = () => {
       </section>
 
       {/* Service Use Cases with Images */}
-      <section ref={containerRef} className="section-padding bg-background">
+      <section ref={containerRef} className="section-padding bg-background pattern-grain">
         <div className="container-editorial">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

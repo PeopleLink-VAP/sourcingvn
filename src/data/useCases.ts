@@ -1,4 +1,4 @@
-import { Package, Users, Cpu } from "lucide-react";
+import { Package, Users, Cpu, Headphones, GraduationCap, Video, ShoppingBag } from "lucide-react";
 
 export interface UseCase {
   id: string;
@@ -6,6 +6,12 @@ export interface UseCase {
   client: string;
   industry: string;
   logo?: string;
+  icon?: typeof Package;
+  brief?: string;
+  services?: string[];
+  challengesLabel?: string;
+  challengeList?: string[];
+  note?: string;
   challenge: string;
   solution: string;
   result: string;
@@ -93,60 +99,95 @@ export const useCaseCategories: UseCaseCategory[] = [
       },
       {
         id: "bamboo-carbon",
-        title: "Bamboo & Coconut Activated Carbon",
+        title: "Coconut & Bamboo Activated Carbon",
         client: "A veterinary products manufacturer, USA",
         industry: "Veterinary & Raw Materials",
-        challenge: "Moving sourcing from China to Vietnam amid US-China trade tension, the client needed bamboo coal in an exact size and spec that would pass US lab testing. Few Vietnamese suppliers qualified for lab or medical-grade testing, client specs differed from standard local production, and hazardous-material logistics needed a special shipping route.",
-        solution: "Phase 1 supplier vetting followed by Phase 2 sample delivery: collecting samples, running quality checks and shipping them to the client's lab in the US.",
-        result: "Found a qualified supplier and connected the client directly for ongoing production.",
+        brief: "A client operating a veterinary products manufacturing chain wanted to shift sourcing of bamboo and coconut activated carbon from China to Vietnam, driven partly by ongoing U.S.-China trade tension. The carbon needed to meet precise size and specification requirements so it could pass U.S. lab testing and be approved for manufacturing in the U.S.",
+        services: [
+          "Phase 1: Supplier vetting",
+          "Phase 2: Sample delivery. We collected samples, checked quality, and shipped them to the client's lab for testing"
+        ],
+        challengeList: [
+          "Vietnam has a limited pool of activated carbon suppliers capable of meeting medical-grade lab testing standards, making qualified suppliers hard to find",
+          "The client's specifications differed significantly from standard lots produced by Vietnamese suppliers",
+          "Activated carbon is highly flammable, which complicates logistics. We worked directly with vendors to establish a dedicated, compliant shipping route"
+        ],
+        note: "Due to confidentiality, some images shown are stock photos used for illustration, not the actual products.",
+        challenge: "Qualified suppliers were scarce, specs differed from standard local lots, and flammable cargo needed a dedicated compliant shipping route.",
+        solution: "Supplier vetting, then sample collection, quality checks and delivery to the client's U.S. lab for testing.",
+        result: "We identified suppliers that met the client's specifications and connected them directly with a factory fully capable of meeting their production needs, enabling the client to move forward with manufacturing.",
         metrics: [
           { label: "Phases Used", value: "2" },
           { label: "Lab Testing", value: "Passed" },
-          { label: "Shipping", value: "Hazmat route" },
+          { label: "Shipping", value: "Compliant route" },
           { label: "Outcome", value: "Direct link" }
         ],
         gallery: [coconutCarbon]
       },
       {
         id: "cleaning-sprayers",
-        title: "Cleaning Sprayers & Wet Tissues",
-        client: "A large US e-commerce seller",
+        title: "Cleaning Sprayers & Wet Tissues for Tech Accessories",
+        client: "A U.S.-based ecommerce seller",
         industry: "Consumer Goods & E-commerce",
-        challenge: "The client had under 24 hours to vet suppliers and book factory visits during a short Vietnam stopover after the Canton Fair. Locations were spread out and some suppliers were unavailable on short notice.",
-        solution: "Rapid supplier vetting plus a planned route of 8 factory visits across 2 days in different provinces, with us on the ground translating and negotiating.",
-        result: "The client found factories matching target pricing and rebooked us for ongoing supplier communication.",
+        brief: "A U.S.-based ecommerce seller moving hundreds of thousands of units annually across categories, from tech accessories to products for aging populations, needed sourcing support for screen-cleaning sprayers and wet tissues.",
+        services: ["Supplier vetting and factory visits"],
+        challengeList: [
+          "The client was attending the Canton Fair in China and flying to Vietnam the very next day, leaving us less than 24 hours to vet their supplier shortlist, identify new leads and schedule factory visits",
+          "Sourced suppliers across three distinct product categories on a tight timeline",
+          "Some suppliers couldn't accommodate the client's limited availability",
+          "Visited factories spread across long distances within just two days",
+          "We handled the full logistics: transportation, meals and appointment scheduling with each factory, so the client could focus solely on evaluating suppliers"
+        ],
+        challenge: "Under 24 hours' notice to vet suppliers, find new leads and route factory visits across long distances.",
+        solution: "Rapid supplier vetting plus a planned route of 8 factory visits across 2 days, with full logistics handled on the ground.",
+        result: "We visited 8 suppliers across 2 days and identified key manufacturers able to meet the client's target pricing. The client left satisfied and later re-engaged us to manage ongoing supplier follow-up and communication.",
         metrics: [
           { label: "Factories Visited", value: "8" },
           { label: "Days", value: "2" },
           { label: "Notice", value: "<24 hrs" },
-          { label: "Volume", value: "100Ks/yr" }
+          { label: "Categories", value: "3" }
         ],
         gallery: [sprayer1, wetTissue, sprayer2, sprayer3, sprayer4]
       },
       {
         id: "medical-scrubs",
-        title: "Medical Scrubs, A to Z",
+        title: "Medical Scrubs",
         client: "International hospital and clinic suppliers",
         industry: "Medical Apparel",
-        challenge: "The client never visited Vietnam in person. We managed imported fabric components from China, ensured 'Made in Vietnam' compliance, resolved a post-wash sizing issue and held the factory accountable for the cost, all while rebuilding trust after a bad sourcing experience in Turkey and navigating COVID-era logistics.",
-        solution: "Full service from supplier vetting through door-to-door shipping, with virtual factory visits and inspection reports standing in for the client on the ground.",
-        result: "All clients satisfied, with several referring us to additional hospitals and clinics.",
+        brief: "Medical scrubs are among our most frequently requested products, largely because FIGS, the category's best-known brand, manufactures in Vietnam, which has earned the country a strong reputation in this space. We source from factories experienced in supplying hospitals and clinics worldwide, across a range of factory sizes.",
+        services: ["Full-service support from supplier vetting through door-to-door shipping. These engagements typically run long, and we manage any issues that arise with factories throughout the process."],
+        challengeList: [
+          "Most clients had never set foot in Vietnam, so we represented them on the ground from A to Z",
+          "Some raw materials are imported from China, extending project timelines",
+          "Ensuring products qualified for 'Made in Vietnam' certification was a top priority",
+          "One client had a prior negative experience with a factory in Turkey and needed ongoing reassurance about quality and reliability in Vietnam",
+          "One factory skipped pre-production fabric testing, causing shrinkage after washing. We worked with them to cover the cost and accelerate the timeline to meet the original deadline",
+          "One order was placed during COVID, when logistics were especially difficult"
+        ],
+        challenge: "Remote clients, imported raw materials, 'Made in Vietnam' compliance, a fabric shrinkage issue and COVID-era logistics.",
+        solution: "Full service from supplier vetting through door-to-door shipping, representing clients on the ground from A to Z.",
+        result: "Every client received their products successfully and was satisfied with the outcome, and several went on to refer us to other hospitals and clinics for new product lines. Because factories are based in either Ho Chi Minh City or Hanoi depending on client needs, our team built the resources and processes to support production reliably across both regions.",
         metrics: [
           { label: "Scope", value: "A to Z" },
           { label: "Client Visits", value: "Remote" },
           { label: "Compliance", value: "Made in VN" },
-          { label: "Referrals", value: "Multiple" }
+          { label: "Regions", value: "North + South" }
         ],
         gallery: [scrubsStudio, scrubsNavy, scrubsVideo1.url, scrubsVideo2.url]
       },
       {
         id: "custom-clothing",
-        title: "Custom Apparel, Low MOQ",
+        title: "Custom Clothing",
         client: "Early-stage apparel brands",
         industry: "Apparel & Fashion",
-        challenge: "Small brands needing hoodies, shirts, dresses and sportswear kept running into big-factory hidden fees and minimum order quantities they could not meet.",
-        solution: "A direct network of local tailors and small factories, led by founder Duyen, who grew up in a tailoring family in Hoi An, Vietnam's custom clothing hub.",
-        result: "Brands launch small, test the market and scale into larger factories when the numbers justify it.",
+        brief: "Low minimum order quantities (MOQs) are the most common request from clothing clients, whether for hoodies, shirts, dresses or sportswear, which makes sense, since most are launching new businesses or testing new product lines.",
+        services: [
+          "Our network across Vietnam lets us cut out unnecessary commissions, avoid large factories with excessive hidden fees, and bypass high-overhead production systems, connecting clients with reliable, professional tailors and local clothing factories matched to their specific needs.",
+          "Support across everyday apparel, business uniforms and specialty garments, with an experienced team of merchandisers and sourcing agents."
+        ],
+        challenge: "Small brands kept running into big-factory hidden fees and minimum order quantities they could not meet.",
+        solution: "A direct network of professional tailors and small factories matched to each brand's specific needs.",
+        result: "Our founder, Duyen, grew up around clothing and design (her father is a tailor and designer), giving her an intuitive understanding of client needs without lengthy explanations. She's also from Hoi An, one of Southeast Asia's most renowned cities for custom clothing.",
         metrics: [
           { label: "MOQ", value: "Low" },
           { label: "Hidden Fees", value: "None" },
@@ -162,53 +203,104 @@ export const useCaseCategories: UseCaseCategory[] = [
     icon: Users,
     color: "from-coral to-coral-muted",
     link: "/talent-sourcing",
-    description: "Find reliable remote support: VAs, customer service, and specialized roles from Vietnam.",
+    description: "Remote Vietnamese professionals: client-facing roles, assistants, editors and support teams.",
     cases: [
       {
-        id: "customer-support",
-        title: "24/7 Customer Support Team",
-        client: "David L., SaaS Founder",
-        industry: "Technology",
-        challenge: "Needed 24/7 customer support without hiring full-time employees. Previous freelancers were unreliable and response times were killing conversions.",
-        solution: "Built a 5-person support team across time zones with custom training on their product. Created SOPs, established escalation procedures, and integrated with their helpdesk.",
-        result: "Response time dropped from 4 hours to 15 minutes. Customer satisfaction went from 3.2 to 4.9 stars. Team has been stable for 18 months.",
+        id: "clo-cso-placements",
+        title: "CLO & CSO Placements",
+        client: "Immigration support company, Australia",
+        industry: "Immigration Services",
+        icon: Headphones,
+        brief: "Our client, an immigration support company based in Australia, needed to fill Client Liaison Officer (CLO) and Customer Support Officer (CSO) positions remotely, on a part-time basis. Given the client-facing nature of these roles, they were specific about candidate quality: strong, accent-neutral English communication, and the flexibility to visit the office in person once a week.",
+        services: ["Full-cycle recruitment support: we screened all incoming applications, ran first-round interviews to vet candidates, and shortlisted the top 3 for the client to interview directly."],
+        challengeList: [
+          "Neutral, accent-free spoken English",
+          "Willingness and ability to visit the client's office once a week",
+          "Strong written and verbal communication for client-facing work"
+        ],
+        challengesLabel: "Requirements",
+        challenge: "Client-facing roles needing accent-neutral English, weekly in-office presence and strong communication skills.",
+        solution: "Full-cycle recruitment: application screening, first-round interviews and a top-3 shortlist per round.",
+        result: "Qualified shortlists delivered inside the client's timeline every round, across 4 separate hiring cycles for different roles.",
         metrics: [
-          { label: "Response Time", value: "15 min" },
-          { label: "CSAT Score", value: "4.9★" },
-          { label: "Team Size", value: "5 people" },
-          { label: "Retention", value: "18 months" }
+          { label: "Hiring Cycles", value: "4" },
+          { label: "Shortlist", value: "Top 3" },
+          { label: "Engagement", value: "Part-time" },
+          { label: "Market", value: "Australia" }
         ],
         gallery: []
       },
       {
-        id: "executive-assistant",
-        title: "Executive Assistant Match",
-        client: "Jennifer M., Agency Owner",
-        industry: "Marketing Agency",
-        challenge: "Overwhelmed with admin tasks, couldn't find reliable remote help. Previous VAs didn't last more than 2 months.",
-        solution: "Matched with experienced VA who had agency background. Provided custom training on her specific workflows, tools, and communication style. 2-week trial with daily check-ins.",
-        result: "Saved 20+ hours/week, relationship scaled to 3 VAs within 6 months managing different departments.",
+        id: "academic-support-team",
+        title: "Academic Support Team",
+        client: "Dr. Bari Courts, University Professor",
+        industry: "Education",
+        icon: GraduationCap,
+        brief: "Dr. Bari Courts, a university professor, wanted to build out a remote support team based in Vietnam. Given the academic context, candidates needed excellent written and verbal English, along with hands-on experience using Learning Management Systems (LMS) and prior exposure to international teaching environments.",
+        services: ["CV Collection: a lighter-touch package where we source and compile qualified candidate profiles, and the client handles screening and interviewing independently. This suits clients who prefer to evaluate candidates themselves but want a curated, pre-filtered pool to start from."],
+        challengesLabel: "Requirements",
+        challengeList: [
+          "Strong written and spoken English",
+          "Experience with LMS platforms",
+          "Background in international or cross-cultural teaching settings"
+        ],
+        challenge: "Academic remote support roles requiring strong English, LMS experience and international teaching exposure.",
+        solution: "CV Collection package: sourcing and compiling a curated, pre-filtered pool of candidate profiles.",
+        result: "A curated shortlist matching the academic and technical requirements, so interviews could start immediately without applicant screening.",
         metrics: [
-          { label: "Hours Saved", value: "20+/week" },
-          { label: "Team Growth", value: "1 → 3 VAs" },
-          { label: "Time to Productivity", value: "2 weeks" },
-          { label: "Cost vs US Hire", value: "65% less" }
+          { label: "Package", value: "CV Collection" },
+          { label: "Screening", value: "Client-led" },
+          { label: "Focus", value: "LMS + teaching" },
+          { label: "Pool", value: "Pre-filtered" }
         ],
         gallery: []
       },
       {
-        id: "content-team",
-        title: "Content Production Team",
-        client: "Alex P., E-commerce Brand",
+        id: "video-editor-pa",
+        title: "Video Editor & Personal Assistant",
+        client: "Vu Kohler, Business Owner, Vietnam",
+        industry: "Creative Agency",
+        icon: Video,
+        brief: "Vu is a Vietnamese-American business owner running an agency in Vietnam. He came to us first for a video editor, and later returned for a personal assistant. Because both roles supported his day-to-day operations directly, he needed candidates capable of working independently, without close supervision.",
+        services: ["CV Collection: we sourced and compiled a pool of qualified candidates for Vu to review and interview on his own timeline."],
+        challengesLabel: "Requirements",
+        challengeList: [
+          "Ability to work independently with minimal oversight",
+          "Relevant skill sets for video editing and executive or personal assistant work"
+        ],
+        challenge: "Two operational roles that had to run with minimal supervision.",
+        solution: "CV Collection for both searches, timed around the client's own review process.",
+        result: "Nearly 2 years of working together. One of the earliest candidates we sourced has grown into a key member of his core team.",
+        metrics: [
+          { label: "Tenure", value: "~2 yrs" },
+          { label: "Roles Filled", value: "2" },
+          { label: "Package", value: "CV Collection" },
+          { label: "Outcome", value: "Core team" }
+        ],
+        gallery: []
+      },
+      {
+        id: "shopify-customer-service",
+        title: "Customer Service Reps",
+        client: "Shopify store owner, Canada",
         industry: "E-commerce",
-        challenge: "Needed consistent content production for 500+ product listings. Freelance writers were inconsistent and expensive.",
-        solution: "Assembled 3-person content team: 1 writer, 1 editor, 1 SEO specialist. Created brand voice guidelines and approval workflow.",
-        result: "Publishing 50+ optimized listings/week. Organic traffic up 340% in 6 months.",
+        icon: ShoppingBag,
+        brief: "A Shopify store owner based in Canada needed to build out a part-time customer service team: 2 representatives covering different time slots to provide coverage outside standard Vietnam business hours.",
+        services: ["Sourcing and shortlisting part-time customer service representatives for timezone-split coverage."],
+        challengesLabel: "Requirements",
+        challengeList: [
+          "Prior customer service experience",
+          "Familiarity with ecommerce workflows and platforms (Shopify a plus)",
+          "Comfort working early mornings or late nights locally to align with Canadian business hours"
+        ],
+        challenge: "Timezone-flexible ecommerce support coverage without hiring locally in Canada.",
+        solution: "Two part-time representatives sourced for split shifts aligned to Canadian business hours.",
+        result: "A recurring need we solve for: reliable, timezone-flexible coverage without the overhead of local hiring.",
         metrics: [
-          { label: "Content Output", value: "50+/week" },
-          { label: "Organic Traffic", value: "+340%" },
-          { label: "Team Size", value: "3 people" },
-          { label: "Cost Savings", value: "70%" }
+          { label: "Reps", value: "2" },
+          { label: "Shifts", value: "Split" },
+          { label: "Engagement", value: "Part-time" },
+          { label: "Market", value: "Canada" }
         ],
         gallery: []
       }
