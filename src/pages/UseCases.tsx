@@ -58,8 +58,6 @@ const UseCases = () => {
 
       {/* Hero */}
       <section className="relative pt-32 pb-16 bg-gradient-to-br from-sunshine/20 via-cream to-teal/10 overflow-hidden">
-        <div className="absolute inset-0 pattern-waves opacity-40" />
-
         <div className="container-editorial relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -102,7 +100,7 @@ const UseCases = () => {
       </section>
 
       {/* Filter bar + unified grid */}
-      <section className="section-padding bg-white pattern-grain">
+      <section className="section-padding bg-white">
         <div className="container-editorial">
           <div className="sticky top-20 z-20 -mx-4 px-4 py-3 mb-10 bg-white/85 backdrop-blur-md flex flex-wrap gap-2 border-b border-border">
             {filters.map((f) => {
@@ -156,7 +154,7 @@ const UseCases = () => {
                       </div>
                     </div>
                   ) : (
-                    <div className="relative h-32 bg-cream pattern-dots flex items-center justify-center border-b border-border">
+                    <div className="relative h-32 bg-cream flex items-center justify-center border-b border-border">
                       {useCase.icon ? (
                         <div className="w-14 h-14 rounded-2xl bg-navy flex items-center justify-center shadow-sm">
                           <useCase.icon className="w-7 h-7 text-cream" strokeWidth={1.5} />
@@ -223,7 +221,7 @@ const UseCases = () => {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header: text only, no photos */}
-              <div className="relative border-b border-border bg-cream/60 pattern-dots rounded-t-2xl px-8 py-8">
+              <div className="relative border-b border-border bg-cream/60 rounded-t-2xl px-8 py-8">
                 <button
                   onClick={() => setSelectedCase(null)}
                   className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors"
