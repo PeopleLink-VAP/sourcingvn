@@ -43,13 +43,13 @@ const teamMembers = [
     photo: maiAnhPhoto,
     intro: "Mai Anh is the account manager you'll always be glad to have on your side.",
     highlights: [
-      "Has a gift for clearing up blurry expectations",
-      "Makes sure every vendor involved is aligned from the start",
-      "A graduate of Columbia College in the U.S.",
-      "Brings a firsthand understanding of cultural and working-style differences",
+      "Has a gift for turning blurry expectations into a clear, written scope",
+      "Keeps clients, vendors and our own team aligned from day one",
+      "Owns timelines, follow-ups and updates so nothing quietly slips",
+      "Reads cultural and working-style differences and adjusts before they become friction",
     ],
     quote: null,
-    closing: "That firsthand understanding makes collaboration with local partners far smoother for everyone involved.",
+    closing: "Clients tend to notice the same thing: they always know where their project stands.",
   },
 ];
 
