@@ -285,7 +285,7 @@ const TalentSourcing = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding surface-dark pattern-grid">
+      <section className="section-padding surface-dark">
         <div className="container-editorial text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
