@@ -156,7 +156,15 @@ const UseCases = () => {
                       </div>
                     </div>
                   ) : (
-                    <div className="h-2 bg-gradient-to-r from-teal/40 via-sunshine/40 to-coral/40" />
+                    <div className="relative h-32 bg-cream pattern-dots flex items-center justify-center border-b border-border">
+                      {useCase.icon ? (
+                        <div className="w-14 h-14 rounded-2xl bg-navy flex items-center justify-center shadow-sm">
+                          <useCase.icon className="w-7 h-7 text-cream" strokeWidth={1.5} />
+                        </div>
+                      ) : (
+                        <div className="h-2 w-24 rounded-full bg-gradient-to-r from-teal/40 via-sunshine/40 to-coral/40" />
+                      )}
+                    </div>
                   )}
 
                   <div className="p-5 flex items-start gap-3">
