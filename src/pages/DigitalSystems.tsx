@@ -84,7 +84,7 @@ const DigitalSystems = () => {
       <SelectedProjects />
 
       {/* How we think */}
-      <section className="section-padding bg-background">
+      <section className="section-padding bg-background pattern-crosshatch">
         <div className="container-editorial">
           <div className="max-w-2xl mb-10">
             <p className="text-xs font-medium uppercase tracking-widest text-primary mb-4">
@@ -117,7 +117,7 @@ const DigitalSystems = () => {
       <Pricing />
 
       {/* Final CTA */}
-      <section className="section-padding bg-secondary/40 border-t border-border">
+      <section className="section-padding bg-secondary/40 pattern-grain border-t border-border">
         <div className="container-editorial">
           <div className="max-w-2xl">
             <h2 className="headline-lg text-foreground mb-5">Not sure what you need yet?</h2>

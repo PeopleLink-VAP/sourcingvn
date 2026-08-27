@@ -93,7 +93,7 @@ const OurPeople = () => {
       </section>
 
       {/* Team Members */}
-      <section className="section-padding bg-background">
+      <section className="section-padding bg-background pattern-dots">
         <div className="container-editorial">
           <div className="space-y-24">
             {teamMembers.map((member, index) => (
@@ -164,7 +164,7 @@ const OurPeople = () => {
       </section>
 
       {/* What You Can Expect */}
-      <section className="section-padding surface-cream">
+      <section className="section-padding surface-cream pattern-arches">
         <div className="container-editorial">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -231,7 +231,7 @@ const OurPeople = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding surface-dark">
+      <section className="section-padding surface-dark pattern-grid">
         <div className="container-editorial text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

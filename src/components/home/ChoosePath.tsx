@@ -11,7 +11,7 @@ const categoryAccent: Record<string, string> = {
 
 export const ChoosePath = () => {
   return (
-    <section className="section-padding bg-gradient-to-br from-navy via-navy-deep to-navy-light relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-br from-navy via-navy-deep to-navy-light pattern-grid relative overflow-hidden">
       <div className="absolute inset-0 pattern-dots opacity-15" />
       <motion.div
         animate={{ x: [0, 50, 0], y: [0, -30, 0] }}

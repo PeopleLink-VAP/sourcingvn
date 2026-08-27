@@ -34,7 +34,7 @@ const services = [
 
 export const WhatWeDo = () => {
   return (
-    <section className="section-padding bg-white relative overflow-hidden">
+    <section className="section-padding bg-white pattern-crosshatch relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-sunshine/5 to-transparent" />
       

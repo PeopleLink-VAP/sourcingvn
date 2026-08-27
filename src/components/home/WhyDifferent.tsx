@@ -111,7 +111,7 @@ const truths = [
 
 export const WhyDifferent = () => {
   return (
-    <section className="section-padding bg-gradient-to-br from-cream to-teal/5 relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-br from-cream to-teal/5 pattern-arches relative overflow-hidden">
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ repeat: Infinity, duration: 30, ease: "linear" }}

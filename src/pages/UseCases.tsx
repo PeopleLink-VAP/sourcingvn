@@ -102,7 +102,7 @@ const UseCases = () => {
       </section>
 
       {/* Filter bar + unified grid */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white pattern-grain">
         <div className="container-editorial">
           <div className="sticky top-20 z-20 -mx-4 px-4 py-3 mb-10 bg-white/85 backdrop-blur-md flex flex-wrap gap-2 border-b border-border">
             {filters.map((f) => {
