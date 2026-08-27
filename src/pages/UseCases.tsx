@@ -214,7 +214,8 @@ const UseCases = () => {
               className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative">
+              {/* Header: text only, no photos */}
+              <div className="relative border-b border-border bg-cream/60 pattern-dots rounded-t-2xl px-8 py-8">
                 <button
                   onClick={() => setSelectedCase(null)}
                   className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors"
@@ -222,55 +223,20 @@ const UseCases = () => {
                   <X className="w-5 h-5 text-navy" />
                 </button>
 
-                {selectedCase.gallery.length > 0 && (
-                  <div
-                    className={`grid gap-1 [&>*]:aspect-[4/3] ${
-                      selectedCase.gallery.length === 1 ? "grid-cols-1" : "grid-cols-2"
-                    }`}
-                  >
-                    {selectedCase.gallery.map((img, i) => (
-                      <div
-                        key={i}
-                        className="relative overflow-hidden cursor-pointer"
-                        onClick={() => {
-                          if (!img.endsWith(".mp4")) setSelectedImage(img);
-                        }}
-                      >
-                        {img.endsWith(".mp4") ? (
-                          <>
-                            <video
-                              src={img}
-                              controls
-                              muted
-                              playsInline
-                              className="w-full h-full object-cover bg-navy"
-                            />
-                            <span className="absolute top-3 left-3 pointer-events-none inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider bg-white/85 text-navy rounded-full px-2 py-1">
-                              <Play className="w-3 h-3" />
-                              Video
-                            </span>
-                          </>
-                        ) : (
-                          <img
-                            src={img}
-                            alt={`${selectedCase.title} project photo ${i + 1}`}
-                            className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                          />
-                        )}
+                <div className="flex items-start justify-between gap-6 pr-12">
+                  <div className="flex items-start gap-4">
+                    {selectedCase.icon && (
+                      <div className="w-12 h-12 rounded-xl bg-navy flex items-center justify-center shrink-0">
+                        <selectedCase.icon className="w-6 h-6 text-cream" strokeWidth={1.5} />
                       </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <div className="p-8">
-                <div className="flex items-start justify-between gap-6 mb-6">
-                  <div>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-teal">
-                      {selectedCase.industry}
-                    </span>
-                    <h2 className="headline-lg text-navy">{selectedCase.title}</h2>
-                    <p className="text-cool-gray">{selectedCase.client}</p>
+                    )}
+                    <div>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-teal">
+                        {selectedCase.industry}
+                      </span>
+                      <h2 className="headline-lg text-navy">{selectedCase.title}</h2>
+                      <p className="text-cool-gray">{selectedCase.client}</p>
+                    </div>
                   </div>
                   {selectedCase.logo && (
                     <img
@@ -280,7 +246,9 @@ const UseCases = () => {
                     />
                   )}
                 </div>
+              </div>
 
+              <div className="p-8">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                   {selectedCase.metrics.map((metric, i) => (
                     <div key={i} className="text-center p-4 bg-cream rounded-xl">
@@ -290,20 +258,95 @@ const UseCases = () => {
                   ))}
                 </div>
 
-                <div className="space-y-6">
+                <div className="space-y-8">
                   <div>
                     <h3 className="text-sm font-semibold uppercase tracking-wider text-coral mb-2">
-                      The Challenge
+                      {selectedCase.brief ? "The Brief" : "The Challenge"}
                     </h3>
-                    <p className="text-cool-gray">{selectedCase.challenge}</p>
+                    <p className="text-cool-gray">{selectedCase.brief ?? selectedCase.challenge}</p>
                   </div>
+
+                  {/* Photos live inside the body of the story */}
+                  {selectedCase.gallery.length > 0 && (
+                    <div>
+                      <div
+                        className={`grid gap-2 [&>*]:aspect-[4/3] ${
+                          selectedCase.gallery.length === 1 ? "grid-cols-1" : "grid-cols-2"
+                        }`}
+                      >
+                        {selectedCase.gallery.map((img, i) => (
+                          <div
+                            key={i}
+                            className="relative overflow-hidden rounded-xl cursor-pointer"
+                            onClick={() => {
+                              if (!img.endsWith(".mp4")) setSelectedImage(img);
+                            }}
+                          >
+                            {img.endsWith(".mp4") ? (
+                              <>
+                                <video
+                                  src={img}
+                                  controls
+                                  muted
+                                  playsInline
+                                  className="w-full h-full object-cover bg-navy"
+                                />
+                                <span className="absolute top-3 left-3 pointer-events-none inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider bg-white/85 text-navy rounded-full px-2 py-1">
+                                  <Play className="w-3 h-3" />
+                                  Video
+                                </span>
+                              </>
+                            ) : (
+                              <img
+                                src={img}
+                                alt={`${selectedCase.title} project photo ${i + 1}`}
+                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                              />
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                      {selectedCase.note && (
+                        <p className="mt-3 text-xs italic text-cool-gray">Note: {selectedCase.note}</p>
+                      )}
+                    </div>
+                  )}
+
                   <div>
                     <h3 className="text-sm font-semibold uppercase tracking-wider text-teal mb-2">
-                      Our Solution
+                      {selectedCase.services ? "Services Used" : "Our Solution"}
                     </h3>
-                    <p className="text-cool-gray">{selectedCase.solution}</p>
+                    {selectedCase.services ? (
+                      <ul className="space-y-2">
+                        {selectedCase.services.map((s) => (
+                          <li key={s} className="flex gap-3 text-cool-gray">
+                            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-teal shrink-0" />
+                            <span>{s}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-cool-gray">{selectedCase.solution}</p>
+                    )}
                   </div>
-                  <div>
+
+                  {selectedCase.challengeList && (
+                    <div>
+                      <h3 className="text-sm font-semibold uppercase tracking-wider text-coral mb-2">
+                        {selectedCase.challengesLabel ?? "Challenges"}
+                      </h3>
+                      <ul className="space-y-2">
+                        {selectedCase.challengeList.map((c) => (
+                          <li key={c} className="flex gap-3 text-cool-gray">
+                            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-coral shrink-0" />
+                            <span>{c}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  <div className="border-l-2 border-sunshine pl-5">
                     <h3 className="text-sm font-semibold uppercase tracking-wider text-sunshine mb-2">
                       The Result
                     </h3>
