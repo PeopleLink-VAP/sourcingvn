@@ -310,7 +310,7 @@ const ProductSourcing = () => {
       </section>
 
       {/* Ethos + CTA */}
-      <section className="section-padding surface-dark pattern-grid">
+      <section className="section-padding surface-dark">
         <div className="container-editorial">
           <motion.div {...fadeUp} className="max-w-3xl">
             <p className="body-lg text-cream/80 mb-10 border-l-2 border-gold pl-6">
