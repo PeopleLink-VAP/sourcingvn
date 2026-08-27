@@ -5,7 +5,7 @@ import duyenPhoto from "@/assets/images/duyen-pham.jpg";
 
 export const WhyWeDoThis = () => {
   return (
-    <section className="section-padding bg-cream relative overflow-hidden">
+    <section className="section-padding bg-cream pattern-grain relative overflow-hidden">
       <div className="container-editorial">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Image left */}

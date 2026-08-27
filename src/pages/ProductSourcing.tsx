@@ -181,7 +181,7 @@ const ProductSourcing = () => {
       </section>
 
       {/* Principles */}
-      <section className="section-padding bg-background">
+      <section className="section-padding bg-background pattern-dots">
         <div className="container-editorial">
           <motion.div {...fadeUp} className="mb-14 max-w-2xl">
             <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
@@ -210,7 +210,7 @@ const ProductSourcing = () => {
       </section>
 
       {/* Case Studies */}
-      <section className="section-padding surface-cream">
+      <section className="section-padding surface-cream pattern-arches">
         <div className="container-editorial">
           <motion.div {...fadeUp} className="mb-14 max-w-2xl">
             <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
@@ -310,7 +310,7 @@ const ProductSourcing = () => {
       </section>
 
       {/* Ethos + CTA */}
-      <section className="section-padding surface-dark">
+      <section className="section-padding surface-dark pattern-grid">
         <div className="container-editorial">
           <motion.div {...fadeUp} className="max-w-3xl">
             <p className="body-lg text-cream/80 mb-10 border-l-2 border-gold pl-6">
