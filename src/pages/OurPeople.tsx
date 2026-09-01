@@ -28,7 +28,7 @@ const teamMembers = [
     name: "Kent Nguyen",
     role: "Technology Consultant",
     photo: kentPhoto,
-    intro: '"In data we trust."',
+    intro: '"In Data We Trust." With 10+ years in tech — from leading ERP teams at 7-Eleven Vietnam and serving as Former Head of Engineering at Grab Vietnam, to building blockchain platforms, digital transformation solutions, and data/BI dashboards — Kent is the tech consultant every business needs. He makes sure your systems work, your data is clean, and your technology stays practical, up-to-date, and ready to scale — without chasing tech trends just for the sake of it.',
     highlights: [
       "Serial tech entrepreneur: co-founded 10+ tech startups across Southeast Asia since 2009",
       "Former Head of Engineering at Grab Vietnam, 2017",
