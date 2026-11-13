@@ -55,7 +55,7 @@ export const FounderStory = () => (
             I grew up in my dad's tailor shop, then spent years placing orders, chasing factories and answering to marketplaces. Again and again I saw the same gap: brands abroad needed someone in Vietnam who thought like a buyer, not like a middleman.
           </p>
           <p className="mt-4 text-lg text-muted-foreground">
-            So I founded Sourcing Vietnam with a team in Ho Chi Minh City, Da Nang and Hanoi. We check, push and report on every order as if it were our own.
+            So I founded Sourcing Vietnam with a team in <span className="whitespace-nowrap">Ho Chi Minh City</span>, <span className="whitespace-nowrap">Da Nang</span> and <span className="whitespace-nowrap">Hanoi</span>. We check, push and report on every order as if it were our own.
           </p>
           <img src={sewing.url} alt="Hands guiding fabric through a sewing machine" loading="lazy" className="mt-8 hidden h-64 w-full rounded-3xl object-cover lg:block" />
         </div>
