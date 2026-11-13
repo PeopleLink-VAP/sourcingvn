@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import factory from "@/assets/home/factory_floor.jpg.asset.json";
+import factory from "@/assets/home/carpenter.jpg.asset.json";
 
 const tabs = ["Find suppliers", "Verify a factory", "Inspect my order"] as const;
 const fields = [
@@ -39,7 +39,7 @@ export const HomeHero = () => {
       <div className="container-editorial mt-12">
         <div className="relative">
           <div className="overflow-hidden rounded-3xl">
-            <img src={factory.url} alt="Garment factory floor in Ba Ria, Vietnam" className="h-[320px] w-full object-cover md:h-[460px]" />
+            <img src={factory.url} alt="Carpenter working wood in a Vietnamese workshop" className="h-[320px] w-full object-cover md:h-[460px]" />
           </div>
           <div className="relative mx-4 -mt-24 rounded-3xl bg-card p-5 shadow-xl md:mx-10 md:p-6">
             <div className="inline-flex flex-wrap gap-1 rounded-full bg-muted p-1">

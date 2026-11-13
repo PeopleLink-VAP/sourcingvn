@@ -42,12 +42,12 @@ export const FounderStory = () => (
             <Link to="/start-project" className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 font-semibold text-background">
               Start a project <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link to="/our-people" className="rounded-full border border-border bg-card px-6 py-3 font-semibold text-foreground">Read my story</Link>
+            <a href="#why-founded" className="rounded-full border border-border bg-card px-6 py-3 font-semibold text-foreground">Read my story</a>
           </div>
         </div>
       </div>
 
-      <div className="mt-24 grid gap-12 lg:grid-cols-2">
+      <div id="why-founded" className="mt-24 grid scroll-mt-28 gap-12 lg:grid-cols-2">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">Why I founded Sourcing Vietnam</p>
           <h2 className="mt-3 font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl">Every role I've had taught me what buyers are missing.</h2>

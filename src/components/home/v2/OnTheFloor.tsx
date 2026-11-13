@@ -1,7 +1,7 @@
 import line from "@/assets/home/tea_processing_line.mp4.asset.json";
 import samples from "@/assets/home/tea_samples.mp4.asset.json";
 import tasting from "@/assets/home/tea_tasting.jpg.asset.json";
-import carpenter from "@/assets/home/carpenter.jpg.asset.json";
+import carpenter from "@/assets/home/factory_floor.jpg.asset.json";
 
 export const OnTheFloor = () => (
   <section className="surface-dark py-20">
@@ -19,10 +19,10 @@ export const OnTheFloor = () => (
         </div>
         <img src={tasting.url} alt="Duyen checking tea samples with a supplier" loading="lazy" className="h-64 w-full rounded-3xl object-cover md:col-span-2 md:h-full" />
         <video src={samples.url} autoPlay muted loop playsInline className="h-64 w-full rounded-3xl object-cover md:h-full" />
-        <img src={carpenter.url} alt="Carpenter at work in a Vietnamese wood workshop" loading="lazy" className="h-64 w-full rounded-3xl object-cover md:h-full" />
+        <img src={carpenter.url} alt="Garment factory floor in Vietnam" loading="lazy" className="h-64 w-full rounded-3xl object-cover md:h-full" />
       </div>
       <div className="mt-6 flex flex-wrap gap-x-8 gap-y-2 text-sm opacity-80">
-        <span>Sample tasting & checks</span><span>Production line visits</span><span>Craft workshops</span>
+        <span>Sample tasting & checks</span><span>Production line visits</span><span>Factory floor checks</span>
       </div>
     </div>
   </section>

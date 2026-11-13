@@ -3,7 +3,8 @@ import { Box } from "lucide-react";
 import caps from "@/assets/home/cat_caps.jpg.asset.json";
 import sneakers from "@/assets/home/cat_sneakers.jpg.asset.json";
 import clothing from "@/assets/home/cat_clothing.jpg.asset.json";
-import bags from "@/assets/home/cat_bags.jpg.asset.json";
+import bags from "@/assets/home/cat_backpack.jpg.asset.json";
+import ceramics from "@/assets/home/ceramics_factory.jpg.asset.json";
 import silicone from "@/assets/home/cat_silicone.jpg.asset.json";
 import wood from "@/assets/home/wood_chair.jpg.asset.json";
 import tea from "@/assets/home/tea_factory.jpg.asset.json";
@@ -12,9 +13,10 @@ const core = [
   { t: "Hats & caps", d: "Baseball caps, bucket hats, sun hats, custom embroidery and labels.", img: caps.url },
   { t: "Shoes & sneakers", d: "Sneakers, casual and sport shoes, from first sample to full production run.", img: sneakers.url },
   { t: "Clothing & uniforms", d: "Sportswear, workwear and uniforms, scarves and cut-and-sew basics.", img: clothing.url },
-  { t: "Bags & handicraft", d: "Handbags, totes, bamboo and woven goods made by Vietnamese craft workshops.", img: bags.url, contain: true },
+  { t: "Bags & handicraft", d: "Handbags, totes, bamboo and woven goods made by Vietnamese craft workshops.", img: bags.url },
 ];
 const also = [
+  { t: "Ceramics & homeware", d: "Cups, vases, tableware", img: ceramics.url },
   { t: "Packaging", d: "Boxes, mailers, bags, labels", icon: Box },
   { t: "Plastic & silicone", d: "Moulded parts, household goods", img: silicone.url },
   { t: "Wood furniture", d: "Indoor, outdoor, home décor", img: wood.url },
@@ -49,7 +51,7 @@ export const Categories = () => (
         ))}
       </div>
       <p className="mt-14 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">We also source</p>
-      <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {also.map((a) => (
           <div key={a.t} className="flex items-center gap-4 rounded-2xl border border-border bg-card/60 p-3">
             <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-muted">
