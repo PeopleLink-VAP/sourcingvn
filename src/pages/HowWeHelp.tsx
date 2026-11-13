@@ -6,10 +6,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Factory, Users, Monitor, CheckCircle2 } from "lucide-react";
 import { useRef } from "react";
 
-import factoryImage from "@/assets/images/factory-workers.jpg";
-import talentImage from "@/assets/images/talent-working.jpg";
-import developerImage from "@/assets/images/developer-working.jpg";
-import teamImage from "@/assets/images/team-meeting.jpg";
+import factoryAsset from "@/assets/home/factory_floor.jpg.asset.json";
+import talentAsset from "@/assets/talent/va_pro_class.jpg.asset.json";
+import developerAsset from "@/assets/home/duyen_laptop.jpg.asset.json";
+import teamAsset from "@/assets/home/client_meeting.jpg.asset.json";
+const factoryImage = factoryAsset.url, talentImage = talentAsset.url, developerImage = developerAsset.url, teamImage = teamAsset.url;
 
 const truths = [
   {

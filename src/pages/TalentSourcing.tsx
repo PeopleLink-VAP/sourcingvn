@@ -87,7 +87,7 @@ const TalentSourcing = () => {
             </h1>
             <p className="body-lg text-cool-gray mb-4">
               Duyen, our founder, also runs one of the top 3 virtual assistant communities in Vietnam.
-              Over 19,000 members, many of whom we've met in person at classes and meetups in Ho Chi
+              Over 20,000 members, many of whom we've met in person at classes and meetups in Ho Chi
               Minh City and Da Nang.
             </p>
             <p className="body-md text-cool-gray mb-8">

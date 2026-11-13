@@ -16,10 +16,10 @@ const teamMembers = [
     photo: duyenPhoto,
     intro: "If you work with Sourcing.vn, you will feel Duyen's influence immediately: structured, direct, and execution-driven.",
     highlights: [
-      "Founder of one of the top three largest Virtual Assistant communities in Vietnam with nearly 17,000 members",
+      "Founder of one of the top three largest Virtual Assistant communities in Vietnam with over 20,000 members",
       "Supported over 200 startups, SMEs, and global founders in operations and sourcing",
       "Helped scale an ecommerce brand to over $1M/month with a single SKU",
-      "Airbnb Superhost with 450+ five-star reviews",
+      "12-time Airbnb Superhost",
     ],
     quote: "Vietnam has world-class talent and capability. It simply needs the right bridge to the global market.",
     closing: "Sourcing.vn exists not only to protect international clients entering Vietnam, but also to create better global opportunities for Vietnamese professionals.",
