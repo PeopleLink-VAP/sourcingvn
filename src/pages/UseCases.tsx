@@ -146,7 +146,7 @@ const UseCases = () => {
                         src={useCase.gallery[0]}
                         alt={useCase.title}
                         loading="lazy"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="rounded-3xl w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
                         <Image className="w-3 h-3 text-navy" />
@@ -306,7 +306,7 @@ const UseCases = () => {
                               <img
                                 src={img}
                                 alt={`${selectedCase.title} project photo ${i + 1}`}
-                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                className="rounded-3xl w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                               />
                             )}
                           </div>

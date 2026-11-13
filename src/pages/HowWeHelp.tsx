@@ -104,7 +104,7 @@ const HowWeHelp = () => {
           <img 
             src={teamImage} 
             alt="Team collaboration" 
-            className="w-full h-[120%] object-cover opacity-20"
+            className="rounded-3xl w-full h-[120%] object-cover opacity-20"
           />
         </motion.div>
         
@@ -119,7 +119,7 @@ const HowWeHelp = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-gold text-sm font-medium uppercase tracking-widest mb-4"
+              className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4"
             >
               How We Help
             </motion.p>
@@ -172,7 +172,7 @@ const HowWeHelp = () => {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
               What You Can Get
             </p>
             <h2 className="headline-lg text-navy max-w-2xl">
@@ -269,7 +269,7 @@ const HowWeHelp = () => {
             viewport={{ once: true }}
             className="mb-16 max-w-2xl"
           >
-            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
               Our Philosophy
             </p>
             <h2 className="headline-lg text-navy">

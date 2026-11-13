@@ -145,7 +145,7 @@ const ProductSourcing = () => {
           <img
             src={marketImage}
             alt="Sourcing work in Vietnam"
-            className="w-full h-full object-cover opacity-25"
+            className="rounded-3xl w-full h-full object-cover opacity-25"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/95 to-navy-deep/80" />
         </div>
@@ -157,7 +157,7 @@ const ProductSourcing = () => {
             transition={{ duration: 0.6 }}
             className="max-w-2xl"
           >
-            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
               Product Sourcing
             </p>
             <h1 className="headline-xl text-cream mb-6">
@@ -184,7 +184,7 @@ const ProductSourcing = () => {
       <section className="section-padding bg-background pattern-dots">
         <div className="container-editorial">
           <motion.div {...fadeUp} className="mb-14 max-w-2xl">
-            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
               How We Work With You
             </p>
             <h2 className="headline-lg text-navy">
@@ -198,7 +198,7 @@ const ProductSourcing = () => {
                 key={p.title}
                 {...fadeUp}
                 transition={{ delay: i * 0.08 }}
-                className="border border-navy/10 p-8 hover:border-gold/40 transition-colors duration-500"
+                className="rounded-3xl border border-border p-8 hover:border-gold/40 transition-colors duration-500"
               >
                 <p.icon className="w-8 h-8 text-gold mb-5" strokeWidth={1.5} />
                 <h3 className="headline-md text-navy mb-3">{p.title}</h3>
@@ -213,7 +213,7 @@ const ProductSourcing = () => {
       <section className="section-padding surface-cream pattern-arches">
         <div className="container-editorial">
           <motion.div {...fadeUp} className="mb-14 max-w-2xl">
-            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
               Our Work
             </p>
             <h2 className="headline-lg text-navy">
@@ -230,13 +230,13 @@ const ProductSourcing = () => {
               <motion.div key={cs.id} {...fadeUp} transition={{ delay: index * 0.06 }}>
                 <Link
                   to={`/use-cases#${cs.id}`}
-                  className="group block h-full bg-background border border-navy/10 hover:border-gold/60 transition-colors"
+                  className="group block h-full bg-background rounded-3xl border border-border hover:border-gold/60 transition-colors"
                 >
                   <div className="aspect-[4/3] overflow-hidden">
                     <img
                       src={cs.photo}
                       alt={`${cs.title} sourcing project in Vietnam`}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="rounded-3xl w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
                   </div>
@@ -273,7 +273,7 @@ const ProductSourcing = () => {
       <section className="section-padding bg-background">
         <div className="container-editorial">
           <motion.div {...fadeUp} className="mb-14 max-w-2xl">
-            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
               How We Work & What It Costs
             </p>
             <h2 className="headline-lg text-navy">

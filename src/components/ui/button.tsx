@@ -9,14 +9,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-navy-light rounded-md",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-md",
-        outline: "border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground rounded-md",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md",
-        ghost: "hover:bg-secondary hover:text-secondary-foreground rounded-md",
+        default: "bg-primary text-primary-foreground hover:bg-navy-light rounded-full",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-full",
+        outline: "border border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground rounded-full",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-full",
+        ghost: "hover:bg-secondary hover:text-secondary-foreground rounded-full",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gold text-navy-deep hover:bg-gold-muted font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5",
-        "hero-outline": "border-2 border-cream/30 bg-transparent text-cream hover:bg-cream/10 hover:border-cream/50",
+        hero: "rounded-full bg-gold text-navy-deep hover:bg-gold-muted font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5",
+        "hero-outline": "rounded-full border-2 border-cream/30 bg-transparent text-cream hover:bg-cream/10 hover:border-cream/50",
         editorial: "bg-transparent text-foreground border-b-2 border-gold rounded-none px-0 hover:bg-transparent hover:text-gold",
       },
       size: {

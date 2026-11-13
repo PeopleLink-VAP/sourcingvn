@@ -168,7 +168,7 @@ export const SelectedProjects = () => {
                         src={shot.src}
                         alt={`${project.name} ${shot.label}`}
                         loading="lazy"
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+                        className="rounded-3xl w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
                       />
                     </div>
                     <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-foreground/80 to-transparent px-3 py-2 text-[11px] font-medium uppercase tracking-wider text-background opacity-0 group-hover:opacity-100 transition-opacity">

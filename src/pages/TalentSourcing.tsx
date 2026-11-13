@@ -81,7 +81,7 @@ const TalentSourcing = () => {
             transition={{ duration: 0.5 }}
             className="lg:col-span-6"
           >
-            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">Talent Sourcing</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">Talent Sourcing</p>
             <h1 className="headline-xl text-navy mb-6">
               "Everyone needs an assistant once in a while."
             </h1>
@@ -110,7 +110,7 @@ const TalentSourcing = () => {
             <img
               src={proClass.url}
               alt="Virtual Assistant Pro class graduates in Ho Chi Minh City"
-              className="w-full aspect-[4/3] object-cover"
+              className="rounded-3xl w-full aspect-[4/3] object-cover"
             />
             <figcaption className="mt-3 text-sm text-cool-gray">
               Graduates of our Virtual Assistant Pro class, Ho Chi Minh City.
@@ -123,11 +123,11 @@ const TalentSourcing = () => {
       <section className="pb-20 bg-background">
         <div className="container-editorial grid md:grid-cols-12 gap-6">
           <figure className="md:col-span-7">
-            <img src={meetup.url} alt="VA community meetup" loading="lazy" className="w-full aspect-[3/2] object-cover" />
+            <img src={meetup.url} alt="VA community meetup" loading="lazy" className="rounded-3xl w-full aspect-[3/2] object-cover" />
             <figcaption className="mt-3 text-sm text-cool-gray">Community meetup. Most of these faces have worked with our clients.</figcaption>
           </figure>
           <figure className="md:col-span-5 md:mt-16">
-            <img src={dinner.url} alt="VA community dinner" loading="lazy" className="w-full aspect-[4/3] object-cover" />
+            <img src={dinner.url} alt="VA community dinner" loading="lazy" className="rounded-3xl w-full aspect-[4/3] object-cover" />
             <figcaption className="mt-3 text-sm text-cool-gray">Dinner with members of the network.</figcaption>
           </figure>
         </div>
@@ -173,7 +173,7 @@ const TalentSourcing = () => {
             viewport={{ once: true }}
             className="mb-12 max-w-2xl"
           >
-            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-3">
               Case Studies
             </p>
             <h2 className="headline-lg text-navy">A few people we placed</h2>
@@ -190,7 +190,7 @@ const TalentSourcing = () => {
               >
                 <Link
                   to={`/use-cases#${cs.id}`}
-                  className="group flex h-full flex-col border border-navy/10 p-8 hover:border-gold/50 hover:shadow-lg transition-all duration-500 bg-background"
+                  className="group flex h-full flex-col rounded-3xl border border-border p-8 hover:border-gold/50 hover:shadow-lg transition-all duration-500 bg-background"
                 >
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-12 h-12 bg-navy-deep flex items-center justify-center shrink-0">

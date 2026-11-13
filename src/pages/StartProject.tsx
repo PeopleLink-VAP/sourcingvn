@@ -16,7 +16,7 @@ const StartProject = () => {
             transition={{ duration: 0.6 }}
             className="max-w-2xl"
           >
-            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
               Start a Project
             </p>
             <h1 className="headline-xl text-cream mb-6">Tell us what you need.</h1>

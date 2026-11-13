@@ -30,10 +30,10 @@ const teamMembers = [
     photo: kentPhoto,
     intro: '"In Data We Trust." Kent is the tech consultant every business needs.',
     highlights: [
-      "10+ years in tech — from leading ERP teams at 7-Eleven Vietnam to serving as Former Head of Engineering at Grab Vietnam",
+      "10+ years in tech, from leading ERP teams at 7-Eleven Vietnam to serving as Former Head of Engineering at Grab Vietnam",
       "Builds blockchain platforms, digital transformation solutions, and data/BI dashboards",
       "Makes sure your systems work, your data is clean, and your technology stays practical",
-      "Keeps your technology up-to-date and ready to scale — without chasing tech trends just for the sake of it",
+      "Keeps your technology up-to-date and ready to scale, without chasing tech trends just for the sake of it",
     ],
     quote: "No matter how advanced the tools are, wrong input leads to wrong output.",
     closing: null,
@@ -77,7 +77,7 @@ const OurPeople = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
               Behind The Scenes
             </p>
             <h1 className="headline-xl text-cream mb-6">
@@ -117,7 +117,7 @@ const OurPeople = () => {
                       className="w-32 h-32 object-cover object-top rounded-lg mb-6"
                     />
                     <h3 className="headline-lg text-navy mb-2">{member.name}</h3>
-                    <p className="text-gold text-sm font-medium uppercase tracking-wider mb-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
                       {member.role}
                     </p>
                     {member.quote && (
@@ -173,7 +173,7 @@ const OurPeople = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
                 Our Promise
               </p>
               <h2 className="headline-lg text-navy mb-6">
