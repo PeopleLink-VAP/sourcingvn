@@ -25,6 +25,9 @@ import {
   Cpu,
 } from "lucide-react";
 import { useCaseCategories } from "@/data/useCases";
+import proClass from "@/assets/talent/va_pro_class.jpg.asset.json";
+import meetup from "@/assets/talent/va_community_meetup.jpg.asset.json";
+import dinner from "@/assets/talent/va_community_dinner.jpg.asset.json";
 
 const heroSkills = [
   { icon: Video, label: "Video editing" },
@@ -70,158 +73,93 @@ const TalentSourcing = () => {
       <Navigation />
 
       {/* Hero / intro */}
-      <section className="relative pt-32 pb-20 bg-navy-deep overflow-hidden">
-        <div className="absolute inset-0 pattern-grid opacity-70" />
-        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-gold/10 blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 w-80 h-80 rounded-full bg-teal/10 blur-3xl" />
-
-        <div className="container-editorial relative z-10">
+      <section className="pt-32 pb-16 bg-background">
+        <div className="container-editorial grid lg:grid-cols-12 gap-10 items-end">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-6"
           >
-            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">
-              Talent Sourcing
-            </p>
-            <h1 className="headline-xl text-cream mb-6">
-              "Everyone needs an assistant
-              <br />
-              <span className="text-gold">once in a while."</span>
+            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-4">Talent Sourcing</p>
+            <h1 className="headline-xl text-navy mb-6">
+              "Everyone needs an assistant once in a while."
             </h1>
-            <p className="body-lg text-cream/75 mb-6">
-              That's the belief driving everything we do. Our founder, Duyen, is also the founder of
-              one of the top 3 virtual assistant communities in Vietnam, with a network of over
-              19,000 members. That gives us access to a deep, diverse talent pool across nearly
-              every skill set our clients need.
+            <p className="body-lg text-cool-gray mb-4">
+              Duyen, our founder, also runs one of the top 3 virtual assistant communities in Vietnam.
+              Over 19,000 members, many of whom we've met in person at classes and meetups in Ho Chi
+              Minh City and Da Nang.
             </p>
+            <p className="body-md text-cool-gray mb-8">
+              So when you ask us for an editor, an assistant or a customer service rep, we aren't
+              searching a database. We're asking people we know.
+            </p>
+            <Button asChild variant="hero" size="lg">
+              <Link to="/start-project">
+                Tell us what you need
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
+            </Button>
           </motion.div>
-
-          {/* Skill icons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+          <motion.figure
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mt-10"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="lg:col-span-6"
           >
-            {heroSkills.map((s) => (
-              <div
-                key={s.label}
-                className="flex flex-col items-start gap-3 border border-cream/15 bg-cream/5 backdrop-blur-sm p-5 hover:border-gold/50 transition-colors duration-500"
-              >
-                <s.icon className="w-7 h-7 text-gold" strokeWidth={1.5} />
-                <span className="text-sm text-cream/85">{s.label}</span>
-              </div>
-            ))}
-          </motion.div>
-
-          <div className="grid lg:grid-cols-2 gap-10 mt-14">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <p className="text-cream/70 body-md mb-5">
-                The one non-negotiable: every opportunity we source for must offer a safe, legal,
-                professional and fair working environment for candidates. In return, we've
-                consistently found that Vietnamese freelancers and remote professionals go above and
-                beyond for the clients they work with.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {nonNegotiables.map((n) => (
-                  <span
-                    key={n.label}
-                    className="inline-flex items-center gap-2 rounded-full border border-gold/40 text-gold text-sm px-4 py-2"
-                  >
-                    <n.icon className="w-4 h-4" strokeWidth={1.5} />
-                    {n.label}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="border-l-2 border-gold pl-6"
-            >
-              <p className="body-lg text-cream/85">
-                We're proud to be the bridge connecting international clients with Vietnam's
-                high-quality remote talent pool, whether the need is full-time, part-time,
-                project-based or task-based. There's almost always someone in our network ready to
-                step in.
-              </p>
-              <div className="mt-6">
-                <Button asChild variant="hero" size="lg">
-                  <Link to="/start-project">
-                    Tell us what you need
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </Button>
-              </div>
-            </motion.div>
-          </div>
+            <img
+              src={proClass.url}
+              alt="Virtual Assistant Pro class graduates in Ho Chi Minh City"
+              className="w-full aspect-[4/3] object-cover"
+            />
+            <figcaption className="mt-3 text-sm text-cool-gray">
+              Graduates of our Virtual Assistant Pro class, Ho Chi Minh City.
+            </figcaption>
+          </motion.figure>
         </div>
       </section>
 
-      {/* Work categories: compact */}
-      <section className="section-padding bg-background pattern-dots">
-        <div className="container-editorial">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-10 max-w-2xl"
-          >
-            <p className="text-gold text-sm font-medium uppercase tracking-widest mb-3">
-              What They Do
+      {/* Community photos */}
+      <section className="pb-20 bg-background">
+        <div className="container-editorial grid md:grid-cols-12 gap-6">
+          <figure className="md:col-span-7">
+            <img src={meetup.url} alt="VA community meetup" loading="lazy" className="w-full aspect-[3/2] object-cover" />
+            <figcaption className="mt-3 text-sm text-cool-gray">Community meetup. Most of these faces have worked with our clients.</figcaption>
+          </figure>
+          <figure className="md:col-span-5 md:mt-16">
+            <img src={dinner.url} alt="VA community dinner" loading="lazy" className="w-full aspect-[4/3] object-cover" />
+            <figcaption className="mt-3 text-sm text-cool-gray">Monthly dinner with members of the network.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      {/* Roles + how we work */}
+      <section className="section-padding surface-cream">
+        <div className="container-editorial grid lg:grid-cols-12 gap-12">
+          <div className="lg:col-span-5">
+            <h2 className="headline-lg text-navy mb-6">Roles we fill most often</h2>
+            <ul className="columns-2 gap-8 text-navy">
+              {categories.map((c) => (
+                <li key={c.label} className="py-2 border-b border-navy/10 break-inside-avoid">{c.label}</li>
+              ))}
+            </ul>
+            <p className="mt-5 text-sm text-cool-gray">Don't see the role? Ask us. The network is wider than this list.</p>
+          </div>
+          <div className="lg:col-span-6 lg:col-start-7">
+            <h2 className="headline-lg text-navy mb-6">How you can work with them</h2>
+            <dl className="divide-y divide-navy/10">
+              {engagements.map((e) => (
+                <div key={e.title} className="py-4 grid grid-cols-3 gap-4">
+                  <dt className="font-display text-navy">{e.title}</dt>
+                  <dd className="col-span-2 text-cool-gray">{e.text}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="mt-8 body-md text-cool-gray border-l-2 border-gold pl-5">
+              One thing we won't bend on: every job we source for has to be safe, legal, professional
+              and fair for the person doing it. In return, Vietnamese freelancers tend to go well
+              beyond what's asked.
             </p>
-            <h2 className="headline-lg text-navy">Roles we fill most often.</h2>
-          </motion.div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-            {categories.map((c, i) => (
-              <motion.div
-                key={c.label}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: Math.min(i, 8) * 0.04 }}
-                className="flex items-center gap-3 bg-white/70 border border-navy/10 rounded-xl px-4 py-3 hover:border-gold/50 hover:bg-white transition-colors"
-              >
-                <c.icon className="w-5 h-5 text-navy-light shrink-0" strokeWidth={1.5} />
-                <span className="text-sm text-navy">{c.label}</span>
-              </motion.div>
-            ))}
-          </div>
-
-          <p className="mt-6 text-sm text-cool-gray">
-            Don't see the role? Ask us. The network is wider than this list.
-          </p>
-        </div>
-      </section>
-
-      {/* Engagement models */}
-      <section className="section-padding surface-cream pattern-diagonal">
-        <div className="container-editorial">
-          <div className="grid md:grid-cols-4 gap-6">
-            {engagements.map((e, i) => (
-              <motion.div
-                key={e.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="bg-background border border-navy/10 p-6 hover:border-gold/40 transition-colors duration-500"
-              >
-                <e.icon className="w-7 h-7 text-gold mb-4" strokeWidth={1.5} />
-                <h3 className="font-display text-lg text-navy mb-2">{e.title}</h3>
-                <p className="text-sm text-cool-gray">{e.text}</p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
@@ -238,7 +176,7 @@ const TalentSourcing = () => {
             <p className="text-gold text-sm font-medium uppercase tracking-widest mb-3">
               Case Studies
             </p>
-            <h2 className="headline-lg text-navy">Placements, told plainly.</h2>
+            <h2 className="headline-lg text-navy">A few people we placed</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6">
