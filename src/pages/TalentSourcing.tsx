@@ -128,7 +128,7 @@ const TalentSourcing = () => {
           </figure>
           <figure className="md:col-span-5 md:mt-16">
             <img src={dinner.url} alt="VA community dinner" loading="lazy" className="w-full aspect-[4/3] object-cover" />
-            <figcaption className="mt-3 text-sm text-cool-gray">Monthly dinner with members of the network.</figcaption>
+            <figcaption className="mt-3 text-sm text-cool-gray">Dinner with members of the network.</figcaption>
           </figure>
         </div>
       </section>
