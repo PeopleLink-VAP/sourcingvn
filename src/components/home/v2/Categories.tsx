@@ -38,7 +38,7 @@ export const Categories = () => (
           <div key={c.t} className="group rounded-3xl bg-card p-3">
             <div className="aspect-square overflow-hidden rounded-2xl bg-background">
               <img src={c.img} alt={c.t} loading="lazy"
-                className={`h-full w-full transition duration-500 group-hover:scale-105 ${c.contain ? "object-contain p-6" : "object-cover"}`} />
+                className={`h-full w-full transition duration-500 group-hover:scale-105 object-cover`} />
             </div>
             <div className="p-3">
               <div className="flex items-center justify-between gap-2">
