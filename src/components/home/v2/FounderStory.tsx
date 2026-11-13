@@ -7,7 +7,7 @@ const roles = [
   ["Grew up around clothing", "My dad is a tailor. Fabric, fit and finish were part of everyday life at home."],
   ["Amazon FBA & Etsy seller", "MOQs, packaging rules, restock deadlines. I've lived them."],
   ["BD Manager, Australian skincare importer", "Cross-border trade from both ends."],
-  ["Ops Manager, DTC brand at ~USD 4M a year", "Production, suppliers and fulfilment at scale."],
+  ["Ops Manager, Canada-based DTC brand at ~USD 4M a year", "Managed the supply chain in China: production, suppliers and fulfilment at scale."],
   ["Sourcing agent for 100+ SMEs and individuals", "Small brands, real orders, real deadlines."],
 ];
 const sides = [
