@@ -5,6 +5,7 @@ import { HomeHero } from "@/components/home/v2/HomeHero";
 import { Categories } from "@/components/home/v2/Categories";
 import { FounderStory } from "@/components/home/v2/FounderStory";
 import { ServicesPricing } from "@/components/home/v2/ServicesPricing";
+import { OnTheFloor } from "@/components/home/v2/OnTheFloor";
 import { TeamOnGround } from "@/components/home/v2/TeamOnGround";
 import { ProcessFaqCta } from "@/components/home/v2/ProcessFaqCta";
 
@@ -14,6 +15,7 @@ const Index = () => (
     <Navigation />
     <HomeHero />
     <Categories />
+    <OnTheFloor />
     <FounderStory />
     <TeamOnGround />
     <ServicesPricing />

@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-import { Box, Armchair, Sprout } from "lucide-react";
+import { Box } from "lucide-react";
 import caps from "@/assets/home/cat_caps.jpg.asset.json";
 import sneakers from "@/assets/home/cat_sneakers.jpg.asset.json";
 import clothing from "@/assets/home/cat_clothing.jpg.asset.json";
 import bags from "@/assets/home/cat_bags.jpg.asset.json";
 import silicone from "@/assets/home/cat_silicone.jpg.asset.json";
+import wood from "@/assets/home/wood_chair.jpg.asset.json";
+import tea from "@/assets/home/tea_factory.jpg.asset.json";
 
 const core = [
   { t: "Hats & caps", d: "Baseball caps, bucket hats, sun hats, custom embroidery and labels.", img: caps.url },
@@ -15,8 +17,8 @@ const core = [
 const also = [
   { t: "Packaging", d: "Boxes, mailers, bags, labels", icon: Box },
   { t: "Plastic & silicone", d: "Moulded parts, household goods", img: silicone.url },
-  { t: "Wood furniture", d: "Indoor, outdoor, home décor", icon: Armchair },
-  { t: "Agricultural products", d: "Coffee, spices, dried goods", icon: Sprout },
+  { t: "Wood furniture", d: "Indoor, outdoor, home décor", img: wood.url },
+  { t: "Agricultural products", d: "Coffee, spices, dried goods", img: tea.url },
 ];
 
 export const Categories = () => (
