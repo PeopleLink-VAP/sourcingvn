@@ -58,7 +58,11 @@ export const ProcessFaqCta = () => (
           </a>
           <a href="mailto:hello@sourcing.vn?subject=Get%20a%20quote" className="rounded-full border border-border bg-card px-7 py-3.5 font-semibold text-foreground">Get a quote</a>
         </div>
-        <a href="mailto:hello@sourcing.vn" className="mt-6 inline-block text-muted-foreground underline">hello@sourcing.vn</a>
+        <p className="mt-6 text-muted-foreground">
+          <a href="mailto:hello@sourcing.vn" className="underline">hello@sourcing.vn</a>
+          {" · "}
+          <a href="https://wa.me/84932548082" target="_blank" rel="noopener noreferrer" className="underline">WhatsApp +84 932 548 082</a>
+        </p>
       </div>
     </section>
   </>

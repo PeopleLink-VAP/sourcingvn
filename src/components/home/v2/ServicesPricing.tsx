@@ -1,5 +1,7 @@
 import { List, ShieldCheck, Search, Factory, ClipboardCheck, Truck, BarChart3, MapPin, Star, Check } from "lucide-react";
 
+const popular = new Set(["Supplier list", "Market research", "Assistant on the go"]);
+
 const services = [
   [List, "Supplier list", "Shortlisted factories that match your product, budget and MOQ."],
   [ShieldCheck, "Company verification", "We confirm a supplier is real, licensed and capable before you pay."],
@@ -23,7 +25,8 @@ export const ServicesPricing = () => (
       </div>
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {services.map(([Icon, t, d]) => (
-          <div key={t} className="rounded-3xl bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg">
+          <div key={t} className={`relative rounded-3xl bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg ${popular.has(t) ? "ring-2 ring-gold" : ""}`}>
+            {popular.has(t) && <span className="absolute right-4 top-4 rounded-full bg-gold px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-navy-deep">Most chosen</span>}
             <Icon className="h-6 w-6 text-primary" />
             <p className="mt-5 font-semibold text-foreground">{t}</p>
             <p className="mt-2 text-sm text-muted-foreground">{d}</p>
@@ -39,8 +42,9 @@ export const ServicesPricing = () => (
         </div>
         <div className="flex flex-col justify-center">
           <div className="rounded-2xl border border-current/20 p-6">
-            <p className="text-sm opacity-70">Every project is quoted on</p>
-            <p className="mt-2 font-display text-3xl font-bold">Your scope, not a package.</p>
+            <p className="text-sm opacity-70">Services start from</p>
+            <p className="mt-2 font-display text-5xl font-bold">USD 150</p>
+            <p className="mt-2 text-sm opacity-70">Final quote based on your scope.</p>
           </div>
           <ul className="mt-6 space-y-3">
             {["You see every vendor quote", "No hidden margin on factory prices", "Pay only for the services you use"].map((x) => (
