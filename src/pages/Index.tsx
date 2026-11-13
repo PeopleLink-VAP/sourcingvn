@@ -1,28 +1,24 @@
 import { Navigation } from "@/components/Navigation";
-import { Hero } from "@/components/home/Hero";
-import { WhyWeDoThis } from "@/components/home/WhyWeDoThis";
-import { WhatWeDo } from "@/components/home/WhatWeDo";
-import { WhyDifferent } from "@/components/home/WhyDifferent";
-import { WhyVietnam } from "@/components/home/WhyVietnam";
-import { ChoosePath } from "@/components/home/ChoosePath";
 import { Footer } from "@/components/Footer";
 import { Mascot } from "@/components/Mascot";
+import { HomeHero } from "@/components/home/v2/HomeHero";
+import { Categories } from "@/components/home/v2/Categories";
+import { FounderStory } from "@/components/home/v2/FounderStory";
+import { ServicesPricing } from "@/components/home/v2/ServicesPricing";
+import { ProcessFaqCta } from "@/components/home/v2/ProcessFaqCta";
 
-const Index = () => {
-  return (
-    <div className="min-h-screen">
-      <Navigation />
-      <Hero />
-      <WhyWeDoThis />
-      <WhatWeDo />
-      <WhyDifferent />
-      {/* <WhyVietnam /> hidden for now */}
-      <ChoosePath />
-      <Footer />
-      <Mascot message="Hi! 👋 Need help with your project?" />
-    </div>
-  );
-};
+// Team-on-the-ground section is waiting for team photos (HCMC, Da Nang, Hanoi).
+const Index = () => (
+  <div className="min-h-screen bg-background">
+    <Navigation />
+    <HomeHero />
+    <Categories />
+    <FounderStory />
+    <ServicesPricing />
+    <ProcessFaqCta />
+    <Footer />
+    <Mascot message="Hi! 👋 Need help with your project?" />
+  </div>
+);
 
 export default Index;
-
