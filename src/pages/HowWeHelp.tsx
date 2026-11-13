@@ -8,7 +8,7 @@ import { useRef } from "react";
 
 import factoryAsset from "@/assets/home/factory_floor.jpg.asset.json";
 import talentAsset from "@/assets/talent/va_pro_class.jpg.asset.json";
-import developerAsset from "@/assets/home/duyen_laptop.jpg.asset.json";
+import developerAsset from "@/assets/home/pos_customer_journey.png.asset.json";
 import teamAsset from "@/assets/home/client_meeting.jpg.asset.json";
 const factoryImage = factoryAsset.url, talentImage = talentAsset.url, developerImage = developerAsset.url, teamImage = teamAsset.url;
 
