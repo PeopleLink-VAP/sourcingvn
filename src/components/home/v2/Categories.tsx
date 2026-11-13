@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Box } from "lucide-react";
 import caps from "@/assets/home/cat_caps.jpg.asset.json";
 import sneakers from "@/assets/home/cat_sneakers.jpg.asset.json";
 import clothing from "@/assets/home/cat_clothing.jpg.asset.json";
@@ -7,6 +6,7 @@ import bags from "@/assets/home/cat_backpack.jpg.asset.json";
 import ceramics from "@/assets/home/ceramics_factory.jpg.asset.json";
 import silicone from "@/assets/home/cat_silicone.jpg.asset.json";
 import wood from "@/assets/home/wood_chair.jpg.asset.json";
+import pack from "@/assets/home/packaging_dieline.jpg.asset.json";
 import tea from "@/assets/home/tea_factory.jpg.asset.json";
 
 const core = [
@@ -15,9 +15,9 @@ const core = [
   { t: "Clothing & uniforms", d: "Sportswear, workwear and uniforms, scarves and cut-and-sew basics.", img: clothing.url },
   { t: "Bags & handicraft", d: "Handbags, totes, bamboo and woven goods made by Vietnamese craft workshops.", img: bags.url },
 ];
-const also = [
+const also: { t: string; d: string; img: string; contain?: boolean }[] = [
   { t: "Ceramics & homeware", d: "Cups, vases, tableware", img: ceramics.url },
-  { t: "Packaging", d: "Boxes, mailers, bags, labels", icon: Box },
+  { t: "Packaging", d: "Boxes, mailers, bags, labels", img: pack.url, contain: true },
   { t: "Plastic & silicone", d: "Moulded parts, household goods", img: silicone.url },
   { t: "Wood furniture", d: "Indoor, outdoor, home décor", img: wood.url },
   { t: "Agricultural products", d: "Coffee, spices, dried goods", img: tea.url },
@@ -53,12 +53,12 @@ export const Categories = () => (
       <p className="mt-14 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground">We also source</p>
       <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {also.map((a) => (
-          <div key={a.t} className="flex items-center gap-4 rounded-2xl border border-border bg-card/60 p-3">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-muted">
-              {a.img ? <img src={a.img} alt={a.t} className="h-full w-full object-cover" /> : a.icon && <a.icon className="h-5 w-5 text-foreground/70" />}
+          <div key={a.t} className="group overflow-hidden rounded-2xl border border-border bg-card">
+            <div className="aspect-[4/3] overflow-hidden bg-card">
+              <img src={a.img} alt={a.t} loading="lazy" className={`h-full w-full transition duration-500 group-hover:scale-105 ${a.contain ? "object-contain p-2" : "object-cover"}`} />
             </div>
-            <div>
-              <p className="font-semibold text-foreground">{a.t}</p>
+            <div className="p-4">
+              <p className="font-display text-lg font-bold text-foreground">{a.t}</p>
               <p className="text-sm text-muted-foreground">{a.d}</p>
             </div>
           </div>

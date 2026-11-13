@@ -4,11 +4,11 @@ import portrait from "@/assets/home/duyen_portrait.jpg.asset.json";
 import sewing from "@/assets/home/sewing_closeup.jpg.asset.json";
 
 const roles = [
-  ["Grew up around clothing", "My dad is a tailor. I learned stitching and fabric before anything else."],
+  ["Grew up around clothing", "My dad is a tailor. Fabric, fit and finish were part of everyday life at home."],
   ["Amazon FBA & Etsy seller", "MOQs, packaging rules, restock deadlines. I've lived them."],
   ["BD Manager, Australian skincare importer", "Cross-border trade from both ends."],
-  ["Ops Manager, fast-growing DTC brand", "Production, suppliers and fulfilment at scale."],
-  ["Sourcing agent for 100+ SMEs on Fiverr", "Small brands, real orders, real deadlines."],
+  ["Ops Manager, DTC brand at ~USD 4M a year", "Production, suppliers and fulfilment at scale."],
+  ["Sourcing agent for 100+ SMEs and individuals", "Small brands, real orders, real deadlines."],
 ];
 const sides = [
   ["As a buyer", "Sourcing production in Vietnam for the first or fiftieth time."],

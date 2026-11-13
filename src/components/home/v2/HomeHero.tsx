@@ -72,7 +72,7 @@ export const HomeHero = () => {
           </div>
         </div>
         <div className="mt-10 flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm font-medium text-foreground/80">
-          <span>100+ SMEs helped on Fiverr</span>
+          <span>100+ SMEs and individuals helped</span>
           <span>Team in HCMC · Da Nang · Hanoi</span>
           <span>Former Amazon FBA & Etsy seller</span>
         </div>

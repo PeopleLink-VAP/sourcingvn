@@ -1,4 +1,4 @@
-import line from "@/assets/home/tea_processing_line.mp4.asset.json";
+import line from "@/assets/home/tea_processing_line_hd.mp4.asset.json";
 import samples from "@/assets/home/tea_samples.mp4.asset.json";
 import tasting from "@/assets/home/tea_tasting.jpg.asset.json";
 import carpenter from "@/assets/home/factory_floor.jpg.asset.json";

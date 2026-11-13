@@ -1,11 +1,11 @@
-import duo from "@/assets/home/trade_fair_duo.jpg.asset.json";
+import duo from "@/assets/home/rnd_clients.jpg.asset.json";
 import team from "@/assets/home/trade_fair_team.jpg.asset.json";
 import factory from "@/assets/home/factory_meeting.jpg.asset.json";
 import client from "@/assets/home/client_meeting.jpg.asset.json";
 
 const shots = [
   { img: team.url, t: "Trade fairs", d: "Meeting suppliers face to face with our clients", span: "lg:col-span-2" },
-  { img: duo.url, t: "With clients", d: "Walking the show floor together", span: "lg:row-span-2", tall: true },
+  { img: duo.url, t: "With clients", d: "Visiting a product R&D centre together", span: "lg:row-span-2", tall: true },
   { img: factory.url, t: "Factory meetings", d: "Specs, samples and timelines, in person" },
   { img: client.url, t: "Supplier reviews", d: "Briefing clients before they commit" },
 ];
