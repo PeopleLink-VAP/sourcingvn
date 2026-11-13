@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import portrait from "@/assets/home/duyen_portrait.jpg.asset.json";
-import laptop from "@/assets/home/duyen_laptop.jpg.asset.json";
+import sewing from "@/assets/home/sewing_closeup.jpg.asset.json";
 
 const roles = [
   ["Grew up around clothing", "My dad is a tailor. I learned stitching and fabric before anything else."],
@@ -57,7 +57,7 @@ export const FounderStory = () => (
           <p className="mt-4 text-lg text-muted-foreground">
             So I founded Sourcing Vietnam with a team in Ho Chi Minh City, Da Nang and Hanoi. We check, push and report on every order as if it were our own.
           </p>
-          <img src={laptop.url} alt="Duyen working with a client" loading="lazy" className="mt-8 hidden h-64 w-full rounded-3xl object-cover object-[50%_30%] lg:block" />
+          <img src={sewing.url} alt="Hands guiding fabric through a sewing machine" loading="lazy" className="mt-8 hidden h-64 w-full rounded-3xl object-cover lg:block" />
         </div>
         <ol className="border-t border-border">
           {roles.map(([t, d], i) => (

@@ -5,15 +5,17 @@ import { HomeHero } from "@/components/home/v2/HomeHero";
 import { Categories } from "@/components/home/v2/Categories";
 import { FounderStory } from "@/components/home/v2/FounderStory";
 import { ServicesPricing } from "@/components/home/v2/ServicesPricing";
+import { TeamOnGround } from "@/components/home/v2/TeamOnGround";
 import { ProcessFaqCta } from "@/components/home/v2/ProcessFaqCta";
 
-// Team-on-the-ground section is waiting for team photos (HCMC, Da Nang, Hanoi).
+
 const Index = () => (
   <div className="min-h-screen bg-background">
     <Navigation />
     <HomeHero />
     <Categories />
     <FounderStory />
+    <TeamOnGround />
     <ServicesPricing />
     <ProcessFaqCta />
     <Footer />
