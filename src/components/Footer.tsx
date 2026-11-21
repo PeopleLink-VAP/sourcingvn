@@ -1,26 +1,32 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logoMain from "@/assets/logo_main.png";
 
 export const Footer = () => {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+  const headingTone = isHome ? "text-cream" : "text-foreground";
+  const mutedTone = isHome ? "text-cream/60" : "text-muted-foreground";
+  const subtleTone = isHome ? "text-cream/40" : "text-muted-foreground/70";
+
   return (
-    <footer className="bg-navy-deep text-cream/80">
+    <footer className={isHome ? "bg-navy-deep text-cream/80" : "border-t border-border bg-secondary/40 text-muted-foreground"}>
       <div className="container-editorial section-padding">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <img 
-              src={logoMain} 
-              alt="Sourcing.vn" 
-              className="h-8 w-auto brightness-0 invert mb-6"
+            <img
+              src={logoMain}
+              alt="Sourcing.vn"
+              className={`h-8 w-auto mb-6 ${isHome ? "brightness-0 invert" : ""}`}
             />
-            <p className="text-sm leading-relaxed text-cream/60 max-w-xs">
+            <p className={`text-sm leading-relaxed ${mutedTone} max-w-xs`}>
               Your on-the-ground partner for sourcing products, talent, and systems in Vietnam.
             </p>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-cream font-display font-semibold text-sm uppercase tracking-wider mb-6">
+            <h4 className={`${headingTone} font-display font-semibold text-sm uppercase tracking-wider mb-6`}>
               Services
             </h4>
             <ul className="space-y-3">
@@ -44,7 +50,7 @@ export const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="text-cream font-display font-semibold text-sm uppercase tracking-wider mb-6">
+            <h4 className={`${headingTone} font-display font-semibold text-sm uppercase tracking-wider mb-6`}>
               Company
             </h4>
             <ul className="space-y-3">
@@ -73,14 +79,14 @@ export const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-cream font-display font-semibold text-sm uppercase tracking-wider mb-6">
+            <h4 className={`${headingTone} font-display font-semibold text-sm uppercase tracking-wider mb-6`}>
               Get in Touch
             </h4>
-            <p className="text-sm text-cream/60 mb-4">
+            <p className={`text-sm ${mutedTone} mb-4`}>
               Ho Chi Minh City, Vietnam
             </p>
-            <a 
-              href="mailto:hello@sourcing.vn" 
+            <a
+              href="mailto:hello@sourcing.vn"
               className="text-gold hover:text-gold-muted transition-colors text-sm font-medium"
             >
               hello@sourcing.vn
@@ -89,15 +95,15 @@ export const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-cream/40">
+        <div className={`mt-16 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 ${isHome ? "border-cream/10" : "border-border"}`}>
+          <p className={`text-xs ${subtleTone}`}>
             © {new Date().getFullYear()} Sourcing.vn. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-xs text-cream/40 hover:text-cream/60 transition-colors">
+            <a href="#" className={`text-xs ${subtleTone} hover:text-gold transition-colors`}>
               Privacy Policy
             </a>
-            <a href="#" className="text-xs text-cream/40 hover:text-cream/60 transition-colors">
+            <a href="#" className={`text-xs ${subtleTone} hover:text-gold transition-colors`}>
               Terms of Service
             </a>
           </div>

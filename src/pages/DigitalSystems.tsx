@@ -6,7 +6,7 @@ import { DashboardPreview } from "@/components/digital/DashboardPreview";
 import { Pricing } from "@/components/digital/Pricing";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, Check } from "lucide-react";
 
 const steps = [
   {
@@ -34,11 +34,13 @@ const DigitalSystems = () => {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 lg:pb-24 bg-background border-b border-border">
+      <section className="relative overflow-hidden border-b border-border bg-secondary/40 pt-32 pb-16 lg:pb-20">
+        <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-teal/10 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 left-1/3 h-48 w-48 rounded-full bg-gold/10 blur-3xl" />
         <div className="container-editorial">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="animate-fade-in">
-              <p className="text-xs font-medium uppercase tracking-widest text-primary mb-5">
+              <p className="text-xs font-medium uppercase tracking-widest text-teal mb-5">
                 Digital &amp; Systems
               </p>
               <h1 className="headline-xl text-foreground mb-6">
@@ -48,6 +50,14 @@ const DigitalSystems = () => {
                 We design and build websites, landing pages, portals, dashboards, LMS platforms and
                 business systems around the way your team actually works.
               </p>
+              <div className="mb-7 flex flex-wrap gap-x-5 gap-y-2 text-sm text-foreground">
+                {["Websites that convert", "Dashboards people use", "Automation that saves time"].map((item) => (
+                  <span key={item} className="inline-flex items-center gap-2">
+                    <Check className="h-4 w-4 text-teal" />
+                    {item}
+                  </span>
+                ))}
+              </div>
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="hover-scale">
                   <Link to="/start-project">
@@ -64,13 +74,37 @@ const DigitalSystems = () => {
               </div>
             </div>
 
-            <div className="animate-scale-in">
-              <DashboardPreview />
+            <div className="relative animate-scale-in lg:pl-4">
+              <div className="absolute -inset-3 rotate-2 rounded-3xl border border-teal/20 bg-teal/5" />
+              <div className="relative rotate-1 transition-transform duration-500 hover:rotate-0">
+                <DashboardPreview />
+              </div>
+              <div className="relative mt-4 ml-auto w-fit rounded-full border border-border bg-card px-4 py-2 text-xs font-medium text-muted-foreground shadow-sm">
+                One clear view of your business
+              </div>
             </div>
           </div>
 
         </div>
       </section>
+
+      <aside className="border-b border-border bg-card">
+        <div className="container-editorial flex flex-col gap-3 py-5 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-muted-foreground">
+            <span className="font-medium text-foreground">Want to view more of our tech demos?</span>{" "}
+            Explore the wider work of our technology team.
+          </p>
+          <a
+            href="https://alphabits.team/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-teal hover:text-foreground transition-colors"
+          >
+            Visit alphabits.team
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
+        </div>
+      </aside>
 
       {/* What a system can do */}
       <div id="examples">
@@ -84,10 +118,10 @@ const DigitalSystems = () => {
       <SelectedProjects />
 
       {/* How we think */}
-      <section className="section-padding bg-background pattern-crosshatch">
+      <section className="section-padding border-y border-border bg-secondary/30">
         <div className="container-editorial">
           <div className="max-w-2xl mb-10">
-            <p className="text-xs font-medium uppercase tracking-widest text-primary mb-4">
+            <p className="text-xs font-medium uppercase tracking-widest text-teal mb-4">
               How We Think
             </p>
             <h2 className="headline-lg text-foreground">Three steps, no mystery.</h2>
@@ -96,10 +130,10 @@ const DigitalSystems = () => {
             {steps.map((step, i) => (
               <div
                 key={step.title}
-                className="rounded-xl border border-border bg-card p-7 animate-fade-in transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/40"
+                className="rounded-xl border border-border bg-card p-7 animate-fade-in transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-teal/40"
                 style={{ animationDelay: `${i * 120}ms` }}
               >
-                <span className="inline-flex w-9 h-9 items-center justify-center rounded-full border border-primary/30 text-primary font-display font-semibold mb-5">
+                <span className="inline-flex w-9 h-9 items-center justify-center rounded-full border border-teal/30 text-teal font-display font-semibold mb-5">
                   {step.number}
                 </span>
 

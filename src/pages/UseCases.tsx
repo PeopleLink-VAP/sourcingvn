@@ -15,7 +15,7 @@ const filters = [
 const accent: Record<string, string> = {
   "Product Sourcing": "bg-teal/10 text-teal border-teal/30",
   "Talent Sourcing": "bg-coral/10 text-coral border-coral/30",
-  "Digital & Systems": "bg-navy/10 text-navy border-navy/30",
+  "Digital & Systems": "bg-foreground/10 text-foreground border-foreground/30",
 };
 
 const UseCases = () => {
@@ -68,7 +68,7 @@ const UseCases = () => {
             <p className="text-sm font-semibold uppercase tracking-widest text-teal mb-4">
               Real Results
             </p>
-            <h1 className="headline-xl text-navy mb-6">
+            <h1 className="headline-xl text-foreground mb-6">
               Stories of <span className="text-sunshine">success</span> from our clients
             </h1>
             <p className="body-lg text-cool-gray max-w-2xl">
@@ -81,10 +81,10 @@ const UseCases = () => {
             {useCaseCategories.map((c) => (
               <div key={c.category} className="flex items-center gap-3">
                 <div className={`p-2.5 rounded-xl bg-gradient-to-br ${c.color}`}>
-                  <c.icon className="w-5 h-5 text-white" />
+                  <c.icon className="w-5 h-5 text-primary-foreground" />
                 </div>
                 <div>
-                  <p className="text-navy font-semibold text-sm">{c.category}</p>
+                  <p className="text-foreground font-semibold text-sm">{c.category}</p>
                   <Link
                     to={c.link}
                     className="text-xs text-cool-gray hover:text-teal inline-flex items-center gap-1"
@@ -100,9 +100,9 @@ const UseCases = () => {
       </section>
 
       {/* Filter bar + unified grid */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-card">
         <div className="container-editorial">
-          <div className="sticky top-20 z-20 -mx-4 px-4 py-3 mb-10 bg-white/85 backdrop-blur-md flex flex-wrap gap-2 border-b border-border">
+          <div className="sticky top-20 z-20 -mx-4 px-4 py-3 mb-10 bg-card/85 backdrop-blur-md flex flex-wrap gap-2 border-b border-border">
             {filters.map((f) => {
               const count =
                 f.value === "All"
@@ -115,8 +115,8 @@ const UseCases = () => {
                   onClick={() => setFilter(f.value)}
                   className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300 ${
                     filter === f.value
-                      ? "bg-navy text-cream border-navy shadow-sm"
-                      : "bg-white text-cool-gray border-border hover:text-navy hover:border-navy/40"
+                      ? "bg-foreground text-cream border-foreground shadow-sm"
+                      : "bg-card text-cool-gray border-border hover:text-foreground hover:border-foreground/40"
                   }`}
                 >
                   {f.label}
@@ -138,25 +138,34 @@ const UseCases = () => {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.35, delay: Math.min(index, 6) * 0.05 }}
                   onClick={() => setSelectedCase(useCase)}
-                  className="scroll-mt-40 flex flex-col bg-white rounded-2xl shadow-sm border border-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
+                  className="scroll-mt-40 flex flex-col bg-card rounded-2xl shadow-sm border border-border overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
                 >
                   {useCase.gallery.length > 0 ? (
-                    <div className="relative h-48 overflow-hidden">
+                    <div className="relative flex h-56 items-center justify-center overflow-hidden bg-secondary/60 p-3">
                       <img
                         src={useCase.gallery[0]}
                         alt={useCase.title}
                         loading="lazy"
-                        className="rounded-3xl w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                       />
-                      <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
-                        <Image className="w-3 h-3 text-navy" />
-                        <span className="text-xs font-medium text-navy">{useCase.gallery.length}</span>
+                      <div className="absolute top-3 right-3 bg-card/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1 shadow-sm">
+                        <Image className="w-3 h-3 text-foreground" />
+                        <span className="text-xs font-medium text-foreground">{useCase.gallery.length}</span>
                       </div>
                     </div>
+                  ) : useCase.portrait ? (
+                    <div className="flex h-56 items-center justify-center bg-secondary/60 p-5">
+                      <img
+                        src={useCase.portrait}
+                        alt={useCase.client}
+                        loading="lazy"
+                        className="h-44 w-44 rounded-full border-4 border-card object-cover shadow-sm"
+                      />
+                    </div>
                   ) : (
-                    <div className="relative h-32 bg-cream flex items-center justify-center border-b border-border">
+                    <div className="relative h-32 bg-secondary/50 flex items-center justify-center border-b border-border">
                       {useCase.icon ? (
-                        <div className="w-14 h-14 rounded-2xl bg-navy flex items-center justify-center shadow-sm">
+                        <div className="w-14 h-14 rounded-2xl bg-foreground flex items-center justify-center shadow-sm">
                           <useCase.icon className="w-7 h-7 text-cream" strokeWidth={1.5} />
                         </div>
                       ) : (
@@ -181,7 +190,7 @@ const UseCases = () => {
                       >
                         {useCase.category}
                       </span>
-                      <h3 className="text-navy font-display font-semibold text-lg leading-snug">
+                      <h3 className="text-foreground font-display font-semibold text-lg leading-snug">
                         {useCase.title}
                       </h3>
                       <p className="text-cool-gray text-sm">{useCase.client}</p>
@@ -191,7 +200,7 @@ const UseCases = () => {
                   <p className="px-5 text-sm text-cool-gray line-clamp-2">{useCase.result}</p>
 
                   <div className="p-5 mt-auto">
-                    <div className="flex items-center gap-2 text-sm text-teal font-medium group-hover:text-navy transition-colors">
+                    <div className="flex items-center gap-2 text-sm text-teal font-medium group-hover:text-foreground transition-colors">
                       <span>View full case study</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -210,37 +219,45 @@ const UseCases = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-navy/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-foreground/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
             onClick={() => setSelectedCase(null)}
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+              className="bg-card rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header: text only, no photos */}
               <div className="relative border-b border-border bg-cream/60 rounded-t-2xl px-8 py-8">
                 <button
+                  type="button"
+                  aria-label="Close case study"
                   onClick={() => setSelectedCase(null)}
-                  className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors"
+                  className="absolute top-4 right-4 z-10 w-10 h-10 bg-card/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-card transition-colors"
                 >
-                  <X className="w-5 h-5 text-navy" />
+                  <X className="w-5 h-5 text-foreground" />
                 </button>
 
                 <div className="flex items-start justify-between gap-6 pr-12">
                   <div className="flex items-start gap-4">
-                    {selectedCase.icon && (
-                      <div className="w-12 h-12 rounded-xl bg-navy flex items-center justify-center shrink-0">
-                        <selectedCase.icon className="w-6 h-6 text-cream" strokeWidth={1.5} />
+                    {selectedCase.portrait ? (
+                      <img
+                        src={selectedCase.portrait}
+                        alt={selectedCase.client}
+                        className="h-14 w-14 rounded-full border border-border object-cover shrink-0"
+                      />
+                    ) : selectedCase.icon ? (
+                      <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center shrink-0">
+                        <selectedCase.icon className="w-6 h-6 text-background" strokeWidth={1.5} />
                       </div>
-                    )}
+                    ) : null}
                     <div>
                       <span className="text-xs font-semibold uppercase tracking-wider text-teal">
                         {selectedCase.industry}
                       </span>
-                      <h2 className="headline-lg text-navy">{selectedCase.title}</h2>
+                      <h2 className="headline-md text-foreground">{selectedCase.title}</h2>
                       <p className="text-cool-gray">{selectedCase.client}</p>
                     </div>
                   </div>
@@ -258,7 +275,7 @@ const UseCases = () => {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                   {selectedCase.metrics.map((metric, i) => (
                     <div key={i} className="text-center p-4 bg-cream rounded-xl">
-                      <div className="text-2xl font-display font-bold text-navy">{metric.value}</div>
+                      <div className="text-2xl font-display font-bold text-foreground">{metric.value}</div>
                       <div className="text-xs text-cool-gray">{metric.label}</div>
                     </div>
                   ))}
@@ -276,14 +293,14 @@ const UseCases = () => {
                   {selectedCase.gallery.length > 0 && (
                     <div>
                       <div
-                        className={`grid gap-2 [&>*]:aspect-[4/3] ${
-                          selectedCase.gallery.length === 1 ? "grid-cols-1" : "grid-cols-2"
+                        className={`grid items-start gap-3 ${
+                          selectedCase.gallery.length === 1 ? "grid-cols-1" : "sm:grid-cols-2"
                         }`}
                       >
                         {selectedCase.gallery.map((img, i) => (
                           <div
                             key={i}
-                            className="relative overflow-hidden rounded-xl cursor-pointer"
+                            className="relative flex items-center justify-center overflow-hidden rounded-xl border border-border bg-secondary/40 p-2 cursor-pointer"
                             onClick={() => {
                               if (!img.endsWith(".mp4")) setSelectedImage(img);
                             }}
@@ -295,9 +312,9 @@ const UseCases = () => {
                                   controls
                                   muted
                                   playsInline
-                                  className="w-full h-full object-cover bg-navy"
+                                  className="aspect-video w-full object-contain bg-foreground"
                                 />
-                                <span className="absolute top-3 left-3 pointer-events-none inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider bg-white/85 text-navy rounded-full px-2 py-1">
+                                <span className="absolute top-3 left-3 pointer-events-none inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider bg-card/85 text-foreground rounded-full px-2 py-1">
                                   <Play className="w-3 h-3" />
                                   Video
                                 </span>
@@ -306,7 +323,7 @@ const UseCases = () => {
                               <img
                                 src={img}
                                 alt={`${selectedCase.title} project photo ${i + 1}`}
-                                className="rounded-3xl w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                className="h-auto max-h-[32rem] w-full rounded-lg object-contain transition-transform duration-300 hover:scale-[1.01]"
                               />
                             )}
                           </div>
@@ -356,12 +373,12 @@ const UseCases = () => {
                     <h3 className="text-sm font-semibold uppercase tracking-wider text-sunshine mb-2">
                       The Result
                     </h3>
-                    <p className="text-navy font-medium">{selectedCase.result}</p>
+                    <p className="text-foreground font-medium">{selectedCase.result}</p>
                   </div>
                 </div>
 
                 <div className="mt-8 text-center">
-                  <Button asChild size="lg" className="bg-navy hover:bg-navy-light text-cream">
+                  <Button asChild size="lg" className="bg-foreground hover:bg-foreground/90 text-cream">
                     <Link to="/start-project" className="inline-flex items-center gap-2">
                       Start Your Project
                       <ArrowRight className="w-4 h-4" />
@@ -381,14 +398,16 @@ const UseCases = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/95 z-[60] flex items-center justify-center p-4"
+            className="fixed inset-0 bg-foreground/95 z-[60] flex items-center justify-center p-4"
             onClick={() => setSelectedImage(null)}
           >
             <button
+              type="button"
+              aria-label="Close image"
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+              className="absolute top-4 right-4 w-12 h-12 bg-card/10 rounded-full flex items-center justify-center hover:bg-card/20 transition-colors"
             >
-              <X className="w-6 h-6 text-white" />
+              <X className="w-6 h-6 text-primary-foreground" />
             </button>
             <motion.img
               initial={{ scale: 0.8 }}
@@ -411,11 +430,11 @@ const UseCases = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="headline-lg text-navy mb-6">Ready to write your success story?</h2>
+            <h2 className="headline-lg text-foreground mb-6">Ready to write your success story?</h2>
             <p className="body-lg text-cool-gray max-w-xl mx-auto mb-8">
               Let's discuss how we can help you achieve similar results.
             </p>
-            <Button asChild size="xl" className="bg-navy hover:bg-navy-light text-cream">
+            <Button asChild size="xl" className="bg-foreground hover:bg-foreground/90 text-cream">
               <Link to="/start-project" className="inline-flex items-center gap-2">
                 Start Your Project
                 <ArrowRight className="w-5 h-5" />

@@ -1,10 +1,9 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Factory, Users, Monitor, CheckCircle2 } from "lucide-react";
-import { useRef } from "react";
+import { ArrowRight, Factory, Users, Monitor, CheckCircle2, Search, ClipboardList, Cog, MessageCircle } from "lucide-react";
 
 import factoryAsset from "@/assets/home/factory_floor.jpg.asset.json";
 import talentAsset from "@/assets/talent/va_pro_class.jpg.asset.json";
@@ -80,92 +79,104 @@ const serviceUseCases = [
   },
 ];
 
+const workingPhases = [
+  {
+    icon: Search,
+    number: "01",
+    title: "Listen",
+    text: "We learn what you need, what is stuck, and what a good outcome looks like.",
+  },
+  {
+    icon: ClipboardList,
+    number: "02",
+    title: "Plan",
+    text: "You get a clear scope, practical next steps, and honest advice before work begins.",
+  },
+  {
+    icon: Cog,
+    number: "03",
+    title: "Do the work",
+    text: "Our team coordinates people, suppliers, and details on the ground in Vietnam.",
+  },
+  {
+    icon: MessageCircle,
+    number: "04",
+    title: "Stay close",
+    text: "You receive clear updates and a real person to speak to when something changes.",
+  },
+];
+
 const HowWeHelp = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-
   return (
     <div className="min-h-screen">
       <Navigation />
       
-      {/* Hero with parallax image */}
-      <section className="relative pt-32 pb-24 bg-navy-deep overflow-hidden">
-        {/* Animated background pattern */}
-        <div className="absolute inset-0 pattern-diagonal opacity-50" />
-        <motion.div 
-          className="absolute inset-0"
-          style={{ y: backgroundY }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep via-navy-deep/95 to-navy-deep" />
-          <img 
-            src={teamImage} 
-            alt="Team collaboration" 
-            className="rounded-3xl w-full h-[120%] object-cover opacity-20"
-          />
-        </motion.div>
-        
-        <div className="container-editorial relative z-10">
+      {/* Hero: the same team photo, with a lighter editorial frame */}
+      <section className="border-b border-border bg-secondary/40 pt-32 pb-16 overflow-hidden">
+        <div className="container-editorial grid lg:grid-cols-12 gap-10 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl"
+            className="lg:col-span-7"
           >
-            <motion.p 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4"
-            >
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-primary mb-4">
               How We Help
-            </motion.p>
-            <h1 className="headline-xl text-cream mb-6">
+            </p>
+            <h1 className="headline-xl text-foreground mb-6">
               We believe sourcing is broken.
               <br />
-              <motion.span 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="text-gold"
-              >
-                Here's how we fix it.
-              </motion.span>
+              <span className="text-muted-foreground">Here's how we fix it.</span>
             </h1>
-            <motion.p 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="body-lg text-cream/70 max-w-2xl"
-            >
+            <p className="body-lg text-muted-foreground max-w-2xl">
               Three core services. One approach: be on the ground, be transparent, be accountable.
-            </motion.p>
+            </p>
           </motion.div>
-        </div>
-
-        {/* Animated scroll indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 10, 0] }}
-          transition={{ delay: 1, duration: 2, repeat: Infinity }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <div className="w-6 h-10 border-2 border-cream/30 rounded-full flex justify-center">
-            <motion.div 
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1.5 h-3 bg-gold rounded-full mt-2"
+          <motion.figure
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="lg:col-span-5"
+          >
+            <img
+              src={teamImage}
+              alt="Sourcing Vietnam team meeting with clients"
+              className="aspect-[4/3] w-full rounded-3xl object-cover shadow-sm"
             />
+            <figcaption className="mt-3 text-sm text-muted-foreground">Real conversations with clients, not a hand-off to a faceless team.</figcaption>
+          </motion.figure>
+        </div>
+      </section>
+
+      {/* A concise view of the working relationship */}
+      <section className="border-b border-border bg-background py-12">
+        <div className="container-editorial">
+          <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-teal mb-3">How We Work</p>
+              <h2 className="headline-md text-foreground">Four phases. One accountable team.</h2>
+            </div>
+            <p className="max-w-md text-sm text-muted-foreground">Enough structure to keep things clear, without turning your project into a long process document.</p>
           </div>
-        </motion.div>
+          <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {workingPhases.map((phase) => (
+              <li key={phase.number} className="relative rounded-2xl border border-border bg-card p-5">
+                <div className="mb-4 flex items-center justify-between">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal/10 text-teal">
+                    <phase.icon className="h-5 w-5" strokeWidth={1.7} />
+                  </span>
+                  <span className="font-display text-xs font-semibold text-muted-foreground">{phase.number}</span>
+                </div>
+                <h3 className="mb-2 font-display text-lg font-semibold text-foreground">{phase.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{phase.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
       </section>
 
       {/* Service Use Cases with Images */}
-      <section ref={containerRef} className="section-padding bg-background pattern-grain">
+      <section className="section-padding bg-background pattern-grain">
         <div className="container-editorial">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -176,7 +187,7 @@ const HowWeHelp = () => {
             <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
               What You Can Get
             </p>
-            <h2 className="headline-lg text-navy max-w-2xl">
+            <h2 className="headline-lg text-foreground max-w-2xl">
               Real services for real businesses.
             </h2>
           </motion.div>
@@ -207,7 +218,7 @@ const HowWeHelp = () => {
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.6 }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />
                     
                     {/* Floating label */}
                     <motion.div 
@@ -215,7 +226,7 @@ const HowWeHelp = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.3 }}
-                      className="absolute bottom-6 left-6 bg-gold text-navy-deep px-4 py-2 font-display font-semibold"
+                      className="absolute bottom-6 left-6 bg-gold text-foreground px-4 py-2 font-display font-semibold"
                     >
                       {service.title}
                     </motion.div>
@@ -243,7 +254,7 @@ const HowWeHelp = () => {
                         className="flex items-center gap-3"
                       >
                         <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0" />
-                        <span className="text-navy">{example}</span>
+                        <span className="text-foreground">{example}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -273,7 +284,7 @@ const HowWeHelp = () => {
             <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
               Our Philosophy
             </p>
-            <h2 className="headline-lg text-navy">
+            <h2 className="headline-lg text-foreground">
               Things we believe to be true.
             </h2>
           </motion.div>
@@ -286,7 +297,7 @@ const HowWeHelp = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: index * 0.1 }}
-                className="grid lg:grid-cols-5 gap-8 py-12 border-b border-navy/10 last:border-b-0 group"
+                className="grid lg:grid-cols-5 gap-8 py-12 border-b border-foreground/10 last:border-b-0 group"
               >
                 <div className="lg:col-span-2 relative">
                   <motion.span 
@@ -296,7 +307,7 @@ const HowWeHelp = () => {
                   >
                     {String(index + 1).padStart(2, '0')}
                   </motion.span>
-                  <blockquote className="headline-md text-navy group-hover:text-gold transition-colors duration-300">
+                  <blockquote className="headline-md text-foreground group-hover:text-gold transition-colors duration-300">
                     "{truth.statement}"
                   </blockquote>
                 </div>
@@ -321,7 +332,7 @@ const HowWeHelp = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <motion.h2 
-              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-navy leading-tight mb-8"
+              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground leading-tight mb-8"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -341,17 +352,17 @@ const HowWeHelp = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding surface-dark">
+      <section className="section-padding border-t border-border bg-secondary/40">
         <div className="container-editorial text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="headline-lg text-cream mb-6">
+            <h2 className="headline-lg text-foreground mb-6">
               Think we might be a good fit?
             </h2>
-            <p className="body-lg text-cream/60 mb-10 max-w-xl mx-auto">
+            <p className="body-lg text-muted-foreground mb-10 max-w-xl mx-auto">
               Let's have a conversation. No pitch, no pressure. 
               Just an honest discussion about what you need.
             </p>

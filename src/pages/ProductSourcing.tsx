@@ -10,12 +10,14 @@ import qualityCheckImage from "@/assets/images/quality-check.jpg";
 import warehouseImage from "@/assets/images/vietnam-warehouse.jpg";
 import factoryWorkersImage from "@/assets/images/factory-workers.jpg";
 import furnitureImage from "@/assets/images/furniture-production.jpg";
-import marketImage from "@/assets/images/vietnam-market.jpg";
+import factoryAsset from "@/assets/home/factory_floor.jpg.asset.json";
 import duyenImage from "@/assets/images/duyen-pham.jpg";
 import bambooStrawsJar from "@/assets/cases/bamboo/bamboo_straws_jar.jpg";
 import sprayerPhoto from "@/assets/cases/sprayers/sprayer_1.jpg";
 import scrubsPhoto from "@/assets/cases/scrubs/scrubs_studio.jpg";
 import apparelPhoto from "@/assets/cases/apparel/apparel_hoodie.jpg";
+
+const marketImage = factoryAsset.url;
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -140,43 +142,47 @@ const ProductSourcing = () => {
       <Navigation />
 
       {/* Hero: quiet, editorial */}
-      <section className="relative pt-32 pb-20 bg-navy-deep overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={marketImage}
-            alt="Sourcing work in Vietnam"
-            className="rounded-3xl w-full h-full object-cover opacity-25"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/95 to-navy-deep/80" />
-        </div>
-
-        <div className="container-editorial relative z-10">
+      <section className="border-b border-border bg-secondary/40 pt-32 pb-16 overflow-hidden">
+        <div className="container-editorial grid lg:grid-cols-12 gap-10 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-2xl"
+            className="lg:col-span-7"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-primary mb-4">
               Product Sourcing
             </p>
-            <h1 className="headline-xl text-cream mb-6">
+            <h1 className="headline-xl text-foreground mb-6">
               A small team on the ground in Vietnam.
               <br />
-              <span className="text-cream/60">Working closely with every client.</span>
+              <span className="text-muted-foreground">Working closely with every client.</span>
             </h1>
-            <p className="body-lg text-cream/70 mb-8">
+            <p className="body-lg text-muted-foreground mb-8 max-w-2xl">
               We are a boutique sourcing team, not a volume operation. That means
               fewer projects at a time, senior people on yours, and honest answers
               even when they are not the ones you hoped for.
             </p>
-            <Button asChild variant="hero" size="xl">
+            <Button asChild size="xl">
               <Link to="/start-project">
                 Start Your Project
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </Button>
           </motion.div>
+          <motion.figure
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="lg:col-span-5"
+          >
+            <img
+              src={marketImage}
+              alt="Sourcing work in Vietnam"
+              className="aspect-[4/3] w-full rounded-3xl object-cover shadow-sm"
+            />
+            <figcaption className="mt-3 text-sm text-muted-foreground">On the ground, from first conversation to final delivery.</figcaption>
+          </motion.figure>
         </div>
       </section>
 
@@ -187,7 +193,7 @@ const ProductSourcing = () => {
             <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
               How We Work With You
             </p>
-            <h2 className="headline-lg text-navy">
+            <h2 className="headline-lg text-foreground">
               Guidance first. Volume never.
             </h2>
           </motion.div>
@@ -201,7 +207,7 @@ const ProductSourcing = () => {
                 className="rounded-3xl border border-border p-8 hover:border-gold/40 transition-colors duration-500"
               >
                 <p.icon className="w-8 h-8 text-gold mb-5" strokeWidth={1.5} />
-                <h3 className="headline-md text-navy mb-3">{p.title}</h3>
+                <h3 className="headline-md text-foreground mb-3">{p.title}</h3>
                 <p className="body-md text-cool-gray">{p.text}</p>
               </motion.div>
             ))}
@@ -216,7 +222,7 @@ const ProductSourcing = () => {
             <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
               Our Work
             </p>
-            <h2 className="headline-lg text-navy">
+            <h2 className="headline-lg text-foreground">
               Case studies, told plainly.
             </h2>
             <p className="body-md text-cool-gray mt-4">
@@ -232,11 +238,11 @@ const ProductSourcing = () => {
                   to={`/use-cases#${cs.id}`}
                   className="group block h-full bg-background rounded-3xl border border-border hover:border-gold/60 transition-colors"
                 >
-                  <div className="aspect-[4/3] overflow-hidden">
+                  <div className="aspect-[4/3] overflow-hidden bg-secondary/60 p-3">
                     <img
                       src={cs.photo}
                       alt={`${cs.title} sourcing project in Vietnam`}
-                      className="rounded-3xl w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="h-full w-full rounded-xl object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                       loading="lazy"
                     />
                   </div>
@@ -244,11 +250,11 @@ const ProductSourcing = () => {
                     <p className="text-gold text-xs font-medium uppercase tracking-widest mb-2">
                       {cs.tag}
                     </p>
-                    <h3 className="font-display text-xl text-navy leading-snug mb-3">
+                    <h3 className="font-display text-xl text-foreground leading-snug mb-3">
                       {cs.title}
                     </h3>
                     <p className="body-md text-cool-gray mb-5">{cs.summary}</p>
-                    <span className="inline-flex items-center gap-2 text-sm font-medium text-navy group-hover:text-gold transition-colors">
+                    <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground group-hover:text-gold transition-colors">
                       View the project
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </span>
@@ -276,7 +282,7 @@ const ProductSourcing = () => {
             <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
               How We Work & What It Costs
             </p>
-            <h2 className="headline-lg text-navy">
+            <h2 className="headline-lg text-foreground">
               Seven phases. Take what you need.
             </h2>
             <p className="body-md text-cool-gray mt-4">
@@ -291,14 +297,14 @@ const ProductSourcing = () => {
                 key={phase.number}
                 {...fadeUp}
                 transition={{ delay: index * 0.05 }}
-                className="group flex gap-6 md:gap-10 items-start py-8 border-b border-navy/10 last:border-b-0"
+                className="group flex gap-6 md:gap-10 items-start py-8 border-b border-foreground/10 last:border-b-0"
               >
-                <span className="text-sm font-display font-semibold text-navy/30 group-hover:text-gold transition-colors pt-1 w-8 flex-shrink-0">
+                <span className="text-sm font-display font-semibold text-foreground/30 group-hover:text-gold transition-colors pt-1 w-8 flex-shrink-0">
                   {phase.number}
                 </span>
                 <div className="flex-1">
                   <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-2">
-                    <h3 className="headline-md text-navy">{phase.title}</h3>
+                    <h3 className="headline-md text-foreground">{phase.title}</h3>
                     <span className="text-sm text-gold font-medium">{phase.price}</span>
                   </div>
                   <p className="body-md text-cool-gray">{phase.description}</p>
@@ -310,18 +316,18 @@ const ProductSourcing = () => {
       </section>
 
       {/* Ethos + CTA */}
-      <section className="section-padding surface-dark">
+      <section className="section-padding border-t border-border bg-secondary/40">
         <div className="container-editorial">
           <motion.div {...fadeUp} className="max-w-3xl">
-            <p className="body-lg text-cream/80 mb-10 border-l-2 border-gold pl-6">
+            <p className="body-lg text-muted-foreground mb-10 border-l-2 border-gold pl-6">
               Our goal isn't just a finished product. It's a satisfied client and
               a fair, respected partnership with the local factories who make it
               happen.
             </p>
-            <h2 className="headline-lg text-cream mb-6">
+            <h2 className="headline-lg text-foreground mb-6">
               Tell us where you are in your sourcing journey.
             </h2>
-            <p className="body-lg text-cream/60 mb-10 max-w-xl">
+            <p className="body-lg text-muted-foreground mb-10 max-w-xl">
               We'll tell you honestly which phase makes sense for you, and which
               ones you can skip.
             </p>

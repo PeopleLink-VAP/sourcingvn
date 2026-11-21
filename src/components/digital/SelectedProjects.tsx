@@ -116,7 +116,7 @@ export const SelectedProjects = () => {
     <section className="section-padding bg-secondary/40 overflow-hidden">
       <div className="container-editorial">
         <div className="max-w-2xl mb-14 animate-fade-in">
-          <p className="text-xs font-medium uppercase tracking-widest text-primary mb-4">Use Cases</p>
+          <p className="text-xs font-medium uppercase tracking-widest text-teal mb-4">Use Cases</p>
           <h2 className="headline-lg text-foreground mb-3">What we've built for our customers.</h2>
           <p className="body-md text-muted-foreground">
             Real websites, portals and systems we designed and built for real businesses. Every
@@ -146,7 +146,7 @@ export const SelectedProjects = () => {
                 <p className="body-md text-muted-foreground flex-1">{project.description}</p>
                 <Link
                   to={project.href}
-                  className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary self-start"
+                  className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-teal self-start"
                 >
                   View case
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -163,12 +163,12 @@ export const SelectedProjects = () => {
                     key={shot.src}
                     className="group relative overflow-hidden rounded-lg border border-border/70 bg-secondary"
                   >
-                    <div className="aspect-[16/10] overflow-hidden">
+                    <div className="aspect-[16/10] overflow-hidden bg-secondary/60 p-2">
                       <img
                         src={shot.src}
                         alt={`${project.name} ${shot.label}`}
                         loading="lazy"
-                        className="rounded-3xl w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+                        className="h-full w-full rounded-md object-contain object-center transition-transform duration-500 group-hover:scale-[1.02]"
                       />
                     </div>
                     <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-foreground/80 to-transparent px-3 py-2 text-[11px] font-medium uppercase tracking-wider text-background opacity-0 group-hover:opacity-100 transition-opacity">
@@ -184,7 +184,7 @@ export const SelectedProjects = () => {
         <div className="mt-10 flex justify-center">
           <Link
             to="/use-cases"
-            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:opacity-80 transition-opacity"
+            className="inline-flex items-center gap-2 text-sm font-medium text-teal hover:opacity-80 transition-opacity"
           >
             Explore all use cases
             <ArrowRight className="w-4 h-4" />

@@ -6,6 +6,7 @@ export interface UseCase {
   client: string;
   industry: string;
   logo?: string;
+  portrait?: string;
   icon?: typeof Package;
   brief?: string;
   services?: string[];
@@ -71,6 +72,9 @@ import apparelHoodie from "@/assets/cases/apparel/apparel_hoodie.jpg";
 import apparelCarpenter from "@/assets/cases/apparel/apparel_carpenter.jpg";
 import apparelKnit from "@/assets/cases/apparel/apparel_knit.jpg";
 import apparelCap from "@/assets/cases/apparel/apparel_cap.jpg";
+import skylarkLogo from "@/assets/talent/skylark_migration_logo.png.asset.json";
+import bariCourtsPortrait from "@/assets/talent/bari_courts.png.asset.json";
+import stxndLogo from "@/assets/talent/stxnd_logo.png.asset.json";
 
 
 export const useCaseCategories: UseCaseCategory[] = [
@@ -208,8 +212,9 @@ export const useCaseCategories: UseCaseCategory[] = [
       {
         id: "clo-cso-placements",
         title: "CLO & CSO Placements",
-        client: "Immigration support company, Australia",
+        client: "Skylark Migration Specialists, Australia",
         industry: "Immigration Services",
+        logo: skylarkLogo.url,
         icon: Headphones,
         brief: "Our client, an immigration support company based in Australia, needed to fill Client Liaison Officer (CLO) and Customer Support Officer (CSO) positions remotely, on a part-time basis. Given the client-facing nature of these roles, they were specific about candidate quality: strong, accent-neutral English communication, and the flexibility to visit the office in person once a week.",
         services: ["Full-cycle recruitment support: we screened all incoming applications, ran first-round interviews to vet candidates, and shortlisted the top 3 for the client to interview directly."],
@@ -233,8 +238,9 @@ export const useCaseCategories: UseCaseCategory[] = [
       {
         id: "academic-support-team",
         title: "Academic Support Team",
-        client: "Dr. Bari Courts, University Professor",
+        client: "Dr. Bari Courts, University Professor, U.S.A.",
         industry: "Education",
+        portrait: bariCourtsPortrait.url,
         icon: GraduationCap,
         brief: "Dr. Bari Courts, a university professor, wanted to build out a remote support team based in Vietnam. Given the academic context, candidates needed excellent written and verbal English, along with hands-on experience using Learning Management Systems (LMS) and prior exposure to international teaching environments.",
         services: ["CV Collection: a lighter-touch package where we source and compile qualified candidate profiles, and the client handles screening and interviewing independently. This suits clients who prefer to evaluate candidates themselves but want a curated, pre-filtered pool to start from."],
@@ -258,8 +264,9 @@ export const useCaseCategories: UseCaseCategory[] = [
       {
         id: "video-editor-pa",
         title: "Video Editor & Personal Assistant",
-        client: "Vu Kohler, Business Owner, Vietnam",
+        client: "Vu Kohler, STXND, Vietnam",
         industry: "Creative Agency",
+        logo: stxndLogo.url,
         icon: Video,
         brief: "Vu is a Vietnamese-American business owner running an agency in Vietnam. He came to us first for a video editor, and later returned for a personal assistant. Because both roles supported his day-to-day operations directly, he needed candidates capable of working independently, without close supervision.",
         services: ["CV Collection: we sourced and compiled a pool of qualified candidates for Vu to review and interview on his own timeline."],

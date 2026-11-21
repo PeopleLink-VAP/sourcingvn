@@ -28,8 +28,8 @@ export const HomeHero = () => {
           Ready to make it in Vietnam?
         </motion.span>
         <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-          className="mt-6 font-display text-5xl font-bold uppercase leading-[0.9] tracking-tight text-foreground md:text-7xl lg:text-8xl">
-          Good factories<span className="text-primary">.</span><br />Great products<span className="text-primary">.</span>
+          className="mx-auto mt-6 max-w-5xl font-display text-4xl font-bold uppercase leading-[1.02] tracking-tight text-foreground sm:text-5xl md:text-6xl">
+          Good Factory, Great Products,<br /><span className="text-primary">Devoted People</span>
         </motion.h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
           Supplier search, sample checks, QC and shipping for small and growing brands, handled on the ground by a team that has sat on the buyer's side of the table.

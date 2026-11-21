@@ -44,7 +44,7 @@ export const DashboardPreview = ({ compact = false }: { compact?: boolean }) => 
               {[38, 52, 44, 61, 57, 72, 66, 84].map((height, i) => (
                 <div
                   key={i}
-                  className="flex-1 rounded-t bg-primary/60"
+                  className="flex-1 origin-bottom rounded-t bg-teal/60 transition-colors hover:bg-teal"
                   style={{ height: `${height}%` }}
                 />
               ))}
@@ -68,15 +68,15 @@ export const DashboardPreview = ({ compact = false }: { compact?: boolean }) => 
               </ul>
             </div>
 
-            <div className="rounded-lg border border-primary/25 bg-primary/5 p-4">
+            <div className="rounded-lg border border-gold/30 bg-gold/10 p-4">
               <div className="flex items-center gap-2 mb-1">
-                <AlertTriangle className="w-4 h-4 text-primary" />
+                <AlertTriangle className="w-4 h-4 text-gold" />
                 <p className="text-sm font-medium text-foreground">2 alerts</p>
               </div>
               <p className="text-xs text-muted-foreground">
                 One invoice overdue, one supplier reply pending.
               </p>
-              <span className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-primary">
+              <span className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-foreground">
                 Review <ArrowUpRight className="w-3 h-3" />
               </span>
             </div>

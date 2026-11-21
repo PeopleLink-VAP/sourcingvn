@@ -26,8 +26,8 @@ export const ChatDemo = () => {
   return (
     <div className="rounded-xl border border-border bg-card shadow-sm overflow-hidden">
       <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-secondary/50">
-        <span className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-          <Bot className="w-4 h-4 text-primary" />
+        <span className="w-8 h-8 rounded-full bg-teal/10 flex items-center justify-center">
+          <Bot className="w-4 h-4 text-teal" />
         </span>
         <div>
           <p className="text-sm font-medium text-foreground">Sourcing Assistant</p>
@@ -41,7 +41,7 @@ export const ChatDemo = () => {
             <p
               className={`max-w-[80%] text-sm leading-relaxed rounded-2xl px-4 py-2.5 ${
                 msg.from === "user"
-                  ? "bg-primary text-primary-foreground rounded-br-sm"
+                  ? "bg-teal text-primary-foreground rounded-br-sm"
                   : "bg-secondary text-foreground rounded-bl-sm"
               }`}
             >
@@ -64,7 +64,7 @@ export const ChatDemo = () => {
 
       <div className="border-t border-border p-4 flex items-center justify-between gap-4">
         <span className="text-xs text-muted-foreground">Suggested next step</span>
-        <span className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">
+        <span className="inline-flex items-center gap-2 rounded-md bg-teal px-4 py-2 text-sm font-medium text-primary-foreground">
           Start supplier request
           <ArrowRight className="w-4 h-4" />
         </span>

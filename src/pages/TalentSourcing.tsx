@@ -82,7 +82,7 @@ const TalentSourcing = () => {
             className="lg:col-span-6"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">Talent Sourcing</p>
-            <h1 className="headline-xl text-navy mb-6">
+            <h1 className="headline-xl text-foreground mb-6">
               "Everyone needs an assistant once in a while."
             </h1>
             <p className="body-lg text-cool-gray mb-4">
@@ -137,20 +137,28 @@ const TalentSourcing = () => {
       <section className="section-padding surface-cream">
         <div className="container-editorial grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
-            <h2 className="headline-lg text-navy mb-6">Roles we fill most often</h2>
-            <ul className="columns-2 gap-8 text-navy">
+            <h2 className="headline-lg text-foreground mb-6">Roles we fill most often</h2>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-foreground">
               {categories.map((c) => (
-                <li key={c.label} className="py-2 border-b border-navy/10 break-inside-avoid">{c.label}</li>
+                <li
+                  key={c.label}
+                  className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-teal/40"
+                >
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal/10 text-teal">
+                    <c.icon className="h-4 w-4" strokeWidth={1.8} />
+                  </span>
+                  <span className="text-sm font-medium">{c.label}</span>
+                </li>
               ))}
             </ul>
             <p className="mt-5 text-sm text-cool-gray">Don't see the role? Ask us. The network is wider than this list.</p>
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
-            <h2 className="headline-lg text-navy mb-6">How you can work with them</h2>
-            <dl className="divide-y divide-navy/10">
+            <h2 className="headline-lg text-foreground mb-6">How you can work with them</h2>
+            <dl className="divide-y divide-border">
               {engagements.map((e) => (
                 <div key={e.title} className="py-4 grid grid-cols-3 gap-4">
-                  <dt className="font-display text-navy">{e.title}</dt>
+                  <dt className="font-display text-foreground">{e.title}</dt>
                   <dd className="col-span-2 text-cool-gray">{e.text}</dd>
                 </div>
               ))}
@@ -176,7 +184,7 @@ const TalentSourcing = () => {
             <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-3">
               Case Studies
             </p>
-            <h2 className="headline-lg text-navy">A few people we placed</h2>
+            <h2 className="headline-lg text-foreground">A few people we placed</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -193,24 +201,36 @@ const TalentSourcing = () => {
                   className="group flex h-full flex-col rounded-3xl border border-border p-8 hover:border-gold/50 hover:shadow-lg transition-all duration-500 bg-background"
                 >
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 bg-navy-deep flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-teal/10 flex items-center justify-center shrink-0">
                       {cs.icon ? (
-                        <cs.icon className="w-6 h-6 text-gold" strokeWidth={1.5} />
+                        <cs.icon className="w-6 h-6 text-teal" strokeWidth={1.5} />
                       ) : (
-                        <Users className="w-6 h-6 text-gold" strokeWidth={1.5} />
+                        <Users className="w-6 h-6 text-teal" strokeWidth={1.5} />
                       )}
                     </div>
                     <div>
-                      <h3 className="headline-md text-navy text-xl leading-snug">{cs.title}</h3>
+                      <h3 className="headline-md text-foreground text-xl leading-snug">{cs.title}</h3>
                       <p className="text-sm text-cool-gray">{cs.client}</p>
                     </div>
                   </div>
 
+                  {(cs.logo || cs.portrait) && (
+                    <div className="mb-5 flex min-h-16 items-center rounded-xl border border-border bg-secondary/40 px-4 py-3">
+                      <img
+                        src={cs.logo ?? cs.portrait}
+                        alt={cs.portrait ? cs.client : `${cs.client} logo`}
+                        className={cs.portrait
+                          ? "h-14 w-14 rounded-full object-cover"
+                          : "h-16 w-auto max-w-[180px] object-contain object-left"}
+                      />
+                    </div>
+                  )}
+
                   <p className="body-md text-cool-gray text-sm mb-5 line-clamp-4">{cs.brief}</p>
 
                   <div className="mt-auto">
-                    <p className="text-sm text-navy font-medium mb-4">{cs.result}</p>
-                    <span className="inline-flex items-center gap-2 text-sm font-medium text-navy group-hover:text-gold transition-colors">
+                    <p className="text-sm text-foreground font-medium mb-4">{cs.result}</p>
+                    <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground group-hover:text-gold transition-colors">
                       Read the full case study
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </span>
@@ -223,15 +243,15 @@ const TalentSourcing = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding surface-dark">
+      <section className="section-padding border-y border-border bg-secondary/50">
         <div className="container-editorial text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="headline-lg text-cream mb-6">Let's find your person.</h2>
-            <p className="body-lg text-cream/60 mb-10 max-w-xl mx-auto">
+            <h2 className="headline-lg text-foreground mb-6">Let's find your person.</h2>
+            <p className="body-lg text-muted-foreground mb-10 max-w-xl mx-auto">
               Tell us the role, the hours and how you like to work. We'll bring you a shortlist worth
               your time.
             </p>

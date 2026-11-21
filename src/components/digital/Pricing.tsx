@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Blocks, Check, Globe, GraduationCap, LayoutDashboard, ShoppingBag } from "lucide-react";
 
 const plans = [
   {
     name: "Websites",
+    icon: Globe,
     description:
       "Professional websites for businesses that need a strong, modern online presence.",
     features: [
@@ -20,6 +21,7 @@ const plans = [
   },
   {
     name: "E-commerce",
+    icon: ShoppingBag,
     description:
       "Online stores designed to help businesses sell products and manage orders.",
     features: [
@@ -35,6 +37,7 @@ const plans = [
   },
   {
     name: "Portals & LMS",
+    icon: GraduationCap,
     description:
       "Custom portals for students, customers, members or teams.",
     features: [
@@ -51,6 +54,7 @@ const plans = [
   },
   {
     name: "Business Systems",
+    icon: LayoutDashboard,
     description:
       "Digital systems that replace scattered spreadsheets, manual processes and disconnected tools.",
     features: [
@@ -67,6 +71,7 @@ const plans = [
   },
   {
     name: "Custom Platforms",
+    icon: Blocks,
     description: "For larger or more complex digital products.",
     features: [
       "Marketplaces",
@@ -87,7 +92,7 @@ export const Pricing = () => {
     <section className="section-padding bg-background border-t border-border" id="pricing">
       <div className="container-editorial">
         <div className="max-w-3xl mb-12">
-          <p className="text-xs font-medium uppercase tracking-widest text-primary mb-4">
+          <p className="text-xs font-medium uppercase tracking-widest text-teal mb-4">
             What We Build
           </p>
           <h2 className="headline-lg text-foreground mb-5">
@@ -98,18 +103,22 @@ export const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5 mb-10">
           {plans.map((plan, i) => (
             <div
               key={plan.name}
-              className="flex flex-col rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/30 animate-fade-in"
+              className={`flex flex-col rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-teal/40 animate-fade-in ${i < 3 ? "lg:col-span-2" : "lg:col-span-3"}`}
               style={{ animationDelay: `${i * 80}ms` }}
             >
-              <div className="mb-5">
-                <h3 className="text-lg font-display font-semibold text-foreground mb-3">
-                  {plan.name}
-                </h3>
+              <div className="mb-5 flex items-center justify-between gap-4">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal/10 text-teal">
+                  <plan.icon className="h-5 w-5" strokeWidth={1.7} />
+                </span>
+                <span className="font-display text-xs font-semibold text-muted-foreground">0{i + 1}</span>
               </div>
+              <h3 className="text-xl font-display font-semibold text-foreground mb-3">
+                {plan.name}
+              </h3>
 
               <p className="text-sm text-muted-foreground leading-relaxed mb-5">
                 {plan.description}
@@ -125,7 +134,7 @@ export const Pricing = () => {
                       key={feature}
                       className="text-sm text-muted-foreground leading-snug flex gap-2"
                     >
-                      <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-teal shrink-0 mt-0.5" />
                       {feature}
                     </li>
                   ))}
@@ -142,7 +151,10 @@ export const Pricing = () => {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-end gap-6 rounded-xl border border-primary/20 bg-primary/5 p-6">
+        <div className="flex flex-col gap-5 rounded-2xl border border-teal/20 bg-teal/5 p-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
+            Tell us what is slowing your team down. We will recommend only what is useful, then quote the scope clearly before work begins.
+          </p>
           <Button asChild size="lg" className="shrink-0">
             <Link to="/start-project">
               Talk to us about your project

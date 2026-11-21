@@ -69,7 +69,7 @@ const OurPeople = () => {
       <Navigation />
       
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-navy-deep">
+      <section className="border-b border-border bg-secondary/40 pt-32 pb-16">
         <div className="container-editorial">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -80,12 +80,12 @@ const OurPeople = () => {
             <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
               Behind The Scenes
             </p>
-            <h1 className="headline-xl text-cream mb-6">
+            <h1 className="headline-xl text-foreground mb-6">
               Our people
               <br />
-              <span className="text-cream/60">and stories</span>
+              <span className="text-muted-foreground">and stories</span>
             </h1>
-            <p className="body-lg text-cream/70 max-w-2xl">
+            <p className="body-lg text-muted-foreground max-w-2xl">
               We're not a faceless agency. We're a coordinated team built to 
               represent you in Vietnam with integrity and precision.
             </p>
@@ -105,7 +105,7 @@ const OurPeople = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
                 className={`grid lg:grid-cols-5 gap-12 items-start ${
-                  index > 0 ? "pt-12 border-t border-navy/10" : ""
+                  index > 0 ? "pt-12 border-t border-foreground/10" : ""
                 }`}
               >
                 {/* Left: Name card */}
@@ -116,13 +116,13 @@ const OurPeople = () => {
                       alt={member.name}
                       className="w-32 h-32 object-cover object-top rounded-lg mb-6"
                     />
-                    <h3 className="headline-lg text-navy mb-2">{member.name}</h3>
+                    <h3 className="headline-lg text-foreground mb-2">{member.name}</h3>
                     <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
                       {member.role}
                     </p>
                     {member.quote && (
                       <div className="border-l-2 border-gold pl-4 mt-6">
-                        <p className="body-md text-navy italic">
+                        <p className="body-md text-foreground italic">
                           "{member.quote}"
                         </p>
                       </div>
@@ -132,7 +132,7 @@ const OurPeople = () => {
 
                 {/* Right: Details */}
                 <div className="lg:col-span-3">
-                  <p className="body-lg text-navy mb-6 font-medium">
+                  <p className="body-lg text-foreground mb-6 font-medium">
                     {member.intro}
                   </p>
                   
@@ -153,7 +153,7 @@ const OurPeople = () => {
                   </div>
 
                   {member.closing && (
-                    <p className="body-md text-navy/80 bg-gold/5 border-l-2 border-gold/30 pl-4 py-3">
+                    <p className="body-md text-foreground/80 bg-gold/5 border-l-2 border-gold/30 pl-4 py-3">
                       {member.closing}
                     </p>
                   )}
@@ -176,7 +176,7 @@ const OurPeople = () => {
               <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-4">
                 Our Promise
               </p>
-              <h2 className="headline-lg text-navy mb-6">
+              <h2 className="headline-lg text-foreground mb-6">
                 What you can expect from us.
               </h2>
               <p className="body-lg text-cool-gray mb-8">
@@ -195,7 +195,7 @@ const OurPeople = () => {
                     className="flex items-center gap-3"
                   >
                     <CheckCircle2 className="w-5 h-5 text-gold flex-shrink-0" />
-                    <span className="text-navy font-medium">{item}</span>
+                    <span className="text-foreground font-medium">{item}</span>
                   </motion.div>
                 ))}
               </div>
@@ -208,18 +208,18 @@ const OurPeople = () => {
               className="space-y-6"
             >
               <div className="border-l-2 border-gold pl-6">
-                <p className="body-md text-navy font-medium">
+                <p className="body-md text-foreground font-medium">
                   "We are not freelancers working independently."
                 </p>
               </div>
-              <div className="border-l-2 border-navy/20 pl-6">
-                <p className="body-md text-navy">
+              <div className="border-l-2 border-foreground/20 pl-6">
+                <p className="body-md text-foreground">
                   "We are a coordinated team built to represent you in Vietnam 
                   with integrity and precision."
                 </p>
               </div>
-              <div className="bg-navy-deep p-8 mt-8">
-                <p className="text-2xl font-display font-bold text-cream mb-2">
+              <div className="rounded-2xl border border-border bg-card p-8 mt-8">
+                <p className="text-2xl font-display font-bold text-foreground mb-2">
                   Sourcing.vn
                 </p>
                 <p className="text-gold text-lg font-display">
@@ -232,14 +232,14 @@ const OurPeople = () => {
       </section>
 
       {/* CTA */}
-      <section className="section-padding surface-dark">
+      <section className="section-padding border-t border-border bg-secondary/40">
         <div className="container-editorial text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="headline-lg text-cream mb-6">
+            <h2 className="headline-lg text-foreground mb-6">
               Ready to work with us?
             </h2>
             <Button asChild variant="hero" size="xl">

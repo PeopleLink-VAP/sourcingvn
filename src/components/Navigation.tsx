@@ -18,16 +18,9 @@ export const Navigation = () => {
   const location = useLocation();
   const isHome = location.pathname === "/";
   
-  // Determine if we're on a dark-background page
-  const isDarkPage = ["/product-sourcing", "/talent-sourcing", "/digital-systems", "/how-we-help"].includes(location.pathname);
-
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isHome 
-        ? 'bg-cream/80 backdrop-blur-md border-b border-navy/5' 
-        : isDarkPage 
-          ? 'bg-navy-deep/95 backdrop-blur-sm' 
-          : 'bg-cream/95 backdrop-blur-sm border-b border-navy/5'
+    <nav className={`fixed top-0 left-0 right-0 z-50 border-b border-navy/5 transition-all duration-300 ${
+      isHome ? 'bg-cream/80 backdrop-blur-md' : 'bg-cream/95 backdrop-blur-sm'
     }`}>
       <div className="container-editorial">
         <div className="flex items-center justify-between h-20 md:h-24">
@@ -36,7 +29,7 @@ export const Navigation = () => {
             <img 
               src={logoMain} 
               alt="Sourcing.vn" 
-              className={`h-8 md:h-10 w-auto ${isDarkPage && !isHome ? 'brightness-0 invert' : ''}`}
+              className="h-8 md:h-10 w-auto"
             />
           </Link>
 
@@ -46,11 +39,7 @@ export const Navigation = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`text-sm font-medium tracking-wide transition-colors duration-200 editorial-link ${
-                  isDarkPage && !isHome
-                    ? 'text-cream/80 hover:text-cream'
-                    : 'text-navy/80 hover:text-navy'
-                }`}
+                className="text-sm font-medium tracking-wide text-navy/80 transition-colors duration-200 editorial-link hover:text-navy"
               >
                 {link.label}
               </Link>
@@ -66,7 +55,7 @@ export const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`lg:hidden relative z-10 p-2 ${isDarkPage && !isHome ? 'text-cream' : 'text-navy'}`}
+            className="lg:hidden relative z-10 p-2 text-navy"
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -82,7 +71,7 @@ export const Navigation = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden fixed inset-0 top-20 bg-navy-deep z-40"
+            className={`absolute left-0 right-0 top-full z-40 h-[calc(100vh-5rem)] overflow-y-auto lg:hidden ${isHome ? "bg-navy-deep" : "border-b border-border bg-cream shadow-lg"}`}
           >
             <div className="container-editorial py-8">
               <div className="flex flex-col gap-6">
@@ -96,7 +85,7 @@ export const Navigation = () => {
                     <Link
                       to={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="text-cream text-2xl font-display font-medium tracking-tight hover:text-sunshine transition-colors"
+                      className={`text-2xl font-display font-medium tracking-tight hover:text-sunshine transition-colors ${isHome ? "text-cream" : "text-navy"}`}
                     >
                       {link.label}
                     </Link>
