@@ -200,31 +200,39 @@ const TalentSourcing = () => {
                   to={`/use-cases#${cs.id}`}
                   className="group flex h-full flex-col rounded-3xl border border-border p-8 hover:border-gold/50 hover:shadow-lg transition-all duration-500 bg-background"
                 >
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-teal/10 flex items-center justify-center shrink-0">
-                      {cs.icon ? (
-                        <cs.icon className="w-6 h-6 text-teal" strokeWidth={1.5} />
+                  <div className="mb-6 flex h-20 items-center justify-between gap-4 rounded-2xl border border-border bg-secondary/30 px-5">
+                    <div className="flex min-w-0 items-center">
+                      {cs.logo ? (
+                        <img
+                          src={cs.logo}
+                          alt={`${cs.client} logo`}
+                          className="h-12 w-auto max-w-[180px] object-contain object-left"
+                        />
+                      ) : cs.portrait ? (
+                        <img
+                          src={cs.portrait}
+                          alt={cs.client}
+                          className="h-12 w-12 rounded-xl object-cover"
+                        />
                       ) : (
-                        <Users className="w-6 h-6 text-teal" strokeWidth={1.5} />
+                        <span className="font-display text-lg font-semibold text-foreground">
+                          {cs.client.split(",")[0]}
+                        </span>
                       )}
                     </div>
-                    <div>
-                      <h3 className="headline-md text-foreground text-xl leading-snug">{cs.title}</h3>
-                      <p className="text-sm text-cool-gray">{cs.client}</p>
-                    </div>
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal/10 text-teal">
+                      {cs.icon ? (
+                        <cs.icon className="h-5 w-5" strokeWidth={1.5} />
+                      ) : (
+                        <Users className="h-5 w-5" strokeWidth={1.5} />
+                      )}
+                    </span>
                   </div>
 
-                  {(cs.logo || cs.portrait) && (
-                    <div className="mb-5 flex min-h-16 items-center rounded-xl border border-border bg-secondary/40 px-4 py-3">
-                      <img
-                        src={cs.logo ?? cs.portrait}
-                        alt={cs.portrait ? cs.client : `${cs.client} logo`}
-                        className={cs.portrait
-                          ? "h-14 w-14 rounded-full object-cover"
-                          : "h-16 w-auto max-w-[180px] object-contain object-left"}
-                      />
-                    </div>
-                  )}
+                  <div className="mb-4">
+                    <h3 className="headline-md text-foreground text-xl leading-snug">{cs.title}</h3>
+                    <p className="mt-1 text-sm text-cool-gray">{cs.client}</p>
+                  </div>
 
                   <p className="body-md text-cool-gray text-sm mb-5 line-clamp-4">{cs.brief}</p>
 

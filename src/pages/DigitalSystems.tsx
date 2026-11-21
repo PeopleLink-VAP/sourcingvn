@@ -6,7 +6,7 @@ import { DashboardPreview } from "@/components/digital/DashboardPreview";
 import { Pricing } from "@/components/digital/Pricing";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, Check, MonitorPlay } from "lucide-react";
 
 const steps = [
   {
@@ -88,21 +88,28 @@ const DigitalSystems = () => {
         </div>
       </section>
 
-      <aside className="border-b border-border bg-card">
-        <div className="container-editorial flex flex-col gap-3 py-5 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-muted-foreground">
-            <span className="font-medium text-foreground">Want to view more of our tech demos?</span>{" "}
-            Explore the wider work of our technology team.
-          </p>
-          <a
-            href="https://alphabits.team/"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-teal hover:text-foreground transition-colors"
-          >
-            Visit alphabits.team
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
+      <aside className="border-b border-teal/20 bg-teal/10">
+        <div className="container-editorial py-6">
+          <div className="flex flex-col gap-5 rounded-2xl border border-teal/20 bg-card/80 p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:px-6">
+            <div className="flex items-center gap-4">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-teal/10 text-teal">
+                <MonitorPlay className="h-6 w-6" strokeWidth={1.7} />
+              </span>
+              <div>
+                <p className="font-display font-semibold text-foreground">Want to view more of our tech demos?</p>
+                <p className="mt-1 text-sm text-muted-foreground">Explore the wider work of our technology team.</p>
+              </div>
+            </div>
+            <a
+              href="https://alphabits.team/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex shrink-0 items-center justify-center gap-2 self-start rounded-full bg-teal px-5 py-3 text-sm font-semibold text-background shadow-sm transition-all hover:-translate-y-0.5 hover:bg-teal/90 sm:self-auto"
+            >
+              Visit alphabits.team
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </aside>
 

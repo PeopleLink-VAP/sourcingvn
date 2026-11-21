@@ -264,9 +264,8 @@ export const useCaseCategories: UseCaseCategory[] = [
       {
         id: "video-editor-pa",
         title: "Video Editor & Personal Assistant",
-        client: "Vu Kohler, STXND, Vietnam",
+        client: "Vu Kohler, Vietnam",
         industry: "Creative Agency",
-        logo: stxndLogo.url,
         icon: Video,
         brief: "Vu is a Vietnamese-American business owner running an agency in Vietnam. He came to us first for a video editor, and later returned for a personal assistant. Because both roles supported his day-to-day operations directly, he needed candidates capable of working independently, without close supervision.",
         services: ["CV Collection: we sourced and compiled a pool of qualified candidates for Vu to review and interview on his own timeline."],
@@ -289,8 +288,9 @@ export const useCaseCategories: UseCaseCategory[] = [
       {
         id: "shopify-customer-service",
         title: "Customer Service Reps",
-        client: "Shopify store owner, Canada",
+        client: "STXND, Shopify store owner, Canada",
         industry: "E-commerce",
+        logo: stxndLogo.url,
         icon: ShoppingBag,
         brief: "A Shopify store owner based in Canada needed to build out a part-time customer service team: 2 representatives covering different time slots to provide coverage outside standard Vietnam business hours.",
         services: ["Sourcing and shortlisting part-time customer service representatives for timezone-split coverage."],
